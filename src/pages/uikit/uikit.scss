@@ -1,0 +1,9 @@
+@import '../../components/sass/base/fonts';
+@import '../../components/sass/abstracts/variables';
+
+.container {
+  background-color: $green;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-size: 24px;
+  color: white;
+}
