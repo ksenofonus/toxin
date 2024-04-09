@@ -17,13 +17,14 @@ module.exports = (env) => {
     },
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, './')
+        Components: path.resolve(__dirname, 'src/components/'),
+        Assets: path.resolve(__dirname, 'src/assets/'),
       }
     },
     devtool: isDev ? 'inline-source-map' : false,
     devServer: isDev ? {
       port: 8080,
-      watchFiles: ['src/pages/**'],
+      watchFiles: ['src/**/**'],
       hot: true,
       open: ['http://localhost:8080/uikit.html']
     } : undefined,

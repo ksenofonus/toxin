@@ -1,9 +1,24 @@
-@import '../../components/sass/base/fonts';
-@import '../../components/sass/abstracts/variables';
+@import 'Components/sass/base/fonts';
+@import 'Components/sass/abstracts/variables';
+@import 'Components/sass/base/normalize';
+@import 'Components/sass/base/basic';
+@import 'Components/blocks/color_item/color-block';
 
 .container {
-  background-color: $green;
-  font-family: 'Montserrat', 'Arial', sans-serif;
-  font-size: 24px;
-  color: white;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-top: 140px;
+  padding-left: 150px;
+  padding-bottom: 140px;
+  & .logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+}
+.color-container {
+  width: 269px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

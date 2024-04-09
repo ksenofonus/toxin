@@ -1,0 +1,47 @@
+@mixin head-font {
+  font-family: $font-2;
+  font-weight: 700;
+  color: $dark;
+}
+@mixin main-font {
+  font-family: $font-1;
+  color: $dark;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+h1 {
+  @include head-font;
+  font-size: 24px;
+}
+h2 {
+  @include head-font;
+  font-size: 19px;
+}
+h3 {
+  @include main-font;
+  font-weight: 700;
+font-size: 12px;
+text-transform: uppercase;
+}
+
+body {
+  @include main-font;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}

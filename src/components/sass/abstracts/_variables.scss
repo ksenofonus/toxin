@@ -1,3 +1,13 @@
+@import '../base/fonts';
+
 $green: #6fcf97;
 $purple: #bc9cff;
-$dark-shade: #1f2041;
+$dark: #1f2041;
+$dark75: rgba($dark, .75);
+$dark50: rgba($dark, .5);
+$dark25: rgba($dark, .25);
+$dark5: rgba($dark, .05);
+
+
+$font-1: 'Montserrat', 'Arial', sans-serif;
+$font-2: 'Quicksand', 'Arial', sans-serif;
