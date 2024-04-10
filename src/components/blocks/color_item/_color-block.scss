@@ -4,7 +4,8 @@
   width: auto;
   display: flex;
   align-items: center;
-  gap: 40px;
+  justify-content: space-between;
+  gap: 20px;
 
   &__rect {
     width: 70px;
@@ -36,5 +37,8 @@
   & .color__name {
     text-transform: capitalize;
     line-height: 1.5;
+  }
+  & .color__prop {
+    width: 164px;
   }
 }
