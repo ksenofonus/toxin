@@ -3,22 +3,29 @@
 @import 'Components/sass/base/normalize';
 @import 'Components/sass/base/basic';
 @import 'Components/blocks/color_item/color-block';
+@import 'Components/blocks/logo/logo';
+@import 'Components/blocks/text-block/text-block';
 
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding-top: 140px;
-  padding-left: 150px;
-  padding-bottom: 140px;
-  & .logo {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-  }
+}
+.block-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 140px 150px ;
+  width: auto;
+  height: auto;
 }
 .color-container {
-  width: 269px;
+  width: auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.text-container {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }

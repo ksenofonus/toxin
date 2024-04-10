@@ -1,0 +1,23 @@
+@import 'Components/sass/base/basic';
+@import 'Components/sass/abstracts/variables';
+
+.text {
+  display: flex;
+  gap: 20px;
+  &__sentence {
+    max-width: 416px;
+  }
+  &__name {
+    width: 37px;
+    text-transform: capitalize;
+    text-align: end;
+    color: $dark25;
+  }
+  &:first-child {
+    font-size: 24px;
+  }
+  &:last-child {
+    @include main-font;
+    color: $dark75;
+  }
+}
