@@ -10,6 +10,7 @@ html(lang='en')
   body
     .container
       section.block-container
+        h2.section-title Colors & Type
         include ../components/blocks/logo/_logo.pug
         .color-container
           +color-item('dark shade 100%', '#1F2041', 'color__rect_dark')
@@ -21,4 +22,9 @@ html(lang='en')
           +color-item('green', '#6FCF97', 'color__rect_green')
         .text-container
           include ../components/blocks/text-block/_text-block.pug
+      section.block-container
+        h2.section-title Form elements
+        include ../components/blocks/logo/_logo.pug
+        include ../components/blocks/forms/_form.pug
+
   script(src="./uikit/uikit.js")

@@ -1,0 +1,19 @@
+.field-name {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  & #text-field {
+    box-sizing: border-box;
+    height: 44px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+    border: 1px solid $dark25;
+    font-weight: 400;
+    font-size: 14px;
+    color: $dark25;
+  }
+}

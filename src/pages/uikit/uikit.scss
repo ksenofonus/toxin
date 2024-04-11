@@ -5,6 +5,7 @@
 @import 'Components/blocks/color_item/color-block';
 @import 'Components/blocks/logo/logo';
 @import 'Components/blocks/text-block/text-block';
+@import 'Components/blocks/forms/form';
 
 .container {
   max-width: 1440px;
@@ -12,10 +13,13 @@
 }
 .block-container {
   display: flex;
-  justify-content: space-between;
   padding: 140px 150px ;
   width: auto;
   height: auto;
+  border-bottom: 1px solid $dark25;
+  & .section-title {
+    display: none;
+  }
 }
 .color-container {
   width: auto;
