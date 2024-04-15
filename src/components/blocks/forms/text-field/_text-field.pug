@@ -1,2 +1,8 @@
-label.field-name Text field
-  input#text-field(type="text", name="", placeholder="Email")
+mixin field(fieldName, name, type, placeholder)
+  label.field-name= fieldName
+    input(
+      type= type
+      name= name
+      placeholder= placeholder
+      id= name
+    )

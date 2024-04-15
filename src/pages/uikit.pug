@@ -1,4 +1,5 @@
 include ../components/blocks/color_item/_color-block.pug
+include ../components/blocks/forms/text-field/_text-field.pug
 
 doctype html
 html(lang='en')
@@ -25,6 +26,8 @@ html(lang='en')
       section.block-container
         h2.section-title Form elements
         include ../components/blocks/logo/_logo.pug
-        include ../components/blocks/forms/_form.pug
+        form(action="", method="post", class="field")
+          +field('text-field', 'text', 'text', 'email', 'text')
+          +field('text-field', 'text-focus', 'text', 'email')
 
   script(src="./uikit/uikit.js")
