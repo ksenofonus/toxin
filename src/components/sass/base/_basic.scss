@@ -15,7 +15,8 @@ h3,
 h4,
 ul,
 li,
-input {
+input,
+select {
   margin: 0;
   padding: 0;
 }
@@ -48,6 +49,8 @@ body {
 input:focus,
 input:hover,
 textarea:hover,
-textarea:focus {
+textarea:focus,
+select:hover,
+select:focus {
   outline: none;
 }

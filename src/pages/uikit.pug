@@ -29,5 +29,7 @@ html(lang='en')
         form(action="", method="post", class="field")
           +field('text-field', 'text', 'text', 'email', 'text')
           +field('text-field', 'text-focus', 'text', 'email')
+          +select('dropdown', 'guests', 'Сколько гостей')
+          +select('date dropdown', 'date', 'ДД.ММ.ГГ')(class='date')
 
   script(src="./uikit/uikit.js")

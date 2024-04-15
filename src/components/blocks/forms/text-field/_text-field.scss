@@ -1,3 +1,14 @@
+@mixin field-style {
+  box-sizing: border-box;
+  height: 44px;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px;
+  border: 1px solid $dark25;
+  font-weight: 400;
+  font-size: 14px;
+}
 @mixin focus-field {
   border: 1px solid $dark50;
     &::-webkit-input-placeholder,
@@ -13,21 +24,20 @@
   font-size: 12px;
 }
 input {
-  box-sizing: border-box;
-  height: 44px;
-  width: 100%;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 4px;
-  border: 1px solid $dark25;
-  font-weight: 400;
-  font-size: 14px;
-  text-transform: capitalize;
+  @include field-style;
   &[type="text"]::placeholder{
     color: $dark25;
-  }
+    text-transform: capitalize;
+    }
   &[type="text"]:hover,
   &[type="text"]:focus {
     @include focus-field;
+  }
+}
+select {
+  @include field-style;
+  color: $dark75;
+  &.date {
+    width: 150px;
   }
 }
