@@ -22,6 +22,7 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
+  width: 100%;
 }
 input {
   @include field-style;
@@ -37,7 +38,7 @@ input {
 select {
   @include field-style;
   color: $dark75;
-  &.date {
-    width: 150px;
-  }
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }

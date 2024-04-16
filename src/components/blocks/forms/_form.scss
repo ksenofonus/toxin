@@ -3,3 +3,15 @@
 .field {
   width: 320px;
 }
+.date-field {
+  width: 150px;
+}
+.disabled-field {
+  color: $dark50;
+  & select{
+    background-color: $dark50;
+  }
+}
+#text-focus {
+  @include focus-field;
+}

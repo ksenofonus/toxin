@@ -35,10 +35,10 @@
 }
 .field {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 320px;
   gap: 20px;
 }
-#text-focus {
-  @include focus-field;
-}
+
+

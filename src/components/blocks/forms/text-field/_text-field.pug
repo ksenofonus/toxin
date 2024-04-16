@@ -1,5 +1,8 @@
-mixin field(fieldName, name, type, placeholder)
-  label.field-name= fieldName
+mixin label(fieldName)
+  label.field-name(class!=attributes.class)= fieldName
+    block
+
+mixin field(type, name, placeholder)
     input(
       type= type
       name= name
@@ -7,11 +10,9 @@ mixin field(fieldName, name, type, placeholder)
       id= name
     )
 
-mixin select(fieldName, name, mainOption)
-  label.field-name= fieldName
-    select(
-      class!=attributes.class
+mixin select(name, mainOption, disabled)
+    select(class!=attributes.class)(
       name= name
-      required
+      disabled= disabled
     )
-      option= mainOption
+      option(disabled= disabled)= mainOption
