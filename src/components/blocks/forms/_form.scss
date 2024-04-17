@@ -1,4 +1,4 @@
-@import './text-field/text-field';
+@import './mixins/mixins-forms';
 
 .field {
   width: 320px;
@@ -10,8 +10,13 @@
   color: $dark50;
   & select{
     background-color: $dark50;
+    background-image: none;
   }
 }
 #text-focus {
   @include focus-field;
+}
+.filter-field,
+.email-form {
+  width: 266px;
 }

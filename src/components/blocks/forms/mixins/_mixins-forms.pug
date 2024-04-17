@@ -3,7 +3,7 @@ mixin label(fieldName)
     block
 
 mixin field(type, name, placeholder)
-    input(
+    input(class!=attributes.class)(
       type= type
       name= name
       placeholder= placeholder
