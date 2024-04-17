@@ -1,4 +1,5 @@
 @import './mixins/mixins-forms';
+@import './subscription/subscription';
 
 .field {
   width: 320px;
@@ -16,7 +17,6 @@
 #text-focus {
   @include focus-field;
 }
-.filter-field,
-.email-form {
+.filter-field {
   width: 266px;
 }
