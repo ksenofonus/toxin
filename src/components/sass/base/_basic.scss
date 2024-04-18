@@ -40,8 +40,10 @@ h3,
 h4,
 ul,
 li,
+form,
 input,
-select {
+select,
+fieldset {
   margin: 0;
   padding: 0;
 }
@@ -81,4 +83,7 @@ select:focus {
 }
 .material-icons {
   @include material;
+}
+fieldset {
+  border: none;
 }
