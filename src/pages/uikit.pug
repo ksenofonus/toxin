@@ -30,7 +30,7 @@ html(lang='en')
         .forms-top
           .forms-block
             form(action="", method="post", class="field")
-              fieldset
+              fieldset.fieldset
                 +label('text field')
                   +field('text', 'email', 'email')
                 +label('text field')
@@ -48,9 +48,12 @@ html(lang='en')
                 include ../components/blocks/forms/subscription/_subscription.pug
           .forms-block
             form(action="", method="post", class="field")
-              fieldset
-                +label('checkbox buttons')
-                  +checkbox('smoking') Можно курить
+              fieldset.fieldset
+                .checkbox-container
+                  legend checkbox buttons
+                  +checkbox('smoking', 'Можно курить')
+                  +checkbox('pets', 'Можно с питомцами')
+                  +checkbox('guests', 'Можно пригласить гостей')
           .forms-block
         .forms-bottom
         

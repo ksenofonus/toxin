@@ -18,9 +18,13 @@ mixin select(name, mainOption, disabled)
     option(disabled= disabled)= mainOption
 
 //- checkbox
-mixin checkbox(name)
-  input(class!=attributes.class)(
-    type="checkbox"
-    name= name
-    id= name
-  )
+mixin checkbox(name, text)
+  .checkbox
+    input(class!=attributes.class)(
+      type="checkbox"
+      name= name
+      id= name
+    )
+    label.checkbox-label(
+      for= name
+    )= text

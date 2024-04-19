@@ -14,7 +14,7 @@
 .block-container {
   position: relative;
   display: flex;
-  padding: 140px 150px ;
+  padding: 140px;
   width: auto;
   height: auto;
   border-bottom: 1px solid $dark25;
@@ -34,14 +34,7 @@
   flex-direction: column;
   gap: 40px;
 }
-fieldset {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 320px;
-  gap: 20px;
-}
-.forms-block {
+.fieldset {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -52,7 +45,14 @@ fieldset {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 30px;
 }
+// .checkbox-container {
 
-
-
+// }
+legend {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  width: 100%;
+}

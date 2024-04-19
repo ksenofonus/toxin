@@ -24,6 +24,11 @@
   font-size: 12px;
   width: 100%;
 }
+
+.checkbox-label{
+  font-size: 14px;
+  color: $dark50;
+}
 input[type="text"] {
   @include field-style;
   &::placeholder{
@@ -35,12 +40,23 @@ input[type="text"] {
     @include focus-field;
   }
 }
-select {
-  @include field-style;
-  color: $dark75;
+select,
+input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  &::after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px solid $dark25;
+    border-radius: 4px;
+  }
+}
+select {
+  @include field-style;
+  color: $dark75;
   background-image: url(../../../../assets/images/svg_materials/expand_more_black_24dp.svg);
   background-color: transparent;
   background-position: calc(100% - 10px) 50%;
