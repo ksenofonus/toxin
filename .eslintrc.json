@@ -1,0 +1,30 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb",
+        "eslint:recommended",
+        "prettier"],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "prettier",
+        "babel",
+        "import"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+        "prettier/prettier": "error",
+        "max-len": ["error", 100, 2, { "ignoreUrls": true }],
+        "indent": [2, "tab"]
+    }
+}

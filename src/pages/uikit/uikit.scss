@@ -1,0 +1,51 @@
+@import 'Components/sass/base/fonts';
+@import 'Components/sass/abstracts/variables';
+@import 'Components/sass/base/normalize';
+@import 'Components/sass/base/basic';
+@import 'Components/blocks/color_item/color-block';
+@import 'Components/blocks/logo/logo';
+@import 'Components/blocks/text-block/text-block';
+@import 'Components/blocks/forms/form';
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.block-container {
+  display: flex;
+  padding: 140px 150px ;
+  width: auto;
+  height: auto;
+  border-bottom: 1px solid $dark25;
+  & .section-title {
+    display: none;
+  }
+}
+.color-container {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.text-container {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.field {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 320px;
+  gap: 20px;
+}
+.forms-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 320px;
+  gap: 20px;
+}
+
+

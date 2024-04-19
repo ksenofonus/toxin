@@ -1,0 +1,19 @@
+mixin label(fieldName)
+  label.field-name(class!=attributes.class)= fieldName
+    block
+
+mixin field(type, name, placeholder)
+  input(class!=attributes.class)(
+    type= type
+    name= name
+    placeholder= placeholder
+    id= name
+  )
+
+mixin select(name, mainOption, disabled)
+  select(class!=attributes.class)(
+    name= name
+    disabled= disabled
+  )
+    option(disabled= disabled)= mainOption
+
