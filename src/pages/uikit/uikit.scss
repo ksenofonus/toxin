@@ -6,6 +6,9 @@
 @import 'Components/blocks/logo/logo';
 @import 'Components/blocks/text-block/text-block';
 @import 'Components/blocks/forms/form';
+@import '../../assets/fonts/fontawesome/scss/fontawesome.scss';
+@import '../../assets/fonts/fontawesome/scss/solid.scss';
+@import '../../assets/fonts/fontawesome/scss/brands.scss';
 
 .container {
   max-width: 1440px;
