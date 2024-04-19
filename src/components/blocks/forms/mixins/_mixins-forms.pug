@@ -2,9 +2,9 @@ mixin label(fieldName)
   label.field-name(class!=attributes.class)= fieldName
     block
 
-mixin field(type, name, placeholder)
+mixin field(name, placeholder)
   input(class!=attributes.class)(
-    type= type
+    type="text"
     name= name
     placeholder= placeholder
     id= name
@@ -17,3 +17,10 @@ mixin select(name, mainOption, disabled)
   )
     option(disabled= disabled)= mainOption
 
+//- checkbox
+mixin checkbox(name)
+  input(class!=attributes.class)(
+    type="checkbox"
+    name= name
+    id= name
+  )

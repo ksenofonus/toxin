@@ -12,6 +12,7 @@
   margin: 0 auto;
 }
 .block-container {
+  position: relative;
   display: flex;
   padding: 140px 150px ;
   width: auto;
@@ -33,7 +34,7 @@
   flex-direction: column;
   gap: 40px;
 }
-.field {
+fieldset {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -47,5 +48,11 @@
   width: 320px;
   gap: 20px;
 }
+.forms-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 
 

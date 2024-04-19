@@ -1,19 +1,19 @@
 
-include ./mixins/_mixins-forms.pug
+//- include ./mixins/_mixins-forms.pug
 
-form(action="", method="post", class="field")
-  +label('text field')
-    +field('text', 'email', 'email')
-  +label('text field')
-    +field('text', 'text-focus', 'email')
-  +label('masked text field')
-    +field('text', 'calendar', 'ДД.ММ.ГГ')
-  +label('dropdown')
-    +select('guests', 'Сколько гостей')
-  +label('date dropdown')(class='date-field')
-    +select('date', 'ДД.ММ.ГГ')
-  +label('date dropdown')(class='date-field disabled-field')
-    +select('disabled', '19.08.2019', true)(class='date')
-  +label('filter date dropdown')(class='filter-field')
-    +select('filter', '19 авг - 23 авг')(class='filter-date')
-  include ./subscription/_subscription.pug
+//- form(action="", method="post", class="field")
+//-   +label('text field')
+//-     +field('text', 'email', 'email')
+//-   +label('text field')
+//-     +field('text', 'text-focus', 'email')
+//-   +label('masked text field')
+//-     +field('text', 'calendar', 'ДД.ММ.ГГ')
+//-   +label('dropdown')
+//-     +select('guests', 'Сколько гостей')
+//-   +label('date dropdown')(class='date-field')
+//-     +select('date', 'ДД.ММ.ГГ')
+//-   +label('date dropdown')(class='date-field disabled-field')
+//-     +select('disabled', '19.08.2019', true)(class='date')
+//-   +label('filter date dropdown')(class='filter-field')
+//-     +select('filter', '19 авг - 23 авг')(class='filter-date')
+//-   include ./subscription/_subscription.pug

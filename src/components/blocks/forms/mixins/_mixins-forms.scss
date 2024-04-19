@@ -24,14 +24,14 @@
   font-size: 12px;
   width: 100%;
 }
-input {
+input[type="text"] {
   @include field-style;
-  &[type="text"]::placeholder{
+  &::placeholder{
     color: $dark25;
     text-transform: capitalize;
     }
-  &[type="text"]:hover,
-  &[type="text"]:focus {
+  &:hover,
+  &:focus {
     @include focus-field;
   }
 }
