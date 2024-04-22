@@ -45,15 +45,40 @@ input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  display: inline-block;
+  position: relative;
+  border: 1px solid $dark25;
+}
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all ease .5s;
   &::after {
+    font-family: 'Font Awesome 6 Free';
     display: block;
-    content: "";
-    width: 20px;
-    height: 20px;
-    border: 1px solid $dark25;
-    border-radius: 4px;
+    content: "\f00c";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    color: $purple;
+  }
+  &:checked {
+    border-color: $purple;
+  }
+  &:checked::after {
+    opacity: 1;
+  }
+  & + label {
+    cursor: pointer;
   }
 }
+
 select {
   @include field-style;
   color: $dark75;
