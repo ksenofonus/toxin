@@ -25,9 +25,13 @@
   font-size: 12px;
   width: 100%;
 }
-
+.checkbox {
+  display: flex;
+  margin-bottom: 10px;
+}
 .checkbox-label{
   font-size: 14px;
+  line-height: 18px;
   color: $dark50;
 }
 input[type="text"] {
@@ -54,7 +58,6 @@ input[type="checkbox"] {
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  vertical-align: middle;
   margin-right: 10px;
   cursor: pointer;
   transition: all ease .5s;
@@ -77,6 +80,7 @@ input[type="checkbox"] {
   }
   & + label {
     cursor: pointer;
+    max-width: 200px;
   }
 }
 
