@@ -1,3 +1,4 @@
+@import '../../../sass/mixins/mixins.scss';
 @mixin field-style {
   box-sizing: border-box;
   height: 44px;
@@ -66,7 +67,7 @@ input[type="checkbox"] {
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%);
-    color: $purple;
+    @include text-gradient;
   }
   &:checked {
     border-color: $purple;

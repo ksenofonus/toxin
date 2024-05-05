@@ -1,3 +1,4 @@
+@import '../../../sass/mixins/mixins.scss';
 .email-form {
   width: 266px;
   position: relative;
@@ -8,7 +9,7 @@
     right: 10px;
     content: 'arrow_forward';
     text-align: center;
-    background: $purple;
+    @include text-gradient;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
