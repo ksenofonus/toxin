@@ -39,7 +39,6 @@ input[type="text"] {
   @include field-style;
   &::placeholder{
     color: $dark25;
-    text-transform: capitalize;
     }
   &:hover,
   &:focus {
