@@ -20,12 +20,14 @@ mixin select(name, mainOption, disabled)
     option(disabled= disabled)= mainOption
 
 //- checkbox
-mixin checkbox(name, text)
+mixin checkbox(name, text, checked)
   .checkbox
     input(class!=attributes.class)(
       type="checkbox"
       name= name
       id= name
+      class="checkbox"
+      checked= checked
     )
     label.checkbox-label(
       for= name
@@ -43,3 +45,17 @@ mixin radio(name, value, text, checked)
     label.radio-label(
         for= value
       )= text
+
+//-toggle
+mixin toggle(name, text, checked)
+  .checkbox
+    input(class!=attributes.class)(
+      type="checkbox"
+      name= name
+      id= name
+      class="switch"
+      checked= checked
+    )
+    label.checkbox-label(
+      for= name
+    )= text

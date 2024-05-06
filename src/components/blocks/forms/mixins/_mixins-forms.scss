@@ -61,27 +61,56 @@ input[type="checkbox"] {
   border-radius: 4px;
   margin-right: 10px;
   cursor: pointer;
-  transition: all ease .5s;
-  &::after {
-    font-family: 'Font Awesome 6 Free';
-    display: block;
-    content: "\f00c";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    @include text-gradient;
-  }
-  &:checked {
-    border-color: $purple;
-  }
-  &:checked::after {
-    opacity: 1;
-  }
   & + label {
     cursor: pointer;
-    max-width: 200px;
+  }
+  &.checkbox {
+    & + label {
+      max-width: 200px;
+    }
+    &::after {
+      font-family: 'Font Awesome 6 Free';
+      display: block;
+      content: "\f00c";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      @include text-gradient;
+    }
+    &:checked {
+      border-color: $purple;
+      &::after {
+      opacity: 1;
+      }
+    }
+  }
+  &.switch {
+    width: 40px;
+    border-radius: 10px;
+    & + label {
+      max-width: 320px;
+    }
+    &::after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translate(-50%, -50%);
+      background-color: $dark25;
+      transition: all ease .5s;
+    }
+    &:checked {
+      border-color: $purple;
+      &::after {
+        @include linear-gradient;
+        left: 30px;
+      }
+    }
   }
 }
 

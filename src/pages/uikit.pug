@@ -52,14 +52,19 @@ html(lang='en')
                 .checkbox-container
                   legend checkbox buttons
                   +checkbox('smoking', 'Можно курить')
-                  +checkbox('pets', 'Можно с питомцами')
-                  +checkbox('guests', 'Можно пригласить гостей (до 10 человек)')
+                  +checkbox('pets', 'Можно с питомцами', 'checked')
+                  +checkbox('guests', 'Можно пригласить гостей (до 10 человек)', 'checked')
               fieldset.fieldset
                 .radio-container
                   legend radio buttons
                   .radio
                     +radio('sex', 'male', 'Мужчина', 'true')
                     +radio('sex', 'female', 'Женщина')
+              fieldset.fieldset
+                .checkbox-container
+                  legend toggle
+                  +toggle('offer-on', 'Получать спецпредложения', 'checked')
+                  +toggle('offer-off', 'Получать спецпредложения')
           .forms-block
         .forms-bottom
         
