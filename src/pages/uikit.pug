@@ -54,6 +54,12 @@ html(lang='en')
                   +checkbox('smoking', 'Можно курить')
                   +checkbox('pets', 'Можно с питомцами')
                   +checkbox('guests', 'Можно пригласить гостей (до 10 человек)')
+              fieldset.fieldset
+                .radio-container
+                  legend radio buttons
+                  .radio
+                    +radio('sex', 'male', 'Мужчина', 'true')
+                    +radio('sex', 'female', 'Женщина')
           .forms-block
         .forms-bottom
         

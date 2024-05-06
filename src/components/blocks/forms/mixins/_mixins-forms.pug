@@ -1,3 +1,4 @@
+//- text forms
 mixin label(fieldName)
   label.field-name(class!=attributes.class)= fieldName
     block
@@ -10,6 +11,7 @@ mixin field(name, placeholder)
     id= name
   )
 
+//-select
 mixin select(name, mainOption, disabled)
   select(class!=attributes.class)(
     name= name
@@ -28,3 +30,16 @@ mixin checkbox(name, text)
     label.checkbox-label(
       for= name
     )= text
+
+//- radio
+mixin radio(name, value, text, checked)
+    input(class!=attributes.class)(
+      type="radio"
+      name= name
+      value= value
+      id= value
+      checked= checked
+    )
+    label.radio-label(
+        for= value
+      )= text

@@ -25,10 +25,11 @@
   font-size: 12px;
   width: 100%;
 }
-.checkbox {
+.checkbox, .radio {
   display: flex;
   margin-bottom: 10px;
 }
+
 .checkbox-label{
   font-size: 14px;
   line-height: 18px;
@@ -46,7 +47,8 @@ input[type="text"] {
   }
 }
 select,
-input[type="checkbox"] {
+input[type="checkbox"],
+input[type="radio"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -93,4 +95,40 @@ select {
   background-repeat: no-repeat;
 }
 
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 100%;
+  transition: all ease .5s;
+  &::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    @include linear-gradient;
+  }
+  &:checked {
+    border-color: $purple;
+    & + .radio-label {
+      color: $dark75;
+    }
+  }
+  &:checked::after {
+    opacity: 1;
+  }
+  & + .radio-label {
+    cursor: pointer;
+    color: $dark50;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
 
