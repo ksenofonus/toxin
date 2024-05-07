@@ -54,7 +54,7 @@ input[type="checkbox"] {
       border-radius: 100%;
       position: absolute;
       top: 50%;
-      left: 10px;
+      left: calc(0% + 10px);
       transform: translate(-50%, -50%);
       background-color: $dark25;
       transition: all ease .5s;
@@ -63,7 +63,7 @@ input[type="checkbox"] {
       border-color: $purple;
       &::after {
         @include back-gradient;
-        left: 30px;
+        left: calc(100% - 10px);
       }
     }
   }

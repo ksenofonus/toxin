@@ -7,7 +7,7 @@
         @include material;
         position: absolute;
         top: 50%;
-        right: 10px;
+        right: calc(0% + 15px);
         content: 'arrow_forward';
         text-align: center;
         @include text-gradient;
