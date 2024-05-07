@@ -25,17 +25,10 @@
   font-size: 12px;
   width: 100%;
 }
-.checkbox, .radio {
-  display: flex;
-  margin-bottom: 10px;
-}
 
-.checkbox-label{
-  font-size: 14px;
-  line-height: 18px;
-  color: $dark50;
-}
-input[type="text"] {
+
+input[type="text"],
+input[type="email"] {
   @include field-style;
   &::placeholder{
     color: $dark25;
@@ -45,76 +38,9 @@ input[type="text"] {
     @include focus-field;
   }
 }
-select,
-input[type="checkbox"],
-input[type="radio"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  display: inline-block;
-  position: relative;
-  border: 1px solid $dark25;
-}
-input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  margin-right: 10px;
-  cursor: pointer;
-  & + label {
-    cursor: pointer;
-  }
-  &.checkbox {
-    & + label {
-      max-width: 200px;
-    }
-    &::after {
-      font-family: 'Font Awesome 6 Free';
-      display: block;
-      content: "\f00c";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      opacity: 0;
-      transform: translate(-50%, -50%);
-      @include text-gradient;
-    }
-    &:checked {
-      border-color: $purple;
-      &::after {
-      opacity: 1;
-      }
-    }
-  }
-  &.switch {
-    width: 40px;
-    border-radius: 10px;
-    & + label {
-      max-width: 320px;
-    }
-    &::after {
-      content: "";
-      width: 12px;
-      height: 12px;
-      border-radius: 100%;
-      position: absolute;
-      top: 50%;
-      left: 10px;
-      transform: translate(-50%, -50%);
-      background-color: $dark25;
-      transition: all ease .5s;
-    }
-    &:checked {
-      border-color: $purple;
-      &::after {
-        @include linear-gradient;
-        left: 30px;
-      }
-    }
-  }
-}
 
 select {
+  @include input-style-reset;
   @include field-style;
   color: $dark75;
   background-image: url(../../../../assets/images/svg_materials/expand_more_black_24dp.svg);
@@ -123,40 +49,22 @@ select {
   background-repeat: no-repeat;
 }
 
-input[type="radio"] {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  cursor: pointer;
-  border-radius: 100%;
-  transition: all ease .5s;
-  &::after {
-    content: "";
-    width: 12px;
-    height: 12px;
-    border-radius: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    @include linear-gradient;
-  }
-  &:checked {
-    border-color: $purple;
-    & + .radio-label {
-      color: $dark75;
-    }
-  }
-  &:checked::after {
-    opacity: 1;
-  }
-  & + .radio-label {
-    cursor: pointer;
-    color: $dark50;
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
+.filter-field {
+  width: 266px;
+}
+.field {
+  width: 320px;
+}
+.date-field {
+  width: 150px;
+}
+.disabled-field {
+  color: $dark50;
+  & select{
+    background-color: $dark50;
+    background-image: none;
   }
 }
+
+
 

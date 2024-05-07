@@ -1,0 +1,34 @@
+@import '../../../sass/abstracts/_variables';
+@import '../../../sass/mixins/_mixins';
+
+.like {
+  box-sizing: border-box;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 20px;
+  color: $dark25;
+  border-radius: 10px;
+  border: 1px solid $dark25;
+  padding-left: 5px;
+  padding-right: 10px;
+  & .like__symbol {
+    font-size: 10px;
+    color: white;
+    -webkit-text-stroke: 1px $dark25;
+  }
+  &_press {
+    background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient($gradient) border-box;
+    border: 1px solid transparent;
+    color: $purple;
+    & .like__symbol {
+      font-size: 10px;
+      color: $purple;
+      -webkit-text-stroke: unset;
+    }
+  }
+}

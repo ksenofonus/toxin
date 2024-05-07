@@ -1,0 +1,109 @@
+@import '../../sass/mixins/mixins';
+.checkbox, .radio {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.checkbox-label{
+  font-size: 14px;
+  color: $dark50;
+}
+//checkbox
+input[type="checkbox"] {
+  @include input-style-reset;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+  & + label {
+    cursor: pointer;
+  }
+  &.checkbox {
+    & + label {
+      max-width: 200px;
+    }
+    &::after {
+      font-family: 'Font Awesome 6 Free';
+      display: block;
+      content: "\f00c";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      @include text-gradient;
+    }
+    &:checked {
+      border-color: $purple;
+      &::after {
+      opacity: 1;
+      }
+    }
+  }
+  &.switch { //toggle button
+    width: 40px;
+    border-radius: 10px;
+    & + label {
+      max-width: 320px;
+    }
+    &::after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translate(-50%, -50%);
+      background-color: $dark25;
+      transition: all ease .5s;
+    }
+    &:checked {
+      border-color: $purple;
+      &::after {
+        @include back-gradient;
+        left: 30px;
+      }
+    }
+  }
+}
+
+//radio-button
+input[type="radio"] {
+  @include input-style-reset;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 100%;
+  transition: all ease .5s;
+  &::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    @include back-gradient;
+  }
+  &:checked {
+    border-color: $purple;
+    & + .radio-label {
+      color: $dark75;
+    }
+  }
+  &:checked::after {
+    opacity: 1;
+  }
+  & + .radio-label {
+    cursor: pointer;
+    color: $dark50;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}

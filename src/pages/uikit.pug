@@ -1,5 +1,7 @@
 include ../components/blocks/color_item/_color-block.pug
 include ../components/blocks/forms/mixins/_mixins-forms.pug
+include ../components/blocks/buttons/_check-buttons.pug
+include ../components/blocks/buttons/like/_like.pug
 
 
 doctype html
@@ -32,11 +34,11 @@ html(lang='en')
             form(action="", method="post", class="field")
               fieldset.fieldset
                 +label('text field')
-                  +field('text', 'Email', 'email')
+                  +field('text', 'email', 'Email')
                 +label('text field')
-                  +field('text-focus', 'This is preaty awesome', 'email')
+                  +field('text', 'text-focus', 'This is preaty awesome')
                 +label('masked text field')
-                  +field('masked', 'ДД.ММ.ГГГГ', 'calendar')
+                  +field('text', 'masked', 'ДД.ММ.ГГГГ')
                 +label('dropdown')
                   +select('guests', 'Сколько гостей')
                 +label('date dropdown')(class='date-field')
@@ -49,22 +51,25 @@ html(lang='en')
           .forms-block
             form(action="", method="post", class="field")
               fieldset.fieldset
-                .checkbox-container
+                .button-container
                   legend checkbox buttons
                   +checkbox('smoking', 'Можно курить')
                   +checkbox('pets', 'Можно с питомцами', 'checked')
                   +checkbox('guests', 'Можно пригласить гостей (до 10 человек)', 'checked')
-              fieldset.fieldset
-                .radio-container
+                .button-container
                   legend radio buttons
                   .radio
                     +radio('sex', 'male', 'Мужчина', 'true')
                     +radio('sex', 'female', 'Женщина')
-              fieldset.fieldset
-                .checkbox-container
+                .button-container
                   legend toggle
                   +toggle('offer-on', 'Получать спецпредложения', 'checked')
                   +toggle('offer-off', 'Получать спецпредложения')
+                .button-container
+                  legend like button
+                  .like-container
+                    +like(2)
+                    +like(12)(class="like_press")
           .forms-block
         .forms-bottom
         

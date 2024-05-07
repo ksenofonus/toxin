@@ -1,37 +1,4 @@
-@mixin head-font {
-  font-family: $font-2;
-  font-weight: 700;
-  color: $dark;
-}
-@mixin main-font {
-  font-family: $font-1;
-  color: $dark;
-}
-@mixin material {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  color: $dark50;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
+@import '../mixins/mixins';
 
 p,
 h1,
@@ -44,7 +11,8 @@ form,
 input,
 select,
 fieldset,
-section {
+section,
+button {
   margin: 0;
   padding: 0;
 }
@@ -85,6 +53,7 @@ select:focus {
 .material-icons {
   @include material;
 }
-fieldset {
+fieldset,
+button {
   border: none;
 }

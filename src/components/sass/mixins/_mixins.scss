@@ -1,0 +1,54 @@
+@import '../abstracts/_variables';
+@mixin text-gradient {
+  background: -webkit-linear-gradient($gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin back-gradient {
+  background-image: linear-gradient($gradient);
+}
+
+@mixin input-style-reset {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  border: 1px solid $dark25;
+}
+
+@mixin material {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  color: $dark50;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+@mixin head-font {
+  font-family: $font-2;
+  font-weight: 700;
+  color: $dark;
+}
+@mixin main-font {
+  font-family: $font-1;
+  color: $dark;
+}

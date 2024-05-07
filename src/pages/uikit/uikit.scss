@@ -2,14 +2,17 @@
 @import 'Components/sass/abstracts/variables';
 @import 'Components/sass/base/normalize';
 @import 'Components/sass/base/basic';
+@import 'Components/sass/mixins/mixins.scss';
 @import 'Components/blocks/color_item/color-block';
 @import 'Components/blocks/logo/logo';
 @import 'Components/blocks/text-block/text-block';
-@import 'Components/blocks/forms/form';
 @import '../../assets/fonts/fontawesome/scss/fontawesome.scss';
 @import '../../assets/fonts/fontawesome/scss/solid.scss';
 @import '../../assets/fonts/fontawesome/scss/brands.scss';
-@import '../../components/sass/mixins/mixins.scss';
+@import 'Components/blocks/buttons/check-buttons.scss';
+@import 'Components/blocks/buttons/like/like.scss';
+@import 'Components/blocks/forms/mixins/mixins-forms.scss';
+@import 'Components/blocks/forms/subscription/subscription.scss';
 
 .container {
   max-width: 1440px;
@@ -51,14 +54,18 @@
   justify-content: space-between;
   gap: 30px;
 }
-.checkbox-container,
-.radio-container {
- margin-bottom: 41px;
-}
+
 legend {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
   width: 100%;
-  margin-bottom: 17px;
+  margin-bottom: 10px;
+}
+#text-focus {
+  @include focus-field;
+}
+.like-container {
+  display: flex;
+  gap: 10px;
 }
