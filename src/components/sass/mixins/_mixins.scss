@@ -8,6 +8,12 @@
 @mixin back-gradient {
   background-image: linear-gradient($gradient);
 }
+@mixin border-gradient {
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient($gradient) border-box;
+  border: 1px solid transparent;
+}
 
 @mixin input-style-reset {
   -webkit-appearance: none;

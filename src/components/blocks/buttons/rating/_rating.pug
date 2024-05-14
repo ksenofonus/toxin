@@ -1,0 +1,10 @@
+
+mixin star(i)
+  - let count = 0;
+  .rating-container
+    while count < 5
+      if count < i
+        span.material-icons.rating-star.rating-star_checked star
+      else
+        span.material-icons.rating-star star
+      - count += 1;

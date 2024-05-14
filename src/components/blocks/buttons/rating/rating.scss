@@ -1,0 +1,27 @@
+@import '../../../sass/mixins/_mixins';
+
+.rating-container{
+  width: 120px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+.rating-star {
+  @include text-gradient;
+  width: 24px;
+  height: 100%;
+  font-size: 12px;
+  -webkit-text-stroke: 4px transparent;
+  -webkit-text-fill-color: #fff;
+  text-align: center;
+  color: #fff;
+  opacity: 1;
+  padding-top: 6px;
+  &_checked {
+    @include text-gradient;
+  }
+  // &:not(last-child) {
+  //   margin-right: 5px;
+  // }
+}

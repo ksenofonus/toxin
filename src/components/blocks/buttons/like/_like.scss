@@ -2,7 +2,6 @@
 @import '../../../sass/mixins/_mixins';
 
 .like {
-  box-sizing: border-box;
   font-size: 10px;
   display: flex;
   align-items: center;
@@ -21,10 +20,7 @@
     -webkit-text-stroke: 1px $dark25;
   }
   &_press {
-    background:
-    linear-gradient(#fff, #fff) padding-box,
-    linear-gradient($gradient) border-box;
-    border: 1px solid transparent;
+    @include border-gradient;
     color: $purple;
     & .like__symbol {
       font-size: 10px;

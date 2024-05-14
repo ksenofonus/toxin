@@ -13,6 +13,7 @@
 @import 'Components/blocks/buttons/like/like.scss';
 @import 'Components/blocks/forms/mixins/mixins-forms.scss';
 @import 'Components/blocks/forms/subscription/subscription.scss';
+@import 'Components/blocks/buttons/rating/rating';
 
 .container {
   max-width: 1440px;
@@ -43,7 +44,7 @@
 }
 .fieldset {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   width: 320px;
   gap: 20px;
@@ -68,4 +69,8 @@ legend {
 .like-container {
   display: flex;
   gap: 10px;
+}
+.rate-buttons {
+  display: flex;
+  gap: 20px;
 }

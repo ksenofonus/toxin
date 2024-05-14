@@ -2,6 +2,7 @@ include ../components/blocks/color_item/_color-block.pug
 include ../components/blocks/forms/mixins/_mixins-forms.pug
 include ../components/blocks/buttons/_check-buttons.pug
 include ../components/blocks/buttons/like/_like.pug
+include ../components/blocks/buttons/rating/_rating.pug
 
 
 doctype html
@@ -59,8 +60,8 @@ html(lang='en')
                 .button-container
                   legend radio buttons
                   .radio
-                    +radio('sex', 'male', 'Мужчина', 'true')
-                    +radio('sex', 'female', 'Женщина')
+                    +radio('sex', 'male', 'Мужчина', 'true')(class='radio__item')
+                    +radio('sex', 'female', 'Женщина')(class='radio__item')
                 .button-container
                   legend toggle
                   +toggle('offer-on', 'Получать спецпредложения', 'checked')
@@ -70,8 +71,12 @@ html(lang='en')
                   .like-container
                     +like(2)
                     +like(12)(class="like_press")
+                .button-container
+                  legend rate button
+                  .rate-buttons
+                    +star(4)
+                    +star(5)
           .forms-block
         .forms-bottom
-        
 
   script(src="./uikit/uikit.js")
