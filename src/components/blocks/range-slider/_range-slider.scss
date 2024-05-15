@@ -1,0 +1,35 @@
+@import '../../sass/abstracts/_variables';
+@import '../../../assets/lib/noUiSlider-15.7.2/_nouislider';
+
+.range-slider {
+  width: auto;
+  &_title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  & .noUi-connect {
+    background-color: $green;
+    border: 1px solid $green;
+  }
+  & .noUi-target {
+    height: 6px;
+    width: 255px;
+    border-color: $dark25;
+    & .noUi-handle {
+      width: 12px;
+      height: 12px;
+      background-color: $green;
+      box-shadow: none;
+      border: 2px solid #fff;
+      border-radius: 100%;
+      top: -4px;
+      right: -6px;
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

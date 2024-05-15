@@ -44,7 +44,11 @@ module.exports = (env) => {
     //   filename: 'css/[name][contenthash:8].css',
     //   // chunkFilename: 'css/[name][contenthash].css'
     // }),
-  new FaviconsWebpackPlugin('./src/assets/favicons/group.png')
+  new FaviconsWebpackPlugin('./src/assets/favicons/group.png'),
+  // new webpack.ProvidePlugin({
+  //   $: 'jquery',
+  //   jQuery: 'jquery',
+  // })
   ],
   module: {
     rules: [
