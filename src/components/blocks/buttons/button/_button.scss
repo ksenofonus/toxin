@@ -37,5 +37,16 @@
   }
   &__long {
     width: 320px;
+    position: relative;
+    &::after {
+      @include material;
+      position: absolute;
+      top: 50%;
+      right: calc(0% + 15px);
+      content: 'arrow_forward';
+      text-align: center;
+      color: #fff;
+      translate: 0 -50%;
+    }
   }
 }
