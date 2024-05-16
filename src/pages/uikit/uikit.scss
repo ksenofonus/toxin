@@ -15,6 +15,7 @@
 @import 'Components/blocks/forms/subscription/subscription.scss';
 @import 'Components/blocks/buttons/rating/rating';
 @import 'Components/blocks/range-slider/range-slider';
+@import 'Components/blocks/buttons/button/button';
 
 .container {
   max-width: 1440px;
@@ -43,6 +44,9 @@
   flex-direction: column;
   gap: 40px;
 }
+.forms-block {
+  max-width: 320px;
+}
 .fieldset {
   display: flex;
   flex-direction: column;
@@ -67,4 +71,11 @@
 .rate-buttons {
   display: flex;
   gap: 20px;
+}
+.buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 250px;
 }

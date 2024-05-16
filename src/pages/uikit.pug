@@ -3,6 +3,7 @@ include ../components/blocks/forms/mixins/_mixins-forms.pug
 include ../components/blocks/buttons/_check-buttons.pug
 include ../components/blocks/buttons/like/_like.pug
 include ../components/blocks/buttons/rating/_rating.pug
+include ../components/blocks/buttons/button/_button.pug
 
 
 doctype html
@@ -79,6 +80,15 @@ html(lang='en')
           .forms-block
             .button-container
               include ../components/blocks/range-slider/_range-slider.pug
+            .button-container
+              h3.buttons-name buttons
+              .buttons-wrapper
+                +button("click me")
+                +button("click me")(class="button_active")
+                +button("click me")(class="button__border")
+                +button("click me")(class="button_active button__border")
+                +button("click me")(class="button__text")
+                +button("click me")(class="button__text button__text_active")
         .forms-bottom
 
   script(src="./uikit/uikit.js")

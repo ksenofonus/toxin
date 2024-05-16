@@ -2,7 +2,7 @@
 @import '../../../assets/lib/noUiSlider-15.7.2/_nouislider';
 
 .range-slider {
-  width: auto;
+  width: 266px;
   &_head {
     display: flex;
     justify-content: space-between;
@@ -42,6 +42,5 @@
       }
     }
   }
-  
 }
 

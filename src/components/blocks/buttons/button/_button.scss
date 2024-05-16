@@ -1,0 +1,38 @@
+
+.button {
+  height: 44px;
+  border-radius: 22px;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 15px 20px;
+  flex-shrink: 0;
+  @include back-gradient;
+  cursor: pointer;
+  &:active,
+  &:hover,
+  &:focus,
+  &_active {
+    opacity: 0.5;
+  }
+  &__border {
+    @include border-gradient;
+    color: $purple;
+  }
+  &__text {
+    border: none;
+    width: auto;
+    height: auto;
+    background: #fff;
+    color: $purple;
+    padding: 0;
+    &:active,
+    &:hover,
+    &:focus,
+    &_active {
+      color: $dark50;
+      opacity: 1;
+    }
+  }
+}
