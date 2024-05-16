@@ -53,26 +53,26 @@ html(lang='en')
             form(action="", method="post", class="field")
               fieldset.fieldset
                 .button-container
-                  legend checkbox buttons
+                  h3.buttons-name checkbox buttons
                   +checkbox('smoking', 'Можно курить')
                   +checkbox('pets', 'Можно с питомцами', 'checked')
                   +checkbox('guests', 'Можно пригласить гостей (до 10 человек)', 'checked')
                 .button-container
-                  legend radio buttons
+                  h3.buttons-name radio buttons
                   .radio
                     +radio('sex', 'male', 'Мужчина', 'true')(class='radio__item')
                     +radio('sex', 'female', 'Женщина')(class='radio__item')
                 .button-container
-                  legend toggle
+                  h3.buttons-name toggle
                   +toggle('offer-on', 'Получать спецпредложения', 'checked')
                   +toggle('offer-off', 'Получать спецпредложения')
                 .button-container
-                  legend like button
+                  h3.buttons-name like button
                   .like-container
                     +like(2)
                     +like(12)(class="like_press")
                 .button-container
-                  legend rate button
+                  h3.buttons-name rate button
                   .rate-buttons
                     +star(4)
                     +star(5)

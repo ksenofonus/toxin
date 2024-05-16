@@ -46,3 +46,11 @@ fieldset,
 button {
   border: none;
 }
+legend,
+h3.buttons-name {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  width: 100%;
+  margin-bottom: 10px;
+}
