@@ -72,12 +72,13 @@
   display: flex;
   gap: 20px;
 }
-.buttons-wrapper {
+.small-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 20px;
   width: 250px;
+  margin-bottom: 20px;
 }
 .button-container:not(last-child) {
   margin-bottom: 40px;

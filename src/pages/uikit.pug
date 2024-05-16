@@ -81,13 +81,14 @@ html(lang='en')
               include ../components/blocks/range-slider/_range-slider.pug
             .button-container
               h3.buttons-name buttons
-              .buttons-wrapper
+              .small-buttons
                 +button("click me")
                 +button("click me")(class="button_active")
                 +button("click me")(class="button__border")
                 +button("click me")(class="button_active button__border")
                 +button("click me")(class="button__text")
                 +button("click me")(class="button__text button__text_active")
+              +button("перейти к оплате")(class="button__long")
         .forms-bottom
 
   script(src="./uikit/uikit.js")
