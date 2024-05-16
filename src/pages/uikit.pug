@@ -52,31 +52,30 @@ html(lang='en')
                 include ../components/blocks/forms/subscription/_subscription.pug
           .forms-block
             form(action="", method="post", class="field")
-              fieldset.fieldset
-                .button-container
-                  h3.buttons-name checkbox buttons
-                  +checkbox('smoking', 'Можно курить')
-                  +checkbox('pets', 'Можно с питомцами', 'checked')
-                  +checkbox('guests', 'Можно пригласить гостей (до 10 человек)', 'checked')
-                .button-container
-                  h3.buttons-name radio buttons
-                  .radio
-                    +radio('sex', 'male', 'Мужчина', 'true')(class='radio__item')
-                    +radio('sex', 'female', 'Женщина')(class='radio__item')
-                .button-container
-                  h3.buttons-name toggle
-                  +toggle('offer-on', 'Получать спецпредложения', 'checked')
-                  +toggle('offer-off', 'Получать спецпредложения')
-                .button-container
-                  h3.buttons-name like button
-                  .like-container
-                    +like(2)
-                    +like(12)(class="like_press")
-                .button-container
-                  h3.buttons-name rate button
-                  .rate-buttons
-                    +star(4)
-                    +star(5)
+              .button-container
+                h3.buttons-name checkbox buttons
+                +checkbox('smoking', 'Можно курить')
+                +checkbox('pets', 'Можно с питомцами', 'checked')
+                +checkbox('guests', 'Можно пригласить гостей (до 10 человек)', 'checked')
+              .button-container
+                h3.buttons-name radio buttons
+                .radio
+                  +radio('sex', 'male', 'Мужчина', 'true')(class='radio__item')
+                  +radio('sex', 'female', 'Женщина')(class='radio__item')
+              .button-container
+                h3.buttons-name toggle
+                +toggle('offer-on', 'Получать спецпредложения', 'checked')
+                +toggle('offer-off', 'Получать спецпредложения')
+              .button-container
+                h3.buttons-name like button
+                .like-container
+                  +like(2)
+                  +like(12)(class="like_press")
+              .button-container
+                h3.buttons-name rate button
+                .rate-buttons
+                  +star(4)
+                  +star(5)
           .forms-block
             .button-container
               include ../components/blocks/range-slider/_range-slider.pug
