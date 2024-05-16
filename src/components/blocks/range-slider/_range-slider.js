@@ -10,26 +10,26 @@ noUiSlider.create(sliderFormat, {
     step: 50,
     range: {
         'min': [500],
-        'max': [15000]
+        'max': [14500]
     },
     format: wNumb({
         decimals: 0,
         thousand: ' ',
-        suffix: '₽'
+        suffix: '&#8381'
     })
 });
 
 const minPrice = document.querySelector('.min-price');
 const maxPrice = document.querySelector('.max-price');
 
-const inputFormat = [
+const price = [
     minPrice,
     maxPrice
 ];
 
 
 sliderFormat.noUiSlider.on('update', function (values, handle) {
-    inputFormat[handle].value = values[handle];
+    price[handle].innerHTML = values[handle];
 });
 
 minPrice.addEventListener('change', function () {

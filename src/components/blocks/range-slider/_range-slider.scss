@@ -3,11 +3,21 @@
 
 .range-slider {
   width: auto;
+  &_head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  &_price {
+    display: flex;
+    justify-content: space-between;
+    color: $dark50;
+    font-size: 12px;
+  }
   &_title {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 12px;
-    margin-bottom: 10px;
   }
   & .noUi-connect {
     background-color: $green;
