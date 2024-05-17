@@ -1,27 +1,24 @@
-import '../../../assets/lib/pagination/_pagination';
-import * as pagination from '../../../assets/lib/pagination/_pagination';
+import '../../../assets/lib/pagination/_pagination.scss';
+import * as pagination from '../../../assets/lib/pagination/_pagination.js';
 import $ from 'jquery';
 
-export function simpleTemplating(data) {
-  var html = '<ul>';
-  $.each(data, function(index, item){
-      html += '<li>'+ item +'</li>';
-  });
-  html += '</ul>';
-  return html;
-}
 
-$('#pagination-container').pagination({
-  dataSource: function(done){
-    var result = [];
-    for(var i = 1; i < 16; i++){
-        result.push(i);
-    }
-    done(result);
-  },
+$("#pagination-container").pagination({
+  dataSource: [1, 2, 3, 4, 5, 6, 7, 8],
+  autoHidePrevious: true,
+  autoHideNext: true,
+  pageSize: 3,
   callback: function(data, pagination) {
-      var html = simpleTemplating(data);
-      $('#data-container').html(html);
-  }
-})
+    var html = simpleTemplating(data);
+    $("#data-container").html(html);
+  },
+});
 
+export function simpleTemplating(data) {
+    const html = new DocumentFragment();
+    $.each(data, function(index, item){
+        item.removeAttribute('hidden');
+        html.append(item);
+    });
+    return html;
+}

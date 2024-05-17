@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PugPlugin = require('pug-plugin');
@@ -44,11 +45,12 @@ module.exports = (env) => {
     //   filename: 'css/[name][contenthash:8].css',
     //   // chunkFilename: 'css/[name][contenthash].css'
     // }),
-  new FaviconsWebpackPlugin('./src/assets/favicons/group.png'),
-  // new webpack.ProvidePlugin({
-  //   $: 'jquery',
-  //   jQuery: 'jquery',
-  // })
+    new FaviconsWebpackPlugin('./src/assets/favicons/group.png'),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      "window.jquery": 'jquery'
+    })
   ],
   module: {
     rules: [

@@ -39,5 +39,5 @@ maxPrice.addEventListener('change', function () {
     sliderFormat.noUiSlider.set(this.value);
 });
 
-export default create;
+export default noUiSlider.create;
 
