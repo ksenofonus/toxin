@@ -1,6 +1,6 @@
 import '../../../assets/lib/noUiSlider-15.7.2/_nouislider.scss';
 import * as noUiSlider from '../../../assets/lib/noUiSlider-15.7.2/_nouislider';
-import * as wNumb from '../../../assets/lib/wNumb';
+import * as wNumb from '../../../assets/lib/_wNumb';
 
 const sliderFormat = document.querySelector('.range-slider_slider');
 
