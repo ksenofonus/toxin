@@ -1,5 +1,5 @@
 const like = document.querySelectorAll('.like');
-const likeToggle = () => {
+function likeToggle(){
   like.forEach((element) => {
     element.addEventListener('click', () => {
       let likeCount = element.querySelector('.like__count');
@@ -8,6 +8,7 @@ const likeToggle = () => {
     })
   })
 }
-likeToggle()
-export { likeToggle };
+likeToggle();
+
+module.export= likeToggle;
 
