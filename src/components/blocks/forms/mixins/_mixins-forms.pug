@@ -11,10 +11,3 @@ mixin field(type, name, placeholder)
     id= name
   )
 
-//-select
-mixin select(name, mainOption, disabled)
-  select(class!=attributes.class)(
-    name= name
-    disabled= disabled
-  )
-    option(disabled= disabled)= mainOption

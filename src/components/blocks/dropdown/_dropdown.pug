@@ -1,5 +1,13 @@
-mixin dropdown()
+mixin dropdown
   .iqdpordown
-    p.iqdropdown-selection(data-seletion-text="item" data-text-plural="items")
+    p.iqdropdown-selection Сколько гостей
     .iqdropdown-menu
-      p(data-id="item1" data-defaultcount="0" data-mincount="0" data-maxcount="1")
+      .iqdropdown-menu-option(data-id="item1")
+        div
+          p.iqdropdown-item Item1
+      .iqdropdown-menu-option(data-id="item2")
+        div
+          p.iqdropdown-item Item2
+      .iqdropdown-menu-option(data-id="item3")
+        div
+          p.iqdropdown-item Item3
