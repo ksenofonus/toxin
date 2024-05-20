@@ -1,18 +1,38 @@
 @import '../../sass/mixins/mixins';
-.datepicker-container .field-name {
-  position: relative;
+@mixin expand-more {
   &::after {
     @include material;
     position: absolute;
     content: "expand_more";
     top: 50%;
-    right: calc(0% + 5px);
+    right: calc(0% + 15px);
   }
+}
+.datepicker-container .field-name{
+  position: relative;
+  @include expand-more;
   & .datepicker {
     width: 150px;
+    &::-webkit-input-placeholder,
+    &::-webkit-input-placeholder {
+      color: $dark75;
+    }
   }
 }
 .datepicker-container {
   display: flex;
   justify-content: space-between;
+}
+.datepicker-filter-container .field-name  {
+  position: relative;
+  width: 266px;
+  @include expand-more;
+  & .filter-datepicker {
+    width: inherit;
+    text-transform: lowercase;
+    &::-webkit-input-placeholder,
+    &::-webkit-input-placeholder {
+      color: $dark75;
+    }
+  }
 }

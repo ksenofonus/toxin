@@ -44,8 +44,11 @@ html(lang='en')
                   +label('date dropdown')
                     +field('text', 'date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
                   .disable-date
-                    h3.disable-date_name date dropdown 
+                    h3.disable-date_name date dropdown
                     .disable-date_field
+                .datepicker-filter-container
+                  +label('date dropdown')
+                    +field('text', 'date', '19 авг - 23 авг')(class='filter-datepicker text-field')
                 include ../components/blocks/forms/subscription/_subscription.pug
           .forms-block
             form(action="", method="post", class="field")
