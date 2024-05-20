@@ -89,3 +89,14 @@
 #data-container ul{
   display: none;
 }
+.disable-date {
+  &_field {
+    width: 150px;
+    height: 44px;
+    background-color: $dark50;
+    border-radius: 4px;
+  }
+  &_name {
+    color: $dark50;
+  }
+}

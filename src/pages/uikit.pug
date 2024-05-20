@@ -35,11 +35,17 @@ html(lang='en')
             form(action="", method="post", class="field")
               fieldset.fieldset
                 +label('text field')
-                  +field('text', 'email', 'Email')
+                  +field('text', 'email', 'Email')(class="text-field")
                 +label('text field')
-                  +field('text', 'text-focus', 'This is preaty awesome')
+                  +field('text', 'text-focus', 'This is preaty awesome')(class="text-field")
                 +label('masked text field')
-                  +field('text', 'masked', 'ДД.ММ.ГГГГ')(class='masked-date')
+                  +field('text', 'masked', 'ДД.ММ.ГГГГ')(class='text-field masked-date')
+                .datepicker-container
+                  +label('date dropdown')
+                    +field('text', 'date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
+                  .disable-date
+                    h3.disable-date_name date dropdown 
+                    .disable-date_field
                 include ../components/blocks/forms/subscription/_subscription.pug
           .forms-block
             form(action="", method="post", class="field")
@@ -95,7 +101,7 @@ html(lang='en')
                 .iqdropdown-menu-option(data-id="item3")
                   div
                     p.iqdropdown-item Item3
-            include ../components/blocks/datepicker/_datepicker.pug
+            
         .forms-bottom
 
   script(src="./uikit/uikit.js")

@@ -2,7 +2,7 @@
 @mixin field-style {
   box-sizing: border-box;
   height: 44px;
-  width: 100%;
+  width: 320px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 4px;
@@ -23,12 +23,10 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
-  width: 100%;
 }
 
 
-input[type="text"],
-input[type="email"] {
+.text-field {
   @include field-style;
   &::placeholder{
     color: $dark25;
@@ -39,32 +37,10 @@ input[type="email"] {
   }
 }
 
-select {
-  @include input-style-reset;
-  @include field-style;
-  color: $dark75;
-  background-image: url(../../../../assets/images/svg_materials/expand_more_black_24dp.svg);
-  background-color: transparent;
-  background-position: calc(100% - 10px) 50%;
-  background-repeat: no-repeat;
-}
-
 .filter-field {
   width: 266px;
 }
-.field {
-  width: 320px;
-}
-.date-field {
-  width: 150px;
-}
-.disabled-field {
-  color: $dark50;
-  & select{
-    background-color: $dark50;
-    background-image: none;
-  }
-}
+
 
 
 

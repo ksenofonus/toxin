@@ -1,0 +1,18 @@
+@import '../../sass/mixins/mixins';
+.datepicker-container .field-name {
+  position: relative;
+  &::after {
+    @include material;
+    position: absolute;
+    content: "expand_more";
+    top: 50%;
+    right: calc(0% + 5px);
+  }
+  & .datepicker {
+    width: 150px;
+  }
+}
+.datepicker-container {
+  display: flex;
+  justify-content: space-between;
+}
