@@ -1,13 +1,19 @@
-mixin dropdown
-  .iqdpordown
-    p.iqdropdown-selection Сколько гостей
-    .iqdropdown-menu
-      .iqdropdown-menu-option(data-id="item1")
-        div
-          p.iqdropdown-item Item1
-      .iqdropdown-menu-option(data-id="item2")
-        div
-          p.iqdropdown-item Item2
-      .iqdropdown-menu-option(data-id="item3")
-        div
-          p.iqdropdown-item Item3
+mixin dropdown(dropdownName, selectionText, data=[], bottom)
+  .dropdown
+    h3.dropdown-name= dropdownName
+    .item-dropdown
+      p.item-dropdown_selection= selectionText
+      .item-dropdown_menu.item-dropdown_menu__closed
+        for item in data
+          .item-dropdown_menu-option
+            .item-dropdown-item
+              p=item
+            .item-dropdown_menu-quantity
+              button.dropdown-button.decrease -
+              .item-quantity 0
+              button.dropdown-button.increase +
+        if bottom
+          .dropdown-bottom
+            button.dropdown-clear.dropdown-clear__invisible Очистить
+            button.dropdown-apply Применить
+        

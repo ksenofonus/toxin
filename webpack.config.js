@@ -20,7 +20,8 @@ module.exports = (env) => {
       alias: {
         Components: path.resolve(__dirname, 'src/components/'),
         Assets: path.resolve(__dirname, 'src/assets/'),
-      }
+      },
+      extensions: ['.js', '.ts']
     },
     devtool: isDev ? 'inline-source-map' : false,
     devServer: isDev ? {

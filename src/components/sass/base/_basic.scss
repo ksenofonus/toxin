@@ -45,6 +45,8 @@ select:focus {
 fieldset,
 button {
   border: none;
+  background: none;
+  font-family: $font-1;
 }
 legend,
 h3.buttons-name {
