@@ -1,3 +1,4 @@
+import declination from './_decl';
 // const dropdownContainer = document.querySelectorAll('.item-dropdown');
 const dropdownSelect = document.querySelectorAll('.item-dropdown_selection');
 // const dropdownMenu = document.querySelectorAll('.item-dropdown_menu');
@@ -12,8 +13,8 @@ dropdownSelect.forEach((item) => {
     const increaseButton = dropdownMenu.querySelectorAll('.increase');
     const decreaseButton = dropdownMenu.querySelectorAll('.decrease');
     const itemQuantity = dropdownMenu.querySelectorAll('.item-quantity');
+    let selectText = item;
     const limitGuest = 20;
-    console.log(event.target.textContent)
     //показать меню / show menu
     dropdownMenu.classList.toggle('item-dropdown_menu__closed');
     dropdownContainer.classList.toggle('item-dropdown__opened');
@@ -29,7 +30,7 @@ dropdownSelect.forEach((item) => {
         if (itemVal >= limitGuest - 1) {
           item.classList.add('dropdown-button__inactive');
         }
-        console.log(itemQuantity[index].textContent)
+        selectText.textContent = sumTotal(dropdownContainer, itemQuantity)
       })
     })
     //кнопка минус
@@ -44,30 +45,35 @@ dropdownSelect.forEach((item) => {
         if (itemVal <= 1) {
           item.classList.add('dropdown-button__inactive');
         }
+        selectText.textContent = sumTotal(dropdownContainer, itemQuantity)
       })
     })
   })
 })
 
-const setActiveButton = (x, index) => {
-  if (x === 0) {
-    decreaseButton[index].classList.add('dropdown-button__inactive');
-  } else if (x > 0 && x < 20) {
-    decreaseButton.classList.remove('dropdown-button__inactive');
-    increaseButton.classList.remove('dropdown-button__inactive');
-  } else if (x === 20) {
-    increaseButton.classList.add('dropdown-button__inactive');
-  }
-}
-//установить текст / set selection text
-const setSelectionTextGuest = (item, index) => {
-  item.textContent = sumTotal()
-}
 
 
 // сумма элементов
-const sumTotal = (item, items) => {
-  if (item.classList.contains('.guest')) {
-    console.log(parSeInt(items[0].textContent) + parSeInt(items[1].textContent));
+const sumTotal = (container, items, select) => {
+  if(container.classList.contains('guest')) {
+    let adult = Number(Array.from(items).find((elem) => elem.id === 'adults').textContent);
+    let children = Number(Array.from(items).find((elem) => elem.id === 'children').textContent);
+    let infant = Number(Array.from(items).find((elem) => elem.id === 'infant').textContent);
+    let sum = adult + children;
+    const guests = ['гость', 'гостя', 'гостей'];
+    const infants = ['младенец', 'младенца', 'младенцев'];
+    let text = '';
+    if (sum === 0) {
+      text = 'Сколько гостей';
+    } else if (infant === 0) {
+      text = `${sum} ${declination(sum, guests)}`
+    } else {
+      text = `${sum} ${declination(sum, guests)}, ${infant} ${declination(infant, infants)}`
+    }
+    return text;
+  }
+  else {
+    console.log(false)
   }
 }
+
