@@ -1,19 +1,19 @@
 // const dropdownContainer = document.querySelectorAll('.item-dropdown');
 const dropdownSelect = document.querySelectorAll('.item-dropdown_selection');
 // const dropdownMenu = document.querySelectorAll('.item-dropdown_menu');
-
+const body = document.querySelector('.container');
 // const decreaseButton = document.querySelectorAll('.decrease');
 // const itemQuantity = document.querySelectorAll('.item-quantity');
 
-
 dropdownSelect.forEach((item) => {
-  item.addEventListener('click', () => {
+  item.addEventListener('click', (event) => {
     const dropdownContainer = item.parentNode;
     const dropdownMenu = item.nextElementSibling;
     const increaseButton = dropdownMenu.querySelectorAll('.increase');
     const decreaseButton = dropdownMenu.querySelectorAll('.decrease');
     const itemQuantity = dropdownMenu.querySelectorAll('.item-quantity');
     const limitGuest = 20;
+    console.log(event.target.textContent)
     //показать меню / show menu
     dropdownMenu.classList.toggle('item-dropdown_menu__closed');
     dropdownContainer.classList.toggle('item-dropdown__opened');
@@ -29,6 +29,7 @@ dropdownSelect.forEach((item) => {
         if (itemVal >= limitGuest - 1) {
           item.classList.add('dropdown-button__inactive');
         }
+        console.log(itemQuantity[index].textContent)
       })
     })
     //кнопка минус
@@ -65,6 +66,8 @@ const setSelectionTextGuest = (item, index) => {
 
 
 // сумма элементов
-const sumTotal = (items, index) => {
-  return 1;
+const sumTotal = (item, items) => {
+  if (item.classList.contains('.guest')) {
+    console.log(parSeInt(items[0].textContent) + parSeInt(items[1].textContent));
+  }
 }

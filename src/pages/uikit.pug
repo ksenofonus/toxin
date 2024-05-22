@@ -40,8 +40,20 @@ html(lang='en')
                   +field('text', 'text-focus', 'This is preaty awesome')(class="text-field")
                 +label('masked text field')
                   +field('text', 'masked', 'ДД.ММ.ГГГГ')(class='text-field masked-date')
-                +dropdown('Dropdown', 'Сколько гостей', ['Взрослые', 'Дети', 'Младенцы'], true)(class="guests")
-                +dropdown('Dropdown', 'Сколько гостей', ['Взрослые', 'Дети', 'Младенцы'], true)(class="guests")
+                +dropdown('guest','Dropdown',
+                           'Сколько гостей',
+                           {'adults': 'Взрослые',
+                            'children': 'Дети',
+                            'infant': 'Младенцы'
+                           },
+                           true)
+                +dropdown('guest','Dropdown',
+                           'Сколько гостей',
+                           {'adults': 'Взрослые',
+                            'children': 'Дети',
+                            'infant': 'Младенцы'
+                           },
+                           true)
                 .datepicker-container
                   +label('date dropdown')
                     +field('text', 'date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
