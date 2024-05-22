@@ -1,26 +1,32 @@
 @import '../datepicker/_datepicker';
+
 .item-dropdown {
   position: relative;
-  width: 320px;
+  width: 100%;
   border: 1px solid $dark25;
   border-radius: 4px;
-  background-color: #fff;
-  z-index: 1;
   &__opened {
     border-color: $dark50;
+    border-radius: 4px 4px 0 0;
   }
   &_menu {
-    border-top: 1px solid $dark50;
+    border: 1px solid $dark50;
     padding-left: 10px;
     padding-right: 10px;
     text-transform: uppercase;
     font-size: 12px;
+    position: absolute;
+    z-index: 1000;
+    background-color: #fff;
+    left: -1px;
+    right: -1px;
+    border-radius: 0 0 4px 4px;
     &-quantity {
       display: flex;
     }
     &__closed {
       display: none;
-      border-top: 1px solid $dark25;
+      z-index: 0;
     }
   }
   &_selection {
