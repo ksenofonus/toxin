@@ -9,7 +9,7 @@ mixin dropdown(dropdownName, selectionText, data=[], bottom)
             .item-dropdown-item
               p=item
             .item-dropdown_menu-quantity
-              button.dropdown-button.decrease -
+              button.dropdown-button.dropdown-button__inactive.decrease -
               .item-quantity 0
               button.dropdown-button.increase +
         if bottom
