@@ -1,60 +1,90 @@
 import declination from './_decl';
-const dropdownSelect = document.querySelectorAll('.item-dropdown__selection');
-const menu = document.querySelectorAll('.item-dropdown__menu');
+// const dropdownSelect = document.querySelectorAll('.item-dropdown__selection');
+// const menu = document.querySelectorAll('.item-dropdown__menu');
 
-dropdownSelect.forEach((item) => {
-  item.addEventListener('click', (event) => {
-    const dropdownContainer = item.parentNode;
-    const dropdownMenu = item.nextElementSibling;
-    const increaseButton = dropdownMenu.querySelectorAll('.increase');
-    const decreaseButton = dropdownMenu.querySelectorAll('.decrease');
-    const itemQuantity = dropdownMenu.querySelectorAll('.item-quantity');
-    const clear = dropdownMenu.querySelector('.dropdown-btn__clear');
-    const apply = dropdownMenu.querySelector('.dropdown-btn__apply');
-    let selectText = item;
-    const limitGuest = 20;
-    //показать/закрыть меню / show/close menu
+function dropdown(select, clear, apply) {
+  const dropdownContainer = select.parentNode;
+  const dropdownMenu = select.nextElementSibling;
+  const increaseButton = dropdownMenu.querySelectorAll('.increase');
+  const decreaseButton = dropdownMenu.querySelectorAll('.decrease');
+  const itemQuantity = dropdownMenu.querySelectorAll('.item-quantity');
+  let selectText = select;
+  const limitGuest = 20;
+  const closeDrop = () => {
     dropdownMenu.classList.toggle('item-dropdown__menu_active');
     dropdownContainer.classList.toggle('item-dropdown_opened');
+  }
+  //показать/закрыть меню / show/close menu
+  select.addEventListener('click', (event) => {
+    closeDrop();
     //кнопка плюс
-    increaseButton.forEach((item, index) => {
-      item.addEventListener('click', (event) => {
-        event.preventDefault();
-        let itemVal = parseInt(itemQuantity[index].textContent);
-        itemVal < limitGuest ? itemQuantity[index].textContent = itemVal + 1 : itemVal = limitGuest;
-        if (itemVal >= 0) {
-          decreaseButton[index].classList.remove('dropdown-button_inactive');
-        }
-        if (itemVal >= limitGuest - 1) {
-          item.classList.add('dropdown-button_inactive');
-        }
-        if (sumTotal(dropdownContainer, itemQuantity).total !== 0) {
+  })
+  increaseButton.forEach((item, index) => {
+    item.addEventListener('click', (event) => {
+      event.preventDefault();
+      let itemVal = parseInt(itemQuantity[index].textContent);
+      itemVal < limitGuest ? itemQuantity[index].textContent = itemVal + 1 : itemVal = limitGuest;
+      if (itemVal >= 0) {
+        decreaseButton[index].classList.remove('dropdown-button_inactive');
+      }
+      if (itemVal >= limitGuest - 1) {
+       item.classList.add('dropdown-button_inactive');
+      }
+      if (clear) {
+        if(sumTotal(dropdownContainer, itemQuantity).total !== 0) {
           clear.classList.add('dropdown-btn__clear_active');
-        }
-        selectText.textContent = sumTotal(dropdownContainer, itemQuantity).text
-      })
-    })
-    //кнопка минус
-    decreaseButton.forEach((item, index) => {
-      item.addEventListener('click', (event) => {
-        event.preventDefault();
-        let itemVal = parseInt(itemQuantity[index].textContent);
-        itemVal > 0 ? itemQuantity[index].textContent = itemVal - 1 : itemVal = 0;
-        if (itemVal <= limitGuest) {
-          increaseButton[index].classList.remove('dropdown-button_inactive');
-        }
-        if (itemVal <= 1) {
-          item.classList.add('dropdown-button_inactive');
-        }
-        if (sumTotal(dropdownContainer, itemQuantity).total === 0) {
+        } else {
           clear.classList.remove('dropdown-btn__clear_active');
         }
-        selectText.textContent = sumTotal(dropdownContainer, itemQuantity).text
-      })
+      }
+      selectText.textContent = sumTotal(dropdownContainer, itemQuantity).text
     })
   })
-})
-
+    //кнопка минус
+  decreaseButton.forEach((item, index) => {
+    item.addEventListener('click', (event) => {
+      event.preventDefault();
+      let itemVal = parseInt(itemQuantity[index].textContent);
+      itemVal > 0 ? itemQuantity[index].textContent = itemVal - 1 : itemVal = 0;
+      if (itemVal <= limitGuest) {
+        increaseButton[index].classList.remove('dropdown-button_inactive');
+      }
+      if (itemVal <= 1) {
+        item.classList.add('dropdown-button_inactive');
+      }
+      if (clear) {
+          if(sumTotal(dropdownContainer, itemQuantity).total !== 0) {
+            clear.classList.add('dropdown-btn__clear_active');
+          } else {
+            clear.classList.remove('dropdown-btn__clear_active');
+          }
+      }
+      selectText.textContent = sumTotal(dropdownContainer, itemQuantity).text
+    })
+  })
+  if (clear) {
+    clear.addEventListener('click', (e) => {
+      e.preventDefault();
+      selectText.textContent = 'Сколько гостей';
+      itemQuantity.forEach((item) => item.textContent = 0)
+    })
+  }
+  if (apply) {
+    apply.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeDrop();
+    })
+  }
+  // закрыть меню при клике вне блока
+  document.querySelector('.container').addEventListener('click', (event) => {
+    const target = event.target;
+    let isMenu = target === dropdownMenu || dropdownMenu.contains(target);
+    const menuIsOpen = dropdownMenu.classList.contains('item-dropdown__menu_active');
+    if (!isMenu && menuIsOpen) {
+      closeDrop();
+    }
+  }, true)
+}
 
 
 // сумма элементов
@@ -88,3 +118,5 @@ const sumTotal = (container, items, select) => {
   }
 }
 
+export { dropdown };
+export { sumTotal };
