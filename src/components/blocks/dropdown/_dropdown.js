@@ -80,8 +80,10 @@ function dropdown(select, clear, apply) {
     const target = event.target;
     let isMenu = target === dropdownMenu || dropdownMenu.contains(target);
     const menuIsOpen = dropdownMenu.classList.contains('item-dropdown__menu_active');
-    if (!isMenu && menuIsOpen) {
-      closeDrop();
+    const isContainer = select.contains(target);
+    if (!isMenu && menuIsOpen && !isContainer) {
+      dropdownMenu.classList.remove('item-dropdown__menu_active');
+      dropdownContainer.classList.remove('item-dropdown_opened');
     }
   }, true)
 }
