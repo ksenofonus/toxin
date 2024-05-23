@@ -1,6 +1,6 @@
 import declination from './_decl';
-const dropdownSelect = document.querySelectorAll('.item-dropdown_selection');
-const menu = document.querySelectorAll('.item-dropdown_menu');
+const dropdownSelect = document.querySelectorAll('.item-dropdown__selection');
+const menu = document.querySelectorAll('.item-dropdown__menu');
 
 dropdownSelect.forEach((item) => {
   item.addEventListener('click', (event) => {
@@ -9,11 +9,13 @@ dropdownSelect.forEach((item) => {
     const increaseButton = dropdownMenu.querySelectorAll('.increase');
     const decreaseButton = dropdownMenu.querySelectorAll('.decrease');
     const itemQuantity = dropdownMenu.querySelectorAll('.item-quantity');
+    const clear = dropdownMenu.querySelector('.dropdown-btn__clear');
+    const apply = dropdownMenu.querySelector('.dropdown-btn__apply');
     let selectText = item;
     const limitGuest = 20;
     //показать/закрыть меню / show/close menu
-    dropdownMenu.classList.toggle('item-dropdown_menu__active');
-    dropdownContainer.classList.toggle('item-dropdown__opened');
+    dropdownMenu.classList.toggle('item-dropdown__menu_active');
+    dropdownContainer.classList.toggle('item-dropdown_opened');
     //кнопка плюс
     increaseButton.forEach((item, index) => {
       item.addEventListener('click', (event) => {
@@ -21,12 +23,15 @@ dropdownSelect.forEach((item) => {
         let itemVal = parseInt(itemQuantity[index].textContent);
         itemVal < limitGuest ? itemQuantity[index].textContent = itemVal + 1 : itemVal = limitGuest;
         if (itemVal >= 0) {
-          decreaseButton[index].classList.remove('dropdown-button__inactive');
+          decreaseButton[index].classList.remove('dropdown-button_inactive');
         }
         if (itemVal >= limitGuest - 1) {
-          item.classList.add('dropdown-button__inactive');
+          item.classList.add('dropdown-button_inactive');
         }
-        selectText.textContent = sumTotal(dropdownContainer, itemQuantity)
+        if (sumTotal(dropdownContainer, itemQuantity).total !== 0) {
+          clear.classList.add('dropdown-btn__clear_active');
+        }
+        selectText.textContent = sumTotal(dropdownContainer, itemQuantity).text
       })
     })
     //кнопка минус
@@ -36,31 +41,21 @@ dropdownSelect.forEach((item) => {
         let itemVal = parseInt(itemQuantity[index].textContent);
         itemVal > 0 ? itemQuantity[index].textContent = itemVal - 1 : itemVal = 0;
         if (itemVal <= limitGuest) {
-          increaseButton[index].classList.remove('dropdown-button__inactive');
+          increaseButton[index].classList.remove('dropdown-button_inactive');
         }
         if (itemVal <= 1) {
-          item.classList.add('dropdown-button__inactive');
+          item.classList.add('dropdown-button_inactive');
         }
-        selectText.textContent = sumTotal(dropdownContainer, itemQuantity)
+        if (sumTotal(dropdownContainer, itemQuantity).total === 0) {
+          clear.classList.remove('dropdown-btn__clear_active');
+        }
+        selectText.textContent = sumTotal(dropdownContainer, itemQuantity).text
       })
     })
   })
 })
 
-document.querySelector('.container').addEventListener('click', (event) => {
-  event.stopPropagation()
-  let target = event.target;
-  dropdownSelect.forEach((item) => {
-    if (target != item) {
-      item.nextElementSibling.classList.add('item-dropdown_menu__closed');
-      item.parentNode.classList.remove('item-dropdown__opened')
-      console.log(item.parentNode)
-    } else {
-      console.log('yes', target)
-    }
-  })
 
-})
 
 // сумма элементов
 const sumTotal = (container, items, select) => {
@@ -69,17 +64,24 @@ const sumTotal = (container, items, select) => {
     let children = Number(Array.from(items).find((elem) => elem.id === 'children').textContent);
     let infant = Number(Array.from(items).find((elem) => elem.id === 'infant').textContent);
     let sum = adult + children;
+    let total = adult + children + infant;
     const guests = ['гость', 'гостя', 'гостей'];
     const infants = ['младенец', 'младенца', 'младенцев'];
     let text = '';
-    if (sum === 0) {
+    if (sum === 0 && infant === 0) {
       text = 'Сколько гостей';
-    } else if (infant === 0) {
+    } else if (sum !== 0 && infant === 0) {
       text = `${sum} ${declination(sum, guests)}`
+    } else if (sum === 0 && infant !== 0) {
+      text = `${infant} ${declination(infant, infants)}`
     } else {
       text = `${sum} ${declination(sum, guests)}, ${infant} ${declination(infant, infants)}`
     }
-    return text;
+    return ({adult: adult,
+             children: children,
+             infant: infant,
+             total: total,
+             text: text});
   }
   else {
     console.log(false)
