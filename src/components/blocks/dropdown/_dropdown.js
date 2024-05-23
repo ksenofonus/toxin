@@ -47,7 +47,20 @@ dropdownSelect.forEach((item) => {
   })
 })
 
+document.querySelector('.container').addEventListener('click', (event) => {
+  event.stopPropagation()
+  let target = event.target;
+  dropdownSelect.forEach((item) => {
+    if (target != item) {
+      item.nextElementSibling.classList.add('item-dropdown_menu__closed');
+      item.parentNode.classList.remove('item-dropdown__opened')
+      console.log(item.parentNode)
+    } else {
+      console.log('yes', target)
+    }
+  })
 
+})
 
 // сумма элементов
 const sumTotal = (container, items, select) => {
