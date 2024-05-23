@@ -1,10 +1,5 @@
 import declination from './_decl';
-// const dropdownContainer = document.querySelectorAll('.item-dropdown');
 const dropdownSelect = document.querySelectorAll('.item-dropdown_selection');
-// const dropdownMenu = document.querySelectorAll('.item-dropdown_menu');
-const body = document.querySelector('.container');
-// const decreaseButton = document.querySelectorAll('.decrease');
-// const itemQuantity = document.querySelectorAll('.item-quantity');
 
 dropdownSelect.forEach((item) => {
   item.addEventListener('click', (event) => {
@@ -15,7 +10,7 @@ dropdownSelect.forEach((item) => {
     const itemQuantity = dropdownMenu.querySelectorAll('.item-quantity');
     let selectText = item;
     const limitGuest = 20;
-    //показать меню / show menu
+    //показать/закрыть меню / show/close menu
     dropdownMenu.classList.toggle('item-dropdown_menu__closed');
     dropdownContainer.classList.toggle('item-dropdown__opened');
     //кнопка плюс
@@ -51,7 +46,20 @@ dropdownSelect.forEach((item) => {
   })
 })
 
+document.querySelector('.container').addEventListener('click', (event) => {
+  event.stopPropagation()
+  let target = event.target;
+  dropdownSelect.forEach((item) => {
+    if (target != item) {
+      item.nextElementSibling.classList.add('item-dropdown_menu__closed');
+      item.parentNode.classList.remove('item-dropdown__opened')
+      console.log(item.parentNode)
+    } else {
+      console.log('yes', target)
+    }
+  })
 
+})
 
 // сумма элементов
 const sumTotal = (container, items, select) => {
