@@ -1,5 +1,8 @@
 @import '../datepicker/_datepicker';
 
+.dropdown {
+  width: 100%;
+}
 .item-dropdown {
   position: relative;
   width: 100%;
@@ -95,3 +98,6 @@
   }
 }
 
+.roomchoice {
+  max-width: 266px;
+}

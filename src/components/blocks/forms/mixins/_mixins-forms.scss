@@ -2,7 +2,7 @@
 @mixin field-style {
   box-sizing: border-box;
   height: 44px;
-  width: 320px;
+  width: 100%;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 4px;
@@ -19,6 +19,7 @@
 }
 .field-name {
   display: flex;
+  width: 100%;
   flex-direction: column;
   text-transform: uppercase;
   font-weight: 700;

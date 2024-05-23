@@ -11,8 +11,9 @@
 .datepicker-container .field-name{
   position: relative;
   @include expand-more;
+  width: 150px;
   & .datepicker {
-    width: 150px;
+    width: 100%;
     &::-webkit-input-placeholder,
     &::-webkit-input-placeholder {
       color: $dark75;

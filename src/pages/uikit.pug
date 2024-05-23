@@ -31,40 +31,31 @@ html(lang='en')
         h2.section-title Form elements
         include ../components/blocks/logo/_logo.pug
         .forms-top
-          .forms-block
-            form(action="", method="post", class="field")
-              fieldset.fieldset
-                +label('text field')
-                  +field('text', 'email', 'Email')(class="text-field")
-                +label('text field')
-                  +field('text', 'text-focus', 'This is preaty awesome')(class="text-field")
-                +label('masked text field')
-                  +field('text', 'masked', 'ДД.ММ.ГГГГ')(class='text-field masked-date')
-                +dropdown('guest','guestdrop', 'Dropdown', 'Сколько гостей',
-                           {'adults': 'Взрослые',
+          .row
+            .forms-block
+              +label('text field')
+                +field('text', 'email', 'Email')(class="text-field")
+              +label('text field')
+                +field('text', 'text-focus', 'This is preaty awesome')(class="text-field")
+              +label('masked text field')
+                +field('text', 'masked', 'ДД.ММ.ГГГГ')(class='text-field masked-date')
+              +dropdown('guest','guestdrop', 'Dropdown', 'Сколько гостей',
+                          {'adults': 'Взрослые',
                             'children': 'Дети',
                             'infant': 'Младенцы'
-                           },
-                           true)
-                //- +dropdown('guest','Dropdown',
-                //-            'Сколько гостей',
-                //-            {'adults': 'Взрослые',
-                //-             'children': 'Дети',
-                //-             'infant': 'Младенцы'
-                //-            },
-                //-            true)
-                .datepicker-container
-                  +label('date dropdown')
-                    +field('text', 'date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
-                  .disable-date
-                    h3.disable-date_name date dropdown
-                    .disable-date_field
-                .datepicker-filter-container
-                  +label('date dropdown')
-                    +field('text', 'date', '19 авг - 23 авг')(class='filter-datepicker text-field')
-                include ../components/blocks/forms/subscription/_subscription.pug
-          .forms-block
-            form(action="", method="post", class="field")
+                          },
+                          true)
+              .datepicker-container
+                +label('date dropdown')
+                  +field('text', 'date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
+                .disable-date
+                  h3.disable-date_name date dropdown
+                  .disable-date_field
+              .datepicker-filter-container
+                +label('date dropdown')
+                  +field('text', 'date', '19 авг - 23 авг')(class='filter-datepicker text-field')
+              include ../components/blocks/forms/subscription/_subscription.pug
+            .forms-block
               .button-container
                 h3.buttons-name checkbox buttons
                 +checkbox('smoking', 'Можно курить')
@@ -89,35 +80,45 @@ html(lang='en')
                 .rate-buttons
                   +star(4)
                   +star(5)
-          .forms-block
-            .button-container
-              include ../components/blocks/range-slider/_range-slider.pug
-            .button-container
-              h3.buttons-name buttons
-              .small-buttons
-                +button("click me")
-                +button("click me")(class="button_active")
-                +button("click me")(class="button__border")
-                +button("click me")(class="button_active button__border")
-                +button("click me")(class="button__text")
-                +button("click me")(class="button__text button__text_active")
-              +button("перейти к оплате")(class="button__long")
-            .button-container
-              h3.buttons-name pagination
-              include ../components/blocks/pagination/_paginat.pug
-            .iqdpordown
-              p.iqdropdown-selection Сколько гостей
-              .iqdropdown-menu
-                .iqdropdown-menu-option(data-id="item1")
-                  div
-                    p.iqdropdown-item Item1
-                .iqdropdown-menu-option(data-id="item2")
-                  div
-                    p.iqdropdown-item Item2
-                .iqdropdown-menu-option(data-id="item3")
-                  div
-                    p.iqdropdown-item Item3
-            
-        .forms-bottom
+            .forms-block
+              .button-container
+                include ../components/blocks/range-slider/_range-slider.pug
+              .button-container
+                h3.buttons-name buttons
+                .small-buttons
+                  +button("click me")
+                  +button("click me")(class="button_active")
+                  +button("click me")(class="button__border")
+                  +button("click me")(class="button_active button__border")
+                  +button("click me")(class="button__text")
+                  +button("click me")(class="button__text button__text_active")
+                +button("перейти к оплате")(class="button__long")
+              .button-container
+                h3.buttons-name pagination
+                include ../components/blocks/pagination/_paginat.pug
+          .row
+            .forms-block
+              +dropdown('roomchoice','roomchoice', 'Dropdown', '2 спальни, 2 кровати',
+                            {'bedroom': 'спальни',
+                              'bed': 'кровати',
+                              'bath': 'Ванные комнаты'
+                            },
+                            true)
+            .forms-block
+              +dropdown('guest','guestopen', 'Dropdown', 'Сколько гостей',
+                            {'adults': 'Взрослые',
+                              'children': 'Дети',
+                              'infant': 'Младенцы'
+                            },
+                            true)
+            .forms-block
+              +dropdown('guest','guestopen', 'Dropdown', 'Сколько гостей',
+                            {'adults': 'Взрослые',
+                              'children': 'Дети',
+                              'infant': 'Младенцы'
+                            },
+                            true)
 
+        .forms-bottom
+            
   script(src="./uikit/uikit.js")
