@@ -3,7 +3,7 @@ mixin dropdown(type, dropdownName, selectionText, data={}, bottom)
     h3.dropdown-name= dropdownName
     .item-dropdown(class= type)
       p.item-dropdown_selection= selectionText
-      .item-dropdown_menu.item-dropdown_menu__closed
+      .item-dropdown_menu
         each item, key in data
           .item-dropdown_menu-option
             .item-dropdown-item

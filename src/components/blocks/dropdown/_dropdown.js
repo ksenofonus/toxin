@@ -1,10 +1,6 @@
 import declination from './_decl';
-// const dropdownContainer = document.querySelectorAll('.item-dropdown');
 const dropdownSelect = document.querySelectorAll('.item-dropdown_selection');
-// const dropdownMenu = document.querySelectorAll('.item-dropdown_menu');
-const body = document.querySelector('.container');
-// const decreaseButton = document.querySelectorAll('.decrease');
-// const itemQuantity = document.querySelectorAll('.item-quantity');
+const menu = document.querySelectorAll('.item-dropdown_menu');
 
 dropdownSelect.forEach((item) => {
   item.addEventListener('click', (event) => {
@@ -15,8 +11,8 @@ dropdownSelect.forEach((item) => {
     const itemQuantity = dropdownMenu.querySelectorAll('.item-quantity');
     let selectText = item;
     const limitGuest = 20;
-    //показать меню / show menu
-    dropdownMenu.classList.toggle('item-dropdown_menu__closed');
+    //показать/закрыть меню / show/close menu
+    dropdownMenu.classList.toggle('item-dropdown_menu__active');
     dropdownContainer.classList.toggle('item-dropdown__opened');
     //кнопка плюс
     increaseButton.forEach((item, index) => {
