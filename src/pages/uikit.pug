@@ -98,7 +98,7 @@ html(lang='en')
                 include ../components/blocks/pagination/_paginat.pug
           .row
             .forms-block
-              +dropdown('roomchoice','roomchoice', 'Dropdown', '2 спальни, 2 кровати',
+              +dropdown('roomchoice','roomchoice', 'Dropdown', '2 спальни, 2 кровати...',
                             {'bedroom': 'спальни',
                               'bed': 'кровати',
                               'bath': 'Ванные комнаты'
@@ -112,7 +112,7 @@ html(lang='en')
                             },
                             true)
             .forms-block
-              +dropdown('guest','guestopen', 'Dropdown', 'Сколько гостей',
+              +dropdown('guest','guestchoose', 'Dropdown', 'Сколько гостей',
                             {'adults': 'Взрослые',
                               'children': 'Дети',
                               'infant': 'Младенцы'

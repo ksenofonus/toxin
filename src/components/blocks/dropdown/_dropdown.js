@@ -2,12 +2,14 @@ import declination from './_decl';
 // const dropdownSelect = document.querySelectorAll('.item-dropdown__selection');
 // const menu = document.querySelectorAll('.item-dropdown__menu');
 
-function dropdown(select, clear, apply) {
+function dropdown(select) {
   const dropdownContainer = select.parentNode;
   const dropdownMenu = select.nextElementSibling;
   const increaseButton = dropdownMenu.querySelectorAll('.increase');
   const decreaseButton = dropdownMenu.querySelectorAll('.decrease');
   const itemQuantity = dropdownMenu.querySelectorAll('.item-quantity');
+  const clear = dropdownContainer.querySelector('.dropdown-btn__clear');
+  const apply = dropdownContainer.querySelector('.dropdown-btn__apply');
   let selectText = select;
   const limitGuest = 20;
   const closeDrop = () => {
