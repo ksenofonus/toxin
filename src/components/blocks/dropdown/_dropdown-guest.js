@@ -24,13 +24,13 @@ chosen.querySelector('[data-dropdown="adults"]').textContent = '2';
 chosen.querySelector('[data-dropdown="children"]').textContent = '1';
 chosen.querySelector('[data-dropdown="adults"]').previousElementSibling.classList.remove('dropdown-button_inactive');
 chosen.querySelector('[data-dropdown="children"]').previousElementSibling.classList.remove('dropdown-button_inactive');
-dropdownChoose.textContent = '3 гостя'
+dropdownChoose.textContent = '3 гостя';
+dropdownChoose.nextElementSibling.querySelector('.dropdown-btn__clear').classList.add('dropdown-btn__clear_active');
 
 
 dropdownRoomOpen.nextElementSibling.classList.add('item-dropdown__menu_active');
 dropdownRoomOpen.parentNode.classList.add('item-dropdown_opened');
 const rooms = document.querySelectorAll('.roomchoice');
-console.log(rooms)
 rooms.forEach((item) => {
   item.querySelectorAll('[data-dropdown="bedroom"]').forEach((el) => {
     el.textContent = '2';

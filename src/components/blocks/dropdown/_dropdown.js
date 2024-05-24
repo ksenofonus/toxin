@@ -15,6 +15,15 @@ function dropdown(select) {
     dropdownContainer.classList.toggle('item-dropdown_opened');
   }
   //показать/закрыть меню / show/close menu
+  if (clear) {
+    if(sumTotal(dropdownContainer, itemQuantity).total !== 0) {
+      clear.classList.add('dropdown-btn__clear_active');
+    } else {
+      clear.classList.remove('dropdown-btn__clear_active');
+    }
+  }
+  selectText.textContent = sumTotal(dropdownContainer, itemQuantity).text;
+
   select.addEventListener('click', () => {
     closeDrop();
     //кнопка плюс
@@ -31,13 +40,13 @@ function dropdown(select) {
        item.classList.add('dropdown-button_inactive');
       }
       if (clear) {
-        if(sumTotal(dropdownContainer, itemQuantity).total !== 0) {
+        if(sumTotal(dropdownContainer).total !== 0) {
           clear.classList.add('dropdown-btn__clear_active');
         } else {
           clear.classList.remove('dropdown-btn__clear_active');
         }
       }
-      selectText.textContent = sumTotal(dropdownContainer, itemQuantity).text
+      selectText.textContent = sumTotal(dropdownContainer).text
     })
   })
     //кнопка минус
@@ -59,14 +68,15 @@ function dropdown(select) {
             clear.classList.remove('dropdown-btn__clear_active');
           }
       }
-      selectText.textContent = sumTotal(dropdownContainer, itemQuantity).text
+      selectText.textContent = sumTotal(dropdownContainer).text
     })
   })
   if (clear) {
     clear.addEventListener('click', (e) => {
       e.preventDefault();
-      selectText.textContent = sumTotal(dropdownContainer, itemQuantity).defaultText;
-      itemQuantity.forEach((item) => item.textContent = 0)
+      selectText.textContent = sumTotal(dropdownContainer).defaultText;
+      itemQuantity.forEach((item) => item.textContent = 0);
+      clear.classList.remove('dropdown-btn__clear_active');
     })
   }
   if (apply) {
@@ -76,21 +86,21 @@ function dropdown(select) {
     })
   }
   // закрыть меню при клике вне блока
-  document.querySelector('.container').addEventListener('click', (event) => {
-    const target = event.target;
-    let isMenu = target === dropdownMenu || dropdownMenu.contains(target);
-    const menuIsOpen = dropdownMenu.classList.contains('item-dropdown__menu_active');
-    const isContainer = select.contains(target);
-    if (!isMenu && menuIsOpen && !isContainer) {
-      dropdownMenu.classList.remove('item-dropdown__menu_active');
-      dropdownContainer.classList.remove('item-dropdown_opened');
-    }
-  }, true)
+  // document.querySelector('.container').addEventListener('click', (event) => {
+  //   const target = event.target;
+  //   let isMenu = target === dropdownMenu || dropdownMenu.contains(target);
+  //   const menuIsOpen = dropdownMenu.classList.contains('item-dropdown__menu_active');
+  //   const isContainer = select.contains(target);
+  //   if (!isMenu && menuIsOpen && !isContainer) {
+  //     dropdownMenu.classList.remove('item-dropdown__menu_active');
+  //     dropdownContainer.classList.remove('item-dropdown_opened');
+  //   }
+  // }, true)
 }
 
 
 // сумма элементов
-const sumTotal = (container, items, select) => {
+const sumTotal = (container) => {
   const guests = ['гость', 'гостя', 'гостей'];
   const infants = ['младенец', 'младенца', 'младенцев'];
   const bedrooms = ['спальня', 'спальни', 'спален'];
@@ -102,7 +112,7 @@ const sumTotal = (container, items, select) => {
     let adult = Number((container.querySelector('[data-dropdown="adults"]')).textContent);
     let children = Number((container.querySelector('[data-dropdown="children"]')).textContent);
     let infant = Number((container.querySelector('[data-dropdown="infant"]')).textContent);
-    let sum = +adult + +children;
+    let sum = adult + children;
     let total = adult + children + infant;
     if (sum === 0 && infant === 0) {
       text = defaultText;
@@ -113,6 +123,7 @@ const sumTotal = (container, items, select) => {
     } else {
       text = `${sum} ${declination(sum, guests)}, ${infant} ${declination(infant, infants)}`
     }
+    
     return ({adult: adult,
              children: children,
              infant: infant,
@@ -126,7 +137,7 @@ const sumTotal = (container, items, select) => {
     let bed = Number(container.querySelector('[data-dropdown="bed"]').textContent);
     let bath = Number(container.querySelector('[data-dropdown="bath"]').textContent);
     if (room === 0 && bed === 0 && bath === 0) {
-      text = '';
+      text = defaultText;
     } else if (room === 0 && bed === 0 && bath !== 0){
       text = `${bath} ${declination(bath, bathroom)}`;
     } else if (room === 0 && bed !== 0 && bath === 0) {
