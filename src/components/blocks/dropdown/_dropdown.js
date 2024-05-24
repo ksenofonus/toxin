@@ -126,7 +126,7 @@ const sumTotal = (container, items, select) => {
     let bed = Number(container.querySelector('[data-dropdown="bed"]').textContent);
     let bath = Number(container.querySelector('[data-dropdown="bath"]').textContent);
     if (room === 0 && bed === 0 && bath === 0) {
-      text = defaultText;
+      text = '';
     } else if (room === 0 && bed === 0 && bath !== 0){
       text = `${bath} ${declination(bath, bathroom)}`;
     } else if (room === 0 && bed !== 0 && bath === 0) {
