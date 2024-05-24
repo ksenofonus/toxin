@@ -15,8 +15,7 @@ function dropdown(select) {
     dropdownContainer.classList.toggle('item-dropdown_opened');
   }
   //показать/закрыть меню / show/close menu
-  select.addEventListener('click', (event) => {
-    console.log(event);
+  select.addEventListener('click', () => {
     closeDrop();
     //кнопка плюс
   })
@@ -100,10 +99,10 @@ const sumTotal = (container, items, select) => {
   let text = '';
   if(container.classList.contains('guest')) {
     const defaultText = 'Сколько гостей';
-    let adult = Number(Array.from(items).find((elem) => elem.id === 'adults').textContent);
-    let children = Number(Array.from(items).find((elem) => elem.id === 'children').textContent);
-    let infant = Number(Array.from(items).find((elem) => elem.id === 'infant').textContent);
-    let sum = adult + children;
+    let adult = Number((container.querySelector('[data-dropdown="adults"]')).textContent);
+    let children = Number((container.querySelector('[data-dropdown="children"]')).textContent);
+    let infant = Number((container.querySelector('[data-dropdown="infant"]')).textContent);
+    let sum = +adult + +children;
     let total = adult + children + infant;
     if (sum === 0 && infant === 0) {
       text = defaultText;
@@ -123,9 +122,9 @@ const sumTotal = (container, items, select) => {
   }
   else if (container.classList.contains('roomchoice')) {
     const defaultText = '2 спальни, 2 кровати...';
-    let room = Number(Array.from(items).find((elem) => elem.id === 'bedroom').textContent);
-    let bed = Number(Array.from(items).find((elem) => elem.id === 'bed').textContent);
-    let bath = Number(Array.from(items).find((elem) => elem.id === 'bath').textContent);
+    let room = Number(container.querySelector('[data-dropdown="bedroom"]').textContent);
+    let bed = Number(container.querySelector('[data-dropdown="bed"]').textContent);
+    let bath = Number(container.querySelector('[data-dropdown="bath"]').textContent);
     if (room === 0 && bed === 0 && bath === 0) {
       text = defaultText;
     } else if (room === 0 && bed === 0 && bath !== 0){

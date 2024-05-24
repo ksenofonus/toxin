@@ -10,7 +10,7 @@ mixin dropdown(type, id, dropdownName, selectionText, data={}, bottom)
               p=item
             .item-dropdown__menu-quantity
               button.dropdown-button.dropdown-button_inactive.decrease -
-              .item-quantity(id= key) 0
+              .item-quantity(data-dropdown= key) 0
               button.dropdown-button.increase +
         if bottom
           .dropdown-bottom

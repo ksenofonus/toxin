@@ -14,3 +14,5 @@ dropdown(dropdownChoose);
 dropdown(dropdownRoomDefault);
 dropdown(dropdownRoomOpen);
 
+dropdownRoomOpen.nextElementSibling.classList.add('item-dropdown__menu_active');
+dropdownRoomOpen.parentNode.classList.add('item-dropdown_opened');
