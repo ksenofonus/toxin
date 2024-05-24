@@ -67,7 +67,7 @@ function dropdown(select) {
   if (clear) {
     clear.addEventListener('click', (e) => {
       e.preventDefault();
-      selectText.textContent = 'Сколько гостей';
+      selectText.textContent = sumTotal(dropdownContainer, itemQuantity).defaultText;
       itemQuantity.forEach((item) => item.textContent = 0)
     })
   }
@@ -93,17 +93,21 @@ function dropdown(select) {
 
 // сумма элементов
 const sumTotal = (container, items, select) => {
+  const guests = ['гость', 'гостя', 'гостей'];
+  const infants = ['младенец', 'младенца', 'младенцев'];
+  const bedrooms = ['спальня', 'спальни', 'спален'];
+  const beds = ['кровать', 'кровати', 'кроватей'];
+  const bathroom = ['ванная...', 'ванные...', 'ванных...'];
+  let text = '';
   if(container.classList.contains('guest')) {
+    const defaultText = 'Сколько гостей';
     let adult = Number(Array.from(items).find((elem) => elem.id === 'adults').textContent);
     let children = Number(Array.from(items).find((elem) => elem.id === 'children').textContent);
     let infant = Number(Array.from(items).find((elem) => elem.id === 'infant').textContent);
     let sum = adult + children;
     let total = adult + children + infant;
-    const guests = ['гость', 'гостя', 'гостей'];
-    const infants = ['младенец', 'младенца', 'младенцев'];
-    let text = '';
     if (sum === 0 && infant === 0) {
-      text = 'Сколько гостей';
+      text = defaultText;
     } else if (sum !== 0 && infant === 0) {
       text = `${sum} ${declination(sum, guests)}`
     } else if (sum === 0 && infant !== 0) {
@@ -115,12 +119,37 @@ const sumTotal = (container, items, select) => {
              children: children,
              infant: infant,
              total: total,
+             defaultText: defaultText,
              text: text});
   }
-  else {
-    console.log(false)
-  }
-}
+  else if (container.classList.contains('roomchoice')) {
+    const defaultText = '2 спальни, 2 кровати...';
+    let room = Number(Array.from(items).find((elem) => elem.id === 'bedroom').textContent);
+    let bed = Number(Array.from(items).find((elem) => elem.id === 'bed').textContent);
+    let bath = Number(Array.from(items).find((elem) => elem.id === 'bath').textContent);
+    if (room === 0 && bed === 0 && bath === 0) {
+      text = defaultText;
+    } else if (room === 0 && bed === 0 && bath !== 0){
+      text = `${bath} ${declination(bath, bathroom)}`;
+    } else if (room === 0 && bed !== 0 && bath === 0) {
+      text = `${bed} ${declination(bed, beds)}`;
+    } else if (room !== 0 && bed === 0 && bath === 0) {
+      text = `${room} ${declination(room, bedrooms)}`;
+    } else if (room === 0 && bed !== 0 && bath !== 0){
+      text = `${bed} ${declination(bed, beds)}, ${bath} ${declination(bath, bathroom)}`;
+    } else if (room !== 0 && bed === 0 && bath !== 0){
+      text = `${room} ${declination(room, bedrooms)}, ${bath} ${declination(bath, bathroom)}`;
+    } 
+     else {
+      text = `${room} ${declination(room, bedrooms)}, ${bed} ${declination(bed, beds)}...`;
+    }
+    return ({bedroom: room,
+             bed: bed,
+             bath: bath,
+             defaultText: defaultText,
+             text: text
+    })
+}}
 
 export { dropdown };
 export { sumTotal };
