@@ -1,6 +1,4 @@
 import declination from './_decl';
-// const dropdownSelect = document.querySelectorAll('.item-dropdown__selection');
-// const menu = document.querySelectorAll('.item-dropdown__menu');
 
 function dropdown(select) {
   const dropdownContainer = select.parentNode;
@@ -18,6 +16,7 @@ function dropdown(select) {
   }
   //показать/закрыть меню / show/close menu
   select.addEventListener('click', (event) => {
+    console.log(event);
     closeDrop();
     //кнопка плюс
   })

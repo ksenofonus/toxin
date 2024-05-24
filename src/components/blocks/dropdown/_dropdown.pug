@@ -1,7 +1,7 @@
 mixin dropdown(type, id, dropdownName, selectionText, data={}, bottom)
   .dropdown(id= id)
     h3.dropdown-name= dropdownName
-    .item-dropdown(class= type)
+    .item-dropdown(class!=attributes.class class= type)
       p.item-dropdown__selection= selectionText
       .item-dropdown__menu
         each item, key in data

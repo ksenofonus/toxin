@@ -33,18 +33,19 @@ html(lang='en')
         .forms-top
           .row
             .forms-block
-              +label('text field')
-                +field('text', 'email', 'Email')(class="text-field")
-              +label('text field')
+              +label('text field')(class="text-field_default")
+                +field('text', 'email', 'Email')(class="text-field text-field_default")
+              +label('text field')(class="text-field_hover")
                 +field('text', 'text-focus', 'This is preaty awesome')(class="text-field")
-              +label('masked text field')
-                +field('text', 'masked', 'ДД.ММ.ГГГГ')(class='text-field masked-date')
               +dropdown('guest','guestdrop', 'Dropdown', 'Сколько гостей',
                           {'adults': 'Взрослые',
                             'children': 'Дети',
                             'infant': 'Младенцы'
                           },
-                          true)
+                          true)(class='default-dropdown')
+              +label('masked text field')(class="text-field_default")
+                +field('text', 'masked', 'ДД.ММ.ГГГГ')(class='text-field masked-date')
+              
               .datepicker-container
                 +label('date dropdown')
                   +field('text', 'date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
@@ -98,12 +99,18 @@ html(lang='en')
                 include ../components/blocks/pagination/_paginat.pug
           .row
             .forms-block
-              +dropdown('roomchoice','roomchoice', 'Dropdown', '2 спальни, 2 кровати...',
+              +dropdown('roomchoice','roomchoice-1', 'Dropdown', '2 спальни, 2 кровати...',
                             {'bedroom': 'спальни',
                             'bed': 'кровати',
                             'bath': 'Ванные комнаты'
                             },
-                            false)
+                            false)(class='default-dropdown')
+              +dropdown('roomchoice','roomchoice-2', 'Dropdown', '2 спальни, 2 кровати...',
+                            {'bedroom': 'спальни',
+                            'bed': 'кровати',
+                            'bath': 'Ванные комнаты'
+                            },
+                            false)(class='expanded-dropdown')
             .forms-block
               +dropdown('guest','guestopen', 'Dropdown', 'Сколько гостей',
                             {'adults': 'Взрослые',
