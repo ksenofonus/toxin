@@ -1,13 +1,5 @@
 @import '../../sass/mixins/mixins';
-@mixin expand-more {
-  &::after {
-    @include material;
-    position: absolute;
-    content: "expand_more";
-    top: 50%;
-    right: calc(0% + 15px);
-  }
-}
+
 .datepicker-container .field-name{
   position: relative;
   @include expand-more;

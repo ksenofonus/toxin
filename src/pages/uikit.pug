@@ -1,10 +1,11 @@
 include ../components/blocks/color_item/_color-block.pug
 include ../components/blocks/forms/mixins/_mixins-forms.pug
-include ../components/blocks/buttons/_check-buttons.pug
+include ../components/blocks/buttons/checkbox/_check-buttons.pug
 include ../components/blocks/buttons/like/_like.pug
 include ../components/blocks/buttons/rating/_rating.pug
 include ../components/blocks/buttons/button/_button.pug
 include ../components/blocks/dropdown/_dropdown.pug
+include ../components/blocks/buttons/checkbox/expandable/_expandable.pug
 
 
 doctype html
@@ -125,7 +126,21 @@ html(lang='en')
                               'infant': 'Младенцы'
                             },
                             true)
+          .row
+            .forms-block
+              +expandable-checkbox
+                +checkbox("breakfast", "завтрак")
+                +checkbox("desk", "письменный стол", "checked")
+                +checkbox("babychair", "стул для кормления", "checked")
+                +checkbox("crib", "кроватка", "checked")
+                +checkbox("tv", "телевизор")
+                +checkbox("shampoo", "шампунь")
+              +expandable-checkbox(class="exp-checkbox__container_active")
+                +checkbox("breakfast1", "завтрак")
+                +checkbox("desk1", "письменный стол", "checked")
+                +checkbox("babychair1", "стул для кормления", "checked")
+                +checkbox("crib1", "кроватка", "checked")
+                +checkbox("tv1", "телевизор")
+                +checkbox("shampoo1", "шампунь")
 
-        .forms-bottom
-            
   script(src="./uikit/uikit.js")

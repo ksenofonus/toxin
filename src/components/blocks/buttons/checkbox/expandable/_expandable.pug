@@ -1,0 +1,8 @@
+include ../_check-buttons.pug
+
+mixin expandable-checkbox
+  .exp-checkbox
+    .exp-checkbox__header
+      h3.buttons-name expandable checkbox list
+    .exp-checkbox__container(class!=attributes.class)
+      block

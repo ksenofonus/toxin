@@ -9,7 +9,7 @@
 @import '../../assets/fonts/fontawesome/scss/fontawesome.scss';
 @import '../../assets/fonts/fontawesome/scss/solid.scss';
 @import '../../assets/fonts/fontawesome/scss/brands.scss';
-@import 'Components/blocks/buttons/check-buttons.scss';
+@import '../../components/blocks/buttons/checkbox/check-buttons';
 @import 'Components/blocks/buttons/like/like.scss';
 @import 'Components/blocks/forms/mixins/mixins-forms.scss';
 @import 'Components/blocks/forms/subscription/subscription.scss';
@@ -19,6 +19,7 @@
 @import 'Components/blocks/pagination/paginat';
 @import 'Components/blocks/dropdown/dropdown';
 @import 'Components/blocks/datepicker/datepicker';
+@import 'Components/blocks/buttons/checkbox/expandable/expandable';
 
 .container {
   max-width: 1440px;
@@ -66,6 +67,7 @@
   row-gap: 100px;
   column-gap: 40px;
   flex-grow: 1;
+  min-height: 250px;
   &:not(:last-child) {
     margin-bottom: 100px;
   }

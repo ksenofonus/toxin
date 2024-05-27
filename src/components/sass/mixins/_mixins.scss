@@ -58,3 +58,12 @@
   font-family: $font-1;
   color: $dark;
 }
+@mixin expand-more {
+  &::after {
+    @include material;
+    position: absolute;
+    content: "expand_more";
+    top: 50%;
+    right: calc(0% + 15px);
+  }
+}

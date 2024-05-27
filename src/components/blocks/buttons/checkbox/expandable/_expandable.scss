@@ -1,0 +1,16 @@
+@import '../../../../sass/mixins/_mixins';
+.exp-checkbox__header{
+  position: relative;
+  width: 266px;
+  cursor: pointer;
+  @include expand-more;
+  &::after {
+    top: 0;
+  }
+}
+.exp-checkbox__container {
+  display: none;
+  &_active {
+    display: block;
+  }
+}

@@ -5,6 +5,7 @@ import '../../components/blocks/pagination/_paginat';
 import '../../components/blocks/dropdown/_dropdown-guest';
 import '../../components/blocks/datepicker/_datepicker';
 import '../../components/blocks/forms/masked-text/_mask';
+import '../../components/blocks/buttons/checkbox/expandable/_expandable'
 
 
 
