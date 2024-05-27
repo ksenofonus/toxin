@@ -7,6 +7,9 @@
 .checkbox-label{
   font-size: 14px;
   color: $dark50;
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
 //checkbox
 input[type="checkbox"] {
