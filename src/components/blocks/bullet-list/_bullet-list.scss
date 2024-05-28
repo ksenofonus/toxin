@@ -1,0 +1,23 @@
+.bullet-list_item{
+  position: relative;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  &::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: $dark25;
+    position: absolute;
+    top: 7px;
+    left: -20px;
+  }
+  color: $dark75;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+.bullet-list {
+  max-width: 240px;
+}
