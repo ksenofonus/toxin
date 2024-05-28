@@ -8,9 +8,10 @@ mixin checkbox(name, text, checked)
       class="checkbox"
       checked= checked
     )
-    label.checkbox-label(
-      for= name
-    )= text
+    .label-container
+      label.checkbox-label(
+        for= name
+      )= text
       block
 
 //- radio

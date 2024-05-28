@@ -3,7 +3,11 @@
   display: flex;
   margin-bottom: 5px;
 }
-
+.label-container{
+  display: flex;
+  flex-direction: column;
+  
+}
 .checkbox-label{
   font-size: 14px;
   color: $dark50;
@@ -19,6 +23,7 @@ input[type="checkbox"] {
   border-radius: 4px;
   margin-right: 10px;
   cursor: pointer;
+  flex-shrink: 0;
   & + label {
     cursor: pointer;
   }
