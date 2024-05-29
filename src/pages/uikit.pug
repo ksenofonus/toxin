@@ -8,6 +8,7 @@ include ../components/blocks/dropdown/_dropdown.pug
 include ../components/blocks/buttons/checkbox/expandable/_expandable.pug
 include ../components/blocks/buttons/checkbox/rich/_rich.pug
 include ../components/blocks/bullet-list/_bullet-list.pug
+include ../components/blocks/advantage/_advantage.pug
 
 
 doctype html
@@ -155,4 +156,16 @@ html(lang='en')
               .button-container
                   h3.buttons-name bullet list
                   +bullet(['нельзя с питомцами', 'без вечеринок и мероприятий', 'время прибытия \u2014 после 13:00, а выезд до 12:00'])
+          .row
+            .advantage-block
+              +advantage({
+                symbol: 'mood',
+                title: 'Комфорт',
+                description: 'Шумопоглощающие стены'
+              })
+              +advantage({
+                symbol: 'location_city',
+                title: 'Удобство',
+                description: 'окно в каждой из спален'
+              })
   script(src="./uikit/uikit.js")
