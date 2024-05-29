@@ -1,0 +1,12 @@
+mixin review(data= {})
+  .review
+    .review__userinfo
+      .review__userphoto
+        img(src= data.userphoto, alt='user photo')
+      .review__data
+        span.review__username= data.username
+        span.review__time=data.time
+    .review__content
+      .review__like
+        block
+      span.review__text= data.text

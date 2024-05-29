@@ -23,6 +23,7 @@
 @import 'Components/blocks/buttons/checkbox/rich/rich';
 @import 'Components/blocks/bullet-list/bullet-list';
 @import 'Components/blocks/advantage/advantage';
+@import 'Components/blocks/review/review';
 
 
 .container {
@@ -67,7 +68,7 @@
 .row {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   row-gap: 100px;
   column-gap: 40px;
   flex-grow: 1;
