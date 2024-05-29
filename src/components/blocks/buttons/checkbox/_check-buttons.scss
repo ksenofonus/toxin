@@ -11,6 +11,7 @@
 .checkbox-label{
   font-size: 14px;
   color: $dark50;
+  cursor: pointer;
   &::first-letter {
     text-transform: uppercase;
   }
