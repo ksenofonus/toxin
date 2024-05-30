@@ -24,7 +24,7 @@
 @import 'Components/blocks/bullet-list/bullet-list';
 @import 'Components/blocks/advantage/advantage';
 @import 'Components/blocks/review/review';
-
+@import 'Components/layout/header/header';
 
 .container {
   max-width: 1440px;
@@ -34,12 +34,16 @@
   position: relative;
   padding: 140px;
   display: flex;
-  width: auto;
+  width: 100%;
   height: auto;
   border-bottom: 1px solid $dark25;
-  & .section-title {
-    display: none;
+  &__layout {
+    padding: 140px 0px;
+    background-color: #e5e5e5;
   }
+}
+.section-title {
+  display: none;
 }
 .color-container {
   width: auto;

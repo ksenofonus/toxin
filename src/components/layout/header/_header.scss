@@ -1,5 +1,46 @@
-.header-container {
-  max-width: 1440px;
-  height: auto;
+.header {
+  width: 100%;
   margin: 0 auto;
+  padding: 0 140px;
+  background-color: #fff;
+}
+.header-container {
+  width: 100%;
+  display: flex;
+  // margin-left: auto;
+  min-height: 70px;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__nav {
+  display: flex;
+  max-width: 447px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 13px;
+  &-item {
+    color: $dark50;
+    cursor: pointer;
+    &:first-child a{
+      font-weight: 800;
+      color: $dark75;
+    }
+  }
+  &-link {
+    text-decoration: none;
+    color: $dark50;
+    
+  }
+}
+.header__title {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+.submenu {
+  display: flex;
+}
+.header__login {
+  display: flex;
+  gap: 20px;
 }
