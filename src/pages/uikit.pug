@@ -11,6 +11,7 @@ include ../components/blocks/bullet-list/_bullet-list.pug
 include ../components/blocks/advantage/_advantage.pug
 include ../components/blocks/review/_review.pug
 include ../components/layout/header/_header.pug
+include ../components/blocks/logo/_logo.pug
 
 
 doctype html
@@ -22,7 +23,7 @@ html(lang='en')
     .container
       section.block-container
         h2.section-title Colors & Type
-        include ../components/blocks/logo/_logo.pug
+        +simpleLogo
         .color-container
           +color-item('dark shade 100%', '#1F2041', 'color__rect_dark')
           +color-item('dark shade 75%', '#1F2041', 'color__rect_dark75')
@@ -35,7 +36,7 @@ html(lang='en')
           include ../components/blocks/text-block/_text-block.pug
       section.block-container
         h2.section-title Form elements
-        include ../components/blocks/logo/_logo.pug
+        +simpleLogo
         .forms-top
           .row
             .forms-block
@@ -180,10 +181,10 @@ html(lang='en')
                 +like(12)(class="like_press")
       section.block-container
         h2.section-title Cards
-        include ../components/blocks/logo/_logo.pug
+        +simpleLogo
       section.block-container.block-container__layout
         h2.section-title Headers and footers
-        include ../components/blocks/logo/_logo.pug
+        +simpleLogo
         +header(false)
         +header(true)
   script(src="./uikit/uikit.js")

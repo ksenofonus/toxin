@@ -1,5 +1,20 @@
-.logo {
+.simple-logo {
   position: absolute;
   top: 20px;
   left: 20px;
+  & svg {
+    width: 48px;
+    height: 48px;
+    & path {
+      color: $dark25;
+      fill: $dark;
+      fill-opacity: 0.25;
+    }
+  }
+}
+.logo {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  margin-right: auto;
 }
