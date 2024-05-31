@@ -1,0 +1,26 @@
+mixin menu(classname, data=[{}])
+  ul(class= classname + '__menu')
+    each item in data
+      li(class= classname + '__menu-item')
+        a(class= classname + '__menu-link', href= item.href)= item.itemname 
+
+//footer
+mixin footer
+  footer.footer
+    .footer-container
+      .footer__top 
+        .footer__column
+          +logo
+          p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+        .footer__column
+          +menu('footer', [
+            {itemname: 'навигация', href: ''},
+            {itemname: 'о нас', href: '#about'},
+            {itemname: 'новости', href: '#news'},
+            {itemname: 'служба поддержки', href: '#support'},
+            {itemname: 'услуги', href: '#servies'},
+          ])
+        .footer__column
+        .footer__column
+        .footer__column
+      .footer__bottom
