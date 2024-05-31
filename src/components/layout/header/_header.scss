@@ -3,13 +3,13 @@
   margin: 0 auto;
   padding: 0 140px;
   background-color: #fff;
+  box-shadow: 0 10px 20px 0 rgba(31, 32, 65, 0.05);
 }
 .header-container {
   width: 100%;
   display: flex;
-  // margin-left: auto;
+  gap: 20px;
   min-height: 70px;
-  justify-content: space-between;
   align-items: center;
 }
 .header__nav {
@@ -29,13 +29,13 @@
   &-link {
     text-decoration: none;
     color: $dark50;
-    
   }
 }
 .header__title {
   display: flex;
   gap: 13px;
   align-items: center;
+  margin-right: auto;
 }
 .submenu {
   display: flex;
@@ -43,4 +43,14 @@
 .header__login {
   display: flex;
   gap: 20px;
+  color: $dark50;
+  position: relative;
+  & .hatch {
+    height: 30px;
+    width: 1px;
+    background-color: $dark25;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
 }
