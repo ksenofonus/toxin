@@ -10,6 +10,7 @@ include ../components/blocks/buttons/checkbox/rich/_rich.pug
 include ../components/blocks/bullet-list/_bullet-list.pug
 include ../components/blocks/advantage/_advantage.pug
 include ../components/blocks/review/_review.pug
+include ../components/layout/header/_header.pug
 
 
 doctype html
@@ -183,5 +184,6 @@ html(lang='en')
       section.block-container.block-container__layout
         h2.section-title Headers and footers
         include ../components/blocks/logo/_logo.pug
-        include ../components/layout/header/_header.pug
+        +header(false)
+        +header(true)
   script(src="./uikit/uikit.js")
