@@ -1,8 +1,11 @@
 mixin menu(classname, data=[{}])
   ul(class= classname + '__menu')
     each item in data
-      li(class= classname + '__menu-item')
-        a(class= classname + '__menu-link', href= item.href)= item.itemname 
+      if item.href
+        li(class= classname + '__menu-item')
+          a(class= classname + '__menu-link', href= item.href)= item.itemname
+      else 
+        li(class= classname + '__menu-item')= item.itemname
 
 //footer
 mixin footer
@@ -11,16 +14,32 @@ mixin footer
       .footer__top 
         .footer__column
           +logo
-          p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+          p.footer__tagline Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
         .footer__column
+          h3.footer__menu-title навигация
           +menu('footer', [
-            {itemname: 'навигация', href: ''},
             {itemname: 'о нас', href: '#about'},
             {itemname: 'новости', href: '#news'},
             {itemname: 'служба поддержки', href: '#support'},
             {itemname: 'услуги', href: '#servies'},
           ])
         .footer__column
+          h3.footer__menu-title о нас
+          +menu('footer', [
+              {itemname: 'о сервисе', href: '#about_service'},
+              {itemname: 'наша команда', href: '#teem'},
+              {itemname: 'вакансии', href: '#vakancies'},
+              {itemname: 'инвесторы', href: '#serviсes'},
+            ])
         .footer__column
+          h3.footer__menu-title служба поддержки
+          +menu('footer', [
+            {itemname: 'соглашения', href: '#about_service'},
+            {itemname: 'сообщества', href: '#teem'},
+            {itemname: 'связь с нами', href: '#vakancies'}
+          ])
         .footer__column
+          h3.footer__menu-title подписка
+          p Получайте специальные предложения и новости сервиса
+          include ../../../components/blocks/forms/subscription/_subscription.pug
       .footer__bottom
