@@ -1,5 +1,5 @@
 include ../mixins/_mixins-forms.pug
 
-.email-form
-  +label('subscription text field')
-    +field('email', 'subscription', 'Email')(class="text-field email-form")
+mixin subscription
+  .email-form
+    +field('email', 'subscription', 'Email')(class="text-field")

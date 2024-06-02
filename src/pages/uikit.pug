@@ -13,6 +13,7 @@ include ../components/blocks/review/_review.pug
 include ../components/layout/header/_header.pug
 include ../components/layout/footer/_footer.pug
 include ../components/blocks/logo/_logo.pug
+include ../components/blocks/forms/subscription/_subscription.pug
 
 
 doctype html
@@ -63,7 +64,9 @@ html(lang='en')
               .datepicker-filter-container
                 +label('date dropdown')
                   +field('text', 'date', '19 авг - 23 авг')(class='filter-datepicker text-field')
-              include ../components/blocks/forms/subscription/_subscription.pug
+              
+              +label('subscription text field')
+                +subscription
             .forms-block
               .button-container
                 h3.buttons-name checkbox buttons

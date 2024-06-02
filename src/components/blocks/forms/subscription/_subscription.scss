@@ -1,19 +1,18 @@
 @import '../../../sass/mixins/mixins.scss';
 .email-form {
   width: 266px;
-  & label {
-    position: relative;
-      &::after {
-        @include material;
-        position: absolute;
-        top: 50%;
-        right: calc(0% + 15px);
-        content: 'arrow_forward';
-        text-align: center;
-        @include text-gradient;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+  position: relative;
+    &::after {
+      @include material;
+      position: absolute;
+      top: 50%;
+      right: calc(0% + 15px);
+      content: 'arrow_forward';
+      text-align: center;
+      @include text-gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      translate: 0 -50%;
       }
     }
-}
