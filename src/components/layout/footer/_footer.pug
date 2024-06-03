@@ -9,9 +9,9 @@ mixin menu(classname, data=[{}])
 
 //footer
 mixin footer
-  footer.footer
+  footer.footer(class!=attributes.class)
     .footer-container
-      .footer__top 
+      .footer__top
         .footer__column
           +logo
           p.footer__tagline Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
