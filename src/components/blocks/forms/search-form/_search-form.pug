@@ -1,0 +1,14 @@
+.search-form
+  h2 Найдем номера под ваши пожелания
+  .form-container 
+    .datepicker-container
+      +label('прибытие')
+        +field('text', 'date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
+      +label('выезд')
+        +field('text', 'date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
+    +dropdown('guest','search-guest', 'гости', 'Сколько гостей',
+              {'adults': 'Взрослые',
+              'children': 'Дети',
+              'infant': 'Младенцы'
+              }, true)
+    +button('подобрать номер')(class="button__long")

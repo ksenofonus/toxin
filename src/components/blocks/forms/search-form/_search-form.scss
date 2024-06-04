@@ -1,0 +1,19 @@
+.search-form {
+  width: 380px;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 10px 20px 0 $dark5;
+  border-radius: 4px;
+  & h2 {
+    margin-bottom: 20px;
+  }
+  & .button {
+    margin-top: 10px;
+  }
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}

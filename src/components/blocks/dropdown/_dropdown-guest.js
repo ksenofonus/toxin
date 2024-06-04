@@ -41,3 +41,5 @@ rooms.forEach((item) => {
     el.previousElementSibling.classList.remove('dropdown-button_inactive');
   });
 })
+
+module.exports
