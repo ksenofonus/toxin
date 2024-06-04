@@ -1,0 +1,15 @@
+.form-bottom {
+  display: flex;
+  align-items: center;
+  & .button {
+    margin: 0;
+    margin-left: auto;
+  }
+  
+}
+.username,
+.userdate {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
