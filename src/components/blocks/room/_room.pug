@@ -1,0 +1,13 @@
+mixin room (img)
+  .room
+    .room__image 
+      img(src= img)
+    .room__info
+      .room__number
+        //- span №&nbsp;
+        span.number= number
+        |&nbsp;
+        span.room_type= type
+      .room__price
+        span.price #{price}&#8381
+        span &nbsp;в сутки

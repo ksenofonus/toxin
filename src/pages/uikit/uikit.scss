@@ -16,7 +16,7 @@
 @import 'Components/blocks/forms/search-form/search-form.scss';
 @import 'Components/blocks/forms/reg-form/reg-form.scss';
 @import 'Components/blocks/forms/enter/enter.scss';
-@import 'Components/blocks/forms/room/room.scss';
+@import 'Components/blocks/forms/room-search/room-search.scss';
 @import 'Components/blocks/buttons/rating/rating';
 @import 'Components/blocks/range-slider/range-slider';
 @import 'Components/blocks/buttons/button/button';
@@ -27,6 +27,7 @@
 @import 'Components/blocks/buttons/checkbox/rich/rich';
 @import 'Components/blocks/bullet-list/bullet-list';
 @import 'Components/blocks/advantage/advantage';
+@import 'Components/blocks/room/room';
 @import 'Components/blocks/review/review';
 @import 'Components/layout/header/header';
 @import 'Components/layout/footer/footer';
@@ -159,4 +160,20 @@
   @include field-clue;
   content: 'expanded';
   top: -25px;
+}
+.empty {
+  width: 320px;
+  height: 369px;
+  border-radius: 4px;
+  background-color: $dark50;
+}
+.flexbox{
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #e5e5e5;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

@@ -1,4 +1,4 @@
-.room {
+.room__info {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,11 +45,11 @@
   height: 20px;
   border: 1px solid $dark25;
   border-radius: 100%;
-
+  cursor: pointer;
 }
-.room__info {
+.room__number {
   font-weight: 800;
-  & .room__number {
+  & .number {
     font-family: $font-2;
     font-size: 24px;
     &::before {

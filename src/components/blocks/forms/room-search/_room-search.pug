@@ -1,12 +1,11 @@
-//- -const ruble = &#8381;
 
-mixin room(type, number, price)
+mixin room-search(type, number, price)
   .form
     .form-container 
-      .room
-        .room__info
+      .room__info
+        .room__number
           //- span №&nbsp;
-          span.room__number= number
+          span.number= number
           |&nbsp;
           span.room_type= type
         .room__price

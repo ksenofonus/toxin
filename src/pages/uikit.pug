@@ -14,7 +14,8 @@ include ../components/layout/header/_header.pug
 include ../components/layout/footer/_footer.pug
 include ../components/blocks/logo/_logo.pug
 include ../components/blocks/forms/subscription/_subscription.pug
-include ../components/blocks/forms/room/_room.pug
+include ../components/blocks/forms/room-search/_room-search.pug
+include ../components/blocks/room/_room.pug
 
 
 doctype html
@@ -184,13 +185,20 @@ html(lang='en')
                 text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
               })
                 +like(12)(class="like_press")
-      section.block-container.block-container__layout
+      section.block-container.flexbox
         h2.section-title Cards
         +simpleLogo
-        include ../components/blocks/forms/search-form/_search-form.pug
-        include ../components/blocks/forms/reg-form/_reg-form.pug
-        +room('люкс', '888', '9900')
-        include ../components/blocks/forms/enter/_enter.pug
+        .column
+          include ../components/blocks/forms/search-form/_search-form.pug
+          include ../components/blocks/forms/reg-form/_reg-form.pug
+        .column
+          +room-search('люкс', '888', '9900')
+          include ../components/blocks/forms/enter/_enter.pug
+        .column
+          .empty
+          +room('../assets/images/rooms/888.jpg')
+          +room('../assets/images/rooms/840.jpg')
+
       section.block-container.block-container__layout
         h2.section-title Headers and footers
         +simpleLogo
