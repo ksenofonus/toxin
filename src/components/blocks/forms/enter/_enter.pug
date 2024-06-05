@@ -1,0 +1,10 @@
+.form
+  h2 Войти
+  .form-container
+    .userdate 
+      +field('email', 'useremail', 'Email')(class="text-field")
+      +field('password', 'userpassword', 'Пароль')(class="text-field")
+    +button('войти')(class="button__long")
+    .form-bottom
+      p Нет аккаунта на Toxin?
+      +button('создать')(class="button__border")

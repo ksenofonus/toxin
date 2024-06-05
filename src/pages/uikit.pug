@@ -14,6 +14,7 @@ include ../components/layout/header/_header.pug
 include ../components/layout/footer/_footer.pug
 include ../components/blocks/logo/_logo.pug
 include ../components/blocks/forms/subscription/_subscription.pug
+include ../components/blocks/forms/room/_room.pug
 
 
 doctype html
@@ -76,8 +77,8 @@ html(lang='en')
               .button-container
                 h3.buttons-name radio buttons
                 .radio
-                  +radio('sex', 'male', 'Мужчина', 'true')(class='radio__item')
-                  +radio('sex', 'female', 'Женщина')(class='radio__item')
+                  +radio('sex', 'man', 'Мужчина', 'true')(class='radio__item')
+                  +radio('sex', 'woman', 'Женщина')(class='radio__item')
               .button-container
                 h3.buttons-name toggle
                 +toggle('offer-on', 'Получать спецпредложения', 'checked')
@@ -188,6 +189,8 @@ html(lang='en')
         +simpleLogo
         include ../components/blocks/forms/search-form/_search-form.pug
         include ../components/blocks/forms/reg-form/_reg-form.pug
+        +room('люкс', '888', '9900')
+        include ../components/blocks/forms/enter/_enter.pug
       section.block-container.block-container__layout
         h2.section-title Headers and footers
         +simpleLogo

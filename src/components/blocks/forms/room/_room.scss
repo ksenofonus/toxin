@@ -1,0 +1,71 @@
+.room {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sum-price__row {
+  display: flex;
+  justify-content: space-between;
+  color: $dark75;
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+.sum-price__calc {
+  & span {
+    &:first-child {
+      width: 214px;
+    }
+  }
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.total {
+  display: flex;
+  justify-content: flex-start;
+  & span {
+    display: block;
+    flex-shrink: 0;
+    &:nth-child(2) {
+      border-bottom: 1px dotted $dark;
+      flex-grow: 1;
+    }
+  }
+  font-weight: 800;
+  font-size: 19px;
+}
+
+.information {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $dark25;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $dark25;
+  border-radius: 100%;
+
+}
+.room__info {
+  font-weight: 800;
+  & .room__number {
+    font-family: $font-2;
+    font-size: 24px;
+    &::before {
+      content: '№ ';
+      font-size: 14px;
+    }
+  }
+  & .room_type {
+    color: $purple;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}
+.room__price {
+  color: $dark50;
+  & .price {
+    font-weight: 800;
+  }
+}
