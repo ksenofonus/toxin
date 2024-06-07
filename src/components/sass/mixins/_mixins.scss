@@ -52,6 +52,7 @@
 @mixin head-font {
   font-family: $font-2;
   color: $dark;
+  font-weight: 700;
 }
 @mixin main-font {
   font-family: $font-1;

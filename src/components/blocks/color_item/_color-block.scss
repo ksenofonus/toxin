@@ -36,9 +36,13 @@
   }
   & .color__name {
     text-transform: capitalize;
-    line-height: 1.5;
   }
   & .color__prop {
+    font-size: 19px;
     width: 164px;
+    line-height: 1.5;
+  }
+  &__hex {
+    font-family: $font-2;
   }
 }
