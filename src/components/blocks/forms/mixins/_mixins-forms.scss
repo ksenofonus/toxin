@@ -3,7 +3,7 @@
   box-sizing: border-box;
   height: 44px;
   width: 100%;
-  padding-left: 15px;
+  padding-left: 14px;
   padding-right: 15px;
   border-radius: 4px;
   border: 1px solid $dark25;
@@ -34,12 +34,14 @@
 
 .text-field {
   @include field-style;
+  line-height: 129%;
   &::placeholder{
     color: $dark25;
     }
   &:hover,
   &:focus {
     @include focus-field;
+    line-height: 171%;
   }
 }
 
