@@ -11,13 +11,23 @@
 }
 @font-face {
   font-family: 'Quicksand';
-  src: url('../../../assets/fonts/Quicksand-VariableFont_wght.ttf');
-  src: url('../../../assets/fonts/Quicksand-Light.eot');
-  src: url('../../../assets/fonts/Quicksand-Light.eot?#iefix') format('embedded-opentype'),
-      url('../../../assets/fonts/Quicksand-Light.woff2') format('woff2'),
-      url('../../../assets/fonts/Quicksand-Light.woff') format('woff'),
-      url('../../../assets/fonts/Quicksand-Light.svg') format('svg');
-  font-weight: 300;
+  src: url('../../../assets/fonts/Quicksand-Regular.eot');
+  src: url('../../../assets/fonts/Quicksand-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../../../assets/fonts/Quicksand-Regular.woff2') format('woff2'),
+      url('../../../assets/fonts/Quicksand-Regular.woff') format('woff'),
+      url('../../../assets/fonts/Quicksand-Regular.svg#Quicksand-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('../../../assets/fonts/Quicksand-Bold.eot');
+  src: url('../../../assets/fonts/Quicksand-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../../../assets/fonts/Quicksand-Bold.woff2') format('woff2'),
+      url('../../../assets/fonts/Quicksand-Bold.woff') format('woff'),
+      url('../../../assets/fonts/Quicksand-Bold.svg#Quicksand-Bold') format('svg');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
