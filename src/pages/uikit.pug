@@ -38,7 +38,7 @@ html(lang='en')
           +color-item('green', '#6FCF97', 'color__rect_green')
         .text-container
           include ../components/blocks/text-block/_text-block.pug
-      section.block-container
+      section.block-container.forms
         h2.section-title Form elements
         +simpleLogo
         .forms-top
@@ -47,7 +47,7 @@ html(lang='en')
               +label('text field')(class="text-field_default")
                 +field('text', 'email', 'Email')(class="text-field text-field_default")
               +label('text field')(class="text-field_hover")
-                +field('text', 'text-focus', 'This is preaty awesome')(class="text-field")
+                +field('text', 'text-focus', 'This is pretty awesome')(class="text-field")
               +dropdown('guest','guestdrop', 'Dropdown', 'Сколько гостей',
                           {'adults': 'Взрослые',
                             'children': 'Дети',
