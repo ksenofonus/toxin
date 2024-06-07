@@ -3,8 +3,30 @@
   background-color: #fff;
   border-radius: 4px;
   overflow: hidden;
+  &_active {
+    & .room__image::before {
+      @include expand-more;
+      z-index: 1;
+      top: 45%;
+      left: 10px;
+      right: auto;
+      transform: rotate(90deg);
+      color: #fff;
+    }
+    & .room__image::after {
+      @include expand-more;
+      z-index: 1;
+      top: 45%;
+      right: 10px;
+      left: auto;
+      transform: rotate(-90deg);
+      color: #fff;
+    }
+  }
   &__image {
     position: relative;
+    height: 151px;
+    
   }
   &-container {
     padding: 18px;

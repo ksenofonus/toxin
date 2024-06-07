@@ -40,9 +40,11 @@
     align-items: center;
     padding-left: 10px;
     position: relative;
-    @include expand-more;
+    
     &::after {
+      @include expand-more;
       top: 25%;
+      
     }
   }
   &__menu-option {

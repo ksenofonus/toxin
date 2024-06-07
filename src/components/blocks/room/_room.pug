@@ -1,6 +1,6 @@
 include ../../blocks/img-slider/_img-slider.pug
 mixin room (url, number, price, i, review, type)
-  .room
+  .room(class!=attributes.class)
     .room__image
       img(src= url)
       +carousel

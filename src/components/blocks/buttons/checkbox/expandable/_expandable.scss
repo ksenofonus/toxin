@@ -3,8 +3,8 @@
   position: relative;
   width: 266px;
   cursor: pointer;
-  @include expand-more;
   &::after {
+    @include expand-more;
     top: 0;
   }
 }

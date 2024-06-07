@@ -59,11 +59,9 @@
   color: $dark;
 }
 @mixin expand-more {
-  &::after {
-    @include material;
-    position: absolute;
-    content: "expand_more";
-    top: 50%;
-    right: calc(0% + 15px);
-  }
+  @include material;
+  position: absolute;
+  content: "expand_more";
+  top: 50%;
+  right: calc(0% + 15px);
 }

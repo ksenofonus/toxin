@@ -1,8 +1,8 @@
-@import '../../sass/mixins/mixins';
-
 .datepicker-container .field-name{
   position: relative;
-  @include expand-more;
+  &::after {
+    @include expand-more;
+  }
   width: 150px;
   & .datepicker {
     width: 100%;
@@ -19,7 +19,9 @@
 .datepicker-filter-container .field-name  {
   position: relative;
   width: 266px;
-  @include expand-more;
+  &::after {
+    @include expand-more;
+  }
   & .filter-datepicker {
     width: inherit;
     text-transform: lowercase;
