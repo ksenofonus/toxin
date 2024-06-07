@@ -21,6 +21,8 @@
   width: 266px;
   &::after {
     @include expand-more;
+    top: 50%;
+    
   }
   & .filter-datepicker {
     width: inherit;

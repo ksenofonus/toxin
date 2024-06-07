@@ -6,7 +6,7 @@
       @include material;
       position: absolute;
       top: 50%;
-      right: calc(0% + 15px);
+      right: calc(0% + 10px);
       content: 'arrow_forward';
       text-align: center;
       @include text-gradient;

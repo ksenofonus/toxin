@@ -56,19 +56,19 @@ html(lang='en')
                           true)(class='default-dropdown')
               +label('masked text field')(class="text-field_default")
                 +field('text', 'masked', 'ДД.ММ.ГГГГ')(class='text-field masked-date')
-              
-              .datepicker-container
-                +label('date dropdown')
-                  +field('text', 'date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
-                .disable-date
-                  h3.disable-date_name date dropdown
-                  .disable-date_field
-              .datepicker-filter-container
-                +label('date dropdown')
-                  +field('text', 'date', '19 авг - 23 авг')(class='filter-datepicker text-field')
-              
-              +label('subscription text field')
-                +subscription
+              .datepick-wrapper
+                .datepicker-container
+                  +label('date dropdown')
+                    +field('text', 'date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
+                  .disable-date
+                    h3.disable-date_name date dropdown
+                    .disable-date_field
+                .datepicker-filter-container
+                  +label('filter date dropdown')
+                    +field('text', 'date', '19 авг - 23 авг')(class='filter-datepicker text-field')
+                
+                +label('subscription text field')
+                  +subscription
             .forms-block
               .button-container
                 h3.buttons-name checkbox buttons
