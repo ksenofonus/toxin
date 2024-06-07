@@ -1,0 +1,17 @@
+.carousel {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  z-index: 1;
+  &__item {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    &_active {
+      background-color: #fff;
+    }
+  }
+}

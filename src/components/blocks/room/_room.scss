@@ -1,6 +1,11 @@
 .room {
   width: 270px;
   background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  &__image {
+    position: relative;
+  }
   &-container {
     padding: 18px;
     display: flex;

@@ -1,8 +1,10 @@
+include ../../blocks/img-slider/_img-slider.pug
 mixin room (url, number, price, i, review, type)
   .room
-    .room__image 
+    .room__image
       img(src= url)
-    .room-container 
+      +carousel
+    .room-container
       .room__info
         .room__number
           //- span №&nbsp;
@@ -12,8 +14,8 @@ mixin room (url, number, price, i, review, type)
         .room__price
           span.price #{price}&#8381
           span &nbsp;в сутки
-      .room__rating 
+      .room__rating
         +star(i)
-        .room__review 
-          span #{review} 
+        .room__review
+          span #{review}
           span отзывов
