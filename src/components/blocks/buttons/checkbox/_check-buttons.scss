@@ -1,7 +1,10 @@
 @import '../../../sass/mixins/mixins';
 .checkbox, .radio {
   display: flex;
-  margin-bottom: 5px;
+  gap: 10px;
+}
+.radio {
+  min-height: 24px;
 }
 .label-container{
   display: flex;
@@ -12,17 +15,29 @@
   font-size: 14px;
   color: $dark50;
   cursor: pointer;
+  line-height: 147%;
   &::first-letter {
     text-transform: uppercase;
   }
 }
 //checkbox
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 240px;
+}
+.toggle-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 61px;
+}
 input[type="checkbox"] {
   @include input-style-reset;
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  margin-right: 10px;
   cursor: pointer;
   flex-shrink: 0;
   & + label {
@@ -83,7 +98,6 @@ input[type="checkbox"] {
   @include input-style-reset;
   width: 20px;
   height: 20px;
-  margin-right: 10px;
   cursor: pointer;
   border-radius: 100%;
   transition: all ease .5s;
@@ -111,8 +125,9 @@ input[type="checkbox"] {
   & + .radio-label {
     cursor: pointer;
     color: $dark50;
+    line-height: 115%;
     &:not(:last-child) {
-      margin-right: 20px;
+      margin-right: 10px;
     }
   }
 }

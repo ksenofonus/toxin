@@ -82,6 +82,10 @@
   flex-wrap: wrap;
   gap: 16px;
   flex-grow: 1;
+  &:nth-child(2) {
+    max-width: 266px;
+    gap: 0;
+  }
 }
 .row {
   display: flex;
@@ -128,8 +132,13 @@
   width: 250px;
   margin-bottom: 20px;
 }
-.button-container:not(:last-child) {
-  margin-bottom: 20px;
+.button-container{
+  &:not(:last-child) {
+    margin-bottom: 33px;
+  }
+  &:last-child {
+    margin-top: 3px;
+  }
 }
 #data-container ul{
   display: none;
@@ -187,4 +196,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.button-container:nth-child(3) h3 {
+  letter-spacing: -0.5px;
 }

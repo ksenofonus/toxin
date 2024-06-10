@@ -72,9 +72,10 @@ html(lang='en')
             .forms-block
               .button-container
                 h3.buttons-name checkbox buttons
-                +checkbox('smoking', 'Можно курить')
-                +checkbox('pets', 'Можно с питомцами', 'checked')
-                +checkbox('guests', 'Можно пригласить гостей (до 10 человек)', 'checked')
+                .checkbox-container
+                  +checkbox('smoking', 'Можно курить')
+                  +checkbox('pets', 'Можно с питомцами', 'checked')
+                  +checkbox('guests', 'Можно пригласить гостей (до 10 человек)', 'checked')
               .button-container
                 h3.buttons-name radio buttons
                 .radio
@@ -82,8 +83,9 @@ html(lang='en')
                   +radio('sex', 'woman', 'Женщина')(class='radio__item')
               .button-container
                 h3.buttons-name toggle
-                +toggle('offer-on', 'Получать спецпредложения', 'checked')
-                +toggle('offer-off', 'Получать спецпредложения')
+                .toggle-container
+                  +toggle('offer-on', 'Получать спецпредложения', 'checked')
+                  +toggle('offer-off', 'Получать спецпредложения')
               .button-container
                 h3.buttons-name like button
                 .like-container
