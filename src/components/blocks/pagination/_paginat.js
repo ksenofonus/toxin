@@ -23,7 +23,7 @@ $("#pagination-container").pagination({
   autoHideNext: true,
   pageSize: 12,
   showNavigator: true,
-  formatNavigator: '<%= rangeStart %> - <%= rangeEnd %> из 100+ вариантов аренды',
+  formatNavigator: '<%= rangeStart %> &ndash; <%= rangeEnd %> из 100+ вариантов аренды',
   pageRange: 1,
   nextText: '',
   prevText: '',

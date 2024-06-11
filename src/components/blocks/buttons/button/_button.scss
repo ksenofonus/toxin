@@ -1,12 +1,11 @@
 
 .button {
-  height: 44px;
+  padding: 15px 20px 15px 19px;
   border-radius: 22px;
   font-weight: 700;
   font-size: 12px;
   text-transform: uppercase;
   color: #fff;
-  padding: 15px 20px;
   flex-shrink: 0;
   @include back-gradient;
   cursor: pointer;
@@ -19,14 +18,16 @@
   &__border {
     @include border-gradient;
     color: $purple;
+    padding: 13px 19px 13px 16px;
   }
   &__text {
     border: none;
     width: auto;
     height: auto;
+    text-align: left;
     background: #fff;
     color: $purple;
-    padding: 0;
+    padding: 2px 2px 0 0;
     &:active,
     &:hover,
     &:focus,
@@ -42,7 +43,7 @@
       @include material;
       position: absolute;
       top: 50%;
-      right: calc(0% + 15px);
+      right: calc(0% + 10px);
       content: 'arrow_forward';
       text-align: center;
       color: #fff;

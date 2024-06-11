@@ -1,12 +1,15 @@
 @import '../../../assets/lib/pagination/_pagination';
 
-.toxin-theme {
+
+#pagination-container .toxin-theme {
   flex-direction: column-reverse;
+  font-family: $font-1;
   & div.paginationjs-nav {
     @include main-font;
     color: $dark75;
     font-size: 14px;
-    margin-left: 10px;
+    margin-left: 5px;
+    line-height: 172%;
   }
   & div.paginationjs-pages{
     margin-left: 0;
@@ -27,6 +30,7 @@
           height: 40px;
           color: $dark50;
           border-radius: 100%;
+          font-size: 12px;
         }
       &.toxin-theme_pages {
         &__active > a {

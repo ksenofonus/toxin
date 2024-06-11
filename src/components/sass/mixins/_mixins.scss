@@ -12,7 +12,7 @@
   background:
     linear-gradient(#fff, #fff) padding-box,
     linear-gradient($gradient) border-box;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
 }
 
 @mixin input-style-reset {

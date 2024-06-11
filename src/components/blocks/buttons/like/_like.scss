@@ -21,6 +21,7 @@
   }
   &_press {
     @include border-gradient;
+    border-width: 1px;
     color: $purple;
     & .like__symbol {
       font-size: 10px;

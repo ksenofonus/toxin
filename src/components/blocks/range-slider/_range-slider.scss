@@ -6,7 +6,7 @@
   &_head {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 19px;
   }
   &_price {
     display: flex;
@@ -29,13 +29,13 @@
     width: 100%;
     border-color: $dark25;
     & .noUi-handle {
-      width: 12px;
-      height: 12px;
+      width: 16px;
+      height: 16px;
       background-color: $green;
       box-shadow: none;
       border: 2px solid #fff;
       border-radius: 100%;
-      top: -4px;
+      top: -6px;
       right: -6px;
       &::after,
       &::before {
