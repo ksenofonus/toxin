@@ -16,6 +16,7 @@ mixin checkbox(name, text, checked)
 
 //- radio
 mixin radio(name, value, text, checked)
+  .radio__item
     input(class!=attributes.class)(
       type="radio"
       name= name

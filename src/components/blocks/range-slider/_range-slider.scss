@@ -19,24 +19,29 @@
     font-weight: 700;
     font-size: 12px;
   }
-  & .noUi-connect {
-    background-color: $green;
-    border: 1px solid $green;
-    height: 6px;
+  & .noUi-connects {
+    overflow: visible;
+    & .noUi-connect {
+      background-color: $green;
+      border: 1px solid $green;
+      margin-top: -1px;
+      height: 6px;
+    }
   }
   & .noUi-target {
     height: 6px;
     width: 100%;
     border-color: $dark25;
+    background-color: #fff;
     & .noUi-handle {
-      width: 16px;
-      height: 16px;
+      width: 17px;
+      height: 17px;
       background-color: $green;
       box-shadow: none;
-      border: 2px solid #fff;
+      border: 3px solid #fff;
       border-radius: 100%;
-      top: -6px;
-      right: -6px;
+      top: -7px;
+      right: -7px;
       &::after,
       &::before {
         display: none;
