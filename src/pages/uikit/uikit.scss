@@ -82,9 +82,12 @@
   flex-wrap: wrap;
   gap: 16px;
   flex-grow: 1;
-  &:nth-child(2) {
+  & .check-buttons {
     max-width: 266px;
     gap: 33px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 26px;
     & .button-container:nth-child(3) h3 {
       letter-spacing: -0.5px;
     }
@@ -104,11 +107,17 @@
   justify-content: space-between;
   flex-wrap: nowrap;
   row-gap: 100px;
-  column-gap: 40px;
+  column-gap: 73px;
   flex-grow: 1;
   min-height: 250px;
   &:not(:last-child) {
     margin-bottom: 96px;
+  }
+  &_2 {
+    justify-content: flex-end;
+    & .forms-block:first-child {
+      margin-right: auto;
+    }
   }
 }
 .forms-bottom {
@@ -206,4 +215,7 @@
 
 #guestdrop {
   margin-bottom: 2px;
+}
+#roomchoice-2 {
+  margin-top: -1px;
 }
