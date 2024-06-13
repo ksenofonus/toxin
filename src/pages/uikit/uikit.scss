@@ -113,6 +113,9 @@
   &:not(:last-child) {
     margin-bottom: 96px;
   }
+  &_1 .button-container:last-child{
+    margin-top: -1px;
+  }
   &_2 {
     justify-content: flex-end;
     & .forms-block:first-child {
