@@ -84,7 +84,7 @@
   flex-grow: 1;
   & .check-buttons {
     max-width: 266px;
-    gap: 33px;
+    gap: 34px;
     display: flex;
     flex-direction: column;
     margin-left: 26px;
@@ -92,7 +92,7 @@
       letter-spacing: -0.5px;
     }
     & .button-container:last-child{
-      margin-top: 3px;
+      margin-top: 2px;
     }
   }
   &:last-child {
