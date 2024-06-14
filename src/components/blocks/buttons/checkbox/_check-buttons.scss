@@ -2,7 +2,6 @@
 .checkbox, .radio {
   display: flex;
   gap: 10px;
-  min-height: 20px;
 }
 // .radio {
 //   min-height: 24px;
@@ -10,7 +9,7 @@
 .label-container{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .checkbox-label{
   font-size: 14px;
@@ -25,8 +24,8 @@
 .checkbox-container {
   display: flex;
   flex-direction: column;
-  gap: 11px;
-  max-width: 240px;
+  gap: 10px;
+  max-width: 254px;
 }
 .toggle-container {
   display: flex;
@@ -87,7 +86,7 @@ input[type="checkbox"] {
       border-color: $purple;
       &::after {
         @include back-gradient;
-        left: calc(100% - 10px);
+        left: calc(100% - 9px);
       }
     }
   }

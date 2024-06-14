@@ -76,7 +76,7 @@ html(lang='en')
                   .checkbox-container
                     +checkbox('smoking', 'Можно курить')
                     +checkbox('pets', 'Можно с питомцами', 'checked')
-                    +checkbox('guests', 'Можно пригласить гостей (до 10 человек)', 'checked')
+                    +checkbox('guests', 'Можно пригласить гостей (до\u00A010 человек)', 'checked')
                 .button-container
                   h3.buttons-name radio buttons
                   .radio
@@ -159,13 +159,16 @@ html(lang='en')
                 +checkbox("shampoo1", "шампунь")
             .forms-block
               .button-container
-                h3.buttons-name rich checkbox buttons
-                +checkbox('hall', 'Широкий коридор')(class="checkbox-rich")
-                  +checkbox-rich('Ширина коридоров в номере не\u00A0менее 91 см.')
-                +checkbox('assistant', 'Помощник для инвалидов')(class="checkbox-rich")
-                  +checkbox-rich('На 1 этаже вас встретит специалист и проводит до номера.')
+                .rich-container
+                  h3.buttons-name rich checkbox buttons
+                  .checkbox-container
+                    +checkbox('hall', 'Широкий коридор')(class="checkbox-rich")
+                      +checkbox-rich('Ширина коридоров в номере не\u00A0менее 91 см.')
+                    +checkbox('assistant', 'Помощник для инвалидов')(class="checkbox-rich")
+                      +checkbox-rich('На 1 этаже вас встретит специалист и проводит до номера.')
             .forms-block
               .button-container
+                .check-buttons
                   h3.buttons-name bullet list
                   +bullet(['нельзя с питомцами', 'без вечеринок и мероприятий', 'время прибытия \u2014 после 13:00, а выезд до 12:00'])
           .row
