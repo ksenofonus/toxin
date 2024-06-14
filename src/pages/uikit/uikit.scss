@@ -106,23 +106,31 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  row-gap: 100px;
   column-gap: 73px;
   flex-grow: 1;
   min-height: 250px;
-  &:not(:last-child) {
-    margin-bottom: 96px;
-  }
-  &_1 .button-container:last-child{
-    margin-top: -1px;
-  }
-  &_2 {
-    justify-content: flex-end;
-    & .forms-block:first-child {
-      margin-right: auto;
+  
+  &-1 {
+    margin-bottom: 97px;
+    & .button-container:last-child{
+      margin-top: -1px;
     }
   }
+  &-2 {
+    justify-content: flex-end;
+    margin-bottom: 70px;
+    & .forms-block:first-child {
+      margin-right: auto;
+      margin-bottom: 40px;
+    }
+  }
+  &-3 {
+    & .forms-block:first-child{
+      gap: 29px;
+  }
+  }
 }
+
 .forms-bottom {
   display: flex;
   justify-content: space-between;

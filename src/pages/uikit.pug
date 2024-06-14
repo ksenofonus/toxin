@@ -42,7 +42,7 @@ html(lang='en')
         h2.section-title Form elements
         +simpleLogo
         .forms-top
-          .row.row_1
+          .row.row-1
             .forms-block
               +label('text field')(class="text-field_default")
                 +field('text', 'email', 'Email')(class="text-field text-field_default")
@@ -113,7 +113,7 @@ html(lang='en')
               .button-container
                 h3.buttons-name pagination
                 include ../components/blocks/pagination/_paginat.pug
-          .row.row_2
+          .row.row-2
             .forms-block
               +dropdown('roomchoice','roomchoice-1', 'Dropdown', '2 спальни, 2 кровати...',
                             {'bedroom': 'спальни',
@@ -141,7 +141,7 @@ html(lang='en')
                               'infant': 'Младенцы'
                             },
                             true)
-          .row
+          .row.row-3
             .forms-block
               +expandable-checkbox
                 +checkbox("breakfast", "завтрак")

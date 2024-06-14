@@ -11,6 +11,8 @@
 .exp-checkbox__container {
   display: none;
   &_active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 }

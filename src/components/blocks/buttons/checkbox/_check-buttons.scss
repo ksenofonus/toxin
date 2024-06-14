@@ -2,6 +2,7 @@
 .checkbox, .radio {
   display: flex;
   gap: 10px;
+  min-height: 20px;
 }
 .radio {
   min-height: 24px;
