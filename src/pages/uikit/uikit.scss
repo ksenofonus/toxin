@@ -84,16 +84,14 @@
   flex-grow: 1;
   & .check-buttons {
     max-width: 266px;
-    gap: 34px;
+    gap: 37px;
     display: flex;
     flex-direction: column;
     margin-left: 26px;
     & .button-container:nth-child(3) h3 {
       letter-spacing: -0.5px;
     }
-    & .button-container:last-child{
-      margin-top: 2px;
-    }
+    
   }
   &:last-child {
     gap: 37px;
@@ -165,7 +163,9 @@
   width: 250px;
   margin-bottom: 31px;
 }
-
+.toggle-container {
+  margin-bottom: 3px;
+}
 #data-container ul{
   display: none;
 }
