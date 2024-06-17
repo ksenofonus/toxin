@@ -1,4 +1,6 @@
 @import '../abstracts/_variables';
+
+
 @mixin text-gradient {
   background: -webkit-linear-gradient($gradient);
   -webkit-background-clip: text;
@@ -58,6 +60,32 @@
   font-family: $font-1;
   color: $dark;
 }
+
+@mixin h3 {
+  @include main-font;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+@mixin h1 {
+  @include head-font;
+  font-size: 24px;
+  line-height: 30px;
+}
+@mixin h2 {
+  @include head-font;
+  font-size: 19px;
+  line-height: 24px;
+}
+@mixin bodyfont {
+  @include main-font;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  color: $dark75;
+}
+
 @mixin expand-more {
   @include material;
   position: absolute;

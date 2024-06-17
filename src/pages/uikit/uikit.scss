@@ -39,7 +39,7 @@
 }
 .block-container {
   position: relative;
-  padding: 145px 190px 145px 150px;
+  padding: 145px 189px 145px 150px;
   display: flex;
   width: 100%;
   height: auto;
@@ -73,7 +73,7 @@
   width: auto;
   display: flex;
   flex-direction: column;
-  gap: 47px;
+  gap: 50px;
 }
 .forms {
   padding: 138px 140px 140px 141px;
@@ -90,7 +90,7 @@
   flex-grow: 1;
   & .check-buttons {
     max-width: 266px;
-    gap: 37px;
+    gap: 36px;
     display: flex;
     flex-direction: column;
     & .button-container:nth-child(3) h3 {

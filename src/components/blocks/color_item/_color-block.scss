@@ -34,13 +34,14 @@
   }
   & .color__name {
     text-transform: capitalize;
+    line-height: 28px;
   }
   & .color__prop {
-    font-size: 19px;
+    @include h2;
     width: 164px;
-    line-height: 1.5;
   }
   &__hex {
-    font-family: $font-2;
+    font-weight: 400;
+    line-height: 28px;
   }
 }

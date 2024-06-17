@@ -11,22 +11,22 @@
     color: $dark25;
     //fix width for first name
   }
-  &:first-child {
-    font-size: 24px;
+}
+.paragraphs {
+  margin-top: -3px;
+  & .text__sentence{
+    @include bodyfont;
   }
-  &:last-child {
-    @include main-font;
-    color: $dark75;
-    margin-top: -5px;
+  & .text__name {
+    @include bodyfont;
+    color: $dark25;
   }
 }
-
 .head {
   &-1 {
-    line-height: 1.3;
+    line-height: 30px;
     & .text__sentence{
-      font-weight: 700;
-      @include head-font;
+      @include h1;
     }
     & .text__name {
       font-size: 24px;
@@ -34,8 +34,7 @@
   }
   &-2 {
     & .text__sentence{
-      @include head-font;
-      font-size: 19px;
+      @include h2;
     }
     & .text__name {
       font-size: 19px;
@@ -43,12 +42,11 @@
   }
   &-3 {
     & .text__sentence{
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
+      @include h3;
     }
     & .text__name {
       font-size: 12px;
+      line-height: 15px;
     }
   }
 }

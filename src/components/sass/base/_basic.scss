@@ -10,21 +10,13 @@ ul {
   list-style: none;
 }
 h1 {
-  margin: 0;
-  padding: 0;
-  @include main-font;
-  font-size: 24px;
-  font-weight: 700;
+  @include h1;
 }
 h2 {
-  @include head-font;
-  font-size: 19px;
+  @include h2;
 }
 h3 {
-  @include main-font;
-  font-weight: 700;
-  font-size: 12px;
-  text-transform: uppercase;
+  @include h3;
 }
 
 body {
@@ -53,9 +45,8 @@ button {
 }
 legend,
 h3.buttons-name {
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 12px;
+  @include h3;
   width: 100%;
   margin-bottom: 11px;
+  
 }
