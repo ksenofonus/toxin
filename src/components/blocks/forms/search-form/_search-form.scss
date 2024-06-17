@@ -1,11 +1,16 @@
+
 .form {
   width: 380px;
   background-color: #fff;
-  padding: 30px;
+  padding: 40px 30px;
   box-shadow: 0 10px 20px 0 $dark5;
   border-radius: 4px;
-  & h2 {
+  &__title {
     margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 30px;
+    font-family: $openSans;
+    font-weight: bold;
   }
   & .button {
     margin-top: 10px;

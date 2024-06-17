@@ -1,12 +1,8 @@
-@import 'Components/sass/base/basic';
-@import 'Components/sass/abstracts/variables';
-
 .text {
   display: flex;
   gap: 30px;
   &__sentence {
     max-width: 338px;
-    
   }
   &__name {
     width: 37px;

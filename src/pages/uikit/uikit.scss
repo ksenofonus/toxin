@@ -47,11 +47,17 @@
   justify-content: space-between;
   &__layout {
     padding: 140px 0px;
-    background-color: #e5e5e5;
+    background-color: f4f4f6;
     display: flex;
     flex-direction: column;
     gap: 50px;
     align-items: center;
+  }
+  &__cards{
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #e5e5e5;
+    padding: 150px 140px;
   }
 }
 .section-title {
@@ -212,11 +218,7 @@
   border-radius: 4px;
   background-color: $dark50;
 }
-.flexbox{
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: #e5e5e5;
-}
+
 .column {
   display: flex;
   flex-direction: column;
