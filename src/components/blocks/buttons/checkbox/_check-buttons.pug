@@ -30,7 +30,7 @@ mixin radio(name, value, text, checked)
 
 //-toggle
 mixin toggle(name, text, checked)
-  .checkbox
+  .checkbox.toggle
     input(class!=attributes.class)(
       type="checkbox"
       name= name

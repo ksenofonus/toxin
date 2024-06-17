@@ -1,7 +1,11 @@
 @import '../../../sass/mixins/mixins';
 .checkbox, .radio {
   display: flex;
+  gap: 20px;
+}
+.toggle {
   gap: 10px;
+  margin-bottom: 3px;
 }
 // .radio {
 //   min-height: 24px;
@@ -96,9 +100,7 @@ input[type="checkbox"] {
 .radio__item {
   display: flex;
   gap: 10px;
-  &:not(:last-child) {
-    margin-right: 10px;
-  }
+  
   & input[type="radio"] {
     @include input-style-reset;
     width: 20px;

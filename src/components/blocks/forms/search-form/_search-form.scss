@@ -1,9 +1,9 @@
 
 .form {
-  width: 380px;
+  width: 378px;
   background-color: #fff;
-  padding: 41px 30px;
-  box-shadow: 0 10px 20px 0 $dark5;
+  padding: 39px 29px 29px;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);;
   border-radius: 4px;
   &__title {
     margin-bottom: 16px;
@@ -12,6 +12,9 @@
     font-family: $openSans;
     font-weight: bold;
   }
+  
+}
+.search {
   & .button {
     margin-top: 12px;
     padding-right: 3px;
