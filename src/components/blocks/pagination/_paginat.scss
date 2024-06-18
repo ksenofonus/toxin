@@ -4,6 +4,7 @@
 #pagination-container .toxin-theme {
   flex-direction: column-reverse;
   font-family: $font-1;
+  line-height: 24px;
   & div.paginationjs-nav {
     @include main-font;
     color: $dark75;

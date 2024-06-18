@@ -1,25 +1,32 @@
 @import '../../../../sass/mixins/_mixins';
 .exp-checkbox {
+  
   &__header{
     position: relative;
     width: 266px;
     cursor: pointer;
     &::after {
       @include expand-more;
-      top: 0;
+      translate: 0 -50%;
+    }
+    & h3 {
+      margin-bottom: 17px;
     }
   }
   &__container {
     display: none;
   }
   &_active {
+    .exp-checkbox__header::after {
+      rotate: 180deg;
+    }
     .exp-checkbox__container {
       display: flex;
       flex-direction: column;
       gap: 10px;
-    }
-    .exp-checkbox__header::after {
-      rotate: 180deg;
-    }
+      & .checkbox-label::first-letter {
+          text-transform: uppercase;
+        }
   }
+}
 }

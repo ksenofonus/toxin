@@ -3,16 +3,18 @@
 
 .range-slider {
   width: 266px;
+  min-height: 47px;
   &_head {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 19px;
+    margin-bottom: 24px;
   }
   &_price {
     display: flex;
     justify-content: space-between;
     color: $dark50;
     font-size: 12px;
+    line-height: 15px;
   }
   &_title {
     text-transform: uppercase;

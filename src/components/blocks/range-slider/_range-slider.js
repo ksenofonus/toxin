@@ -9,7 +9,7 @@ noUiSlider.create(sliderFormat, {
     connect: true,
     step: 50,
     range: {
-        'min': [300],
+        'min': [200],
         'max': [15500]
     },
     format: wNumb({

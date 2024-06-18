@@ -70,7 +70,7 @@ html(lang='en')
                 +label('subscription text field')
                   +subscription
             .forms-block
-              .check-buttons
+              .buttons-wrapper
                 .button-container
                   h3.buttons-name checkbox buttons
                   .checkbox-container
@@ -98,21 +98,22 @@ html(lang='en')
                     +star(4)
                     +star(5)
             .forms-block
-              .button-container
-                include ../components/blocks/range-slider/_range-slider.pug
-              .button-container
-                h3.buttons-name buttons
-                .small-buttons
-                  +button("click me")
-                  +button("click me")(class="button_active")
-                  +button("click me")(class="button__border")
-                  +button("click me")(class="button_active button__border")
-                  +button("click me")(class="button__text")
-                  +button("click me")(class="button__text button__text_active")
-                +button("перейти к оплате")(class="button__long")
-              .button-container
-                h3.buttons-name pagination
-                include ../components/blocks/pagination/_paginat.pug
+              .buttons-wrapper
+                .button-container
+                  include ../components/blocks/range-slider/_range-slider.pug
+                .button-container
+                  h3.buttons-name buttons
+                  .small-buttons
+                    +button("click me")
+                    +button("click me")(class="button_active")
+                    +button("click me")(class="button__border")
+                    +button("click me")(class="button_active button__border")
+                    +button("click me")(class="button__text")
+                    +button("click me")(class="button__text button__text_active")
+                  +button("перейти к оплате")(class="button__long")
+                .button-container
+                  h3.buttons-name pagination
+                  include ../components/blocks/pagination/_paginat.pug
           .row.row-2
             .forms-block
               +dropdown('roomchoice','roomchoice-1', 'Dropdown', '2 спальни, 2 кровати...',

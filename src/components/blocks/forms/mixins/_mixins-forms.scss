@@ -24,23 +24,20 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 12px;
+  @include h3;
+  gap: 5px;
 }
-
-
 
 .text-field {
   @include field-style;
-  line-height: 129%;
+  line-height: 24px;
   &::placeholder{
     color: $dark25;
     }
   &:hover,
   &:focus {
     @include focus-field;
-    line-height: 171%;
+    line-height: 24px;
   }
 }
 

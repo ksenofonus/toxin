@@ -9,6 +9,7 @@
   border-radius: 22px;
   font-weight: 700;
   font-size: 12px;
+  line-height: 15px;
   text-transform: uppercase;
   color: #fff;
   flex-shrink: 0;
@@ -23,7 +24,6 @@
   &__border {
     @include border-gradient;
     color: $purple;
-    padding-right: 3px;
   }
   &__text {
     display: inline-flex;
@@ -35,7 +35,7 @@
     color: $purple;
     justify-content: center;
     align-items: center;
-    padding: 2px 2px 0 0;
+    padding: 1px 0 0 1px;
     &:active,
     &:hover,
     &:focus,

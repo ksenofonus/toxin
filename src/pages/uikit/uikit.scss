@@ -76,7 +76,7 @@
   gap: 50px;
 }
 .forms {
-  padding: 138px 140px 140px 141px;
+  padding: 142px 141px 140px 141px;
 }
 .forms-top {
   width: 100%;
@@ -86,47 +86,41 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 20px;
   flex-grow: 1;
-  & .check-buttons {
-    max-width: 266px;
-    gap: 36px;
+  & .buttons-wrapper {
+    gap: 41px;
     display: flex;
     flex-direction: column;
-    & .button-container:nth-child(3) h3 {
-      letter-spacing: -0.5px;
-    }
-  }
-  &:last-child {
-    gap: 37px;
-    & .button-container:first-child {
-      min-height: 51px;
-    }
   }
 }
 .row {
   display: flex;
   justify-content: flex-end;
   flex-wrap: nowrap;
-  column-gap: 73px;
+  column-gap: 72px;
   flex-grow: 1;
   min-height: 250px;
   & .forms-block:first-child {
     margin-right: auto;
   }
   &-1 {
-    margin-bottom: 97px;
+    margin-bottom: 100px;
     & .button-container:last-child{
       margin-top: -1px;
+      margin-left: 1px;
     }
   }
   &-2 {
     margin-bottom: 70px;
+    & .forms-block:first-child {
+      gap: 21px;
+    }
   }
   &-3 {
     margin-bottom: 103px;
     & .forms-block:first-child{
-      gap: 29px;
+      gap: 33px;
   }
   }
   &-4 {
@@ -143,7 +137,7 @@
 .datepick-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 37px;
+  gap: 41px;
   margin-top: 20px;
 }
 
@@ -163,13 +157,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  column-gap: 19px;
+  column-gap: 20px;
   row-gap: 30px;
   width: 250px;
-  margin-bottom: 31px;
+  margin-bottom: 30px;
 }
+
 .toggle-container {
-  margin-bottom: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
 }
 #data-container ul{
   display: none;
@@ -192,6 +189,7 @@
   font-weight: 400;
   text-transform: uppercase;
   font-size: 12px;
+  line-height: 15px;
 }
 .text-field_default::after {
   @include field-clue;
@@ -205,12 +203,12 @@
 .default-dropdown::after {
   @include field-clue;
   content: 'default';
-  top: -25px;
+  top: -21px;
+  right: -1px;
 }
 .expanded-dropdown::after {
   @include field-clue;
   content: 'expanded';
-  top: -25px;
 }
 .empty {
   width: 320px;
@@ -218,16 +216,23 @@
   border-radius: 4px;
   background-color: $dark50;
 }
-
+.disable-date {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 .column {
   display: flex;
   flex-direction: column;
   gap: 42px;
 }
-
 #guestdrop {
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
+
 #roomchoice-2 {
   margin-top: -1px;
+}
+.exp-checkbox_active {
+  margin-left: -1px;
 }
