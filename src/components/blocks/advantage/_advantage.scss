@@ -15,7 +15,7 @@
     background-color: rgba($dark, .1);
     content: '';
     position: absolute;
-    top: calc(100% + 19px);
+    top: calc(100% + 20px);
     left: 0;
   }
   &__symbol {
@@ -33,7 +33,7 @@
     display: flex;
     flex-direction: column;
     font-size: 14px;
-    line-height: 171%;
+    line-height: 24px;
     color: $dark75;
     & span::first-letter {
       text-transform: uppercase;

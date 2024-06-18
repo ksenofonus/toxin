@@ -20,10 +20,7 @@ h3 {
 }
 
 body {
-  @include main-font;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
+  @include bodyfont;
   box-sizing: border-box;
 }
 input:focus,

@@ -1,5 +1,6 @@
 .bullet-list_item{
   position: relative;
+  line-height: 24px;
   &:not(:last-child) {
     margin-bottom: 10px;
   }
@@ -20,6 +21,6 @@
 }
 .bullet-list {
   max-width: 260px;
-  margin-top: -4px;
-  padding-left: 20px;
+  margin-top: -3px;
+  padding-left: 21px;
 }
