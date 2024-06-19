@@ -74,9 +74,9 @@ html(lang='en')
                 .button-container
                   h3.buttons-name checkbox buttons
                   .checkbox-container
-                    +checkbox('smoking', 'Можно курить')
-                    +checkbox('pets', 'Можно с питомцами', 'checked')
-                    +checkbox('guests', 'Можно пригласить гостей (до\u00A010 человек)', 'checked')
+                    +checkbox({ 1: {name: 'smoking', text: 'Можно курить'}, 
+                                2: {name: 'pets', text: 'Можно с питомцами', checked: 'checked'}, 
+                                3: {name: 'guests', text: 'Можно пригласить гостей (до 10 человек)', checked: 'checked'}})
                 .button-container
                   h3.buttons-name radio buttons
                   .radio
@@ -145,27 +145,28 @@ html(lang='en')
           .row.row-3
             .forms-block
               +expandable-checkbox
-                +checkbox("breakfast", "завтрак")
-                +checkbox("desk", "письменный стол")
-                +checkbox("babychair", "стул для кормления")
-                +checkbox("crib", "кроватка")
-                +checkbox("tv", "телевизор")
-                +checkbox("shampoo", "шампунь")
+                +checkbox({ 1: {name: 'breakfast', text: "Завтрак"}, 
+                            2: {name: 'desk', text: "Письменный стол"}, 
+                            3: {name: 'babychair', text: "Стул для кормления"}, 
+                            4: {name: 'crib', text: "Кроватка"}, 
+                            5: {name: 'tv', text: "Телевизор"}, 
+                            6: {name: 'shampoo', text: "Шампунь"}})
+
               +expandable-checkbox(class="exp-checkbox_active")
-                +checkbox("breakfast1", "завтрак")
-                +checkbox("desk1", "письменный стол", "checked")
-                +checkbox("babychair1", "стул для кормления", "checked")
-                +checkbox("crib1", "кроватка", "checked")
-                +checkbox("tv1", "телевизор")
-                +checkbox("shampoo1", "шампунь")
+                +checkbox({ 1: {name: 'breakfast', text: "Завтрак"}, 
+                            2: {name: 'desk', text: "Письменный стол", checked: 'checked'}, 
+                            3: {name: 'babychair', text: "Стул для кормления", checked: 'checked'}, 
+                            4: {name: 'crib', text: "Кроватка", checked: 'checked'}, 
+                            5: {name: 'tv', text: "Телевизор"}, 
+                            6: {name: 'shampoo', text: "Шампунь"}})
             .forms-block
               .button-container
                 .rich-container
                   h3.buttons-name rich checkbox buttons
                   .checkbox-container
-                    +checkbox('hall', 'Широкий коридор')(class="checkbox-rich")
+                    +checkbox({ 1: {name: 'hall', text: 'Широкий коридор'} })(class="checkbox-rich")
                       +checkbox-rich('Ширина коридоров в номере не\u00A0менее 91 см.')
-                    +checkbox('assistant', 'Помощник для инвалидов')(class="checkbox-rich")
+                    +checkbox({1: {name: 'assistant', text: 'Помощник для инвалидов'}} )(class="checkbox-rich")
                       +checkbox-rich('На 1 этаже вас встретит специалист и проводит до номера.')
             .forms-block
               .button-container

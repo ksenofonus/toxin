@@ -1,36 +1,38 @@
 @import '../../../sass/mixins/mixins';
-.checkbox {
-  display: flex;
-  gap: 10px;
-  align-items: start;
-}
+
 .toggle {
   gap: 10px;
-  margin-bottom: 3px;
+  & label {
+    max-width: 320px;
+    padding-bottom: 3px;
+  }
 }
 .radio {
   display: flex;
   gap: 20px;
 }
-.label-container{
-  padding-top: 2px;
-  line-height: 18px;
-  &::first-letter {
-    text-transform: uppercase;
-  }
-}
+// .label-container{
+//   padding-top: 2px;
+//   line-height: 18px;
+//   &::first-letter {
+//     text-transform: uppercase;
+//   }
+// }
 .checkbox-label{
   font-size: 14px;
   color: $dark50;
   cursor: pointer;
   line-height: 18px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  max-width: 245px;
 }
 //checkbox
 .checkbox-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 254px;
 }
 
 input[type="checkbox"] {
@@ -40,13 +42,8 @@ input[type="checkbox"] {
   border-radius: 4px;
   cursor: pointer;
   flex-shrink: 0;
-  & + label {
-    cursor: pointer;
-  }
+  align-self: flex-start;
   &.checkbox {
-    & + label {
-      max-width: 200px;
-    }
     &::after {
       font-family: 'Font Awesome 6 Free';
       display: block;
@@ -68,9 +65,7 @@ input[type="checkbox"] {
   &.switch { //toggle button
     width: 40px;
     border-radius: 10px;
-    & + label {
-      max-width: 320px;
-    }
+    
     &::after {
       content: "";
       width: 12px;
@@ -95,9 +90,17 @@ input[type="checkbox"] {
 
 //radio-button
 .radio__item {
-  display: flex;
-  gap: 10px;
-  
+  // display: flex;
+  // gap: 10px;
+  & .radio-label {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    color: $dark50;
+    line-height: 141%;
+    padding: 5px;
+    margin: -5px;
+  }
   & input[type="radio"] {
     @include input-style-reset;
     width: 20px;
@@ -126,13 +129,6 @@ input[type="checkbox"] {
         opacity: 1;
       }
     }
-    & + .radio-label {
-      cursor: pointer;
-      color: $dark50;
-      line-height: 141%;
-      &:not(:last-child) {
-        margin-right: 10px;
-      }
-    }
+  
   }
 }

@@ -1,43 +1,40 @@
 //- checkbox
-mixin checkbox(name, text, checked)
-  .checkbox
-    input(class!=attributes.class)(
-      type="checkbox"
-      name= name
-      id= name
-      class="checkbox"
-      checked= checked
-    )
-    .label-container
-      label.checkbox-label(
-        for= name
-      )= text
-      block
+mixin checkbox(data={})
+  each item in data
+    .checkbox
+      label.checkbox-label(class!=attributes.class)
+        input(
+        type="checkbox"
+        name= item.name
+        id= item.name
+        class="checkbox"
+        checked= item.checked
+      )
+        | #{item.text}
+        block
 
 //- radio
 mixin radio(name, value, text, checked)
   .radio__item
-    input(class!=attributes.class)(
+    label.radio-label
+      input(class!=attributes.class)(
       type="radio"
       name= name
       value= value
       id= value
       checked= checked
     )
-    label.radio-label(
-        for= value
-      )= text
+      | #{text}
 
 //-toggle
 mixin toggle(name, text, checked)
   .checkbox.toggle
-    input(class!=attributes.class)(
+    label.checkbox-label
+      input(class!=attributes.class)(
       type="checkbox"
       name= name
       id= name
       class="switch"
       checked= checked
     )
-    label.checkbox-label(
-      for= name
-    )= text
+      | #{text}
