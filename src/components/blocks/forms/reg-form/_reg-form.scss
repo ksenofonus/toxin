@@ -1,6 +1,10 @@
+.reg-form {
+  padding-top: 39px;;
+}
 .form-bottom {
   display: flex;
   align-items: center;
+  margin-top: 9px;
   & .button {
     margin: 0;
     margin-left: auto;
@@ -17,6 +21,5 @@
   margin-bottom: 20px;
 }
 .birthday {
-  margin-top: 2px;
-  margin-bottom: -2px;
+  margin-top: 3px;
 }
