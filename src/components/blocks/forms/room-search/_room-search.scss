@@ -1,40 +1,32 @@
 .room__info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
+  margin-bottom: -5px;
 }
-.sum-price__row {
-  display: flex;
-  justify-content: space-between;
-  color: $dark75;
-  &:not(:last-child) {
-    margin-bottom: 10px;
-  }
-}
-.sum-price__calc {
-  & span {
-    &:first-child {
-      width: 214px;
+.sum-price {
+  padding-left: 1px;
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    color: $dark75;
+    line-height: 18px;
+    &:not(:last-child) {
+      margin-bottom: 15px;
     }
   }
-  display: flex;
-  justify-content: space-between;
-  gap: 5px;
-}
-.total {
-  display: flex;
-  justify-content: flex-start;
-  & span {
-    display: block;
-    flex-shrink: 0;
-    &:nth-child(2) {
-      border-bottom: 1px dotted $dark;
-      flex-grow: 1;
+  &__calc {
+    & span {
+      &:first-child {
+        width: 214px;
+      }
     }
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
   }
-  font-weight: 800;
-  font-size: 19px;
 }
+
 
 .information {
   display: flex;
@@ -47,25 +39,62 @@
   border-radius: 100%;
   cursor: pointer;
 }
-.room__number {
-  font-weight: 800;
-  & .number {
-    font-family: $font-2;
-    font-size: 24px;
-    &::before {
-      content: '№ ';
-      font-size: 14px;
+.room-search  {
+  padding-left: 30px;
+  padding-right: 28px;
+  & .room__number {
+    font-weight: 800;
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    & .number {
+      @include h1;
+      &::before {
+        content: '№ ';
+        font-size: 14px;
+      }
+    }
+    & .room_type {
+      color: $purple;
+      font-size: 12px;
+      text-transform: uppercase;
+      line-height: 29px;
     }
   }
-  & .room_type {
-    color: $purple;
-    font-size: 12px;
-    text-transform: uppercase;
+  & .total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: -2px;
+    padding-left: 1px;
+    @include h2;
+    font-family: $openSans;
+    align-items: baseline;
+    & span {
+      display: block;
+      flex-shrink: 0;
+      &:last-child {
+        font-family: $font-2;
+      }
+    }
+    & .dots {
+      display: block;
+      border-bottom: 1px dotted $dark;
+      flex-grow: 1;
+      margin: 0 5px;
+    }
+      
   }
 }
 .room__price {
   color: $dark50;
+  display: flex;
+  line-height: 29px;
+  gap: 4px;
   & .price {
     font-weight: 800;
+    & + span {
+      font-size: 12px;
+    }
   }
 }

@@ -1,16 +1,15 @@
-
+- const ruble = '&#8381';
 mixin room-search(type, number, price)
-  .form
+  .form.room-search
     .form-container 
       .room__info
         .room__number
           //- span №&nbsp;
           span.number= number
-          |&nbsp;
           span.room_type= type
         .room__price
-          span.price #{price}&#8381
-          span &nbsp;в сутки
+          span.price #{price}!{ruble}
+          span в сутки
       .datepicker-container
         +label('прибытие')
           +field('text', 'date', '19.08.2019')(class='masked-date datepicker text-field')
@@ -24,24 +23,24 @@ mixin room-search(type, number, price)
       .sum-price 
         .sum-price__row 
           .sum-price__calc
-            span #{price}&#8381; x 4 суток
+            span #{price}!{ruble} x 4 суток
           .sum-price__sum 
-            span 39 960&#8381
+            span 39 960!{ruble}
         .sum-price__row 
           .sum-price__calc
-            span Сбор за услуги: скидка 2 179&#8381
+            span Сбор за услуги: скидка 2 179!{ruble}
             span.information i
           .sum-price__sum 
-            span 0&#8381
+            span 0!{ruble}
         .sum-price__row 
           .sum-price__calc
             span Сбор за дополнительные услуги 
             span.information i
           .sum-price__sum 
-            span 300&#8381
+            span 300!{ruble}
       .total
         span Итого
-        span
-        span 38 081&#8381
+        span.dots
+        span 38 081!{ruble}
 
       +button('забронировать')(class="button__long")
