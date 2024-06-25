@@ -1,35 +1,50 @@
+$arrow_linear: rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%;
+@mixin arrow {
+  @include expand-more;
+  z-index: 2;
+  color: #fff;
+  translate: 0 -50%;
+}
 .room {
   width: 270px;
   background-color: #fff;
   border-radius: 4px;
   overflow: hidden;
   &_active {
-    & .room__image::before {
-      @include expand-more;
+    & .room__slider-arrow {
+      position: absolute;
       z-index: 1;
-      top: 45%;
-      left: 10px;
-      right: auto;
-      transform: rotate(90deg);
       color: #fff;
-    }
-    & .room__image::after {
-      @include expand-more;
-      z-index: 1;
-      top: 45%;
-      right: 10px;
-      left: auto;
-      transform: rotate(-90deg);
-      color: #fff;
+      top: 0;
+      width: 42px;
+      height: 100%;
+      &_left {
+        left: 0;
+        background: linear-gradient(90deg, $arrow_linear);
+        &::before {
+          @include arrow;
+          transform: rotate(90deg);
+        }
+      }
+      &_right {
+        right: 0;
+        background: linear-gradient(-90deg, $arrow_linear);
+        &::before {
+          @include arrow;
+          transform: rotate(-90deg);
+        }
+      }
     }
   }
   &__image {
     position: relative;
-    height: 151px;
-    
+    overflow: hidden;
+  }
+  &__slider {
+    max-height: 151px;
   }
   &-container {
-    padding: 18px;
+    padding: 17px 17px 18px 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -42,19 +57,22 @@
     &::after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: -6px;
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: $dark25;
+      background-color: $dark10;
     }
   }
   &__rating {
     display: flex;
     justify-content: space-between;
+    padding-right: 3px;
   }
   &__review {
     color: $dark50;
+    display: flex;
+    gap: 4px;
     & span {
       text-transform: capitalize;
       &:first-child {

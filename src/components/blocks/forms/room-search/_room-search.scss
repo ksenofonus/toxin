@@ -42,25 +42,6 @@
 .room-search  {
   padding-left: 29px;
   padding-right: 29px;
-  & .room__number {
-    font-weight: 800;
-    display: flex;
-    gap: 8px;
-    align-items: flex-end;
-    & .number {
-      @include h1;
-      &::before {
-        content: '№ ';
-        font-size: 14px;
-      }
-    }
-    & .room_type {
-      color: $purple;
-      font-size: 12px;
-      text-transform: uppercase;
-      line-height: 29px;
-    }
-  }
   & .total {
     display: flex;
     justify-content: space-between;
@@ -84,6 +65,25 @@
       margin: 0 5px;
     }
       
+  }
+}
+.room__number {
+  font-weight: 800;
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  & .number {
+    @include h1;
+    &::before {
+      content: '№ ';
+      font-size: 14px;
+    }
+  }
+  & .room_type {
+    color: $purple;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 29px;
   }
 }
 .room__price {

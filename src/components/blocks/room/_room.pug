@@ -1,19 +1,21 @@
 include ../../blocks/img-slider/_img-slider.pug
+//- - const ruble = '&#8381';
 mixin room (url, number, price, i, review, type)
   .room(class!=attributes.class)
     .room__image
-      img(src= url)
-      +carousel
+      .room__slider
+        .room__slider-arrow.room__slider-arrow_left
+        .room__slider-arrow.room__slider-arrow_right
+        img(src= url)
+        +carousel
     .room-container
       .room__info
         .room__number
-          //- span №&nbsp;
           span.number= number
-          |&nbsp;
           span.room_type= type
         .room__price
-          span.price #{price}&#8381
-          span &nbsp;в сутки
+          span.price #{price}!{ruble}
+          span в сутки
       .room__rating
         +star(i)
         .room__review

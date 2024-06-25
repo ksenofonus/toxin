@@ -55,9 +55,18 @@
   }
   &__cards{
     flex-direction: row;
-    justify-content: space-between;
+    // justify-content: space-between;
     background-color: #f4f4f6;
     padding: 151px 139px 150px 141px;
+    & .column {
+      display: flex;
+      flex-direction: column;
+      gap: 42px;
+      &:last-child {
+        gap: 40px;
+        margin-right: 1px;
+      }
+    }
   }
 }
 .section-title {
@@ -215,17 +224,14 @@
   height: 369px;
   border-radius: 4px;
   background-color: $dark50;
+  margin-top: -1px;
 }
 .disable-date {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.column {
-  display: flex;
-  flex-direction: column;
-  gap: 42px;
-}
+
 #guestdrop {
   margin-bottom: 3px;
 }
