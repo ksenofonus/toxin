@@ -50,7 +50,7 @@
     background-color: #f4f4f6;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
     align-items: center;
   }
   &__cards{
@@ -166,10 +166,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  column-gap: 20px;
+  column-gap: 19px;
   row-gap: 30px;
   width: 250px;
   margin-bottom: 30px;
+  margin-left: 2px;
 }
 
 .toggle-container {

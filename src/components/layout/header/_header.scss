@@ -4,6 +4,11 @@
   padding: 0 140px;
   background-color: #fff;
   box-shadow: 0 10px 20px 0 $dark5;
+  & .button {
+    height: 34px;
+    min-width: 87px;
+    padding: 0 19px;
+  }
 }
 .header-container {
   width: 100%;
@@ -14,10 +19,9 @@
 }
 .header__nav {
   display: flex;
-  max-width: 447px;
   justify-content: space-between;
   align-items: center;
-  gap: 13px;
+  gap: 21px;
   &-item {
     color: $dark50;
     cursor: pointer;
@@ -42,6 +46,7 @@
 }
 .header__login {
   display: flex;
+  align-items: center;
   gap: 20px;
   color: $dark50;
   position: relative;

@@ -1,11 +1,11 @@
 
 .button {
-  // padding: 15px 20px 15px 19px;
+  padding: 0 19px;
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 99px;
-  min-height: 44px;
+  height: 44px;
   border-radius: 22px;
   font-weight: 700;
   font-size: 12px;
@@ -24,6 +24,7 @@
   &__border {
     @include border-gradient;
     color: $purple;
+    padding: 0 17px 0 14px;
   }
   &__text {
     display: inline-flex;
