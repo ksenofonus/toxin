@@ -24,41 +24,40 @@
   width: 100%;
   background-color: #fff;
   box-shadow: 0 10px 20px 0 rgba(31, 32, 65, 0.05);
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    &:first-child {
+      max-width: 260px;
+    }
+    &:last-child {
+      max-width: 260px;
+    }
+  }
+  &-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 70px;
+    align-items: center;
+    padding: 100px 140px 10px;
+  }
   &_media {
     width: 768px;
     @include media-footer;
   }
-}
-.footer-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  min-height: 70px;
-  align-items: center;
-  padding: 100px 140px 10px;
-}
-.footer__top {
-  display: flex;
-  width: 100%;
-  gap: 10px;
-  justify-content: space-between;
-  margin-bottom: 100px;
-  & p {
-    color: $dark75;
+  &__top {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    & p {
+      color: $dark75;
+    }
   }
-}
-.footer__column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  &:first-child {
-    max-width: 260px;
-  }
-  &:last-child {
-    max-width: 260px;
-  }
-  
 }
 .footer__menu .footer__menu-item {
   &::first-letter {
@@ -89,7 +88,7 @@
     left: -140px;
     right: -140px;
   }
-  .media-block {
+  & .media-block {
     & .media-block__list li {
       display: inline-block;
       @media (hover: hover) {
