@@ -6,7 +6,7 @@ mixin menu(classname, data=[{}])
           a(class= classname + '__menu-link', href= item.href)= item.itemname
       else 
         li(class= classname + '__menu-item')= item.itemname
-
+- const icons = ['twitter', 'square-facebook', 'instagram'];
 //footer
 mixin footer
   footer.footer(class!=attributes.class)
@@ -15,7 +15,7 @@ mixin footer
         .footer__column
           +logo
           p.footer__tagline Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-        .footer__column
+        .footer__column.footer__nav
           h3.footer__menu-title навигация
           +menu('footer', [
             {itemname: 'о нас', href: '#about'},
@@ -23,7 +23,7 @@ mixin footer
             {itemname: 'служба поддержки', href: '#support'},
             {itemname: 'услуги', href: '#servies'},
           ])
-        .footer__column
+        .footer__column.footer__nav
           h3.footer__menu-title о нас
           +menu('footer', [
               {itemname: 'о сервисе', href: '#about_service'},
@@ -31,7 +31,7 @@ mixin footer
               {itemname: 'вакансии', href: '#vakancies'},
               {itemname: 'инвесторы', href: '#serviсes'},
             ])
-        .footer__column
+        .footer__column.footer__nav
           h3.footer__menu-title служба поддержки
           +menu('footer', [
             {itemname: 'соглашения', href: '#about_service'},
@@ -46,9 +46,7 @@ mixin footer
         p Copyright &#169; 2018 Toxin отель. Все права зачищены.
         .media-block
           ul.media-block__list
-            li.meadia-block__item
-              i.fa-brands.fa-twitter
-            li.meadia-block__item
-              i.fa-brands.fa-square-facebook
-            li.meadia-block__item
-              i.fa-brands.fa-instagram
+            each icon in icons
+              li.meadia-block__item
+                i(class=`fa-brands fa-${icon}`)
+              

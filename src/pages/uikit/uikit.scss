@@ -149,6 +149,10 @@
   gap: 41px;
   margin-top: 20px;
 }
+.datepicker-filter-container,
+.datepicker-email-container {
+  max-width: 266px;
+}
 
 #text-focus {
   @include focus-field;

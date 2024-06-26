@@ -1,6 +1,5 @@
 @import '../../../sass/mixins/mixins.scss';
 .email-form {
-  width: 266px;
   position: relative;
     &::after {
       @include material;
