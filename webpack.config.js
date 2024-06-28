@@ -46,7 +46,10 @@ module.exports = (env) => {
     //   filename: 'css/[name][contenthash:8].css',
     //   // chunkFilename: 'css/[name][contenthash].css'
     // }),
-    new FaviconsWebpackPlugin('./src/assets/favicons/group.png'),
+    new FaviconsWebpackPlugin({
+      logo: './src/assets/favicons/favicon.ico',
+      inject: true,
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -65,8 +68,9 @@ module.exports = (env) => {
         ],
       },
       {
-        test: /\.(ico|png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource'
+        test: /\.(ico|png|svg|jpg|jpeg|gif|webmanifest)$/i,
+        type: 'asset/resource',
+        
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,

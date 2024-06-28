@@ -1,4 +1,5 @@
 import '../index/index.scss';
+// import '../../assets/favicons/favicon';
 import '../../components/blocks/buttons/like/_like';
 import '../../components/blocks/range-slider/_range-slider';
 import '../../components/blocks/pagination/_paginat';
