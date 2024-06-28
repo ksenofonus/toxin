@@ -15,6 +15,7 @@ new AirDatepicker(filterDatepicker, {
   );
 
 let datepickerStart, datepickerEnd;
+
 datepickerStart = new AirDatepicker('#start-date', {
   onSelect({ date }) {
     datepickerEnd.update({
@@ -22,6 +23,7 @@ datepickerStart = new AirDatepicker('#start-date', {
     });
   },
 });
+
 datepickerEnd = new AirDatepicker('#end-date', {
   onSelect({ date }) {
     datepickerStart.update({
