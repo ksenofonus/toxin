@@ -28,7 +28,7 @@ module.exports = (env) => {
       port: 8080,
       watchFiles: ['src/**/**'],
       hot: true,
-      open: ['http://localhost:8080/uikit.html']
+      open: ['http://localhost:8080/index.html']
     } : undefined,
   plugins: [
     new PugPlugin({
