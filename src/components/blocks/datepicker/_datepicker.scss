@@ -33,3 +33,44 @@
     }
   }
 }
+#air-datepicker-global-container > div > div.air-datepicker {
+  &--navigation > nav {
+    & > div.air-datepicker-nav--title {
+      @include head-font;
+      font-size: 19px;
+      & i {
+        @include head-font;
+      }
+    }
+    & > div.air-datepicker-nav--action {
+      position: relative;
+      & > svg {
+        display: none;
+      }
+      &::after {
+        @include material;
+        color: $purple;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &[data-action="prev"]::after {
+        content: 'arrow_back';
+      }
+      &[data-action="next"]::after {
+        content: 'arrow_forward';
+      }
+    }
+  }
+  &--content {
+    & div.air-datepicker-body--day-name {
+      color: $purple;
+      font-weight: 700;
+      text-transform: capitalize;
+      font-size: 12px;
+    }
+  }
+}
+
+
