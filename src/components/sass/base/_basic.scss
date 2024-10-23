@@ -45,5 +45,8 @@ h3.buttons-name {
   @include h3;
   width: 100%;
   margin-bottom: 16px;
-  
+}
+.container  {
+  max-width: 1440px;
+  margin: 0 auto;
 }
