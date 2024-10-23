@@ -3,4 +3,14 @@
   min-height: 830px;
   background-image: url('../../../assets/images/background/background_main.jpg');
   background-repeat: no-repeat;
+  padding-left: 140px;
+  padding-top: 70px;
+  position: relative;
+  & .tagline {
+    width: 297px;
+    text-align: right;
+    position: absolute;
+    bottom: 18px;
+    right: 134px;
+  }
 }
