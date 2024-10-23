@@ -3,9 +3,9 @@
   .form-container 
     .datepicker-container
       +label('прибытие')
-        +field('text', 'date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
+        +field('text', 'start-date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
       +label('выезд')
-        +field('text', 'date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
+        +field('text', 'end-date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
     +dropdown('guest','search-guest', 'гости', 'Сколько гостей',
               {'adults': 'Взрослые',
               'children': 'Дети',
