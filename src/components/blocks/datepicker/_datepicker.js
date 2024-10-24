@@ -2,7 +2,9 @@ import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
 
 const datepicker = document.querySelectorAll('.datepicker');
-datepicker.forEach((item) => new AirDatepicker(item));
+datepicker.forEach((item) => new AirDatepicker(item, {
+  range: true
+}));
 
 const filterDatepicker = document.querySelector('.filter-datepicker');
 new AirDatepicker(filterDatepicker, {
@@ -11,3 +13,19 @@ new AirDatepicker(filterDatepicker, {
   dateFormat: 'dd MMM'
   }
   );
+
+let datepickerStart, datepickerEnd;
+datepickerStart = new AirDatepicker('#start-date', {
+  onSelect({ date }) {
+    datepickerEnd.update({
+      minDate: date,
+    });
+  },
+});
+datepickerEnd = new AirDatepicker('#end-date', {
+  onSelect({ date }) {
+    datepickerStart.update({
+      maxDate: date,
+    });
+  },
+});
