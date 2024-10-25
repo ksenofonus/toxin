@@ -86,14 +86,15 @@
           text-transform: capitalize;
           font-size: 12px;
         }
-        &--cells {
+        &--cells.-days- {
           font-family: $font-1;
           color: $dark50;
           font-size: 12px;
           grid-template-columns: repeat(7, 40px);
           grid-auto-rows: 40px;
+
           & .-day-:hover {
-            border-radius: 100%;
+            border-radius: 50%;
           }
           & .-other-month- {
             color: $dark25;
@@ -102,14 +103,36 @@
             @include green-gradient;
             font-weight: 700;
             color: #fff;
-            border-radius: 100%;
+            border-radius: 50%;
           }
           & .-selected- {
             @include back-gradient;
-            border-radius: 100%;
+            border-radius: 50%;
             font-weight: 700;
+            position: relative;
+            &.-range-from-::after,  &.-range-to-::after{
+              position: absolute;
+              content: '';
+              top: 0;
+              width: 50%;
+              height: 100%;
+              // background-color: $green;
+              background-image: linear-gradient($opacityGradient);
+              overflow: hidden;
+              mask-image: radial-gradient(circle farthest-side at 0, transparent 100%, #000 0);
+            }
+            &.-range-from-::after {
+              right: 0;
+              mask-image: radial-gradient(circle farthest-side at 0, transparent 100%, #000 0);
+            }
+            &.-range-to-::after{
+              left: 0;
+              mask-image: radial-gradient(circle farthest-side at 0, transparent 100%, #000 0);
+              transform: scale(-1, 1);
+            }
           }
           & .-in-range- {
+            background-color: transparent;
             background-image: linear-gradient($opacityGradient);
             border-radius: 0;
           }
