@@ -15,6 +15,13 @@ new AirDatepicker(filterDatepicker, {
   );
 
 let datepickerStart, datepickerEnd;
+let apply = {
+  content: 'Применить',
+  className: 'apply-button',
+  onclick: (dp) => {
+    
+  }
+}
 
 datepickerStart = new AirDatepicker('#start-date', {
   onSelect({ date }) {
@@ -22,6 +29,7 @@ datepickerStart = new AirDatepicker('#start-date', {
       minDate: date,
     });
   },
+  buttons: ['clear', apply],
 });
 
 datepickerEnd = new AirDatepicker('#end-date', {
@@ -30,4 +38,5 @@ datepickerEnd = new AirDatepicker('#end-date', {
       maxDate: date,
     });
   },
+  buttons: ['clear']
 });

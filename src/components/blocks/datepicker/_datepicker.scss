@@ -1,4 +1,4 @@
-.datepicker-container .field-name{
+.datepicker-container .field-name {
   position: relative;
   &::after {
     @include expand-more;
@@ -14,15 +14,14 @@
 }
 .datepicker-container {
   display: flex;
-  gap: 20px; 
+  gap: 20px;
 }
-.datepicker-filter-container .field-name  {
+.datepicker-filter-container .field-name {
   position: relative;
   width: 266px;
   &::after {
     @include expand-more;
     top: 50%;
-    
   }
   & .filter-datepicker {
     width: inherit;
@@ -33,44 +32,77 @@
     }
   }
 }
-#air-datepicker-global-container > div > div.air-datepicker {
-  &--navigation > nav {
-    & > div.air-datepicker-nav--title {
-      @include head-font;
-      font-size: 19px;
-      & i {
+#air-datepicker-global-container {
+  & .air-datepicker {
+    width: 320px;
+    height: 369px;
+    padding: 20px;
+    box-sizing: border-box;
+    &-buttons button {
+      text-transform: uppercase;
+    }
+    &--pointer {
+      display: none;
+    }
+    &--navigation .air-datepicker-nav {
+      border-bottom: none;
+      &--title {
         @include head-font;
+        font-size: 19px;
+        & i {
+          @include head-font;
+        }
+      }
+      & > div.air-datepicker-nav--action {
+        position: relative;
+        & > svg {
+          display: none;
+        }
+        &::after {
+          @include material;
+          color: $purple;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &[data-action='prev']::after {
+          content: 'arrow_back';
+        }
+        &[data-action='next']::after {
+          content: 'arrow_forward';
+        }
       }
     }
-    & > div.air-datepicker-nav--action {
-      position: relative;
-      & > svg {
-        display: none;
+    &--content {
+      margin-top: 26px;
+      & .air-datepicker-body {
+        &--day-names {
+          grid-template-columns: repeat(7, 40px);
+        }
+        &--day-name {
+          color: $purple;
+          font-weight: 700;
+          text-transform: capitalize;
+          font-size: 12px;
+        }
+        &--cells {
+          font-family: $font-1;
+          color: $dark50;
+          font-size: 12px;
+          grid-template-columns: repeat(7, 40px);
+          grid-auto-rows: 40px;
+          & .-other-month- {
+            color: $dark25;
+          }
+          & .-current- {
+            background-color: $green;
+            font-weight: 700;
+            color: #fff;
+            border-radius: 100%;
+          }
+        }
       }
-      &::after {
-        @include material;
-        color: $purple;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-      &[data-action="prev"]::after {
-        content: 'arrow_back';
-      }
-      &[data-action="next"]::after {
-        content: 'arrow_forward';
-      }
-    }
-  }
-  &--content {
-    & div.air-datepicker-body--day-name {
-      color: $purple;
-      font-weight: 700;
-      text-transform: capitalize;
-      font-size: 12px;
     }
   }
 }
-
-
