@@ -1,10 +1,10 @@
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
 
-const datepicker = document.querySelectorAll('.datepicker');
-datepicker.forEach((item) => new AirDatepicker(item, {
-  range: true
-}));
+// const datepicker = document.querySelectorAll('.datepicker');
+// datepicker.forEach((item) => new AirDatepicker(item, {
+//   range: true
+// }));
 
 const filterDatepicker = document.querySelector('.filter-datepicker');
 new AirDatepicker(filterDatepicker, {
@@ -14,7 +14,9 @@ new AirDatepicker(filterDatepicker, {
   }
   );
 
-let datepickerStart, datepickerEnd;
+let datepickerStart = document.getElementById('start-date');
+let datepickerEnd = document.getElementById('end-date');
+
 let apply = {
   content: 'Применить',
   className: 'apply-button',
@@ -23,20 +25,23 @@ let apply = {
   }
 }
 
-datepickerStart = new AirDatepicker('#start-date', {
+let start = new AirDatepicker(datepickerStart, {
+  range: true,
   onSelect({ date }) {
-    datepickerEnd.update({
+    end.update({
       minDate: date,
     });
   },
   buttons: ['clear', apply],
+  
 });
 
-datepickerEnd = new AirDatepicker('#end-date', {
+let end = new AirDatepicker(datepickerEnd, {
   onSelect({ date }) {
-    datepickerStart.update({
+    start.update({
       maxDate: date,
     });
   },
   buttons: ['clear']
 });
+start.show();
