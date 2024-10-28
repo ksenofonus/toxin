@@ -93,8 +93,10 @@
           grid-template-columns: repeat(7, 40px);
           grid-auto-rows: 40px;
 
-          & .-day-:hover {
+          & .-day-:not(.-in-range-):hover {
             border-radius: 50%;
+            border: none;
+            background-image: linear-gradient($opacityGradient);
           }
           & .-other-month- {
             color: $dark25;
