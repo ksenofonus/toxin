@@ -107,31 +107,33 @@
             color: #fff;
             border-radius: 50%;
           }
+          & .-range-from-:not(:has(+ .-range-to-), .-range-to-)::after,
+          & .-range-from-:has(+ .-in-range-):not(:has(.-range-to-)) ~ .-range-to-::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-image: linear-gradient($opacityGradient);
+            overflow: hidden;
+            mask-image: radial-gradient(
+              circle farthest-side at 0,
+              transparent 100%,
+              #000 0
+            );
+          }
+          & .-range-from-::after {
+            right: 0;
+          }
+          & .-range-to-::after {
+            left: 0;
+            transform: scale(-1, 1);
+          }
           & .-selected- {
             @include back-gradient;
             border-radius: 50%;
             font-weight: 700;
             position: relative;
-            &.-range-from-::after,  &.-range-to-::after{
-              position: absolute;
-              content: '';
-              top: 0;
-              width: 50%;
-              height: 100%;
-              // background-color: $green;
-              background-image: linear-gradient($opacityGradient);
-              overflow: hidden;
-              mask-image: radial-gradient(circle farthest-side at 0, transparent 100%, #000 0);
-            }
-            &.-range-from-::after {
-              right: 0;
-              mask-image: radial-gradient(circle farthest-side at 0, transparent 100%, #000 0);
-            }
-            &.-range-to-::after{
-              left: 0;
-              mask-image: radial-gradient(circle farthest-side at 0, transparent 100%, #000 0);
-              transform: scale(-1, 1);
-            }
           }
           & .-in-range- {
             background-color: transparent;
