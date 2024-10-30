@@ -19,7 +19,9 @@ const endDate = document.getElementById('end-date');
 const apply = {
   content: 'Применить',
   className: 'apply-button',
-  onclick: (dp) => {},
+  onClick: (dp) => {
+    dp.hide();
+  },
 };
 
 const datepicker = new AirDatepicker('#start-date', {
