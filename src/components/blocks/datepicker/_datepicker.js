@@ -35,6 +35,7 @@ const datepicker = new AirDatepicker(startDate, {
       endDate.value = datepicker.formatDate(date[1], 'dd.MM.yyyy');
     }
   },
+  
 });
 
 endDate.addEventListener('click', () => datepicker.show())
@@ -42,14 +43,16 @@ endDate.addEventListener('click', () => datepicker.show())
 document.body.addEventListener('click', (e) => {
   const target = e.target;
   const isDatepicker =
-    target === datepicker.$datepicker || datepicker.$datepicker.contains(target);
+    target === datepicker.$datepicker ||
+    datepicker.$datepicker.contains(target);
   const isStartInput =
     target === datepicker.$el || datepicker.$el.contains(target);
-  let isEndInput = target === endDate || endDate.contains(target)
-  if (!isDatepicker && !isStartInput && !isEndInput) {
+  const isEndInput = target === endDate || endDate.contains(target);
+  const isOpen = datepicker.$datepicker.classList.contains('-active-');
+  if (!isDatepicker && !isStartInput && !isEndInput && isOpen) {
     datepicker.hide();
   }
-})
+});
 
 
 
