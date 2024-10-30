@@ -27,14 +27,10 @@ let apply = {
 let start = new AirDatepicker(startDate, {
   range: true,
   onSelect({ date }) {
-    console.log(date)
     end.update({
-      minDate: date[0],
-      maxDate: date[1],
       selectedDates: [date]
     })
-    end.selectDate(date[1])
-    startDate.value = start.formatDate(date[0], 'dd.MM.yyyy');
+    
   },
   buttons: ['clear', apply],
 });
@@ -44,10 +40,9 @@ let end = new AirDatepicker(endDate, {
   range: true,
   position: 'bottom right',
   onSelect({ date }) {
-    start.update({
-      minDate: date[0],
-      maxDate: date[1]
-    });
+    start.unselectDate();
+    
+    
   },
   buttons: ['clear'],
 });
