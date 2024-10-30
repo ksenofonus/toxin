@@ -22,23 +22,24 @@ const apply = {
   onclick: (dp) => {},
 };
 
-const datepicker = new AirDatepicker(startDate, {
+const datepicker = new AirDatepicker('#start-date', {
   range: true,
   buttons: ['clear', apply],
   onSelect: ({ date }) => {
-    console.log(date[0], date[1]);
-    datepicker.$el.value = endDate.value = datepicker.formatDate(
-      date[0],
-      'dd.MM.yyyy',
-    );
+    endDate.value = datepicker.$el.value;
+    if (date.length !== 0) {
+      datepicker.$el.value = datepicker.formatDate(
+        date[0],
+        'dd.MM.yyyy',
+      );
+    }
     if (date.length > 1) {
       endDate.value = datepicker.formatDate(date[1], 'dd.MM.yyyy');
     }
   },
-  
 });
 
-endDate.addEventListener('click', () => datepicker.show())
+endDate.addEventListener('click', () => datepicker.show());
 
 document.body.addEventListener('click', (e) => {
   const target = e.target;
@@ -53,20 +54,3 @@ document.body.addEventListener('click', (e) => {
     datepicker.hide();
   }
 });
-
-
-
-// let end = new AirDatepicker(endDate, {
-//   range: true,
-//   position: 'bottom right',
-//   onSelect({ date }) {
-//     // start.update({
-//     //   viewDate: end.viewDate,
-//     //   selectedDates: [date],
-//     // }),
-//     //   {
-//     //     silent: true,
-//     //   };
-//   },
-//   buttons: ['clear'],
-// });
