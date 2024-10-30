@@ -15,7 +15,7 @@ new AirDatepicker(filterDatepicker, {
 //datepicker fields
 const startDate = document.getElementById('start-date');
 const endDate = document.getElementById('end-date');
-//button
+//buttons
 const apply = {
   content: 'Применить',
   className: 'apply-button',
@@ -27,13 +27,17 @@ const clear = {
   content: 'Очистить',
   className: 'clear-button',
   onClick: (dp) => {
-    ;
+    dp.clear();
+    const ranged =  dp.$datepicker.querySelectorAll('.-in-range-');
+    ranged.forEach(element => {
+      element.classList.remove('-in-range-')
+    });
   },
 };
 
 const datepicker = new AirDatepicker(startDate, {
   range: true,
-  buttons: ['clear', apply],
+  buttons: [clear, apply],
   onSelect: ({ date }) => {
     endDate.value = datepicker.$el.value;
     if (date.length !== 0) {
