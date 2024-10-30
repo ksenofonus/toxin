@@ -23,17 +23,21 @@ const apply = {
     dp.hide();
   },
 };
+const clear = {
+  content: 'Очистить',
+  className: 'clear-button',
+  onClick: (dp) => {
+    ;
+  },
+};
 
-const datepicker = new AirDatepicker('#start-date', {
+const datepicker = new AirDatepicker(startDate, {
   range: true,
   buttons: ['clear', apply],
   onSelect: ({ date }) => {
     endDate.value = datepicker.$el.value;
     if (date.length !== 0) {
-      datepicker.$el.value = datepicker.formatDate(
-        date[0],
-        'dd.MM.yyyy',
-      );
+      datepicker.$el.value = datepicker.formatDate(date[0], 'dd.MM.yyyy');
     }
     if (date.length > 1) {
       endDate.value = datepicker.formatDate(date[1], 'dd.MM.yyyy');
