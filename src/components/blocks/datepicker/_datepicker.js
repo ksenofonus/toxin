@@ -1,5 +1,6 @@
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
+import { apply, clear } from './_datepicker_buttons';
 
 // const datepicker = document.querySelectorAll('.datepicker');
 // datepicker.forEach((item) => new AirDatepicker(item, {
@@ -15,25 +16,7 @@ new AirDatepicker(filterDatepicker, {
 //datepicker fields
 const startDate = document.getElementById('start-date');
 const endDate = document.getElementById('end-date');
-//buttons
-const apply = {
-  content: 'Применить',
-  className: 'apply-button',
-  onClick: (dp) => {
-    dp.hide();
-  },
-};
-const clear = {
-  content: 'Очистить',
-  className: 'clear-button',
-  onClick: (dp) => {
-    dp.clear();
-    const ranged =  dp.$datepicker.querySelectorAll('.-in-range-');
-    ranged.forEach(element => {
-      element.classList.remove('-in-range-')
-    });
-  },
-};
+
 
 const datepicker = new AirDatepicker(startDate, {
   range: true,
@@ -64,3 +47,17 @@ document.body.addEventListener('click', (e) => {
     datepicker.hide();
   }
 });
+
+const manual = () => {
+  startDate.addEventListener('keydown', (e) => {
+    const val = datepicker.formatDate(startDate.value, 'dd.MM.yyyy');
+    if (e.code === 'Enter') {
+      datepicker.selectDate(val)
+      console.log(val);
+    }
+  })
+//   endDate.addEventListener('keydown', (e) => {
+// const val = datepicker.formatDate(endDate.value, 'dd.MM.yyyy');
+//   })
+}
+manual();
