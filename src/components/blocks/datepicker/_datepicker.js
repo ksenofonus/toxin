@@ -1,6 +1,7 @@
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
 import { apply, clear } from './_datepicker_buttons';
+import '../forms/masked-text/_mask';
 
 // const datepicker = document.querySelectorAll('.datepicker');
 // datepicker.forEach((item) => new AirDatepicker(item, {
@@ -33,6 +34,7 @@ const datepicker = new AirDatepicker(startDate, {
 });
 
 endDate.addEventListener('click', () => datepicker.show());
+endDate.addEventListener('focus', () => datepicker.show());
 
 document.body.addEventListener('click', (e) => {
   const target = e.target;
@@ -50,14 +52,18 @@ document.body.addEventListener('click', (e) => {
 
 const manual = () => {
   startDate.addEventListener('keydown', (e) => {
-    const val = datepicker.formatDate(startDate.value, 'dd.MM.yyyy');
-    if (e.code === 'Enter') {
-      datepicker.selectDate(val)
-      console.log(val);
+    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+      const val = datepicker.formatDate(startDate.value, 'dd.MM.yyyy');
+      datepicker.selectDate(val);
     }
   })
-//   endDate.addEventListener('keydown', (e) => {
-// const val = datepicker.formatDate(endDate.value, 'dd.MM.yyyy');
-//   })
+  endDate.addEventListener('keydown', (e) => {
+    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+      const val = datepicker.formatDate(endDate.value, 'dd.MM.yyyy');
+      console.log(val);
+      datepicker.selectDate(val);
+    }
+
+  })
 }
 manual();
