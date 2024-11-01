@@ -38,8 +38,26 @@
     min-height: 369px;
     padding: 20px;
     box-sizing: border-box;
-    &-buttons button {
-      text-transform: uppercase;
+    &--buttons {
+      border: none;
+      padding: 0;
+      & button {
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: 700;
+        &.clear-button {
+          color: $dark50;
+          & > span {
+            justify-content: flex-start;
+          }
+        }
+        &.apply-button {
+          color: $purple;
+          & > span {
+            justify-content: flex-end;
+          }
+        }
+      }
     }
     &--pointer {
       display: none;
@@ -76,7 +94,9 @@
     }
     &--content {
       margin-top: 26px;
+      padding: 0;
       & .air-datepicker-body {
+        font-family: $font-1;
         &--day-names {
           grid-template-columns: repeat(7, 40px);
         }
@@ -87,7 +107,7 @@
           font-size: 12px;
         }
         &--cells.-days- {
-          font-family: $font-1;
+          
           color: $dark50;
           font-size: 12px;
           grid-template-columns: repeat(7, 40px);
@@ -107,8 +127,14 @@
             color: #fff;
             border-radius: 50%;
           }
-          & .-range-from-:has(+ .-in-range-):not(:has(+ .-range-to-), .-range-to-)::after,
-          & .-range-from-:has(+ .-in-range-):not(:has(.-range-to-)) ~ .-range-to-::after {
+          &
+            .-range-from-:has(+ .-in-range-):not(
+              :has(+ .-range-to-),
+              .-range-to-
+            )::after,
+          &
+            .-range-from-:has(+ .-in-range-):not(:has(.-range-to-))
+            ~ .-range-to-::after {
             position: absolute;
             content: '';
             top: 0;

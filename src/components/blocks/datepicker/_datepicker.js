@@ -18,7 +18,6 @@ new AirDatepicker(filterDatepicker, {
 const startDate = document.getElementById('start-date');
 const endDate = document.getElementById('end-date');
 
-
 const datepicker = new AirDatepicker(startDate, {
   range: true,
   buttons: [clear, apply],
@@ -50,20 +49,28 @@ document.body.addEventListener('click', (e) => {
   }
 });
 
-const manual = () => {
-  startDate.addEventListener('keydown', (e) => {
-    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
-      const val = datepicker.formatDate(startDate.value, 'dd.MM.yyyy');
-      datepicker.selectDate(val);
-    }
-  })
-  endDate.addEventListener('keydown', (e) => {
-    if (e.code === 'Enter' || e.code === 'NumpadEnter') {
-      const val = datepicker.formatDate(endDate.value, 'dd.MM.yyyy');
-      console.log(val);
-      datepicker.selectDate(val);
-    }
+// const manual = () => {
+//   const dates = [];
+//   startDate.addEventListener('keydown', (e) => {
+//     if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+//       const startVal = datepicker.formatDate(startDate.value, 'dd.MM.yyyy');
+//       dates.unshift(startVal)
+//       console.log(dates)
+//       datepicker.update({
+//         selectedDates: dates
+//       })
+//     }
+//   })
+//   endDate.addEventListener('keydown', (e) => {
+//     if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+//       const endVal = datepicker.formatDate(endDate.value, 'dd.MM.yyyy');
+//       dates.push(endVal);
+//       console.log(dates)
+//       datepicker.update({
+//         selectedDates: dates,
+//       });
+//     }
 
-  })
-}
-manual();
+//   })
+// }
+// manual();
