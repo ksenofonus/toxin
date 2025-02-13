@@ -1,6 +1,5 @@
 @import '../../../assets/lib/pagination/_pagination';
 
-
 #pagination-container .toxin-theme {
   flex-direction: column-reverse;
   font-family: $font-1;
@@ -12,7 +11,7 @@
     margin-left: 5px;
     line-height: 186%;
   }
-  & div.paginationjs-pages{
+  & div.paginationjs-pages {
     margin-left: 0;
     & li {
       &.toxin-theme_pages,
@@ -33,39 +32,39 @@
           border-radius: 100%;
           font-size: 12px;
         }
-      &.toxin-theme_pages {
-        &__active > a {
-          @include back-gradient;
-          color: #fff;
-        }
-        &__next > a {
-          @include material;
-          position: relative;
-          background-color: $green;
-          color: #fff;
-          &::after {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            content: 'arrow_forward';
-            translate: -50% -50%;
+        &.toxin-theme_pages {
+          &__active > a {
+            @include back-gradient;
+            color: #fff;
           }
-        }
-        &__prev > a {
-          @include material;
-          position: relative;
-          background-color: $green;
-          color: #fff;
-          &::after {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            content: 'arrow_back';
-            translate: -50% -50%;
+          &__next > a {
+            @include material;
+            position: relative;
+            background-color: $green;
+            color: #fff;
+            &::after {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              content: 'arrow_forward';
+              translate: -50% -50%;
+            }
+          }
+          &__prev > a {
+            @include material;
+            position: relative;
+            background-color: $green;
+            color: #fff;
+            &::after {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              content: 'arrow_back';
+              translate: -50% -50%;
+            }
           }
         }
       }
-    }
     }
   }
 }

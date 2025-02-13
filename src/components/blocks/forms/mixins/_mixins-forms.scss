@@ -13,11 +13,11 @@
 }
 @mixin focus-field {
   border: 1px solid $dark50;
-    &::-webkit-input-placeholder,
-    &::-webkit-input-placeholder {
-      color: $dark75;
-      font-family: $font-1;
-    }
+  &::-webkit-input-placeholder,
+  &::-webkit-input-placeholder {
+    color: $dark75;
+    font-family: $font-1;
+  }
 }
 .field-name {
   position: relative;
@@ -31,9 +31,9 @@
 .text-field {
   @include field-style;
   line-height: 24px;
-  &::placeholder{
+  &::placeholder {
     color: $dark25;
-    }
+  }
   &:hover,
   &:focus {
     @include focus-field;
@@ -44,7 +44,3 @@
 .filter-field {
   width: 266px;
 }
-
-
-
-

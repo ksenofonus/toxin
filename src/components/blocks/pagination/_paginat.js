@@ -4,18 +4,18 @@ import * as pagination from '../../../assets/lib/pagination/_pagination.js';
 
 function simpleTemplating(data) {
   let html = '<ul>';
-    $.each(data, function(index, item){
-        html += '<li>'+ item +'</li>';
-    });
-    html += '</ul>';
-    return html;
+  $.each(data, function (index, item) {
+    html += `<li>${item}</li>`;
+  });
+  html += '</ul>';
+  return html;
 }
 
-$("#pagination-container").pagination({
-  dataSource: function(done){
-    let result = [];
-    for(var i = 1; i < 170; i++){
-        result.push(i);
+$('#pagination-container').pagination({
+  dataSource(done) {
+    const result = [];
+    for (let i = 1; i < 170; i++) {
+      result.push(i);
     }
     done(result);
   },
@@ -23,7 +23,8 @@ $("#pagination-container").pagination({
   autoHideNext: true,
   pageSize: 12,
   showNavigator: true,
-  formatNavigator: '<%= rangeStart %> &ndash; <%= rangeEnd %> из 100+ вариантов аренды',
+  formatNavigator:
+    '<%= rangeStart %> &ndash; <%= rangeEnd %> из 100+ вариантов аренды',
   pageRange: 1,
   nextText: '',
   prevText: '',
@@ -34,8 +35,8 @@ $("#pagination-container").pagination({
   disableClassName: 'toxin-theme_pages__disable',
   nextClassName: 'toxin-theme_pages__next',
   prevClassName: 'toxin-theme_pages__prev',
-  callback: function(data, pagination) {
-    var html = simpleTemplating(data);
-    $("#data-container").html(html);
+  callback(data, pagination) {
+    const html = simpleTemplating(data);
+    $('#data-container').html(html);
   },
 });

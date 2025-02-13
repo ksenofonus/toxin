@@ -14,7 +14,7 @@ new AirDatepicker(filterDatepicker, {
   multipleDatesSeparator: ' - ',
   dateFormat: 'dd MMM',
 });
-//datepicker fields
+// datepicker fields
 const startDate = document.getElementById('start-date');
 const endDate = document.getElementById('end-date');
 
@@ -36,7 +36,7 @@ endDate.addEventListener('click', () => datepicker.show());
 endDate.addEventListener('focus', () => datepicker.show());
 
 document.body.addEventListener('click', (e) => {
-  const target = e.target;
+  const { target } = e;
   const isDatepicker =
     target === datepicker.$datepicker ||
     datepicker.$datepicker.contains(target);

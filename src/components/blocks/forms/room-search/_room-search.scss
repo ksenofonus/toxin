@@ -27,7 +27,6 @@
   }
 }
 
-
 .information {
   display: flex;
   align-items: center;
@@ -39,7 +38,7 @@
   border-radius: 100%;
   cursor: pointer;
 }
-.room-search  {
+.room-search {
   padding-left: 29px;
   padding-right: 29px;
   & .total {
@@ -64,7 +63,6 @@
       flex-grow: 1;
       margin: 0 5px;
     }
-      
   }
 }
 .room__number {

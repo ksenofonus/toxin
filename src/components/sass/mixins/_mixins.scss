@@ -1,6 +1,5 @@
 @import '../abstracts/_variables';
 
-
 @mixin text-gradient {
   background: -webkit-linear-gradient($gradient);
   -webkit-background-clip: text;
@@ -32,7 +31,7 @@
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
+  font-size: 24px; /* Preferred icon size */
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -91,7 +90,7 @@
 @mixin expand-more {
   @include material;
   position: absolute;
-  content: "expand_more";
+  content: 'expand_more';
   top: 50%;
   right: calc(0% + 9px);
 }

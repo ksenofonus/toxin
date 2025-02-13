@@ -1,7 +1,6 @@
 @import '../../../../sass/mixins/_mixins';
 .exp-checkbox {
-  
-  &__header{
+  &__header {
     position: relative;
     width: 266px;
     cursor: pointer;
@@ -25,8 +24,8 @@
       flex-direction: column;
       gap: 10px;
       & .checkbox-label::first-letter {
-          text-transform: uppercase;
-        }
+        text-transform: uppercase;
+      }
+    }
   }
-}
 }

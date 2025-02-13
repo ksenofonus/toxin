@@ -14,7 +14,7 @@
 }
 .paragraphs {
   margin-top: -3px;
-  & .text__sentence{
+  & .text__sentence {
     @include bodyfont;
   }
   & .text__name {
@@ -25,7 +25,7 @@
 .head {
   &-1 {
     line-height: 30px;
-    & .text__sentence{
+    & .text__sentence {
       @include h1;
     }
     & .text__name {
@@ -33,7 +33,7 @@
     }
   }
   &-2 {
-    & .text__sentence{
+    & .text__sentence {
       @include h2;
     }
     & .text__name {
@@ -41,7 +41,7 @@
     }
   }
   &-3 {
-    & .text__sentence{
+    & .text__sentence {
       @include h3;
     }
     & .text__name {

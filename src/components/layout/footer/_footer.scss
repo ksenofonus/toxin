@@ -99,15 +99,13 @@
             cursor: pointer;
             transform: scale(1.1);
           }
-          
+
           & i {
             font-size: 21px;
             @include text-gradient;
           }
         }
       }
-      
-      
     }
   }
 }
@@ -119,10 +117,10 @@
     text-decoration: none;
     color: $dark50;
   }
-  &:not(:last-child){
+  &:not(:last-child) {
     margin-bottom: 14px;
   }
 }
-@media screen and (max-width: $tablet){
+@media screen and (max-width: $tablet) {
   @include media-footer;
 }

@@ -19,7 +19,7 @@
 //     text-transform: uppercase;
 //   }
 // }
-.checkbox-label{
+.checkbox-label {
   font-size: 14px;
   color: $dark50;
   cursor: pointer;
@@ -37,7 +37,7 @@
   margin-bottom: 2px;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   @include input-style-reset;
   width: 20px;
   height: 20px;
@@ -49,7 +49,7 @@ input[type="checkbox"] {
     &::after {
       font-family: 'Font Awesome 6 Free';
       display: block;
-      content: "\f00c";
+      content: '\f00c';
       position: absolute;
       top: 50%;
       left: 50%;
@@ -60,16 +60,17 @@ input[type="checkbox"] {
     &:checked {
       border-color: $purple;
       &::after {
-      opacity: 1;
+        opacity: 1;
       }
     }
   }
-  &.switch { //toggle button
+  &.switch {
+    //toggle button
     width: 40px;
     border-radius: 10px;
-    
+
     &::after {
-      content: "";
+      content: '';
       width: 12px;
       height: 12px;
       border-radius: 100%;
@@ -78,7 +79,7 @@ input[type="checkbox"] {
       left: calc(0% + 10px);
       transform: translate(-50%, -50%);
       background-color: $dark25;
-      transition: all ease .5s;
+      transition: all ease 0.5s;
     }
     &:checked {
       border-color: $purple;
@@ -103,15 +104,15 @@ input[type="checkbox"] {
     padding: 5px;
     margin: -5px;
   }
-  & input[type="radio"] {
+  & input[type='radio'] {
     @include input-style-reset;
     width: 20px;
     height: 20px;
     cursor: pointer;
     border-radius: 100%;
-    transition: all ease .5s;
+    transition: all ease 0.5s;
     &::after {
-      content: "";
+      content: '';
       width: 12px;
       height: 12px;
       border-radius: 100%;
@@ -131,6 +132,5 @@ input[type="checkbox"] {
         opacity: 1;
       }
     }
-  
   }
 }

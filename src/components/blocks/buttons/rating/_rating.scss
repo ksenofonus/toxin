@@ -1,11 +1,11 @@
 @import '../../../sass/mixins/_mixins';
 
-.rating-container{
+.rating-container {
   width: 120px;
   height: 24px;
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 }
 .rating-star {
   @include text-gradient;

@@ -1,39 +1,34 @@
-(function(factory) {
-  if (typeof define === "function" && define.amd) {
+(function (factory) {
+  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
     define([], factory);
-  } else if (typeof exports === "object") {
+  } else if (typeof exports === 'object') {
     // Node/CommonJS
     module.exports = factory();
   } else {
     // Browser globals
     window.wNumb = factory();
   }
-})(function() {
-  "use strict";
-
-  var FormatOptions = [
-    "decimals",
-    "thousand",
-    "mark",
-    "prefix",
-    "suffix",
-    "encoder",
-    "decoder",
-    "negativeBefore",
-    "negative",
-    "edit",
-    "undo"
+})(function () {
+  const FormatOptions = [
+    'decimals',
+    'thousand',
+    'mark',
+    'prefix',
+    'suffix',
+    'encoder',
+    'decoder',
+    'negativeBefore',
+    'negative',
+    'edit',
+    'undo',
   ];
 
   // General
 
   // Reverse a string
   function strReverse(a) {
-    return a
-      .split("")
-      .reverse()
-      .join("");
+    return a.split('').reverse().join('');
   }
 
   // Check if a string starts with a specified prefix.
@@ -55,16 +50,16 @@
 
   // Check if a number is finite and not NaN
   function isValidNumber(input) {
-    return typeof input === "number" && isFinite(input);
+    return typeof input === 'number' && isFinite(input);
   }
 
   // Provide rounding-accurate toFixed method.
   // Borrowed: http://stackoverflow.com/a/21323330/775265
   function toFixed(value, exp) {
-    value = value.toString().split("e");
-    value = Math.round(+(value[0] + "e" + (value[1] ? +value[1] + exp : exp)));
-    value = value.toString().split("e");
-    return (+(value[0] + "e" + (value[1] ? +value[1] - exp : -exp))).toFixed(exp);
+    value = value.toString().split('e');
+    value = Math.round(+`${value[0]}e${value[1] ? +value[1] + exp : exp}`);
+    value = value.toString().split('e');
+    return (+`${value[0]}e${value[1] ? +value[1] - exp : -exp}`).toFixed(exp);
   }
 
   // Formatting
@@ -84,12 +79,12 @@
     undo,
     input
   ) {
-    var originalInput = input,
-      inputIsNegative,
-      inputPieces,
-      inputBase,
-      inputDecimals = "",
-      output = "";
+    const originalInput = input;
+    let inputIsNegative;
+    let inputPieces;
+    let inputBase;
+    let inputDecimals = '';
+    let output = '';
 
     // Apply user encoder to the input.
     // Expected outcome: number.
@@ -124,8 +119,8 @@
     input = input.toString();
 
     // Break the number on the decimal separator.
-    if (input.indexOf(".") !== -1) {
-      inputPieces = input.split(".");
+    if (input.indexOf('.') !== -1) {
+      inputPieces = input.split('.');
 
       inputBase = inputPieces[0];
 
@@ -191,9 +186,9 @@
     undo,
     input
   ) {
-    var originalInput = input,
-      inputIsNegative,
-      output = "";
+    const originalInput = input;
+    let inputIsNegative;
+    let output = '';
 
     // User defined pre-decoder. Result must be a non empty string.
     if (undo) {
@@ -201,25 +196,25 @@
     }
 
     // Test the input. Can't be empty.
-    if (!input || typeof input !== "string") {
+    if (!input || typeof input !== 'string') {
       return false;
     }
 
     // If the string starts with the negativeBefore value: remove it.
     // Remember is was there, the number is negative.
     if (negativeBefore && strStartsWith(input, negativeBefore)) {
-      input = input.replace(negativeBefore, "");
+      input = input.replace(negativeBefore, '');
       inputIsNegative = true;
     }
 
     // Repeat the same procedure for the prefix.
     if (prefix && strStartsWith(input, prefix)) {
-      input = input.replace(prefix, "");
+      input = input.replace(prefix, '');
     }
 
     // And again for negative.
     if (negative && strStartsWith(input, negative)) {
-      input = input.replace(negative, "");
+      input = input.replace(negative, '');
       inputIsNegative = true;
     }
 
@@ -231,27 +226,27 @@
 
     // Remove the thousand grouping.
     if (thousand) {
-      input = input.split(thousand).join("");
+      input = input.split(thousand).join('');
     }
 
     // Set the decimal separator back to period.
     if (mark) {
-      input = input.replace(mark, ".");
+      input = input.replace(mark, '.');
     }
 
     // Prepend the negative symbol.
     if (inputIsNegative) {
-      output += "-";
+      output += '-';
     }
 
     // Add the number
     output += input;
 
     // Trim all non-numeric characters (allow '.' and '-');
-    output = output.replace(/[^0-9\.\-.]/g, "");
+    output = output.replace(/[^0-9\.\-.]/g, '');
 
     // The value contains no parse-able number.
-    if (output === "") {
+    if (output === '') {
       return false;
     }
 
@@ -275,13 +270,13 @@
 
   // Validate formatting options
   function validate(inputOptions) {
-    var i,
-      optionName,
-      optionValue,
-      filteredOptions = {};
+    let i;
+    let optionName;
+    let optionValue;
+    const filteredOptions = {};
 
-    if (inputOptions["suffix"] === undefined) {
-      inputOptions["suffix"] = inputOptions["postfix"];
+    if (inputOptions.suffix === undefined) {
+      inputOptions.suffix = inputOptions.postfix;
     }
 
     for (i = 0; i < FormatOptions.length; i += 1) {
@@ -290,17 +285,17 @@
 
       if (optionValue === undefined) {
         // Only default if negativeBefore isn't set.
-        if (optionName === "negative" && !filteredOptions.negativeBefore) {
-          filteredOptions[optionName] = "-";
+        if (optionName === 'negative' && !filteredOptions.negativeBefore) {
+          filteredOptions[optionName] = '-';
           // Don't set a default for mark when 'thousand' is set.
-        } else if (optionName === "mark" && filteredOptions.thousand !== ".") {
-          filteredOptions[optionName] = ".";
+        } else if (optionName === 'mark' && filteredOptions.thousand !== '.') {
+          filteredOptions[optionName] = '.';
         } else {
           filteredOptions[optionName] = false;
         }
 
         // Floating points in JS are stable up to 7 decimals.
-      } else if (optionName === "decimals") {
+      } else if (optionName === 'decimals') {
         if (optionValue >= 0 && optionValue < 8) {
           filteredOptions[optionName] = optionValue;
         } else {
@@ -309,40 +304,38 @@
 
         // These options, when provided, must be functions.
       } else if (
-        optionName === "encoder" ||
-        optionName === "decoder" ||
-        optionName === "edit" ||
-        optionName === "undo"
+        optionName === 'encoder' ||
+        optionName === 'decoder' ||
+        optionName === 'edit' ||
+        optionName === 'undo'
       ) {
-        if (typeof optionValue === "function") {
+        if (typeof optionValue === 'function') {
           filteredOptions[optionName] = optionValue;
         } else {
           throw new Error(optionName);
         }
 
         // Other options are strings.
+      } else if (typeof optionValue === 'string') {
+        filteredOptions[optionName] = optionValue;
       } else {
-        if (typeof optionValue === "string") {
-          filteredOptions[optionName] = optionValue;
-        } else {
-          throw new Error(optionName);
-        }
+        throw new Error(optionName);
       }
     }
 
     // Some values can't be extracted from a
     // string if certain combinations are present.
-    throwEqualError(filteredOptions, "mark", "thousand");
-    throwEqualError(filteredOptions, "prefix", "negative");
-    throwEqualError(filteredOptions, "prefix", "negativeBefore");
+    throwEqualError(filteredOptions, 'mark', 'thousand');
+    throwEqualError(filteredOptions, 'prefix', 'negative');
+    throwEqualError(filteredOptions, 'prefix', 'negativeBefore');
 
     return filteredOptions;
   }
 
   // Pass all options as function arguments
   function passAll(options, method, input) {
-    var i,
-      args = [];
+    let i;
+    const args = [];
 
     // Add all options in order of FormatOptions
     for (i = 0; i < FormatOptions.length; i += 1) {
@@ -352,7 +345,7 @@
     // Append the input, then call the method, presenting all
     // options as arguments.
     args.push(input);
-    return method.apply("", args);
+    return method.apply('', args);
   }
 
   function wNumb(options) {
@@ -360,19 +353,19 @@
       return new wNumb(options);
     }
 
-    if (typeof options !== "object") {
+    if (typeof options !== 'object') {
       return;
     }
 
     options = validate(options);
 
     // Call 'formatTo' with proper arguments.
-    this.to = function(input) {
+    this.to = function (input) {
       return passAll(options, formatTo, input);
     };
 
     // Call 'formatFrom' with proper arguments.
-    this.from = function(input) {
+    this.from = function (input) {
       return passAll(options, formatFrom, input);
     };
   }

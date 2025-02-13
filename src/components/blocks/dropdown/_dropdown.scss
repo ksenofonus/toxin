@@ -40,7 +40,7 @@
     &_active {
       display: block;
       z-index: 100;
-      box-shadow: 0 10px 20px 0 rgba(31, 32, 65, 0.05);;
+      box-shadow: 0 10px 20px 0 rgba(31, 32, 65, 0.05);
     }
   }
   &__selection {
@@ -60,7 +60,7 @@
     // height: 37px;
     @include h3;
     display: flex;
-    
+
     justify-content: space-between;
     font-weight: 700;
     text-transform: uppercase;
@@ -68,7 +68,8 @@
       margin-bottom: 7px;
     }
   }
-  &-item, .item-quantity {
+  &-item,
+  .item-quantity {
     line-height: 15px;
     padding-top: 6px;
   }

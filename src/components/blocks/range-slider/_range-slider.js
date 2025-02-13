@@ -5,39 +5,34 @@ import * as wNumb from '../../../assets/lib/_wNumb';
 const sliderFormat = document.querySelector('.range-slider_slider');
 
 noUiSlider.create(sliderFormat, {
-    start: [5000, 10000],
-    connect: true,
-    step: 50,
-    range: {
-        'min': [200],
-        'max': [15500]
-    },
-    format: wNumb({
-        decimals: 0,
-        thousand: ' ',
-        suffix: '&#8381'
-    })
+  start: [5000, 10000],
+  connect: true,
+  step: 50,
+  range: {
+    min: [200],
+    max: [15500],
+  },
+  format: wNumb({
+    decimals: 0,
+    thousand: ' ',
+    suffix: '&#8381',
+  }),
 });
 
 const minPrice = document.querySelector('.min-price');
 const maxPrice = document.querySelector('.max-price');
 
-const price = [
-    minPrice,
-    maxPrice
-];
-
+const price = [minPrice, maxPrice];
 
 sliderFormat.noUiSlider.on('update', function (values, handle) {
-    price[handle].innerHTML = values[handle];
+  price[handle].innerHTML = values[handle];
 });
 
 minPrice.addEventListener('change', function () {
-    sliderFormat.noUiSlider.set(this.value);
+  sliderFormat.noUiSlider.set(this.value);
 });
 maxPrice.addEventListener('change', function () {
-    sliderFormat.noUiSlider.set(this.value);
+  sliderFormat.noUiSlider.set(this.value);
 });
 
 export default noUiSlider.create;
-
