@@ -116,32 +116,16 @@ html(lang='en')
                   include ../components/blocks/pagination/_paginat.pug
           .row.row-2
             .forms-block
-              +dropdown('roomchoice','roomchoice-1', 'Dropdown', '2 спальни, 2 кровати...',
-                            {'bedroom': 'спальни',
-                            'bed': 'кровати',
-                            'bath': 'Ванные комнаты'
-                            },
-                            false)(class='default-dropdown')
-              +dropdown('roomchoice','roomchoice-2', 'Dropdown', '2 спальни, 2 кровати...',
-                            {'bedroom': 'спальни',
-                            'bed': 'кровати',
-                            'bath': 'Ванные комнаты'
-                            },
-                            false)(class='expanded-dropdown')
+              +roomDropdown('dropdown')(class='default' id='roomselect')
+              +roomDropdown('dropdown')(class='expanded dropdown_active')
             .forms-block
-              +dropdown('guest','guestopen', 'Dropdown', 'Сколько гостей',
-                            {'adults': 'Взрослые',
-                              'children': 'Дети',
-                              'infant': 'Младенцы'
-                            },
-                            true)
+              +guestDropdown('dropdown')(class='dropdown_active')
             .forms-block
-              +dropdown('guest','guestchoose', 'Dropdown', 'Сколько гостей',
-                            {'adults': 'Взрослые',
-                              'children': 'Дети',
-                              'infant': 'Младенцы'
-                            },
-                            true)
+              +guestDropdown('dropdown', '3 гостя',
+                {'взрослые': 2,
+                'дети': 1,
+                'младенцы': 0
+                })(class='dropdown_active')
           .row.row-3
             .forms-block
               +expandable-checkbox

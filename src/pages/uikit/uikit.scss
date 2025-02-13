@@ -214,15 +214,17 @@
   @include field-clue;
   content: 'hover / focus';
 }
-.default-dropdown::after {
+.default::after {
   @include field-clue;
   content: 'default';
-  top: -21px;
-  right: -1px;
+  top: 0;
+  right: 0;
 }
-.expanded-dropdown::after {
+.expanded::after {
   @include field-clue;
   content: 'expanded';
+  top: 0;
+  right: 0;
 }
 .empty {
   width: 320px;
