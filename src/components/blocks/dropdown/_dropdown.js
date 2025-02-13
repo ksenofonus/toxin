@@ -148,7 +148,7 @@ const sumTotal = (container) => {
       text = `${bed} ${declination(bed, beds)}, ${bath} ${declination(bath, bathroom)}`;
     } else if (room !== 0 && bed === 0 && bath !== 0){
       text = `${room} ${declination(room, bedrooms)}, ${bath} ${declination(bath, bathroom)}`;
-    } 
+    }
      else {
       text = `${room} ${declination(room, bedrooms)}, ${bed} ${declination(bed, beds)}...`;
     }

@@ -1,19 +1,37 @@
-mixin dropdown(type, id, dropdownName, selectionText, data={}, bottom)
-  .dropdown(id= id)
-    h3.dropdown-name= dropdownName
-    .item-dropdown(class!=attributes.class class= type)
-      p.item-dropdown__selection= selectionText
-      .item-dropdown__menu
-        each item, key in data
-          .item-dropdown__menu-option
-            .item-dropdown-item
-              p=item
-            .item-dropdown__menu-quantity
-              button.dropdown-button.dropdown-button_inactive.decrease -
-              .item-quantity(data-dropdown= key) 0
-              button.dropdown-button.increase +
-        if bottom
-          .dropdown-bottom
-            button.dropdown-btn.dropdown-btn__clear Очистить
-            button.dropdown-btn.dropdown-btn__apply Применить
-        
+mixin dropdown(type, dropdownName, placeholder, bottom)
+  .dropdown(class= type)(class!=attributes.class)
+    h3.dropdown__name= dropdownName
+    .dropdown__item
+      span.dropdown__placeholder= placeholder
+    block
+
+mixin option(data={})
+  .dropdown__menu
+    each item, key in data
+      .dropdown__option
+        .dropdown__option-name
+          span= key
+        .dropdown__option-amount
+          button.amount-button.amount-button_inactive.decrease -
+          .amount= item
+          button.amount-button.increase +
+    block
+
+mixin roomDropdown(name)
+  +dropdown('roomselect', name, '2 спальни, 2 кровати, 1 ванная комната',
+    false)(class!=attributes.class)
+    +option(
+      {
+        'спальни': 2,
+        'кровати': 2,
+        'ванные комнаты': 1
+      }
+    )
+      block
+
+mixin guestDropdown(name, placeholder= 'Сколько гостей', data= {'взрослые': 0, 'дети': 0, 'младенцы': 0})
+  +dropdown('guest', name, placeholder, true)(class!=attributes.class)
+    +option(data)
+      .dropdown__footer
+        button.dropdown__btn.dropdown__btn__clear Очистить
+        button.dropdown__btn.dropdown__btn__apply Применить

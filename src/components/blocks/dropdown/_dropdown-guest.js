@@ -6,6 +6,14 @@ const dropdownChoose = document.querySelector('#guestchoose .item-dropdown__sele
 const dropdownRoomDefault = document.querySelector('#roomchoice-1 .item-dropdown__selection');
 const dropdownRoomOpen = document.querySelector('#roomchoice-2 .item-dropdown__selection');
 
+const drop = document.querySelectorAll('.dropdown');
+drop.forEach((item) => {
+  item.addEventListener('click', (event) => {
+    event.stopPropagation();
+    console.log(event.target);
+  });
+})
+
 const dropdownContainer = dropdownSelect.parentNode;
 
 dropdown(dropdownSelect);
