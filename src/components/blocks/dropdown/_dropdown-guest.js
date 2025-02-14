@@ -1,15 +1,124 @@
-import { dropdown } from './_dropdown';
+// import sumTotal from './_dropdown';
 
-const dropdowns = document.querySelectorAll('.dropdown');
-function dropdownToggle(dropdown) {
-  dropdown.classList.toggle('dropdown_active');
+const dropdowns = document.querySelectorAll('.dropdown__item');
+function dropdownToggle(item) {
+  item.parentElement.classList.toggle('dropdown_active');
 }
 
+function increase() {
+
+}
+
+function counter(item) {
+  
+  increaseButton.forEach((item, index) => {
+    item.addEventListener('click', (event) => {
+      event.preventDefault();
+      let itemVal = parseInt(itemQuantity[index].textContent);
+      itemVal < limitGuest ? itemQuantity[index].textContent = itemVal + 1 : itemVal = limitGuest;
+      if (itemVal >= 0) {
+        decreaseButton[index].classList.remove('dropdown-button_inactive');
+      }
+      if (itemVal >= limitGuest - 1) {
+       item.classList.add('dropdown-button_inactive');
+      }
+      if (clear) {
+        if(sumTotal(dropdownContainer).total !== 0) {
+          clear.classList.add('dropdown-btn__clear_active');
+        } else {
+          clear.classList.remove('dropdown-btn__clear_active');
+        }
+      }
+      selectText.textContent = sumTotal(dropdownContainer).text
+    })
+  })
+}
+
+function sumTotal(item) {
+  const guests = ['гость', 'гостя', 'гостей'];
+  const infants = ['младенец', 'младенца', 'младенцев'];
+  const bedrooms = ['спальня', 'спальни', 'спален'];
+  const beds = ['кровать', 'кровати', 'кроватей'];
+  const bathroom = ['ванная...', 'ванные...', 'ванных...'];
+  let text = '';
+  if (container.classList.contains('guest')) {
+    const defaultText = 'Сколько гостей';
+    let adult = Number(
+      container.querySelector('[data-dropdown="adults"]').textContent,
+    );
+    let children = Number(
+      container.querySelector('[data-dropdown="children"]').textContent,
+    );
+    let infant = Number(
+      container.querySelector('[data-dropdown="infant"]').textContent,
+    );
+    let sum = adult + children;
+    let total = adult + children + infant;
+    if (sum === 0 && infant === 0) {
+      text = defaultText;
+    } else if (sum !== 0 && infant === 0) {
+      text = `${sum} ${declination(sum, guests)}`;
+    } else if (sum === 0 && infant !== 0) {
+      text = `${infant} ${declination(infant, infants)}`;
+    } else {
+      text = `${sum} ${declination(sum, guests)}, ${infant} ${declination(infant, infants)}`;
+    }
+
+    return {
+      adult: adult,
+      children: children,
+      infant: infant,
+      total: total,
+      defaultText: defaultText,
+      text: text,
+    };
+  } else if (container.classList.contains('roomchoice')) {
+    const defaultText = '2 спальни, 2 кровати...';
+    let room = Number(
+      container.querySelector('[data-dropdown="bedroom"]').textContent,
+    );
+    let bed = Number(
+      container.querySelector('[data-dropdown="bed"]').textContent,
+    );
+    let bath = Number(
+      container.querySelector('[data-dropdown="bath"]').textContent,
+    );
+    if (room === 0 && bed === 0 && bath === 0) {
+      text = defaultText;
+    } else if (room === 0 && bed === 0 && bath !== 0) {
+      text = `${bath} ${declination(bath, bathroom)}`;
+    } else if (room === 0 && bed !== 0 && bath === 0) {
+      text = `${bed} ${declination(bed, beds)}`;
+    } else if (room !== 0 && bed === 0 && bath === 0) {
+      text = `${room} ${declination(room, bedrooms)}`;
+    } else if (room === 0 && bed !== 0 && bath !== 0) {
+      text = `${bed} ${declination(bed, beds)}, ${bath} ${declination(bath, bathroom)}`;
+    } else if (room !== 0 && bed === 0 && bath !== 0) {
+      text = `${room} ${declination(room, bedrooms)}, ${bath} ${declination(bath, bathroom)}`;
+    } else {
+      text = `${room} ${declination(room, bedrooms)}, ${bed} ${declination(bed, beds)}...`;
+    }
+    return {
+      bedroom: room,
+      bed: bed,
+      bath: bath,
+      defaultText: defaultText,
+      text: text,
+    };
+  }
+}
 dropdowns.forEach((item) => {
-  item.addEventListener('click', (event) => {
+  item.addEventListener('click', (event) =>{
     const current = event.currentTarget;
+    const currentMenu = current.nextSibling;
+    const options = currentMenu.querySelectorAll('.dropdown__option');
+    options.forEach((option, index) => {
+      this.name = option.getAttribute('data-name');
+    })
+    console.log(this)
     dropdownToggle(current);
-  });
+    
+  })
 });
 
 // const dropdownSelect = document.querySelector(

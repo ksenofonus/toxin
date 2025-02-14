@@ -100,62 +100,62 @@
 
 
 // // сумма элементов
-// export const sumTotal = (container) => {
-//   const guests = ['гость', 'гостя', 'гостей'];
-//   const infants = ['младенец', 'младенца', 'младенцев'];
-//   const bedrooms = ['спальня', 'спальни', 'спален'];
-//   const beds = ['кровать', 'кровати', 'кроватей'];
-//   const bathroom = ['ванная...', 'ванные...', 'ванных...'];
-//   let text = '';
-//   if(container.classList.contains('guest')) {
-//     const defaultText = 'Сколько гостей';
-//     let adult = Number((container.querySelector('[data-dropdown="adults"]')).textContent);
-//     let children = Number((container.querySelector('[data-dropdown="children"]')).textContent);
-//     let infant = Number((container.querySelector('[data-dropdown="infant"]')).textContent);
-//     let sum = adult + children;
-//     let total = adult + children + infant;
-//     if (sum === 0 && infant === 0) {
-//       text = defaultText;
-//     } else if (sum !== 0 && infant === 0) {
-//       text = `${sum} ${declination(sum, guests)}`
-//     } else if (sum === 0 && infant !== 0) {
-//       text = `${infant} ${declination(infant, infants)}`
-//     } else {
-//       text = `${sum} ${declination(sum, guests)}, ${infant} ${declination(infant, infants)}`
-//     }
+export function sumTotal(container) {
+  const guests = ['гость', 'гостя', 'гостей'];
+  const infants = ['младенец', 'младенца', 'младенцев'];
+  const bedrooms = ['спальня', 'спальни', 'спален'];
+  const beds = ['кровать', 'кровати', 'кроватей'];
+  const bathroom = ['ванная...', 'ванные...', 'ванных...'];
+  let text = '';
+  if(container.classList.contains('guest')) {
+    const defaultText = 'Сколько гостей';
+    let adult = Number((container.querySelector('[data-dropdown="adults"]')).textContent);
+    let children = Number((container.querySelector('[data-dropdown="children"]')).textContent);
+    let infant = Number((container.querySelector('[data-dropdown="infant"]')).textContent);
+    let sum = adult + children;
+    let total = adult + children + infant;
+    if (sum === 0 && infant === 0) {
+      text = defaultText;
+    } else if (sum !== 0 && infant === 0) {
+      text = `${sum} ${declination(sum, guests)}`
+    } else if (sum === 0 && infant !== 0) {
+      text = `${infant} ${declination(infant, infants)}`
+    } else {
+      text = `${sum} ${declination(sum, guests)}, ${infant} ${declination(infant, infants)}`
+    }
     
-//     return ({adult: adult,
-//              children: children,
-//              infant: infant,
-//              total: total,
-//              defaultText: defaultText,
-//              text: text});
-//   }
-//   else if (container.classList.contains('roomchoice')) {
-//     const defaultText = '2 спальни, 2 кровати...';
-//     let room = Number(container.querySelector('[data-dropdown="bedroom"]').textContent);
-//     let bed = Number(container.querySelector('[data-dropdown="bed"]').textContent);
-//     let bath = Number(container.querySelector('[data-dropdown="bath"]').textContent);
-//     if (room === 0 && bed === 0 && bath === 0) {
-//       text = defaultText;
-//     } else if (room === 0 && bed === 0 && bath !== 0){
-//       text = `${bath} ${declination(bath, bathroom)}`;
-//     } else if (room === 0 && bed !== 0 && bath === 0) {
-//       text = `${bed} ${declination(bed, beds)}`;
-//     } else if (room !== 0 && bed === 0 && bath === 0) {
-//       text = `${room} ${declination(room, bedrooms)}`;
-//     } else if (room === 0 && bed !== 0 && bath !== 0){
-//       text = `${bed} ${declination(bed, beds)}, ${bath} ${declination(bath, bathroom)}`;
-//     } else if (room !== 0 && bed === 0 && bath !== 0){
-//       text = `${room} ${declination(room, bedrooms)}, ${bath} ${declination(bath, bathroom)}`;
-//     }
-//      else {
-//       text = `${room} ${declination(room, bedrooms)}, ${bed} ${declination(bed, beds)}...`;
-//     }
-//     return ({bedroom: room,
-//              bed: bed,
-//              bath: bath,
-//              defaultText: defaultText,
-//              text: text
-//     })
-// }}
+    return ({adult: adult,
+             children: children,
+             infant: infant,
+             total: total,
+             defaultText: defaultText,
+             text: text});
+  }
+  else if (container.classList.contains('roomchoice')) {
+    const defaultText = '2 спальни, 2 кровати...';
+    let room = Number(container.querySelector('[data-dropdown="bedroom"]').textContent);
+    let bed = Number(container.querySelector('[data-dropdown="bed"]').textContent);
+    let bath = Number(container.querySelector('[data-dropdown="bath"]').textContent);
+    if (room === 0 && bed === 0 && bath === 0) {
+      text = defaultText;
+    } else if (room === 0 && bed === 0 && bath !== 0){
+      text = `${bath} ${declination(bath, bathroom)}`;
+    } else if (room === 0 && bed !== 0 && bath === 0) {
+      text = `${bed} ${declination(bed, beds)}`;
+    } else if (room !== 0 && bed === 0 && bath === 0) {
+      text = `${room} ${declination(room, bedrooms)}`;
+    } else if (room === 0 && bed !== 0 && bath !== 0){
+      text = `${bed} ${declination(bed, beds)}, ${bath} ${declination(bath, bathroom)}`;
+    } else if (room !== 0 && bed === 0 && bath !== 0){
+      text = `${room} ${declination(room, bedrooms)}, ${bath} ${declination(bath, bathroom)}`;
+    }
+     else {
+      text = `${room} ${declination(room, bedrooms)}, ${bed} ${declination(bed, beds)}...`;
+    }
+    return ({bedroom: room,
+             bed: bed,
+             bath: bath,
+             defaultText: defaultText,
+             text: text
+    })
+}}
