@@ -1,12 +1,12 @@
-const declination = (num, [one, two, plural]) => {
-  if (num%10 === 1 && num !== 11) {
+export default function declination(num, [one, two, plural]) {
+  if (num % 10 === 1 && num !== 11) {
     return one;
-  } else if (num >= 5 && num <= 20) {
-    return plural;
-  } else if (num % 10 > 1 && num % 10 < 5) {
-    return two;
-  } else {
+  }
+  if (num >= 5 && num <= 20) {
     return plural;
   }
+  if (num % 10 > 1 && num % 10 < 5) {
+    return two;
+  }
+  return plural;
 }
-module.exports= declination

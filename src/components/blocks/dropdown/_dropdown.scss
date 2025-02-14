@@ -59,6 +59,9 @@
     background-color: #fff;
     border-radius: 0 0 4px 4px;
     display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
   }
   &__option {
     // height: 37px;

@@ -10,10 +10,10 @@ mixin option(data={})
     each item, key in data
       .dropdown__option
         .dropdown__option-name
-          span= key
+          span= item.text
         .dropdown__option-amount
           button.amount-button.amount-button_inactive.decrease -
-          .amount= item
+          .amount(data-name= key)= item.amount
           button.amount-button.increase +
     block
 
@@ -22,14 +22,14 @@ mixin roomDropdown(name)
     false)(class!=attributes.class)
     +option(
       {
-        'спальни': 2,
-        'кровати': 2,
-        'ванные комнаты': 1
+        'bedroom': {amount: 2, text: 'спальни'},
+        'bed': { amount: 2, text: 'кровати'},
+        'bath': {amount: 1, text: 'ванные комнаты'},
       }
     )
       block
 
-mixin guestDropdown(name, placeholder= 'Сколько гостей', data= {'взрослые': 0, 'дети': 0, 'младенцы': 0})
+mixin guestDropdown(name, placeholder= 'Сколько гостей', data= {'adults': {amount: 0, text: 'взрослые'},'children': { amount: 0, text: 'дети'},'infants': {amount: 0, text: 'младенцы'},})
   +dropdown('guest', name, placeholder, true)(class!=attributes.class)
     +option(data)
       .dropdown__footer
