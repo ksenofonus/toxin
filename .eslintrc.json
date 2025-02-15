@@ -3,7 +3,8 @@
         "browser": true,
         "es2021": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "commonjs": true
     },
     "extends": [
         "airbnb",
@@ -21,10 +22,9 @@
         "babel",
         "import"
     ],
-    "parser": "babel-eslint",
+    // "parser": "babel-eslint",
     "rules": {
         "prettier/prettier": "error",
-        "max-len": ["error", 100, 2, { "ignoreUrls": true }],
-        "indent": [2, "tab"]
+        "max-len": ["error", 100, 2, { "ignoreUrls": true }]
     }
 }

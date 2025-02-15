@@ -48,12 +48,7 @@ html(lang='en')
                 +field('text', 'email', 'Email')(class="text-field text-field_default")
               +label('text field')(class="text-field_hover")
                 +field('text', 'text-focus', 'This is pretty awesome')(class="text-field")
-              +dropdown('guest','guestdrop', 'Dropdown', 'Сколько гостей',
-                          {'adults': 'Взрослые',
-                            'children': 'Дети',
-                            'infant': 'Младенцы'
-                          },
-                          true)(class='default-dropdown')
+              +guestDropdown('dropdown')(class='default')
               +label('masked text field')(class="text-field_default")
                 +field('text', 'masked', 'ДД.ММ.ГГГГ')(class='text-field masked-date')
               .datepick-wrapper
@@ -122,10 +117,7 @@ html(lang='en')
               +guestDropdown('dropdown')(class='dropdown_active')
             .forms-block
               +guestDropdown('dropdown', '3 гостя',
-                {'взрослые': 2,
-                'дети': 1,
-                'младенцы': 0
-                })(class='dropdown_active')
+                {'adults': {amount: 2, text: 'взрослые'},'children': { amount: 1, text: 'дети'},'infants': {amount: 0, text: 'младенцы'},})(class='dropdown_active')
           .row.row-3
             .forms-block
               +expandable-checkbox
