@@ -12,7 +12,7 @@ mixin option(data={})
         .dropdown__option-name
           span= item.text
         .dropdown__option-amount
-          button.amount-button.amount-button_inactive.decrease -
+          button.amount-button.amount-button_inactive.decrease(disabled= true) -
           .amount= item.amount
           button.amount-button.increase +
     block

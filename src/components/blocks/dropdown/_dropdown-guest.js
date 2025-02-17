@@ -1,46 +1,76 @@
 // import sumTotal from './_dropdown';
 
-const dropdowns = document.querySelectorAll('.dropdown__item');
 function dropdownToggle(item) {
   item.parentElement.classList.toggle('dropdown_active');
 }
 
-function increase() {
 
-}
 
-function counter(item) {
-  
-  increaseButton.forEach((item, index) => {
-    item.addEventListener('click', (event) => {
-      event.preventDefault();
-      let itemVal = parseInt(itemQuantity[index].textContent);
-      itemVal < limitGuest ? itemQuantity[index].textContent = itemVal + 1 : itemVal = limitGuest;
-      if (itemVal >= 0) {
-        decreaseButton[index].classList.remove('dropdown-button_inactive');
+function counter(menu) {
+  const options = menu.querySelectorAll('.dropdown__option');
+  options.forEach(option => {
+    const amount = option.querySelector('.amount');
+    let sum = Number(amount.textContent);
+    function count(button) {
+      let limit;
+      if (button.classList.contains('increase')) {
+        limit = 10;
+        sum += 1;
+        decrease.classList.remove('amount-button_inactive');
+        decrease.removeAttribute('disabled');
+      } else {
+        limit = 0;
+        sum -= 1;
+        increase.classList.remove('amount-button_inactive');
+        increase.removeAttribute('disabled');
       }
-      if (itemVal >= limitGuest - 1) {
-       item.classList.add('dropdown-button_inactive');
+      if (sum === limit) {
+        button.classList.add('amount-button_inactive');
+        button.disabled = true;
       }
-      if (clear) {
-        if(sumTotal(dropdownContainer).total !== 0) {
-          clear.classList.add('dropdown-btn__clear_active');
-        } else {
-          clear.classList.remove('dropdown-btn__clear_active');
-        }
-      }
-      selectText.textContent = sumTotal(dropdownContainer).text
+      amount.textContent = sum;
+    }
+    const increase = option.querySelector('.increase');
+    const decrease = option.querySelector('.decrease');
+    increase.addEventListener('click', () => {
+      count(increase);
+    })
+    decrease.addEventListener('click', () => {
+      count(decrease);
     })
   })
 }
 
-function sumTotal(item) {
-  const guests = ['гость', 'гостя', 'гостей'];
-  const infants = ['младенец', 'младенца', 'младенцев'];
+function totalRoom(item) {
   const bedrooms = ['спальня', 'спальни', 'спален'];
   const beds = ['кровать', 'кровати', 'кроватей'];
-  const bathroom = ['ванная...', 'ванные...', 'ванных...'];
+  const bathroom = ['ванная', 'ванные', 'ванных'];
   let text = '';
+  const defaultText = '2 спальни, 2 кровати';
+  let room = Number(
+    container.querySelector('[data-dropdown="bedroom"]').textContent,
+  );
+  let bed = Number(
+    container.querySelector('[data-dropdown="bed"]').textContent,
+  );
+  let bath = Number(
+    container.querySelector('[data-dropdown="bath"]').textContent,
+  );
+  if (room === 0 && bed === 0 && bath === 0) {
+    text = defaultText;
+  } else if (room === 0 && bed === 0 && bath !== 0) {
+    text = `${bath} ${declination(bath, bathroom)}`;
+  } else if (room === 0 && bed !== 0 && bath === 0) {
+    text = `${bed} ${declination(bed, beds)}`;
+  } else if (room !== 0 && bed === 0 && bath === 0) {
+    text = `${room} ${declination(room, bedrooms)}`;
+  } else if (room === 0 && bed !== 0 && bath !== 0) {
+    text = `${bed} ${declination(bed, beds)}, ${bath} ${declination(bath, bathroom)}`;
+  } else if (room !== 0 && bed === 0 && bath !== 0) {
+    text = `${room} ${declination(room, bedrooms)}, ${bath} ${declination(bath, bathroom)}`;
+  } else {
+    text = `${room} ${declination(room, bedrooms)}, ${bed} ${declination(bed, beds)}...`;
+  }
   if (container.classList.contains('guest')) {
     const defaultText = 'Сколько гостей';
     let adult = Number(
@@ -73,31 +103,7 @@ function sumTotal(item) {
       text: text,
     };
   } else if (container.classList.contains('roomchoice')) {
-    const defaultText = '2 спальни, 2 кровати...';
-    let room = Number(
-      container.querySelector('[data-dropdown="bedroom"]').textContent,
-    );
-    let bed = Number(
-      container.querySelector('[data-dropdown="bed"]').textContent,
-    );
-    let bath = Number(
-      container.querySelector('[data-dropdown="bath"]').textContent,
-    );
-    if (room === 0 && bed === 0 && bath === 0) {
-      text = defaultText;
-    } else if (room === 0 && bed === 0 && bath !== 0) {
-      text = `${bath} ${declination(bath, bathroom)}`;
-    } else if (room === 0 && bed !== 0 && bath === 0) {
-      text = `${bed} ${declination(bed, beds)}`;
-    } else if (room !== 0 && bed === 0 && bath === 0) {
-      text = `${room} ${declination(room, bedrooms)}`;
-    } else if (room === 0 && bed !== 0 && bath !== 0) {
-      text = `${bed} ${declination(bed, beds)}, ${bath} ${declination(bath, bathroom)}`;
-    } else if (room !== 0 && bed === 0 && bath !== 0) {
-      text = `${room} ${declination(room, bedrooms)}, ${bath} ${declination(bath, bathroom)}`;
-    } else {
-      text = `${room} ${declination(room, bedrooms)}, ${bed} ${declination(bed, beds)}...`;
-    }
+    
     return {
       bedroom: room,
       bed: bed,
@@ -107,19 +113,20 @@ function sumTotal(item) {
     };
   }
 }
-dropdowns.forEach((item) => {
-  item.addEventListener('click', (event) =>{
-    const current = event.currentTarget;
-    const currentMenu = current.nextSibling;
-    const options = currentMenu.querySelectorAll('.dropdown__option');
-    options.forEach((option, index) => {
-      this.name = option.getAttribute('data-name');
-    })
-    console.log(this)
-    dropdownToggle(current);
-    
-  })
-});
+
+function dropdown() {
+  const dropdowns = document.querySelectorAll('.dropdown__item');
+  dropdowns.forEach((item) => {
+    item.addEventListener('click', (event) => {
+      const current = event.currentTarget;
+      dropdownToggle(current);
+    });
+    const menu = item.nextElementSibling;
+    counter(menu);
+  });
+}
+dropdown();
+
 
 // const dropdownSelect = document.querySelector(
 //   '#guestdrop .item-dropdown__selection'
