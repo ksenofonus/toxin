@@ -1,5 +1,5 @@
 mixin dropdown(type, dropdownName, placeholder, bottom)
-  .dropdown(class= type)(class!=attributes.class)
+  .dropdown(class= type)&attributes(attributes)
     h3.dropdown__name= dropdownName
     .dropdown__item
       span.dropdown__placeholder= placeholder
@@ -12,14 +12,17 @@ mixin option(data={})
         .dropdown__option-name
           span= item.text
         .dropdown__option-amount
-          button.amount-button.amount-button_inactive.decrease(disabled= true) -
+          button(
+            class='amount-button decrease'
+            class = item.amount <= 0 ? 'amount-button_inactive' : false
+          ) -
           .amount= item.amount
           button.amount-button.increase +
     block
 
 mixin roomDropdown(name)
   +dropdown('roomselect', name, '2 спальни, 2 кровати, 1 ванная комната',
-    false)(class!=attributes.class)
+    false)&attributes(attributes)
     +option(
       {
         'bedroom': {amount: 2, text: 'спальни'},

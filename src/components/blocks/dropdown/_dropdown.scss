@@ -3,7 +3,7 @@
 .dropdown {
   width: 100%;
   position: relative;
-  
+  min-width: 266px;
   &__name {
     margin-bottom: 5px;
   }
@@ -61,6 +61,7 @@
     display: none;
     position: absolute;
     width: 100%;
+    
     z-index: 1;
   }
   &__option {
