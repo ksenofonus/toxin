@@ -171,13 +171,13 @@ html(lang='en')
       section.block-container.block-container__cards
         h2.section-title Cards
         +simpleLogo
-        .column
+        .grid
           include ../components/blocks/forms/search-form/_search-form.pug
           include ../components/blocks/forms/reg-form/_reg-form.pug
-        .column
+        
           +room-search('люкс', '888', '9 990')
           include ../components/blocks/forms/enter/_enter.pug
-        .column
+        
           .empty
           +room('../assets/images/rooms/888.jpg', '888', '9 990', '5', '145', 'люкс')(class='room_active')
           +room('../assets/images/rooms/840.jpg', '840', '9 900', '4', '65')

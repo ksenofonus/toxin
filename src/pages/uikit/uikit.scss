@@ -252,3 +252,10 @@
 #roomselect {
   z-index: 2;
 }
+.grid {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-height: 1060px;
+}
