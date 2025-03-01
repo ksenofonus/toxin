@@ -1,7 +1,9 @@
 import declination from './_decl';
-export default function setPlacehoolder(menu) {
-  const options = menu.querySelectorAll('.dropdown__option');
+import clear from './_clear';
+export default function setPlaceholder(menu, options) {
   const placeholder = menu.previousSibling.querySelector('span');
+  const clearBtn = menu.querySelector('.dropdown__btn__clear');
+  let defaultPlaceholder = '';
   const optionAmount = Array.from(options).map((option) =>
     Number(option.querySelector('.amount').textContent),
   );
@@ -12,6 +14,7 @@ export default function setPlacehoolder(menu) {
     ['ванная', 'ванные', 'ванных'],
   ];
   if (menu.parentNode.classList.contains('guest')) {
+    defaultPlaceholder = 'Сколько гостей'
     nouns = [
       ['гость', 'гостя', 'гостей'],
       ['младенец', 'младенца', 'младенцев'],
@@ -24,6 +27,16 @@ export default function setPlacehoolder(menu) {
     }
     return acc;
   }, []);
-  console.log(optionText);
-  placeholder.textContent = optionText.join(', ');
+  let sum = amount.reduce((acc, current) => acc + current, 0);
+  if (clearBtn) {
+    sum > 0
+      ? clearBtn.classList.add('dropdown__btn__clear_active')
+      : clearBtn.classList.remove('dropdown__btn__clear_active');
+    clearBtn.addEventListener('click', () => {
+      clear(options);
+      placeholder.textContent = defaultPlaceholder;
+      clearBtn.classList.remove('dropdown__btn__clear_active');
+    });
+  }
+  sum !== 0 ? placeholder.textContent = optionText.join(', ') : placeholder.textContent = defaultPlaceholder;
 }
