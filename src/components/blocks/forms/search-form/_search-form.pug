@@ -5,10 +5,6 @@
       +label('прибытие')
         +field('text', 'start-date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field', readonly='readonly')
       +label('выезд')
-        +field('text', 'end-date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field', readonly='readonly')
-    +dropdown('guest','search-guest', 'гости', 'Сколько гостей',
-              {'adults': 'Взрослые',
-              'children': 'Дети',
-              'infant': 'Младенцы'
-              }, true)
+        +field('text', 'end-date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field')
+    +guestDropdown('гости')
     +button('подобрать номер')(class="button__long")

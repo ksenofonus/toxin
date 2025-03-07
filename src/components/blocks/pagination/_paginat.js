@@ -1,10 +1,10 @@
 import $ from 'jquery';
 import '../../../assets/lib/pagination/_pagination.scss';
-import * as pagination from '../../../assets/lib/pagination/_pagination.js';
+import * as paginationjs from '../../../assets/lib/pagination/_pagination';
 
 function simpleTemplating(data) {
   let html = '<ul>';
-  $.each(data, function (index, item) {
+  $.each(data, function template(index, item) {
     html += `<li>${item}</li>`;
   });
   html += '</ul>';
@@ -14,7 +14,7 @@ function simpleTemplating(data) {
 $('#pagination-container').pagination({
   dataSource(done) {
     const result = [];
-    for (let i = 1; i < 170; i++) {
+    for (let i = 1; i < 170; i += 1) {
       result.push(i);
     }
     done(result);

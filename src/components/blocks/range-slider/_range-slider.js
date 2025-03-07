@@ -24,14 +24,14 @@ const maxPrice = document.querySelector('.max-price');
 
 const price = [minPrice, maxPrice];
 
-sliderFormat.noUiSlider.on('update', function (values, handle) {
+sliderFormat.noUiSlider.on('update', (values, handle) => {
   price[handle].innerHTML = values[handle];
 });
 
-minPrice.addEventListener('change', function () {
+minPrice.addEventListener('change', () => {
   sliderFormat.noUiSlider.set(this.value);
 });
-maxPrice.addEventListener('change', function () {
+maxPrice.addEventListener('change', () => {
   sliderFormat.noUiSlider.set(this.value);
 });
 

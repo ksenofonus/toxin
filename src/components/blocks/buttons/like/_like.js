@@ -3,13 +3,14 @@ function likeToggle() {
   like.forEach((element) => {
     element.addEventListener('click', () => {
       const likeCount = element.querySelector('.like__count');
+      const sum = Number(likeCount.textContent);
       element.classList.toggle('like_press');
-      element.classList.contains('like_press')
-        ? (likeCount.textContent = +likeCount.textContent + 1)
-        : (likeCount.textContent = +likeCount.textContent - 1);
+      if (element.classList.contains('like_press')) {
+        likeCount.textContent = sum + 1;
+      } else {
+        likeCount.textContent = sum - 1;
+      }
     });
   });
 }
 likeToggle();
-
-module.export = likeToggle;

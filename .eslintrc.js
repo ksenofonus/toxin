@@ -7,11 +7,11 @@ module.exports = {
   },
   extends: ['airbnb-base', 'plugin:prettier/recommended'],
   ignorePatterns: [
-            "!node_modules/",
-            "node_modules/*",
-            "!node_modules/mylibrary/",
-            "src/assets/lib/"
-        ],
+    '!node_modules/',
+    'node_modules/*',
+    '!node_modules/mylibrary/',
+    'src/assets/lib/*',
+  ],
   overrides: [
     {
       env: {
@@ -24,17 +24,19 @@ module.exports = {
     },
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: 2022,
     sourceType: 'module',
   },
   rules: {
-    indent: ['error', 2],
+    'no-unused-vars': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'prettier/prettier': [
-      'error', 
+      'error',
       {
         endOfLine: 'auto',
-      }
+      },
     ],
   },
   plugins: ['prettier'],
+  noInlineConfig: true,
 };

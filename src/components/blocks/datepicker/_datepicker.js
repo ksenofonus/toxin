@@ -9,11 +9,12 @@ import '../forms/masked-text/_mask';
 // }));
 
 const filterDatepicker = document.querySelector('.filter-datepicker');
-new AirDatepicker(filterDatepicker, {
+const filterPicker = new AirDatepicker(filterDatepicker, {
   range: true,
   multipleDatesSeparator: ' - ',
   dateFormat: 'dd MMM',
 });
+filterDatepicker.addEventListener('click', () => filterPicker.show());
 // datepicker fields
 const startDate = document.getElementById('start-date');
 const endDate = document.getElementById('end-date');

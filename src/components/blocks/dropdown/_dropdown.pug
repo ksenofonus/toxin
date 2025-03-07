@@ -1,19 +1,40 @@
-mixin dropdown(type, id, dropdownName, selectionText, data={}, bottom)
-  .dropdown(id= id)
-    h3.dropdown-name= dropdownName
-    .item-dropdown(class!=attributes.class class= type)
-      p.item-dropdown__selection= selectionText
-      .item-dropdown__menu
-        each item, key in data
-          .item-dropdown__menu-option
-            .item-dropdown-item
-              p=item
-            .item-dropdown__menu-quantity
-              button.dropdown-button.dropdown-button_inactive.decrease -
-              .item-quantity(data-dropdown= key) 0
-              button.dropdown-button.increase +
-        if bottom
-          .dropdown-bottom
-            button.dropdown-btn.dropdown-btn__clear Очистить
-            button.dropdown-btn.dropdown-btn__apply Применить
-        
+mixin dropdown(type, dropdownName, placeholder, bottom)
+  .dropdown(class= type)&attributes(attributes)
+    h3.dropdown__name= dropdownName
+    .dropdown__item
+      span.dropdown__placeholder= placeholder
+    block
+
+mixin option(data={})
+  .dropdown__menu
+    each item, key in data
+      .dropdown__option(data-name= key)
+        .dropdown__option-name
+          span= item.text
+        .dropdown__option-amount
+          button(
+            class='amount-button decrease'
+            class = item.amount <= 0 ? 'amount-button_inactive' : false
+          ) -
+          .amount= item.amount
+          button.amount-button.increase +
+    block
+
+mixin roomDropdown(name)
+  +dropdown('roomselect', name, '2 спальни, 2 кровати, 1 ванная комната',
+    false)&attributes(attributes)
+    +option(
+      {
+        'bedroom': {amount: 2, text: 'спальни'},
+        'bed': { amount: 2, text: 'кровати'},
+        'bath': {amount: 1, text: 'ванные комнаты'},
+      }
+    )
+      block
+
+mixin guestDropdown(name, placeholder= 'Сколько гостей', data= {'adults': {amount: 0, text: 'взрослые'},'children': { amount: 0, text: 'дети'},'infants': {amount: 0, text: 'младенцы'},})
+  +dropdown('guest', name, placeholder, true)(class!=attributes.class)
+    +option(data)
+      .dropdown__footer
+        button.dropdown__btn.dropdown__btn__clear Очистить
+        button.dropdown__btn.dropdown__btn__apply Применить

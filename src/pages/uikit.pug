@@ -48,12 +48,7 @@ html(lang='en')
                 +field('text', 'email', 'Email')(class="text-field text-field_default")
               +label('text field')(class="text-field_hover")
                 +field('text', 'text-focus', 'This is pretty awesome')(class="text-field")
-              +dropdown('guest','guestdrop', 'Dropdown', 'Сколько гостей',
-                          {'adults': 'Взрослые',
-                            'children': 'Дети',
-                            'infant': 'Младенцы'
-                          },
-                          true)(class='default-dropdown')
+              +guestDropdown('dropdown')(class='default')
               +label('masked text field')(class="text-field_default")
                 +field('text', 'masked', 'ДД.ММ.ГГГГ')(class='text-field masked-date')
               .datepick-wrapper
@@ -116,32 +111,13 @@ html(lang='en')
                   include ../components/blocks/pagination/_paginat.pug
           .row.row-2
             .forms-block
-              +dropdown('roomchoice','roomchoice-1', 'Dropdown', '2 спальни, 2 кровати...',
-                            {'bedroom': 'спальни',
-                            'bed': 'кровати',
-                            'bath': 'Ванные комнаты'
-                            },
-                            false)(class='default-dropdown')
-              +dropdown('roomchoice','roomchoice-2', 'Dropdown', '2 спальни, 2 кровати...',
-                            {'bedroom': 'спальни',
-                            'bed': 'кровати',
-                            'bath': 'Ванные комнаты'
-                            },
-                            false)(class='expanded-dropdown')
+              +roomDropdown('dropdown')(class='default' id='roomselect')
+              +roomDropdown('dropdown')(class='expanded dropdown_active')
             .forms-block
-              +dropdown('guest','guestopen', 'Dropdown', 'Сколько гостей',
-                            {'adults': 'Взрослые',
-                              'children': 'Дети',
-                              'infant': 'Младенцы'
-                            },
-                            true)
+              +guestDropdown('dropdown')(class='dropdown_active')
             .forms-block
-              +dropdown('guest','guestchoose', 'Dropdown', 'Сколько гостей',
-                            {'adults': 'Взрослые',
-                              'children': 'Дети',
-                              'infant': 'Младенцы'
-                            },
-                            true)
+              +guestDropdown('dropdown', '3 гостя',
+                {'adults': {amount: 2, text: 'взрослые'},'children': { amount: 1, text: 'дети'},'infants': {amount: 0, text: 'младенцы'},})(class='dropdown_active')
           .row.row-3
             .forms-block
               +expandable-checkbox
@@ -195,13 +171,13 @@ html(lang='en')
       section.block-container.block-container__cards
         h2.section-title Cards
         +simpleLogo
-        .column
+        .grid
           include ../components/blocks/forms/search-form/_search-form.pug
           include ../components/blocks/forms/reg-form/_reg-form.pug
-        .column
+        
           +room-search('люкс', '888', '9 990')
           include ../components/blocks/forms/enter/_enter.pug
-        .column
+        
           .empty
           +room('../assets/images/rooms/888.jpg', '888', '9 990', '5', '145', 'люкс')(class='room_active')
           +room('../assets/images/rooms/840.jpg', '840', '9 900', '4', '65')
