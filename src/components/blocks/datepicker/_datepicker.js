@@ -3,18 +3,16 @@ import 'air-datepicker/air-datepicker.css';
 import { apply, clear } from './_datepicker_buttons';
 import '../forms/masked-text/_mask';
 
-// const datepicker = document.querySelectorAll('.datepicker');
-// datepicker.forEach((item) => new AirDatepicker(item, {
-//   range: true
-// }));
-
 const filterDatepicker = document.querySelector('.filter-datepicker');
 const filterPicker = new AirDatepicker(filterDatepicker, {
   range: true,
   multipleDatesSeparator: ' - ',
   dateFormat: 'dd MMM',
 });
-filterDatepicker.addEventListener('click', () => filterPicker.show());
+if (filterDatepicker) {
+  filterDatepicker.addEventListener('click', () => filterPicker.show());
+}
+
 // datepicker fields
 const startDate = document.getElementById('start-date');
 const endDate = document.getElementById('end-date');
@@ -49,29 +47,3 @@ document.body.addEventListener('click', (e) => {
     datepicker.hide();
   }
 });
-
-// const manual = () => {
-//   const dates = [];
-//   startDate.addEventListener('keydown', (e) => {
-//     if (e.code === 'Enter' || e.code === 'NumpadEnter') {
-//       const startVal = datepicker.formatDate(startDate.value, 'dd.MM.yyyy');
-//       dates.unshift(startVal)
-//       console.log(dates)
-//       datepicker.update({
-//         selectedDates: dates
-//       })
-//     }
-//   })
-//   endDate.addEventListener('keydown', (e) => {
-//     if (e.code === 'Enter' || e.code === 'NumpadEnter') {
-//       const endVal = datepicker.formatDate(endDate.value, 'dd.MM.yyyy');
-//       dates.push(endVal);
-//       console.log(dates)
-//       datepicker.update({
-//         selectedDates: dates,
-//       });
-//     }
-
-//   })
-// }
-// manual();

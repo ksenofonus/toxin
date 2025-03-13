@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import '../../../assets/lib/pagination/_pagination.scss';
-import * as paginationjs from '../../../assets/lib/pagination/_pagination';
+import 'Assets/lib/pagination/_pagination.scss';
+import * as paginationjs from 'Assets/lib/pagination/_pagination';
 
 function simpleTemplating(data) {
   let html = '<ul>';

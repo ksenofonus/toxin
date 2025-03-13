@@ -5,7 +5,11 @@ module.exports = {
     commonjs: true,
     node: true,
   },
-  extends: ['airbnb-base', 'plugin:prettier/recommended'],
+  extends: [
+    'airbnb-base',
+    'plugin:prettier/recommended',
+    'plugin:import/recommended',
+  ],
   ignorePatterns: [
     '!node_modules/',
     'node_modules/*',
@@ -30,6 +34,9 @@ module.exports = {
   rules: {
     'no-unused-vars': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/no-unresolved': ['error', { commonjs: true }],
+    'node/no-missing-require': 'off',
+    'node/no-extraneous-import': 'off',
     'prettier/prettier': [
       'error',
       {
@@ -37,6 +44,9 @@ module.exports = {
       },
     ],
   },
-  plugins: ['prettier'],
+  plugins: ['prettier', 'import'],
   noInlineConfig: true,
+  settings: {
+    'import/resolver': webpack,
+  },
 };
