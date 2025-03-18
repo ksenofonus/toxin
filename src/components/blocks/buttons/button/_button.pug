@@ -1,2 +1,2 @@
-mixin button(name)
-  button.button(class!=attributes.class)= name
+mixin button(name, href)
+  a.button(href= href class!=attributes.class)= name

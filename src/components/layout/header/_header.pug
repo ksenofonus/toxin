@@ -17,8 +17,8 @@ mixin header(isLogin)
             span.material-icons expand_more
       .header__login
         if !isLogin
-          +button("войти")(class="button__border")
-          +button("зарегистрироваться")
+          +button("войти", 'login.html')(class="button__border signin-btn")
+          +button("зарегистрироваться", 'registration.html')(class="registration-btn")
         else
           span.hatch
           span Юлий Цезарь

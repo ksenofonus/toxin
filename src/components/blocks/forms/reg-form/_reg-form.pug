@@ -1,21 +1,22 @@
-.form.reg-form
-  h2.form__title Регистрация аккаунта
-  .form-container
-    .username
-      +field('text', 'username', 'Имя')(class="text-field")
-      +field('text', 'usersurname', 'Фамилия')(class="text-field")
-      .radio
-        +radio('sex', 'male', 'Мужчина', 'true')(class='radio__item')
-        +radio('sex', 'female', 'Женщина')(class='radio__item')
-    .birthday
-      +label('дата рождения')
-        +field('text', 'birthday', 'ДД.ММ.ГГГГ')(class='text-field masked-date')
-    .userdate 
-      +label('данные для входа в сервис')
-        +field('email', 'useremail', 'Email')(class="text-field")
-      +field('password', 'userpassword', 'Пароль')(class="text-field")
-      +toggle('offer-off', 'Получать спецпредложения')
-    +button('перейти к оплате')(class="button__long")
-    .form-bottom
-      p Уже есть аккаунт на Toxin
-      +button('войти')(class="button__border")
+mixin registration
+  .form.reg-form&attributes(attributes)
+    h2.form__title Регистрация аккаунта
+    .form-container
+      .username
+        +field('text', 'username', 'Имя')(class="text-field")
+        +field('text', 'usersurname', 'Фамилия')(class="text-field")
+        .radio
+          +radio('sex', 'male', 'Мужчина', 'true')(class='radio__item')
+          +radio('sex', 'female', 'Женщина')(class='radio__item')
+      .birthday
+        +label('дата рождения')
+          +field('text', 'birthday', 'ДД.ММ.ГГГГ')(class='text-field masked-date')
+      .userdate 
+        +label('данные для входа в сервис')
+          +field('email', 'useremail', 'Email')(class="text-field")
+        +field('password', 'userpassword', 'Пароль')(class="text-field")
+        +toggle('offer-off', 'Получать спецпредложения')
+      +button('перейти к оплате')(class="button__long")
+      .form-bottom
+        p Уже есть аккаунт на Toxin
+        +button('войти', './login.html')(class="button__border")

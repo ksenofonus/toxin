@@ -1,0 +1,70 @@
+@import 'Components/sass/base/fonts';
+@import 'Components/sass/abstracts/variables';
+@import 'Components/sass/base/normalize';
+@import 'Components/sass/base/basic';
+@import 'Components/sass/mixins/mixins.scss';
+@import 'Blocks/color_item/color-block';
+@import 'Blocks/logo/logo';
+@import 'Blocks/text-block/text-block';
+@import 'Assets/fonts/fontawesome/scss/fontawesome.scss';
+@import 'Assets/fonts/fontawesome/scss/solid.scss';
+@import 'Assets/fonts/fontawesome/scss/brands.scss';
+@import 'Blocks/buttons/checkbox/check-buttons';
+@import 'Blocks/buttons/like/like.scss';
+@import 'Blocks/forms/mixins/mixins-forms.scss';
+@import 'Blocks/forms/subscription/subscription.scss';
+@import 'Blocks/forms/search-form/search-form.scss';
+@import 'Blocks/forms/reg-form/reg-form.scss';
+@import 'Blocks/forms/enter/enter.scss';
+@import 'Blocks/forms/room-search/room-search.scss';
+@import 'Blocks/buttons/rating/rating';
+@import 'Blocks/range-slider/range-slider';
+@import 'Blocks/buttons/button/button';
+@import 'Blocks/pagination/paginat';
+@import 'Blocks/dropdown/dropdown';
+@import 'Blocks/datepicker/datepicker';
+@import 'Blocks/buttons/checkbox/expandable/expandable';
+@import 'Blocks/buttons/checkbox/rich/rich';
+@import 'Blocks/bullet-list/bullet-list';
+@import 'Blocks/advantage/advantage';
+@import 'Blocks/room/room';
+@import 'Blocks/review/review';
+@import 'Blocks/img-slider/img-slider';
+@import 'Components/layout/header/header';
+@import 'Components/layout/footer/footer';
+.main-container {
+  width: 100%;
+  background-image:
+    url('Assets/images/background/background-login.jpg'),
+    url('Assets/images/background/background-main-login.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 19px;
+  position: relative;
+  animation-name: background-switch;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  .enter-form {
+    margin-top: 172px;
+    margin-bottom: 172px;
+  }
+}
+@keyframes background-switch {
+  0% {
+    background-image: url('Assets/images/background/background-login.jpg');
+  }
+  25% {
+    background-image: url('Assets/images/background/background-login.jpg');
+  }
+  50% {
+    background-image: url('Assets/images/background/background-main-login.jpg');
+  }
+  75% {
+    background-image: url('Assets/images/background/background-main-login.jpg');
+  }
+  100% {
+    background-image: url('Assets/images/background/background-login.jpg');
+  }
+}

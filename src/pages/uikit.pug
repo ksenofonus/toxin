@@ -16,6 +16,8 @@ include ../components/blocks/logo/_logo.pug
 include ../components/blocks/forms/subscription/_subscription.pug
 include ../components/blocks/forms/room-search/_room-search.pug
 include ../components/blocks/room/_room.pug
+include ../components/blocks/forms/reg-form/_reg-form.pug
+include ../components/blocks/forms/enter/_enter.pug
 
 
 doctype html
@@ -173,10 +175,10 @@ html(lang='en')
         +simpleLogo
         .grid
           include ../components/blocks/forms/search-form/_search-form.pug
-          include ../components/blocks/forms/reg-form/_reg-form.pug
+          +registration
         
           +room-search('люкс', '888', '9 990')
-          include ../components/blocks/forms/enter/_enter.pug
+          +enter
         
           .empty
           +room('../assets/images/rooms/888.jpg', '888', '9 990', '5', '145', 'люкс')(class='room_active')

@@ -4,7 +4,6 @@ include ../components/blocks/buttons/checkbox/_check-buttons.pug
 include ../components/blocks/buttons/like/_like.pug
 include ../components/blocks/buttons/rating/_rating.pug
 include ../components/blocks/buttons/button/_button.pug
-include ../components/blocks/dropdown/_dropdown.pug
 include ../components/blocks/buttons/checkbox/expandable/_expandable.pug
 include ../components/blocks/buttons/checkbox/rich/_rich.pug
 include ../components/blocks/bullet-list/_bullet-list.pug
@@ -14,8 +13,9 @@ include ../components/layout/header/_header.pug
 include ../components/layout/footer/_footer.pug
 include ../components/blocks/logo/_logo.pug
 include ../components/blocks/forms/subscription/_subscription.pug
-include ../components/blocks/forms/room-search/_room-search.pug
 include ../components/blocks/room/_room.pug
+include ../components/blocks/forms/reg-form/_reg-form.pug
+include ../components/blocks/forms/enter/_enter.pug
 
 doctype html
 html(lang="en")
@@ -28,7 +28,6 @@ html(lang="en")
       +header(false)
       main.main
         .main-container
-          include ../components/blocks/forms/search-form/_search-form.pug
-          p.tagline Лучшие номера для вашей работы, отдыха и просто вдохновения
+          +enter(id='login')
       +footer
-  script(src="./index/index.js")
+  script(src="./login/login.js")
