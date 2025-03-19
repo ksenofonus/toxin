@@ -16,7 +16,8 @@ include ../components/blocks/logo/_logo.pug
 include ../components/blocks/forms/subscription/_subscription.pug
 include ../components/blocks/forms/room-search/_room-search.pug
 include ../components/blocks/room/_room.pug
-
+include Blocks/datepicker/_filter-datepicker.pug
+include ../components/blocks/range-slider/_range-slider.pug
 doctype html
 html(lang="en")
   head
@@ -29,6 +30,29 @@ html(lang="en")
       main.main
         .main-container
           .room-filter
+            +filter-datepicker('дата пребывания в отеле', 'text', 'date', '19 авг - 23 авг')
+            +guestDropdown('гости', '3 гостя, 1 младенец',
+                {'adults': {amount: 2, text: 'взрослые'},'children': { amount: 1, text: 'дети'},'infants': {amount: 1, text: 'младенцы'},})
+            +range-slider('диапазон цены', 'стоимость за сутки пребывания в номере')
+            .button-container
+              h3.buttons-name checkbox buttons
+              .checkbox-container
+                +checkbox({ 1: {name: 'smoking', text: 'Можно курить'}, 2: {name: 'pets', text: 'Можно с питомцами', checked: 'checked'}, 3: {name: 'guests', text: 'Можно пригласить гостей (до 10 человек)', checked: 'checked'}})
+            .rich-container
+              h3.buttons-name доступность
+              .checkbox-container
+                +checkbox({ 1: {name: 'hall', text: 'Широкий коридор'} })(class="checkbox-rich")
+                  +checkbox-rich('Ширина коридоров в номере не\u00A0менее 91 см.')
+                +checkbox({1: {name: 'assistant', text: 'Помощник для инвалидов'}} )(class="checkbox-rich")
+                  +checkbox-rich('На 1 этаже вас встретит специалист и проводит до номера.')
+            +roomDropdown('удобства номера')(id='roomselect')
+            +expandable-checkbox('дополнительные удобства')
+              +checkbox({ 1: {name: 'breakfast', text: "Завтрак"}, 
+                            2: {name: 'desk', text: "Письменный стол", checked: 'checked'}, 
+                            3: {name: 'babychair', text: "Стул для кормления", checked: 'checked'}, 
+                            4: {name: 'crib', text: "Кроватка", checked: 'checked'}, 
+                            5: {name: 'tv', text: "Телевизор"}, 
+                            6: {name: 'shampoo', text: "Шампунь"}})
           .room-container
       +footer
   script(src="./search/search.js")

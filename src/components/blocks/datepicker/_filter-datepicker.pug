@@ -1,0 +1,6 @@
+include Blocks/forms/mixins/_mixins-forms.pug
+
+mixin filter-datepicker(label, type, name, placeholder)
+  .datepicker-filter-container
+    +label(label)
+      +field(type, name, placeholder)(class='filter-datepicker text-field')

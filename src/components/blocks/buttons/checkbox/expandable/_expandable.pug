@@ -1,6 +1,6 @@
-mixin expandable-checkbox
+mixin expandable-checkbox(label)
   .exp-checkbox(class!=attributes.class)
     .exp-checkbox__header
-      h3.buttons-name expandable checkbox list
+      h3.buttons-name= label
     .exp-checkbox__container
       block

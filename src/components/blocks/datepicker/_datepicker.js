@@ -3,16 +3,6 @@ import 'air-datepicker/air-datepicker.css';
 import { apply, clear } from './_datepicker_buttons';
 import '../forms/masked-text/_mask';
 
-const filterDatepicker = document.querySelector('.filter-datepicker');
-const filterPicker = new AirDatepicker(filterDatepicker, {
-  range: true,
-  multipleDatesSeparator: ' - ',
-  dateFormat: 'dd MMM',
-});
-if (filterDatepicker) {
-  filterDatepicker.addEventListener('click', () => filterPicker.show());
-}
-
 // datepicker fields
 const startDate = document.getElementById('start-date');
 const endDate = document.getElementById('end-date');
