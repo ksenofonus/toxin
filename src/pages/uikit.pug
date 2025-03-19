@@ -18,8 +18,8 @@ include ../components/blocks/forms/room-search/_room-search.pug
 include ../components/blocks/room/_room.pug
 include ../components/blocks/forms/reg-form/_reg-form.pug
 include ../components/blocks/forms/enter/_enter.pug
-
-
+include Blocks/datepicker/_filter-datepicker.pug
+include ../components/blocks/range-slider/_range-slider.pug
 doctype html
 html(lang='en')
   head
@@ -60,9 +60,7 @@ html(lang='en')
                   .disable-date
                     h3.disable-date_name date dropdown
                     .disable-date_field
-                .datepicker-filter-container
-                  +label('filter date dropdown')
-                    +field('text', 'date', '19 авг - 23 авг')(class='filter-datepicker text-field')
+                +filter-datepicker('filter date dropdown', 'text', 'date', '19 авг - 23 авг')
                 .datepicker-email-container
                   +label('subscription text field')
                     +subscription
@@ -97,7 +95,7 @@ html(lang='en')
             .forms-block
               .buttons-wrapper
                 .button-container
-                  include ../components/blocks/range-slider/_range-slider.pug
+                  +range-slider('range slider')
                 .button-container
                   h3.buttons-name buttons
                   .small-buttons
@@ -122,7 +120,7 @@ html(lang='en')
                 {'adults': {amount: 2, text: 'взрослые'},'children': { amount: 1, text: 'дети'},'infants': {amount: 0, text: 'младенцы'},})(class='dropdown_active')
           .row.row-3
             .forms-block
-              +expandable-checkbox
+              +expandable-checkbox('expandable checkbox')
                 +checkbox({ 1: {name: 'breakfast', text: "Завтрак"}, 
                             2: {name: 'desk', text: "Письменный стол"}, 
                             3: {name: 'babychair', text: "Стул для кормления"}, 

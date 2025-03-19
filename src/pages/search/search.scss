@@ -36,4 +36,10 @@
   width: 100%;
   display: grid;
   grid-template-columns: 266px auto;
+  padding: 30px 140px;
+}
+.room-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }

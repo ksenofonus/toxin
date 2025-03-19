@@ -1,23 +1,45 @@
 include ../../blocks/img-slider/_img-slider.pug
 //- - const ruble = '&#8381';
-mixin room (url, number, price, i, review, type)
-  .room(class!=attributes.class)
-    .room__image
-      .room__slider
-        .room__slider-arrow.room__slider-arrow_left
-        .room__slider-arrow.room__slider-arrow_right
-        img(src= url)
-        +carousel
-    .room-container
-      .room__info
-        .room__number
-          span.number= number
-          span.room_type= type
-        .room__price
-          span.price #{price}!{ruble}
-          span в сутки
-      .room__rating
-        +star(i)
-        .room__review
-          span #{review}
-          span отзывов
+//- mixin room (url, number, price, i, review, type)
+//-   .room(class!=attributes.class)
+//-     .room__image
+//-       .room__slider
+//-         .room__slider-arrow.room__slider-arrow_left
+//-         .room__slider-arrow.room__slider-arrow_right
+//-         img(src= url)
+//-         +carousel
+//-     .room-container
+//-       .room__info
+//-         .room__number
+//-           span.number= number
+//-           span.room_type= type
+//-         .room__price
+//-           span.price #{price}!{ruble}
+//-           span в сутки
+//-       .room__rating
+//-         +star(i)
+//-         .room__review
+//-           span #{review}
+//-           span отзывов
+
+
+.room(class!=attributes.class)
+  .room__image
+    .room__slider
+      .room__slider-arrow.room__slider-arrow_left
+      .room__slider-arrow.room__slider-arrow_right
+      img(src= `../../../assets/images/rooms/${Data.number}.jpeg`)
+      +carousel
+  .room-container
+    .room__info
+      .room__number
+        span.number= Data.number
+        span.room_type= Data.lux
+      .room__price
+        span.price #{Data.price}!{ruble}
+        span в сутки
+    .room__rating
+      +star(Data.stars)
+      .room__review
+        span #{Data.reviews}
+        span отзывов

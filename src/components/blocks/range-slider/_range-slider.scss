@@ -20,6 +20,14 @@
     font-weight: 700;
     font-size: 12px;
   }
+  &_tag {
+    margin-top: 10px;
+    color: variables.$dark50;
+    font-size: 12px;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
   & .noUi-connects {
     overflow: visible;
     & .noUi-connect {

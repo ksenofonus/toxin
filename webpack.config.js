@@ -3,12 +3,13 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PugPlugin = require('pug-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const sass = require('sass');
 
 module.exports = (env) => {
   const isDev = env.mode === 'development';
   return {
     mode: env.mode ?? 'development',
-    entry: './src/pages/index/index.js',
+    // entry: './src/pages/index/index.js',
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].[contenthash].js',
@@ -35,7 +36,7 @@ module.exports = (env) => {
       : undefined,
     plugins: [
       new PugPlugin({
-        entry: './src/pages',
+        entry: './src/pages/',
         js: {
           // JS output filename
           filename: 'js/[name].[contenthash:8].js',
@@ -58,8 +59,8 @@ module.exports = (env) => {
         {
           test: /\.(sa|sc|c)ss$/,
           use: [
-            'style-loader',
             'css-loader',
+            'sass-loader',
             {
               loader: 'sass-loader',
               options: {
