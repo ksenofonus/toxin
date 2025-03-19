@@ -1,14 +1,14 @@
-@import '../../../sass/mixins/mixins.scss';
+@use '../../../sass/mixins/mixins';
 .email-form {
   position: relative;
   &::after {
-    @include material;
+    @include mixins.material;
     position: absolute;
     top: 50%;
     right: calc(0% + 10px);
     content: 'arrow_forward';
     text-align: center;
-    @include text-gradient;
+    @include mixins.text-gradient;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -1,3 +1,4 @@
+@use '../../../sass/abstracts/variables';
 .form {
   width: 378px;
   background-color: #fff;
@@ -9,7 +10,7 @@
     margin-bottom: 20px;
     font-size: 24px;
     line-height: 30px;
-    font-family: $openSans;
+    font-family: variables.$openSans;
     font-weight: bold;
   }
 }

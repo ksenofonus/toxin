@@ -1,5 +1,4 @@
-@import '../../../sass/mixins/_mixins';
-
+@use '../../../sass/mixins/mixins';
 .rating-container {
   width: 120px;
   height: 24px;
@@ -8,7 +7,7 @@
   align-items: center;
 }
 .rating-star {
-  @include text-gradient;
+  @include mixins.text-gradient;
   width: 24px;
   height: 100%;
   font-size: 12px;
@@ -19,9 +18,6 @@
   opacity: 1;
   padding-top: 6px;
   &_checked {
-    @include text-gradient;
+    @include mixins.text-gradient;
   }
-  // &:not(last-child) {
-  //   margin-right: 5px;
-  // }
 }

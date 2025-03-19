@@ -1,5 +1,5 @@
-@import '../datepicker/_datepicker';
-
+@use '../../sass/abstracts/variables';
+@use '../../sass/mixins/mixins';
 .dropdown {
   width: 100%;
   position: relative;
@@ -21,35 +21,35 @@
       border-bottom: none;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      border-color: $dark50;
+      border-color: variables.$dark50;
     }
   }
   &__item {
     display: flex;
     position: relative;
     width: 100%;
-    border: 1px solid $dark25;
+    border: 1px solid variables.$dark25;
     border-radius: 4px;
     min-height: 42px;
     padding: 0 88px 0 15px;
     align-items: center;
     line-height: 24px;
-    color: $dark75;
+    color: variables.$dark75;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
     &::after {
-      @include expand-more;
+      @include mixins.expand-more;
       translate: 0 -50%;
     }
     &_opened {
-      border-color: $dark50;
+      border-color: variables.$dark50;
       border-radius: 4px 4px 0 0;
     }
   }
   &__menu {
-    border: 1px solid $dark50;
+    border: 1px solid variables.$dark50;
     padding-left: 14px;
     padding-right: 7px;
     padding-bottom: 6px;
@@ -66,7 +66,7 @@
   }
   &__option {
     // height: 37px;
-    @include h3;
+    @include mixins.h3;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -102,8 +102,8 @@
   width: 30px;
   height: 30px;
   border-radius: 100%;
-  border: 1px solid $dark25;
-  color: $dark50;
+  border: 1px solid variables.$dark25;
+  color: variables.$dark50;
   font-size: 18px;
   cursor: pointer;
     &_inactive {
@@ -117,10 +117,10 @@
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 700;
-  color: $dark50;
+  color: variables.$dark50;
   cursor: pointer;
   &__apply {
-    color: $purple;
+    color: variables.$purple;
   }
   &__clear {
     opacity: 0;

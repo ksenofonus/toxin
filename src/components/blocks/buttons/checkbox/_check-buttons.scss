@@ -1,5 +1,5 @@
-@import '../../../sass/mixins/mixins';
-
+@use '../../../sass/abstracts/variables';
+@use '../../../sass/mixins/mixins';
 .toggle {
   gap: 10px;
   & label {
@@ -12,16 +12,9 @@
   display: flex;
   gap: 20px;
 }
-// .label-container{
-//   padding-top: 2px;
-//   line-height: 18px;
-//   &::first-letter {
-//     text-transform: uppercase;
-//   }
-// }
 .checkbox-label {
   font-size: 14px;
-  color: $dark50;
+  color: variables.$dark50;
   cursor: pointer;
   line-height: 18px;
   display: flex;
@@ -38,7 +31,7 @@
 }
 
 input[type='checkbox'] {
-  @include input-style-reset;
+  @include mixins.input-style-reset;
   width: 20px;
   height: 20px;
   border-radius: 4px;
@@ -55,10 +48,10 @@ input[type='checkbox'] {
       left: 50%;
       opacity: 0;
       transform: translate(-50%, -50%);
-      @include text-gradient;
+      @include mixins.text-gradient;
     }
     &:checked {
-      border-color: $purple;
+      border-color: variables.$purple;
       &::after {
         opacity: 1;
       }
@@ -78,13 +71,13 @@ input[type='checkbox'] {
       top: 50%;
       left: calc(0% + 10px);
       transform: translate(-50%, -50%);
-      background-color: $dark25;
+      background-color: variables.$dark25;
       transition: all ease 0.5s;
     }
     &:checked {
-      border-color: $purple;
+      border-color: variables.$purple;
       &::after {
-        @include back-gradient;
+        @include mixins.back-gradient;
         left: calc(100% - 9px);
       }
     }
@@ -99,13 +92,13 @@ input[type='checkbox'] {
     display: flex;
     gap: 10px;
     cursor: pointer;
-    color: $dark50;
+    color: variables.$dark50;
     line-height: 141%;
     padding: 5px;
     margin: -5px;
   }
   & input[type='radio'] {
-    @include input-style-reset;
+    @include mixins.input-style-reset;
     width: 20px;
     height: 20px;
     cursor: pointer;
@@ -121,12 +114,12 @@ input[type='checkbox'] {
       left: 50%;
       opacity: 0;
       transform: translate(-50%, -50%);
-      @include back-gradient;
+      @include mixins.back-gradient;
     }
     &:checked {
-      border-color: $purple;
+      border-color: variables.$purple;
       & + .radio-label {
-        color: $dark75;
+        color: variables.$dark75;
       }
       &::after {
         opacity: 1;

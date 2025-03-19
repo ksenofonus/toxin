@@ -57,7 +57,16 @@ module.exports = (env) => {
       rules: [
         {
           test: /\.(sa|sc|c)ss$/,
-          use: ['css-loader', 'sass-loader'],
+          use: [
+            'style-loader',
+            'css-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                api: 'modern-compiler',
+              },
+            },
+          ],
         },
         {
           test: /\.(ico|png|svg|jpg|jpeg|gif)$/i,

@@ -1,5 +1,5 @@
-@import '../mixins/mixins';
-
+@use '../mixins/mixins';
+@use '../abstracts/variables';
 * {
   margin: 0;
   padding: 0;
@@ -10,17 +10,17 @@ ul {
   list-style: none;
 }
 h1 {
-  @include h1;
+  @include mixins.h1;
 }
 h2 {
-  @include h2;
+  @include mixins.h2;
 }
 h3 {
-  @include h3;
+  @include mixins.h3;
 }
 
 body {
-  @include bodyfont;
+  @include mixins.bodyfont;
   box-sizing: border-box;
 }
 input:focus,
@@ -32,17 +32,17 @@ select:focus {
   outline: none;
 }
 .material-icons {
-  @include material;
+  @include mixins.material;
 }
 fieldset,
 button {
   border: none;
   background: none;
-  font-family: $font-1;
+  font-family: variables.$font-1;
 }
 legend,
 h3.buttons-name {
-  @include h3;
+  @include mixins.h3;
   width: 100%;
   margin-bottom: 16px;
 }

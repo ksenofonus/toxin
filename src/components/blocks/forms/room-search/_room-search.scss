@@ -1,3 +1,5 @@
+@use '../../../sass/abstracts/variables';
+@use '../../../sass/mixins/mixins';
 .room__info {
   display: flex;
   justify-content: space-between;
@@ -9,7 +11,7 @@
   &__row {
     display: flex;
     justify-content: space-between;
-    color: $dark75;
+    color: variables.$dark75;
     line-height: 18px;
     &:not(:last-child) {
       margin-bottom: 15px;
@@ -31,10 +33,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $dark25;
+  color: variables.$dark25;
   width: 20px;
   height: 20px;
-  border: 1px solid $dark25;
+  border: 1px solid variables.$dark25;
   border-radius: 100%;
   cursor: pointer;
 }
@@ -47,19 +49,19 @@
     margin-top: 8px;
     margin-bottom: -1px;
     padding-left: 1px;
-    @include h2;
-    font-family: $openSans;
+    @include mixins.h2;
+    font-family: variables.$openSans;
     align-items: baseline;
     & span {
       display: block;
       flex-shrink: 0;
       &:last-child {
-        font-family: $font-2;
+        font-family: variables.$font-2;
       }
     }
     & .dots {
       display: block;
-      border-bottom: 1px dotted $dark;
+      border-bottom: 1px dotted variables.$dark;
       flex-grow: 1;
       margin: 0 5px;
     }
@@ -71,21 +73,21 @@
   gap: 8px;
   align-items: flex-end;
   & .number {
-    @include h1;
+    @include mixins.h1;
     &::before {
       content: '№ ';
       font-size: 14px;
     }
   }
   & .room_type {
-    color: $purple;
+    color: variables.$purple;
     font-size: 12px;
     text-transform: uppercase;
     line-height: 29px;
   }
 }
 .room__price {
-  color: $dark50;
+  color: variables.$dark50;
   display: flex;
   line-height: 29px;
   gap: 4px;

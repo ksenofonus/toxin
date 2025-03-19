@@ -1,12 +1,12 @@
-@import '../../../assets/lib/pagination/_pagination';
-
+@use '../../sass/abstracts/variables';
+@use '../../sass/mixins/mixins';
 #pagination-container .toxin-theme {
   flex-direction: column-reverse;
-  font-family: $font-1;
+  font-family: variables.$font-1;
   line-height: 24px;
   & div.paginationjs-nav {
-    @include main-font;
-    color: $dark75;
+    @include mixins.main-font;
+    color: variables.$dark75;
     font-size: 14px;
     margin-left: 5px;
     line-height: 186%;
@@ -25,22 +25,22 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          @include main-font;
+          @include mixins.main-font;
           width: 40px;
           height: 40px;
-          color: $dark50;
+          color: variables.$dark50;
           border-radius: 100%;
           font-size: 12px;
         }
         &.toxin-theme_pages {
           &__active > a {
-            @include back-gradient;
+            @include mixins.back-gradient;
             color: #fff;
           }
           &__next > a {
-            @include material;
+            @include mixins.material;
             position: relative;
-            background-color: $green;
+            background-color: variables.$green;
             color: #fff;
             &::after {
               position: absolute;
@@ -51,9 +51,9 @@
             }
           }
           &__prev > a {
-            @include material;
+            @include mixins.material;
             position: relative;
-            background-color: $green;
+            background-color: variables.$green;
             color: #fff;
             &::after {
               position: absolute;

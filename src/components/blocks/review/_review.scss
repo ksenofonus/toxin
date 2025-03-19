@@ -1,6 +1,7 @@
+@use '../../sass/abstracts/variables';
 .review {
   display: flex;
-  color: $dark75;
+  color: variables.$dark75;
   gap: 10px;
   max-width: 712px;
   height: auto;
@@ -32,7 +33,7 @@
     height: 48px;
     border-radius: 100%;
     border: 2px solid #fff;
-    box-shadow: 0px 10px 20px 0px rgba($dark25, 0.1);
+    box-shadow: 0px 10px 20px 0px rgba(variables.$dark25, 0.1);
     overflow: hidden;
   }
   &__userdata {

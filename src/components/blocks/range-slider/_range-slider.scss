@@ -1,6 +1,5 @@
-@import '../../sass/abstracts/_variables';
-@import '../../../assets/lib/noUiSlider-15.7.2/_nouislider';
-
+@use 'Assets/lib/noUiSlider-15.7.2/_nouislider';
+@use '../../sass/abstracts/variables';
 .range-slider {
   width: 266px;
   min-height: 47px;
@@ -12,7 +11,7 @@
   &_price {
     display: flex;
     justify-content: space-between;
-    color: $dark50;
+    color: variables.$dark50;
     font-size: 12px;
     line-height: 15px;
   }
@@ -24,8 +23,8 @@
   & .noUi-connects {
     overflow: visible;
     & .noUi-connect {
-      background-color: $green;
-      border: 1px solid $green;
+      background-color: variables.$green;
+      border: 1px solid variables.$green;
       margin-top: -1px;
       height: 6px;
     }
@@ -33,12 +32,12 @@
   & .noUi-target {
     height: 6px;
     width: 100%;
-    border-color: $dark25;
+    border-color: variables.$dark25;
     background-color: #fff;
     & .noUi-handle {
       width: 17px;
       height: 17px;
-      background-color: $green;
+      background-color: variables.$green;
       box-shadow: none;
       border: 3px solid #fff;
       border-radius: 100%;

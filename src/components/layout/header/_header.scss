@@ -1,7 +1,9 @@
+
+@use '../../sass/abstracts/variables';
 .header {
   width: 100%;
   background-color: #fff;
-  box-shadow: 0 10px 20px 0 $dark5;
+  box-shadow: 0 10px 20px 0 variables.$dark5;
   & .button {
     height: 34px;
     min-width: 87px;
@@ -25,16 +27,16 @@
   align-items: center;
   gap: 21px;
   &-item {
-    color: $dark50;
+    color: variables.$dark50;
     cursor: pointer;
     &:first-child a {
       font-weight: 800;
-      color: $dark75;
+      color: variables.$dark75;
     }
   }
   &-link {
     text-decoration: none;
-    color: $dark50;
+    color: variables.$dark50;
   }
 }
 .header__title {
@@ -50,12 +52,12 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  color: $dark50;
+  color: variables.$dark50;
   position: relative;
   & .hatch {
     height: 30px;
     width: 1px;
-    background-color: $dark25;
+    background-color: variables.$dark25;
     position: relative;
     top: 0;
     left: 0;

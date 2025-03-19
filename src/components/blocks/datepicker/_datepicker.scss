@@ -1,14 +1,16 @@
+@use '../../sass/abstracts/variables';
+@use '../../sass/mixins/mixins';
 .datepicker-container .field-name {
   position: relative;
   &::after {
-    @include expand-more;
+    @include mixins.expand-more;
   }
   width: 150px;
   & .datepicker {
     width: 100%;
     &::-webkit-input-placeholder,
     &::-webkit-input-placeholder {
-      color: $dark75;
+      color: variables.$dark75;
     }
   }
 }
@@ -20,7 +22,7 @@
   position: relative;
   width: 266px;
   &::after {
-    @include expand-more;
+    @include mixins.expand-more;
     top: 50%;
   }
   & .filter-datepicker {
@@ -28,7 +30,7 @@
     text-transform: lowercase;
     &::-webkit-input-placeholder,
     &::-webkit-input-placeholder {
-      color: $dark75;
+      color: variables.$dark75;
     }
   }
 }
@@ -46,13 +48,13 @@
         font-size: 15px;
         font-weight: 700;
         &.clear-button {
-          color: $dark50;
+          color: variables.$dark50;
           & > span {
             justify-content: flex-start;
           }
         }
         &.apply-button {
-          color: $purple;
+          color: variables.$purple;
           & > span {
             justify-content: flex-end;
           }
@@ -65,10 +67,10 @@
     &--navigation .air-datepicker-nav {
       border-bottom: none;
       &--title {
-        @include head-font;
+        @include mixins.head-font;
         font-size: 19px;
         & i {
-          @include head-font;
+          @include mixins.head-font;
         }
       }
       & > div.air-datepicker-nav--action {
@@ -77,8 +79,8 @@
           display: none;
         }
         &::after {
-          @include material;
-          color: $purple;
+          @include mixins.material;
+          color: variables.$purple;
           position: absolute;
           top: 50%;
           left: 50%;
@@ -96,18 +98,18 @@
       margin-top: 26px;
       padding: 0;
       & .air-datepicker-body {
-        font-family: $font-1;
+        font-family: variables.$font-1;
         &--day-names {
           grid-template-columns: repeat(7, 40px);
         }
         &--day-name {
-          color: $purple;
+          color: variables.$purple;
           font-weight: 700;
           text-transform: capitalize;
           font-size: 12px;
         }
         &--cells.-days- {
-          color: $dark50;
+          color: variables.$dark50;
           font-size: 12px;
           grid-template-columns: repeat(7, 40px);
           grid-auto-rows: 40px;
@@ -115,13 +117,13 @@
           & .-day-:not(.-in-range-):hover {
             border-radius: 50%;
             border: none;
-            background-image: linear-gradient($opacityGradient);
+            background-image: linear-gradient(variables.$opacityGradient);
           }
           & .-other-month- {
-            color: $dark25;
+            color: variables.$dark25;
           }
           & .-current- {
-            @include green-gradient;
+            @include mixins.green-gradient;
             font-weight: 700;
             color: #fff;
             border-radius: 50%;
@@ -139,7 +141,7 @@
             top: 0;
             width: 50%;
             height: 100%;
-            background-image: linear-gradient($opacityGradient);
+            background-image: linear-gradient(variables.$opacityGradient);
             overflow: hidden;
             mask-image: radial-gradient(
               circle farthest-side at 0,
@@ -155,14 +157,14 @@
             transform: scale(-1, 1);
           }
           & .-selected- {
-            @include back-gradient;
+            @include mixins.back-gradient;
             border-radius: 50%;
             font-weight: 700;
             position: relative;
           }
           & .-in-range- {
             background-color: transparent;
-            background-image: linear-gradient($opacityGradient);
+            background-image: linear-gradient(variables.$opacityGradient);
             border-radius: 0;
           }
         }

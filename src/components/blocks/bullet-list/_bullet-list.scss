@@ -1,3 +1,4 @@
+@use '../../sass/abstracts/variables';
 .bullet-list_item {
   position: relative;
   line-height: 24px;
@@ -9,12 +10,12 @@
     width: 10px;
     height: 10px;
     border-radius: 100%;
-    background-color: $dark25;
+    background-color: variables.$dark25;
     position: absolute;
     top: 7px;
     left: -20px;
   }
-  color: $dark75;
+  color: variables.$dark75;
   &::first-letter {
     text-transform: uppercase;
   }

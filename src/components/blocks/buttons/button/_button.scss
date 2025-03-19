@@ -1,3 +1,5 @@
+@use '../../../sass/abstracts/variables';
+@use '../../../sass/mixins/mixins';
 .button {
   padding: 0 19px;
   display: flex;
@@ -13,7 +15,7 @@
   color: #fff;
   flex-shrink: 0;
   text-decoration: none;
-  @include back-gradient;
+  @include mixins.back-gradient;
   cursor: pointer;
   &:active,
   &:hover,
@@ -22,8 +24,8 @@
     opacity: 0.5;
   }
   &__border {
-    @include border-gradient;
-    color: $purple;
+    @include mixins.border-gradient;
+    color: variables.$purple;
     padding: 0 17px 0 14px;
   }
   &__text {
@@ -33,7 +35,7 @@
     height: 15px;
     text-align: left;
     background: #fff;
-    color: $purple;
+    color: variables.$purple;
     justify-content: center;
     align-items: center;
     padding: 1px 0 0 1px;
@@ -41,7 +43,7 @@
     &:hover,
     &:focus,
     &_active {
-      color: $dark50;
+      color: variables.$dark50;
       opacity: 1;
     }
   }
@@ -49,7 +51,7 @@
     width: 320px;
     position: relative;
     &::after {
-      @include material;
+      @include mixins.material;
       position: absolute;
       top: 50%;
       right: calc(0% + 10px);

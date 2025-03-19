@@ -1,3 +1,4 @@
+@use '../../sass/abstracts/variables';
 .simple-logo {
   position: absolute;
   top: 30px;
@@ -6,8 +7,8 @@
     width: 48px;
     height: 48px;
     & path {
-      color: $dark25;
-      fill: $dark;
+      color: variables.$dark25;
+      fill: variables.$dark;
       fill-opacity: 0.25;
     }
   }

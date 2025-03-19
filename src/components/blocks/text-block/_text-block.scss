@@ -1,3 +1,5 @@
+@use '../../sass/abstracts/variables';
+@use '../../sass/mixins/mixins';
 .text {
   display: flex;
   gap: 30px;
@@ -8,25 +10,25 @@
     width: 37px;
     text-transform: capitalize;
     text-align: end;
-    color: $dark25;
+    color: variables.$dark25;
     //fix width for first name
   }
 }
 .paragraphs {
   margin-top: -3px;
   & .text__sentence {
-    @include bodyfont;
+    @include mixins.bodyfont;
   }
   & .text__name {
-    @include bodyfont;
-    color: $dark25;
+    @include mixins.bodyfont;
+    color: variables.$dark25;
   }
 }
 .head {
   &-1 {
     line-height: 30px;
     & .text__sentence {
-      @include h1;
+      @include mixins.h1;
     }
     & .text__name {
       font-size: 24px;
@@ -34,7 +36,7 @@
   }
   &-2 {
     & .text__sentence {
-      @include h2;
+      @include mixins.h2;
     }
     & .text__name {
       font-size: 19px;
@@ -42,7 +44,7 @@
   }
   &-3 {
     & .text__sentence {
-      @include h3;
+      @include mixins.h3;
     }
     & .text__name {
       font-size: 12px;

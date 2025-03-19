@@ -1,22 +1,21 @@
-@import '../abstracts/_variables';
-
+@use '../abstracts/variables';
 @mixin text-gradient {
-  background: -webkit-linear-gradient($gradient);
+  background: -webkit-linear-gradient(variables.$gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 @mixin back-gradient {
-  background: linear-gradient($gradient);
+  background: linear-gradient(variables.$gradient);
 }
 @mixin border-gradient {
   background:
     linear-gradient(#fff, #fff) padding-box,
-    linear-gradient($gradient) border-box;
+    linear-gradient(variables.$gradient) border-box;
   border: 2px solid transparent;
 }
 @mixin green-gradient {
-  background-image: linear-gradient(180deg, $green 0%, #66d2ea 100%);
+  background-image: linear-gradient(180deg, variables.$green 0%, #66d2ea 100%);
 }
 @mixin input-style-reset {
   -webkit-appearance: none;
@@ -24,7 +23,7 @@
   appearance: none;
   display: inline-block;
   position: relative;
-  border: 1px solid $dark25;
+  border: 1px solid variables.$dark25;
 }
 
 @mixin material {
@@ -39,7 +38,7 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  color: $dark50;
+  color: variables.$dark50;
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
   /* Support for Safari and Chrome. */
@@ -53,13 +52,13 @@
 }
 
 @mixin head-font {
-  font-family: $font-2;
-  color: $dark;
+  font-family: variables.$font-2;
+  color: variables.$dark;
   font-weight: 700;
 }
 @mixin main-font {
-  font-family: $font-1;
-  color: $dark;
+  font-family: variables.$font-1;
+  color: variables.$dark;
 }
 
 @mixin h3 {
@@ -84,7 +83,7 @@
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
-  color: $dark75;
+  color: variables.$dark75;
 }
 
 @mixin expand-more {

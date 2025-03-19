@@ -1,11 +1,11 @@
-@import '../../../../sass/mixins/_mixins';
+@use '../../../../sass/mixins/mixins';
 .exp-checkbox {
   &__header {
     position: relative;
     width: 266px;
     cursor: pointer;
     &::after {
-      @include expand-more;
+      @include mixins.expand-more;
       translate: 0 -50%;
     }
     & h3 {

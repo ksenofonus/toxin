@@ -1,3 +1,5 @@
+@use '../../sass/abstracts/variables';
+@use '../../sass/mixins/mixins';
 .color {
   width: auto;
   display: flex;
@@ -11,25 +13,25 @@
     border-radius: 6px;
 
     &_dark {
-      background-color: $dark;
+      background-color: variables.$dark;
     }
     &_dark75 {
-      background-color: $dark75;
+      background-color: variables.$dark75;
     }
     &_dark50 {
-      background-color: $dark50;
+      background-color: variables.$dark50;
     }
     &_dark25 {
-      background-color: $dark25;
+      background-color: variables.$dark25;
     }
     &_dark5 {
-      background-color: $dark5;
+      background-color: variables.$dark5;
     }
     &_purple {
-      background-color: $purple;
+      background-color: variables.$purple;
     }
     &_green {
-      background-color: $green;
+      background-color: variables.$green;
     }
   }
   & .color__name {
@@ -37,7 +39,7 @@
     line-height: 28px;
   }
   & .color__prop {
-    @include h2;
+    @include mixins.h2;
     width: 164px;
   }
   &__hex {
