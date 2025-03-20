@@ -33,6 +33,7 @@
   width: 100%;
   background-color: #fff;
   box-shadow: 0 10px 20px 0 rgba(31, 32, 65, 0.05);
+  border-top: 1px solid variables.$dark25;
   &__column {
     display: flex;
     flex-direction: column;
