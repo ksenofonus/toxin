@@ -15,7 +15,6 @@ include ../components/layout/footer/_footer.pug
 include ../components/blocks/logo/_logo.pug
 include ../components/blocks/forms/subscription/_subscription.pug
 include ../components/blocks/forms/room-search/_room-search.pug
-include ../components/blocks/room/_room.pug
 include Blocks/datepicker/_filter-datepicker.pug
 include ../components/blocks/range-slider/_range-slider.pug
 doctype html
@@ -53,6 +52,7 @@ html(lang="en")
                             4: {name: 'crib', text: "Кроватка", checked: 'checked'}, 
                             5: {name: 'tv', text: "Телевизор"}, 
                             6: {name: 'shampoo', text: "Шампунь"}})
-          .room-container
+          .room-wrapper
+            block content
       +footer
   script(src="./search/search.js")

@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PugPlugin = require('pug-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const sass = require('sass');
@@ -87,7 +86,15 @@ module.exports = (env) => {
             },
           },
         },
+        {
+          test: /\.geojson$/,
+          type: 'json',
+        },
       ],
     },
+    stats: {
+      errorDetails: false,
+    },
   };
+  
 };

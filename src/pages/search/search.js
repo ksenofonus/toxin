@@ -4,8 +4,10 @@ import '../../components/blocks/dropdown/_dropdown-guest';
 import '../../components/blocks/range-slider/_range-slider';
 import '../../components/blocks/buttons/checkbox/expandable/_expandable';
 import template from '../../components/blocks/room/_room.pug';
-import Data from '../../assets/json/_rooms.json';
+import { list } from './_roomslist';
 
-const roomsContainer = document.querySelector('.room-container');
-roomsContainer.innerHTML = template(Data);
-console.log(Data)
+const roomsContainer = document.querySelector('.room-wrapper');
+for (let key in list) {
+  roomsContainer.insertAdjacentHTML('afterbegin', template(list[key]));
+}
+
