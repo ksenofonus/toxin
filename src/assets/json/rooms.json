@@ -1,0 +1,87 @@
+[
+  {
+    "number": 888,
+    "stars": 5,
+    "lux": true,
+    "price": 9990,
+    "reviews": 145
+  },
+  {
+    "number": 840,
+    "stars": 4,
+    "lux": false,
+    "price": 9990,
+    "reviews": 65
+  },
+  {
+    "number": 980,
+    "stars": 3,
+    "lux": true,
+    "price": 8500,
+    "reviews": 35
+  },
+  {
+    "number": 856,
+    "stars": 5,
+    "lux": false,
+    "price": 7300,
+    "reviews": 19
+  },
+  {
+    "number": 740,
+    "stars": 4,
+    "lux": false,
+    "price": 6000,
+    "reviews": 44
+  },
+  {
+    "number": 982,
+    "stars": 3,
+    "lux": false,
+    "price": 5800,
+    "reviews": 56
+  },
+  {
+    "number": 678,
+    "stars": 5,
+    "lux": false,
+    "price": 5500,
+    "reviews": 45
+  },
+  {
+    "number": 450,
+    "stars": 4,
+    "lux": false,
+    "price": 5300,
+    "reviews": 39
+  },
+  {
+    "number": 350,
+    "stars": 3,
+    "lux": false,
+    "price": 5000,
+    "reviews": 77
+  },
+  {
+    "number": 666,
+    "stars": 5,
+    "lux": false,
+    "price": 5000,
+    "reviews": 25
+  },
+  {
+    "number": 444,
+    "stars": 4,
+    "lux": false,
+    "price": 5000,
+    "reviews": 15
+  },
+  {
+    "number": 352,
+    "stars": 3,
+    "lux": false,
+    "price": 5000,
+    "reviews": 55
+  }
+]
+

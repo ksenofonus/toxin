@@ -37,7 +37,7 @@
   display: grid;
   grid-template-columns: 266px auto;
   padding: 30px 140px;
-  gap: 30px;
+  gap: 60px;
 }
 .room-filter {
   display: flex;
@@ -47,5 +47,5 @@
 .room-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 20px 12px;
 }
