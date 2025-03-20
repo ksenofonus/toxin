@@ -52,7 +52,9 @@ html(lang="en")
                             4: {name: 'crib', text: "Кроватка", checked: 'checked'}, 
                             5: {name: 'tv', text: "Телевизор"}, 
                             6: {name: 'shampoo', text: "Шампунь"}})
-          .room-wrapper
-            block content
+          .room-section
+            h1.room-section__title Номера, которые мы для вас подобрали
+            .room-pagination-container
+              include ../components/blocks/pagination/_paginat.pug
       +footer
   script(src="./search/search.js")
