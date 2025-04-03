@@ -1,0 +1,23 @@
+extends Components/layout/layout/_layout.pug
+
+block main
+  .photo-container
+  .content-container
+    .info
+      .advantage-container
+        h3.info__title Сведения о номере
+        block advantage
+      .impression-container
+        h3.info__title Впечатления о номере
+        block impression
+      .review-container
+        h3.info__title Отзывы посетителей номера
+        block review
+      .rules
+        h3.info__title Правила
+        block rules
+      .cancel
+        h3.info__title Отмена
+        block cancel
+    .booking-form
+      +booking(type, number, price)

@@ -16,6 +16,7 @@ $arrow_linear:
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 10px 20px 0 rgba(31, 32, 65, 0.05);
+  cursor: pointer;
   &_active {
     & .room__slider-arrow {
       position: absolute;
@@ -85,5 +86,9 @@ $arrow_linear:
         font-weight: 800;
       }
     }
+  }
+  &__page {
+    display: block;
+    text-decoration: none;
   }
 }

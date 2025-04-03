@@ -36,6 +36,9 @@ module.exports = (env) => {
     plugins: [
       new PugPlugin({
         entry: './src/pages/',
+        filename: ({ filename, chunk: { name } }) => {
+          return '[name].html';
+        },
         js: {
           // JS output filename
           filename: 'js/[name].[contenthash:8].js',

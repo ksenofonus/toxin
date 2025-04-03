@@ -1,24 +1,24 @@
-include ../components/blocks/color_item/_color-block.pug
-include ../components/blocks/forms/mixins/_mixins-forms.pug
-include ../components/blocks/buttons/checkbox/_check-buttons.pug
-include ../components/blocks/buttons/like/_like.pug
-include ../components/blocks/buttons/rating/_rating.pug
-include ../components/blocks/buttons/button/_button.pug
-include ../components/blocks/dropdown/_dropdown.pug
-include ../components/blocks/buttons/checkbox/expandable/_expandable.pug
-include ../components/blocks/buttons/checkbox/rich/_rich.pug
-include ../components/blocks/bullet-list/_bullet-list.pug
-include ../components/blocks/advantage/_advantage.pug
-include ../components/blocks/review/_review.pug
-include ../components/layout/header/_header.pug
-include ../components/layout/footer/_footer.pug
-include ../components/blocks/logo/_logo.pug
-include ../components/blocks/forms/subscription/_subscription.pug
-include ../components/blocks/forms/room-search/_room-search.pug
-include ../components/blocks/forms/reg-form/_reg-form.pug
-include ../components/blocks/forms/enter/_enter.pug
+include Blocks/color_item/_color-block.pug
+include Blocks/forms/mixins/_mixins-forms.pug
+include Blocks/buttons/checkbox/_check-buttons.pug
+include Blocks/buttons/like/_like.pug
+include Blocks/buttons/rating/_rating.pug
+include Blocks/buttons/button/_button.pug
+include Blocks/dropdown/_dropdown.pug
+include Blocks/buttons/checkbox/expandable/_expandable.pug
+include Blocks/buttons/checkbox/rich/_rich.pug
+include Blocks/bullet-list/_bullet-list.pug
+include Blocks/advantage/_advantage.pug
+include Blocks/review/_review.pug
+include Components/layout/header/_header.pug
+include Components/layout/footer/_footer.pug
+include Blocks/logo/_logo.pug
+include Blocks/forms/subscription/_subscription.pug
+include Blocks/forms/booking/_booking.pug
+include Blocks/forms/reg-form/_reg-form.pug
+include Blocks/forms/enter/_enter.pug
 include Blocks/datepicker/_filter-datepicker.pug
-include ../components/blocks/range-slider/_range-slider.pug
+include Blocks/range-slider/_range-slider.pug
 doctype html
 html(lang='en')
   head
@@ -174,7 +174,7 @@ html(lang='en')
           include ../components/blocks/forms/search-form/_search-form.pug
           +registration
         
-          +room-search('люкс', '888', '9 990')
+          +booking('люкс', '888', '9 990')
           +enter
         
           .empty
