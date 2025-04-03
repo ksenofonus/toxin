@@ -1,33 +1,7 @@
-include ../components/blocks/color_item/_color-block.pug
-include ../components/blocks/forms/mixins/_mixins-forms.pug
-include ../components/blocks/buttons/checkbox/_check-buttons.pug
-include ../components/blocks/buttons/like/_like.pug
-include ../components/blocks/buttons/rating/_rating.pug
-include ../components/blocks/buttons/button/_button.pug
-include ../components/blocks/dropdown/_dropdown.pug
-include ../components/blocks/buttons/checkbox/expandable/_expandable.pug
-include ../components/blocks/buttons/checkbox/rich/_rich.pug
-include ../components/blocks/bullet-list/_bullet-list.pug
-include ../components/blocks/advantage/_advantage.pug
-include ../components/blocks/review/_review.pug
-include ../components/layout/header/_header.pug
-include ../components/layout/footer/_footer.pug
-include ../components/blocks/logo/_logo.pug
-include ../components/blocks/forms/subscription/_subscription.pug
-include ../components/blocks/forms/room-search/_room-search.pug
+extends Components/layout/layout/_layout.pug
 
-doctype html
-html(lang="en")
-  head
-    meta(charset="utf-8")
-    include ../assets/favicons/_favicons.pug
-    title Toxin
-  body
-    .container
-      +header(false)
-      main.main
-        .main-container
-          include ../components/blocks/forms/search-form/_search-form.pug
-          p.tagline Лучшие номера для вашей работы, отдыха и просто вдохновения
-      +footer
+block main
+  include ../components/blocks/forms/search-form/_search-form.pug
+  p.tagline Лучшие номера для вашей работы, отдыха и просто вдохновения
+block script
   script(src="./index/index.js")

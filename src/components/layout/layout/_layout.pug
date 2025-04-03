@@ -1,0 +1,35 @@
+//- include Blocks/color_item/_color-block.pug
+//- include Blocks/forms/mixins/_mixins-forms.pug
+include Blocks/buttons/checkbox/_check-buttons.pug
+include Blocks/buttons/like/_like.pug
+include Blocks/buttons/rating/_rating.pug
+include Blocks/buttons/button/_button.pug
+include Blocks/dropdown/_dropdown.pug
+include Blocks/buttons/checkbox/expandable/_expandable.pug
+include Blocks/buttons/checkbox/rich/_rich.pug
+include Blocks/bullet-list/_bullet-list.pug
+include Blocks/advantage/_advantage.pug
+include Blocks/review/_review.pug
+include Components/layout/header/_header.pug
+include Components/layout/footer/_footer.pug
+include Blocks/logo/_logo.pug
+include Blocks/forms/subscription/_subscription.pug
+include Blocks/forms/room-search/_room-search.pug
+include Blocks/datepicker/_filter-datepicker.pug
+include Blocks/range-slider/_range-slider.pug
+include Blocks/forms/reg-form/_reg-form.pug
+include Blocks/forms/enter/_enter.pug
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    include Assets/favicons/_favicons.pug
+    title Toxin
+  body
+    .container
+      +header(false)
+      main.main
+        .main-container
+          block main
+      +footer
+  block script

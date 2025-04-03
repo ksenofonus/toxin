@@ -1,60 +1,33 @@
-include ../components/blocks/color_item/_color-block.pug
-include ../components/blocks/forms/mixins/_mixins-forms.pug
-include ../components/blocks/buttons/checkbox/_check-buttons.pug
-include ../components/blocks/buttons/like/_like.pug
-include ../components/blocks/buttons/rating/_rating.pug
-include ../components/blocks/buttons/button/_button.pug
-include ../components/blocks/dropdown/_dropdown.pug
-include ../components/blocks/buttons/checkbox/expandable/_expandable.pug
-include ../components/blocks/buttons/checkbox/rich/_rich.pug
-include ../components/blocks/bullet-list/_bullet-list.pug
-include ../components/blocks/advantage/_advantage.pug
-include ../components/blocks/review/_review.pug
-include ../components/layout/header/_header.pug
-include ../components/layout/footer/_footer.pug
-include ../components/blocks/logo/_logo.pug
-include ../components/blocks/forms/subscription/_subscription.pug
-include ../components/blocks/forms/room-search/_room-search.pug
-include Blocks/datepicker/_filter-datepicker.pug
-include ../components/blocks/range-slider/_range-slider.pug
-doctype html
-html(lang="en")
-  head
-    meta(charset="utf-8")
-    include ../assets/favicons/_favicons.pug
-    title Toxin
-  body
-    .container
-      +header(false)
-      main.main
-        .main-container
-          .room-filter
-            +filter-datepicker('дата пребывания в отеле', 'text', 'date', '19 авг - 23 авг')
-            +guestDropdown('гости', '3 гостя, 1 младенец',
+extends Components/layout/layout/_layout.pug
+
+block main 
+  .room-filter
+    +filter-datepicker('дата пребывания в отеле', 'text', 'date', '19 авг - 23 авг')
+    +guestDropdown('гости', '3 гостя, 1 младенец',
                 {'adults': {amount: 2, text: 'взрослые'},'children': { amount: 1, text: 'дети'},'infants': {amount: 1, text: 'младенцы'},})
-            +range-slider('диапазон цены', 'стоимость за сутки пребывания в номере')
-            .button-container
-              h3.buttons-name checkbox buttons
-              .checkbox-container
-                +checkbox({ 1: {name: 'smoking', text: 'Можно курить'}, 2: {name: 'pets', text: 'Можно с питомцами', checked: 'checked'}, 3: {name: 'guests', text: 'Можно пригласить гостей (до 10 человек)', checked: 'checked'}})
-            .rich-container
-              h3.buttons-name доступность
-              .checkbox-container
-                +checkbox({ 1: {name: 'hall', text: 'Широкий коридор'} })(class="checkbox-rich")
-                  +checkbox-rich('Ширина коридоров в номере не\u00A0менее 91 см.')
-                +checkbox({1: {name: 'assistant', text: 'Помощник для инвалидов'}} )(class="checkbox-rich")
-                  +checkbox-rich('На 1 этаже вас встретит специалист и проводит до номера.')
-            +roomDropdown('удобства номера')(id='roomselect')
-            +expandable-checkbox('дополнительные удобства')
-              +checkbox({ 1: {name: 'breakfast', text: "Завтрак"}, 
+    +range-slider('диапазон цены', 'стоимость за сутки пребывания в номере')
+    .button-container
+      h3.buttons-name checkbox buttons
+      .checkbox-container
+        +checkbox({ 1: {name: 'smoking', text: 'Можно курить'}, 2: {name: 'pets', text: 'Можно с питомцами', checked: 'checked'}, 3: {name: 'guests', text: 'Можно пригласить гостей (до 10 человек)', checked: 'checked'}})
+    .rich-container
+      h3.buttons-name доступность
+      .checkbox-container
+        +checkbox({ 1: {name: 'hall', text: 'Широкий коридор'} })(class="checkbox-rich")
+          +checkbox-rich('Ширина коридоров в номере не\u00A0менее 91 см.')
+        +checkbox({1: {name: 'assistant', text: 'Помощник для инвалидов'}} )(class="checkbox-rich")
+          +checkbox-rich('На 1 этаже вас встретит специалист и проводит до номера.')
+    +roomDropdown('удобства номера')(id='roomselect')
+    +expandable-checkbox('дополнительные удобства')
+        +checkbox({ 1: {name: 'breakfast', text: "Завтрак"}, 
                             2: {name: 'desk', text: "Письменный стол", checked: 'checked'}, 
                             3: {name: 'babychair', text: "Стул для кормления", checked: 'checked'}, 
                             4: {name: 'crib', text: "Кроватка", checked: 'checked'}, 
                             5: {name: 'tv', text: "Телевизор"}, 
                             6: {name: 'shampoo', text: "Шампунь"}})
-          .room-section
-            h1.room-section__title Номера, которые мы для вас подобрали
-            .room-pagination-container
-              include ../components/blocks/pagination/_paginat.pug
-      +footer
+  .room-section
+    h1.room-section__title Номера, которые мы для вас подобрали
+    .room-pagination-container
+      include Blocks/pagination/_paginat.pug
+block script 
   script(src="./search/search.js")
