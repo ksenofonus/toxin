@@ -2,6 +2,7 @@ extends Components/layout/layout/_layout.pug
 
 block main
   .photo-container
+    block photo
   .content-container
     .info
       .advantage-container
@@ -21,3 +22,5 @@ block main
         block cancel
     .booking-form
       +booking(type, number, price)
+block script
+  script(src='./_roompage.js')
