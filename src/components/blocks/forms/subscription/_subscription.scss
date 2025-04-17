@@ -1,4 +1,5 @@
 @use '../../../sass/mixins/mixins';
+@use 'Blocks/forms/mixins/mixins-forms';
 .email-form {
   position: relative;
   &::after {

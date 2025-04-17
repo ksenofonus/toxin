@@ -1,5 +1,6 @@
 @use '../../sass/abstracts/variables';
 @use '../../sass/mixins/mixins';
+@use 'Blocks/forms/subscription/subscription';
 @mixin media-footer {
   .footer {
     &-container {

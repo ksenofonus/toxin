@@ -13,46 +13,19 @@
 @use 'Blocks/forms/mixins/mixins-forms.scss';
 @use 'Blocks/forms/subscription/subscription.scss';
 @use 'Blocks/forms/search-form/search-form.scss';
+@use 'Blocks/forms/reg-form/reg-form.scss';
+@use 'Blocks/forms/enter/enter.scss';
 @use 'Blocks/forms/booking/booking.scss';
 @use 'Blocks/buttons/rating/rating';
+@use 'Blocks/range-slider/range-slider';
 @use 'Blocks/buttons/button/button';
+@use 'Blocks/pagination/paginat';
 @use 'Blocks/dropdown/dropdown';
+@use 'Blocks/datepicker/datepicker';
 @use 'Blocks/buttons/checkbox/expandable/expandable';
 @use 'Blocks/buttons/checkbox/rich/rich';
 @use 'Blocks/bullet-list/bullet-list';
 @use 'Blocks/advantage/advantage';
+@use 'Blocks/room/room';
 @use 'Blocks/review/review';
-@use 'Blocks/datepicker/datepicker';
-@use 'Components/layout/header/header';
-@use 'Components/layout/footer/footer';
-
-.main-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.photo-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 981px auto;
-  grid-template-rows: 243px 242px;
-}
-.content-container {
-  display: flex;
-  margin: 70px auto ;
-  width: calc(100% - 280px);
-}
-.info {
-  max-width: 712px;
-}
-.room-image {
-  &_first {
-    grid-area: 1 / 1 / 2 / 2;
-  }
-  &_second {
-    grid-area: 2 / 2 / 1 / 2;
-  }
-  &_third {
-    grid-area: 2 / 2 / 2 / 2;
-  }
-}
+@use 'Blocks/img-slider/img-slider';

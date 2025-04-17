@@ -1,7 +1,16 @@
 extends Components/layout/roompage/_roompage.pug
 
-block main 
-  block photo
-    img(src=`Assets/images/rooms/888/image_1`);
-    img(src=`Assets/images/rooms/888/image_2`);
-    img(src=`Assets/images/rooms/888/image_3`);
+block photo
+  img(src=require(`Assets/images/rooms/888/image_1.jpg`) class="room-image room-image_first")
+  img(src=require(`Assets/images/rooms/888/image_2.jpg`) class="room-image room-image_second")
+  img(src=require(`Assets/images/rooms/888/image_3.jpg`) class="room-image room-image_third")
+
+block advantage
+  -var advantages = [{ symbol: 'mood', title: 'Комфорт', description: 'Шумопоглощающие стены' }, { symbol: 'location_city', title: 'Удобство', description: 'Окно в каждой из спален' }, { symbol: 'whatshot', title: 'Уют', description: 'Номер оснащён камином' }]
+  each item in advantages
+    +advantage(item)
+block booking 
+  +booking('люкс', 888, 9990)
+block script
+  script(src=`Components/layout/roompage/_roompage.js`)
+  script(src=`Pages/room-pages/888.js`)

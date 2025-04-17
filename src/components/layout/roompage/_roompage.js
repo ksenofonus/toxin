@@ -1,14 +1,11 @@
-import './_roompage.scss';
+// import './_roompage.scss';
 
-
-export let number;
-
-export function getRoom(data) {
+export function getRoom(data, number) {
   let room = {};
   for (let item of data) {
     if (item.number === number) {
       room = item;
     }
   }
-  console.log(room)
+  return room;
 }
