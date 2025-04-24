@@ -41,9 +41,13 @@
   display: flex;
   margin: 70px auto ;
   width: calc(100% - 280px);
+  gap: 40px;
 }
 .info {
   max-width: 712px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 .room-image {
   &_first {
@@ -55,4 +59,8 @@
   &_third {
     grid-area: 2 / 2 / 2 / 2;
   }
+}
+.chart {
+  width: 300px;
+  height: 120px;
 }

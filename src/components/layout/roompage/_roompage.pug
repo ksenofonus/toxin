@@ -11,7 +11,9 @@ block main
         block advantage
       .impression-container
         h2.info__title Впечатления о номере
-        block impression
+        .chart
+          canvas(id="myChart")
+          .chart__legend(id="legend")
       .review-container
         h2.info__title Отзывы посетителей номера
         block review
@@ -23,4 +25,5 @@ block main
         block cancel
     .booking-form
       block booking
-      
+//- 
+//- block script
