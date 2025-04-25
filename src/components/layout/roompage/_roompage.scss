@@ -43,11 +43,19 @@
   width: calc(100% - 280px);
   gap: 40px;
 }
+.advantages__items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 .info {
   max-width: 712px;
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
+  &__title {
+    margin-bottom: 20px;
+  }
 }
 .room-image {
   &_first {
@@ -61,6 +69,6 @@
   }
 }
 .chart {
-  width: 300px;
-  height: 120px;
+  width: 312px;
+  
 }

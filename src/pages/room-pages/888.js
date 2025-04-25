@@ -24,16 +24,34 @@ new Chart(doughnut, {
         // backgroundColor: [],
       },
     ],
-    labels: ['Великолепно', 'Хорошо', 'Удовлитворительно', 'Разочарован'],
+    labels: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'],
   },
   options: {
     rotation: 180,
+    aspectRatio: 2.6,
+    radius: 60,
+    cutout: 52,
+    layout: {
+      padding: {
+        left: 0,
+        right: 60
+      }
+    },
     plugins: {
       legend: {
         position: 'right',
         display: true,
+        align: 'end',
         labels: {
-          color: 'rgb(255, 99, 132)',
+          boxWidth: 10,
+          boxHeight: 10,
+          padding: 12,
+          usePointStyle: true,
+          pointStyle: 'circle',
+          font: {
+            size: 14,
+            family: 'Montserrat, Arial, sans-serif',
+          },
         },
       },
     },

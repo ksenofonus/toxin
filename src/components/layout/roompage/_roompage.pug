@@ -6,15 +6,15 @@ block main
     block photo
   .content-container
     .info
-      .advantage-container
+      .advantages
         h2.info__title Сведения о номере
-        block advantage
-      .impression-container
+        .advantages__items
+          block advantage
+      .impressions
         h2.info__title Впечатления о номере
         .chart
           canvas(id="myChart")
-          .chart__legend(id="legend")
-      .review-container
+      .reviews
         h2.info__title Отзывы посетителей номера
         block review
       .rules
