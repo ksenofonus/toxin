@@ -1,5 +1,6 @@
 @use 'Components/sass/base/_fonts';
 @use 'Components/sass/abstracts/variables';
+@use 'Components/sass/mixins/mixins';
 @use 'Components/sass/base/normalize';
 @use 'Components/sass/base/basic';
 @use 'Blocks/color_item/color-block';
@@ -25,6 +26,7 @@
 @use 'Blocks/datepicker/datepicker';
 @use 'Components/layout/header/header';
 @use 'Components/layout/footer/footer';
+
 
 .main-container {
   width: 100%;
@@ -99,14 +101,14 @@
   }
 }
 .perfect::before {
-  background-color: yellow;
+  @include mixins.gradient-color(#FFE39C, #FFBA9C);
 }
 .good::before {
-  background-color: green;
+  @include mixins.green-gradient;
 }
 .satisfact::before {
-  background-color: purple;
+  @include mixins.main-gradient;
 }
 .disappoint::before {
-  background-color: black;
+  @include mixins.gradient-color(#909090, #3D4975);
 }

@@ -157,7 +157,7 @@
             transform: scale(-1, 1);
           }
           & .-selected- {
-            @include mixins.back-gradient;
+            @include mixins.main-gradient;
             border-radius: 50%;
             font-weight: 700;
             position: relative;

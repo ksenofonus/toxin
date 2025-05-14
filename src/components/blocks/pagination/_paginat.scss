@@ -34,7 +34,7 @@
         }
         &.toxin-theme_pages {
           &__active > a {
-            @include mixins.back-gradient;
+            @include mixins.main-gradient;
             color: #fff;
           }
           &__next > a {

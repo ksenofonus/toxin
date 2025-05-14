@@ -15,7 +15,7 @@
   color: #fff;
   flex-shrink: 0;
   text-decoration: none;
-  @include mixins.back-gradient;
+  @include mixins.main-gradient;
   cursor: pointer;
   &:active,
   &:hover,
