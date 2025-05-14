@@ -57,6 +57,9 @@
     margin-bottom: 20px;
   }
 }
+.impressions {
+  flex-grow: 1;
+}
 .room-image {
   &_first {
     grid-area: 1 / 1 / 2 / 2;
@@ -68,7 +71,42 @@
     grid-area: 2 / 2 / 2 / 2;
   }
 }
+.chart-container {
+  display: flex;
+  gap: 30px;
+}
+
 .chart {
-  width: 312px;
-  
+  height: 120px;
+  width: 120px;
+  &__legend {
+    display: flex;
+    align-items: flex-end;
+  }
+  &__legend-item {
+    position: relative;
+    padding-left: 15px;
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+}
+.perfect::before {
+  background-color: yellow;
+}
+.good::before {
+  background-color: green;
+}
+.satisfact::before {
+  background-color: purple;
+}
+.disappoint::before {
+  background-color: black;
 }

@@ -15,6 +15,7 @@ const doughnut = document.getElementById('myChart');
 const legend = document.getElementById('legend');
 const ctx = doughnut.getContext('2d');
 const gradient = ctx.createLinearGradient(20, 0, 220, 0);
+
 new Chart(doughnut, {
   type: 'doughnut',
   data: {
@@ -28,31 +29,10 @@ new Chart(doughnut, {
   },
   options: {
     rotation: 180,
-    aspectRatio: 2.6,
-    radius: 60,
-    cutout: 52,
-    layout: {
-      padding: {
-        left: 0,
-        right: 60
-      }
-    },
+    cutout: '90%',
     plugins: {
       legend: {
-        position: 'right',
-        display: true,
-        align: 'end',
-        labels: {
-          boxWidth: 10,
-          boxHeight: 10,
-          padding: 12,
-          usePointStyle: true,
-          pointStyle: 'circle',
-          font: {
-            size: 14,
-            family: 'Montserrat, Arial, sans-serif',
-          },
-        },
+        display: false
       },
     },
   },

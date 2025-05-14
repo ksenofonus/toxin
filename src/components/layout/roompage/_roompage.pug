@@ -12,8 +12,15 @@ block main
           block advantage
       .impressions
         h2.info__title Впечатления о номере
-        .chart
-          canvas(id="myChart")
+        .chart-container
+          .chart
+            canvas(id="myChart")
+          .chart__legend
+            ul
+              li.chart__legend-item.perfect Восхитительно
+              li.chart__legend-item.good Хорошо
+              li.chart__legend-item.satisfact Удовлетворительно
+              li.chart__legend-item.disappoint Разочарован
       .reviews
         h2.info__title Отзывы посетителей номера
         block review
