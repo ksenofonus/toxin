@@ -100,15 +100,15 @@
     }
   }
 }
-.perfect::before {
+.perfect {
   @include mixins.gradient-color(#FFE39C, #FFBA9C);
 }
-.good::before {
+.good {
   @include mixins.green-gradient;
 }
-.satisfact::before {
+.satisfact {
   @include mixins.main-gradient;
 }
-.disappoint::before {
+.disappoint {
   @include mixins.gradient-color(#909090, #3D4975);
 }
