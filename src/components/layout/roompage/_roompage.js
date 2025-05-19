@@ -1,7 +1,8 @@
 import './_roompage.scss';
-import Chart from 'chart.js/auto';
+import { addChart } from 'Blocks/chart/_chart';
+import Data from 'Assets/json/rooms.json';
 
-export function getRoom(data, number) {
+function getRoom(data, number) {
   let room = {};
   for (let item of data) {
     if (item.number === number) {
@@ -11,6 +12,12 @@ export function getRoom(data, number) {
   return room;
 }
 
+export function setChart(number) {
+  const room = getRoom(Data, number);
+  const data = Object.values(room.impressions);
+  const labels = Object.keys(room.impressions);
+  addChart(data, labels);
+}
 
 
 
