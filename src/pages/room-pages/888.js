@@ -7,11 +7,9 @@ import Chart from 'chart.js/auto';
 
 const number = 888;
 const room = getRoom(Data, number);
-console.log(room);
+const data = Object.values(room.impressions);
+const labels = Object.keys(room.impressions);
 
-const data = [
-  { magnificently: 130, good: 65, satisfactorily: 65, disappointed: 0},
-];
 const doughnut = document.getElementById('myChart');
 
 const ctx = doughnut.getContext('2d');
@@ -27,6 +25,12 @@ gradientSatisfate.addColorStop(1, '#8ba4f9');
 const gradientDissapoint = ctx.createLinearGradient(0, 0, 0, 120);
 gradientDissapoint.addColorStop(0, '#909090');
 gradientDissapoint.addColorStop(1, '#3D4975');
+
+const colors = ['#FFBA9C', '#bc9cff', '#6fcf97', '#3D4975'];
+const fontColors = labels.reduce((acc, current, index) =>{
+  acc[current] = colors[index];
+  return acc;
+}, {});
 
 const getOrCreateLegendList = (chart, id) => {
   const legendContainer = document.getElementById(id);
@@ -63,6 +67,7 @@ const htmlLegendPlugin = {
       li.style.cursor = 'pointer';
       li.style.display = 'flex';
       li.style.alignItems = 'center';
+      li.style.textTransform = 'capitalize';
       li.onclick = () => {
         const { type } = chart.config;
         if (type === 'pie' || type === 'doughnut') {
@@ -115,24 +120,23 @@ Tooltip.positioners.myCustomPositioner = function (elements, eventPosition) {
     // You may also include xAlign and yAlign to override those tooltip options.
   };
 };
+
 const getOrCreateTooltip = (chart) => {
   let tooltipEl = chart.canvas.parentNode.querySelector('div');
 
   if (!tooltipEl) {
     tooltipEl = document.createElement('div');
-    tooltipEl.style.background = 'rgba(0, 0, 0, 0.7)';
-    tooltipEl.style.borderRadius = '3px';
-    tooltipEl.style.color = 'white';
-    tooltipEl.style.opacity = 1;
+    tooltipEl.style.background = 'rgba(250, 250, 250, 0)';
+    tooltipEl.style.color = '#bc9cff';
     tooltipEl.style.pointerEvents = 'none';
     tooltipEl.style.position = 'absolute';
-    tooltipEl.style.transform = 'translate(-50%, 0)';
-    tooltipEl.style.transition = 'all .1s ease';
+    tooltipEl.style.transform = 'translate(-50%, -50%)';
+    tooltipEl.style.transition = 'all 1s ease';
 
-    const table = document.createElement('table');
-    table.style.margin = '0px';
+    const tooltipBody = document.createElement('div');
+    tooltipBody.className = 'tooltip';
 
-    tooltipEl.appendChild(table);
+    tooltipEl.appendChild(tooltipBody);
     chart.canvas.parentNode.appendChild(tooltipEl);
   }
 
@@ -143,62 +147,15 @@ const externalTooltipHandler = (context) => {
   // Tooltip Element
   const { chart, tooltip } = context;
   const tooltipEl = getOrCreateTooltip(chart);
-
-  // Hide if no tooltip
-  if (tooltip.opacity === 0) {
-    tooltipEl.style.opacity = 0;
-    return;
-  }
-
   // Set Text
   if (tooltip.body) {
     const titleLines = tooltip.title || [];
-    const bodyLines = tooltip.body.map((b) => b.lines);
+    const tooltipHead = document.createElement('span');
+    const tooltipAfter = document.createElement('span');
+    tooltipHead.textContent = `${tooltip.body[0].lines}`;
+    tooltipAfter.textContent = 'голосов';
 
-    const tableHead = document.createElement('thead');
-
-    titleLines.forEach((title) => {
-      const tr = document.createElement('tr');
-      tr.style.borderWidth = 0;
-
-      const th = document.createElement('th');
-      th.style.borderWidth = 0;
-      const text = document.createTextNode(title);
-
-      th.appendChild(text);
-      tr.appendChild(th);
-      tableHead.appendChild(tr);
-    });
-
-    const tableBody = document.createElement('tbody');
-    bodyLines.forEach((body, i) => {
-      const colors = tooltip.labelColors[i];
-
-      const span = document.createElement('span');
-      span.style.background = colors.backgroundColor;
-      span.style.borderColor = colors.borderColor;
-      span.style.borderWidth = '2px';
-      span.style.marginRight = '10px';
-      span.style.height = '10px';
-      span.style.width = '10px';
-      span.style.display = 'inline-block';
-
-      const tr = document.createElement('tr');
-      tr.style.backgroundColor = 'inherit';
-      tr.style.borderWidth = 0;
-
-      const td = document.createElement('td');
-      td.style.borderWidth = 0;
-
-      const text = document.createTextNode(body);
-
-      td.appendChild(span);
-      td.appendChild(text);
-      tr.appendChild(td);
-      tableBody.appendChild(tr);
-    });
-
-    const tableRoot = tooltipEl.querySelector('table');
+    const tableRoot = tooltipEl.querySelector('.tooltip');
 
     // Remove old children
     while (tableRoot.firstChild) {
@@ -206,19 +163,13 @@ const externalTooltipHandler = (context) => {
     }
 
     // Add new children
-    tableRoot.appendChild(tableHead);
-    tableRoot.appendChild(tableBody);
+    tableRoot.appendChild(tooltipHead);
+    tableRoot.appendChild(tooltipAfter);
   }
-
-  const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas;
-
-  // Display, position, and set styles for font
-  tooltipEl.style.opacity = 1;
-  tooltipEl.style.left = positionX + tooltip.caretX + 'px';
-  tooltipEl.style.top = positionY + tooltip.caretY + 'px';
-  tooltipEl.style.font = tooltip.options.bodyFont.string;
-  tooltipEl.style.padding =
-    tooltip.options.padding + 'px ' + tooltip.options.padding + 'px';
+  const tooltipColor = fontColors[tooltip.title];
+  tooltipEl.style.left = '50%';
+  tooltipEl.style.top = '50%';
+  tooltipEl.style.color = tooltipColor;
 };
 
 new Chart(doughnut, {
@@ -226,7 +177,7 @@ new Chart(doughnut, {
   data: {
     datasets: [
       {
-        data: [130, 65, 65, 0],
+        data: data,
         backgroundColor: [
           gradientPerfect,
           gradientSatisfate,
@@ -235,7 +186,7 @@ new Chart(doughnut, {
         ],
       },
     ],
-    labels: ['Великолепно', 'Удовлетворительно', 'Хорошо', 'Разочарован'],
+    labels: labels,
   },
   options: {
     rotation: 180,
@@ -249,18 +200,8 @@ new Chart(doughnut, {
       },
       tooltip: {
         enabled: false,
-        intersect: false,
         external: externalTooltipHandler,
         position: 'myCustomPositioner',
-        callbacks: {
-          title: function (tooltipItem) {
-            // console.log(tooltipItem);
-            return tooltipItem[0].parsed;
-          },
-          afterTitle: function () {
-            return 'голосов';
-          },
-        },
       },
     },
   },

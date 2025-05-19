@@ -1,4 +1,5 @@
-// import './_roompage.scss';
+import './_roompage.scss';
+import Chart from 'chart.js/auto';
 
 export function getRoom(data, number) {
   let room = {};
@@ -9,4 +10,7 @@ export function getRoom(data, number) {
   }
   return room;
 }
+
+
+
 
