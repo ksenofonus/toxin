@@ -11,6 +11,10 @@ block advantage
     +advantage(item)
 block booking 
   +booking('люкс', 888, 9990)
+block review
+  -var reviews = [{ username: 'Мурад Сарафанов', userphoto: 'Assets/images/users/murad-sarafanov.png', time: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', likes: 12, likePress: true }, { username: 'Патрисия Стеклышкова', userphoto: 'Assets/images/users/patrisia-steklyshkova.png', time: 'неделю назад', text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент', likes: 2, likePress: false }]
+  each item in reviews
+    +review(item)
 block script
   script(src=`Pages/room-pages/888.js`)
   script(src=`Components/layout/roompage/_roompage.js`)

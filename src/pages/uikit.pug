@@ -162,24 +162,21 @@ html(lang='en')
             .review-container
               +review({
                 username: 'Мурад Сарафанов',
-                userphoto: '../assets/images/userphoto.png',
+                userphoto: '../assets/images/users/murad-sarafanov.png',
                 time: '5 дней назад',
-                text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+                text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+                likes: 12,
+                likePress: true
               })
-                +like(12)(class="like_press")
       section.block-container.block-container__cards
         h2.section-title Cards
         +simpleLogo
         .grid
           include ../components/blocks/forms/search-form/_search-form.pug
           +registration
-        
           +booking('люкс', '888', '9 990')
           +enter
-        
           .empty
-          //- +room('../assets/images/rooms/888.jpg', '888', '9 990', '5', '145', 'люкс')(class='room_active')
-          //- +room('../assets/images/rooms/840.jpg', '840', '9 900', '4', '65')
 
       section.block-container.block-container__layout
         h2.section-title Headers and footers

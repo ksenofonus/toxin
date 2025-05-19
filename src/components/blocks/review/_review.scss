@@ -18,6 +18,9 @@
     flex-direction: column;
     gap: 10px;
     line-height: 24px;
+    & .review__time::first-letter {
+      text-transform: capitalize;
+    }
   }
   &__userinfo {
     display: flex;

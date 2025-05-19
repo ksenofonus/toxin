@@ -1,7 +1,10 @@
-const like = document.querySelectorAll('.like');
-function likeToggle() {
+
+export function likeToggle() {
+  const like = document.querySelectorAll('.like');
+  console.log(like)
   like.forEach((element) => {
-    element.addEventListener('click', () => {
+    element.addEventListener('click', (e) => {
+      console.log(element);
       const likeCount = element.querySelector('.like__count');
       const sum = Number(likeCount.textContent);
       element.classList.toggle('like_press');

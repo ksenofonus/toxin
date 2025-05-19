@@ -1,10 +1,15 @@
+include Blocks/buttons/like/_like.pug
+
 mixin review(data= {})
   .review
     .review__image
       .review__userphoto
         img(src= data.userphoto, alt='user photo')
       .review__like
-        block
+        if (data.likePress)
+          +like(data.likes)(class="like_press")
+        else
+          +like(data.likes)
     .review__content
       .review__userdata
         span.review__username= data.username
