@@ -133,3 +133,8 @@
 .cancel {
   max-width: 340px;
 }
+.review-container {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
