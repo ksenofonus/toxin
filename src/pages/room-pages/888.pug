@@ -1,9 +1,10 @@
 extends Components/layout/roompage/_roompage.pug
 
 block photo
-  img(src=require(`Assets/images/rooms/888/image_1.jpg`) class="room-image room-image_first")
-  img(src=require(`Assets/images/rooms/888/image_2.jpg`) class="room-image room-image_second")
-  img(src=require(`Assets/images/rooms/888/image_3.jpg`) class="room-image room-image_third")
+  -var photos = ['image_1.jpg', 'image_2.jpg', 'image_3.jpg']
+  each photo, index in photos
+    div.room-image(class='room-image_'+ index)
+      img(src=require(`Assets/images/rooms/888/`+ photo))
 
 block advantage
   -var advantages = [{ symbol: 'mood', title: 'Комфорт', description: 'Шумопоглощающие стены' }, { symbol: 'location_city', title: 'Удобство', description: 'Окно в каждой из спален' }, { symbol: 'whatshot', title: 'Уют', description: 'Номер оснащён камином' }]

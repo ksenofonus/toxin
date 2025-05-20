@@ -36,9 +36,10 @@
 .photo-container {
   width: 100%;
   display: grid;
-  grid-template-columns: 981px auto;
+  grid-template-columns: 1fr auto;
   grid-template-rows: 243px 242px;
 }
+
 .content-container {
   display: flex;
   margin: 70px auto ;
@@ -63,14 +64,19 @@
   flex-grow: 1;
 }
 .room-image {
-  &_first {
-    grid-area: 1 / 1 / 2 / 2;
+  display: block;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
   }
-  &_second {
-    grid-area: 2 / 2 / 1 / 2;
+  &_0 {
+    max-width: 981px;
+    grid-area: 1 / 1 / 3 / 2;
   }
-  &_third {
-    grid-area: 2 / 2 / 2 / 2;
+  &_2 {
+    grid-area: 2 / 2 / 3 / 3;
   }
 }
 .chart-container {
