@@ -5,15 +5,20 @@ block photo
   include ./_data.pug
   each photo, index in photos
     div.room-image(class='room-image_'+ index)
-      img(src=require(`Assets/images/rooms/888/`+ photo))
+      img(src=require(`Assets/images/rooms/` + number + `/`+ photo))
 
 block advantage
   each item in advantages
     +advantage(item)
 block booking
-  +booking('люкс', 888, 9990)
+  each item in data
+    if item.number === number
+      if item.lux === true
+        +booking('люкс', number, item.price)
+      else 
+        +booking(number, item.price)
 block review
   each item in reviews
     +review(item)
 block script
-  script(src=`Pages/room-pages/888/888.js`)
+  script(src=`Pages/room-pages/` + number +`/` + number +`.js`)
