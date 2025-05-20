@@ -1,0 +1,19 @@
+extends Components/layout/roompage/_roompage.pug
+
+
+block photo
+  include ./_data.pug
+  each photo, index in photos
+    div.room-image(class='room-image_'+ index)
+      img(src=require(`Assets/images/rooms/888/`+ photo))
+
+block advantage
+  each item in advantages
+    +advantage(item)
+block booking
+  +booking('люкс', 888, 9990)
+block review
+  each item in reviews
+    +review(item)
+block script
+  script(src=`Pages/room-pages/888/888.js`)
