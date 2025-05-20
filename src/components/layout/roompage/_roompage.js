@@ -1,7 +1,7 @@
 import './_roompage.scss';
 import { addChart } from 'Blocks/chart/_chart';
 import Data from 'Assets/json/rooms.json';
-import 'Blocks/review/_review';
+import 'Blocks/buttons/like/_like';
 
 function getRoom(data, number) {
   let room = {};
