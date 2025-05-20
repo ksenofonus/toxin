@@ -138,3 +138,14 @@
   flex-direction: column;
   gap: 22px;
 }
+.reviews .info__title {
+  position: relative;
+}
+.review__counter {
+  font-size: 14px;
+  color: variables.$dark50;
+  font-family: variables.$font-1;
+  font-weight: normal;
+  position: absolute;
+  right: 0;
+}
