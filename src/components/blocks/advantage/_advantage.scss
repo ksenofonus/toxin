@@ -11,7 +11,7 @@
   display: flex;
   gap: 10px;
 
-  &::after {
+  &:not(:last-child)::after {
     width: 100%;
     height: 1px;
     background-color: rgba(variables.$dark, 0.1);
