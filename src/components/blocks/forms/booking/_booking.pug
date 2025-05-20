@@ -12,9 +12,9 @@ mixin booking(type, number, price)
           span в сутки
       .datepicker-container
         +label('прибытие')
-          +field('text', 'date', '19.08.2019')(class='masked-date datepicker text-field')
+          +field('text', 'date', '19.08.2019')(class='masked-date datepicker text-field' id='start-booking-date')
         +label('выезд')
-          +field('text', 'date', '23.08.2019')(class='masked-date datepicker text-field')
+          +field('text', 'date', '23.08.2019')(class='masked-date datepicker text-field' id='end-booking-date')
       +guestDropdown('гости')
       .sum-price 
         .sum-price__row 

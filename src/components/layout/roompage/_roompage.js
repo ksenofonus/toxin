@@ -2,6 +2,7 @@ import './_roompage.scss';
 import { addChart } from 'Blocks/chart/_chart';
 import Data from 'Assets/json/rooms.json';
 import 'Blocks/buttons/like/_like';
+import { setDatepicker } from 'Blocks/datepicker/_datepicker';
 
 function getRoom(data, number) {
   let room = {};
@@ -20,5 +21,6 @@ export function setChart(number) {
   addChart(data, labels);
 }
 
+setDatepicker('start-booking-date', 'end-booking-date');
 
 
