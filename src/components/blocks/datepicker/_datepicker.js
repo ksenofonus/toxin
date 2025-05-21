@@ -13,6 +13,21 @@ export function setDatepicker(start, end) {
   const datepicker = new AirDatepicker(start, {
     range: true,
     buttons: [clear, apply],
+    onSelect: ({ date }) => {
+      end.value = datepicker.$el.value;
+      if (date.length !== 0) {
+        datepicker.$el.value = datepicker.formatDate(date[0], 'dd.MM.yyyy');
+      }
+      if (date.length === 1) {
+        const today = date[0];
+        let tommorow = new Date(today);
+        tommorow.setDate(tommorow.getDate() + 1);
+        end.value = datepicker.formatDate(tommorow, 'dd.MM.yyyy');
+      }
+      if (date.length > 1) {
+        end.value = datepicker.formatDate(date[1], 'dd.MM.yyyy');
+      }
+    }
   });
 
   end.addEventListener('click', () => datepicker.show());
@@ -36,24 +51,14 @@ export function setDatepicker(start, end) {
 
 export function selectDates(datepicker, end, field) {
   datepicker.opts.onSelect = ({ date }) => {
-    end.value = datepicker.$el.value;
-    if (date.length !== 0) {
-      datepicker.$el.value = datepicker.formatDate(date[0], 'dd.MM.yyyy');
-    }
-    if (date.length === 1) {
-      const today = date[0];
-      let tommorow = new Date(today);
-      tommorow.setDate(tommorow.getDate() + 1)
-      end.value = datepicker.formatDate(tommorow, 'dd.MM.yyyy');
-      field.textContent = '1';
-    }
-    if (date.length > 1) {
-      end.value = datepicker.formatDate(date[1], 'dd.MM.yyyy');
-      const amountOfDays = daysBetween(date[0], date[1]);
-      if (field) {
-        field.textContent = amountOfDays;
-      }
-    }
+    
+    // if (date.length > 1) {
+    //   end.value = datepicker.formatDate(date[1], 'dd.MM.yyyy');
+    //   const amountOfDays = daysBetween(date[0], date[1]);
+    //   if (field) {
+    //     field.textContent = amountOfDays;
+    //   }
+    // }
   };
   return;
 }
