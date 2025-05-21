@@ -13,10 +13,8 @@ block advantage
 block booking
   each item in data
     if item.number === number
-      if item.lux === true
-        +booking('люкс', number, item.price)
-      else 
-        +booking(number, item.price)
+      +booking(item.type, number, item.price)
+      
 block review
   each item in reviews
     +review(item)

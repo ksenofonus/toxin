@@ -6,9 +6,11 @@ mixin booking(type, number, price)
         .room__number
           //- span №&nbsp;
           span.number= number
-          span.room_type= type
+          if type
+            span.room_type= type
         .room__price
-          span.price #{price}!{ruble}
+          span.price.digit #{price}
+          span !{ruble}
           span в сутки
       .datepicker-container
         +label('прибытие')
@@ -18,25 +20,36 @@ mixin booking(type, number, price)
       +guestDropdown('гости')
       .sum-price 
         .sum-price__row 
-          .sum-price__calc
-            span #{price}!{ruble} x 4 суток
+          .sum-price__cost
+            .sum-price__calc
+              span.digit #{price}
+              span  !{ruble} х 
+              span.days 4 
+              span  суток
           .sum-price__sum 
-            span 39 960!{ruble}
+            span.digit 39960
+            span !{ruble}
         .sum-price__row 
-          .sum-price__calc
-            span Сбор за услуги: скидка 2 179!{ruble}
+          .sum-price__cost
+            .discont
+              span Сбор за услуги: скидка 
+              span.digit 2179
+              span !{ruble}
             span.information i
           .sum-price__sum 
-            span 0!{ruble}
+            span.digit 0
+            span !{ruble}
         .sum-price__row 
-          .sum-price__calc
+          .sum-price__cost
             span Сбор за дополнительные услуги 
             span.information i
           .sum-price__sum 
-            span 300!{ruble}
+            span.digit 300
+            span !{ruble}
       .total
         span Итого
         span.dots
-        span 38 081!{ruble}
+        span.digit 38081
+        span !{ruble}
 
       +button('забронировать')(class="button__long")

@@ -2,7 +2,7 @@
   {
     "number": 888,
     "stars": 5,
-    "lux": true,
+    "type": "люкс",
     "price": 9990,
     "reviews": 145,
     "impressions": {
