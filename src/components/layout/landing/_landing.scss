@@ -1,4 +1,9 @@
-
+@use '../../sass/abstracts/variables';
+.main {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 10px 20px 0 variables.$dark5;
+}
 .main-container {
   width: 100%;
   min-height: 830px;
@@ -16,6 +21,7 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
+  
   & .tagline {
     width: 297px;
     text-align: right;
