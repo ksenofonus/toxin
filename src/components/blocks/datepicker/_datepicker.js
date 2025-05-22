@@ -2,19 +2,23 @@ import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
 import { apply, clear } from './_datepicker_buttons';
 import '../forms/masked-text/_mask';
+import { calculateSum } from '../forms/booking/_booking';
 
-function daysBetween(startDate, endDate) {
+function daysBetween(array) {
+  const startDate = array[0];
+  const endDate = array[1];
   const diffTime = Math.abs(Date.UTC(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()) - Date.UTC(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()));
   const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
   return diffDays;
 }
 
-export function setDatepicker(start, end) {
+export function setDatepicker(start, end, day) {
   const datepicker = new AirDatepicker(start, {
     range: true,
     buttons: [clear, apply],
-    onSelect: ({ date }) => {
-      end.value = datepicker.$el.value;
+    onSelect: ({ date, datepicker }) => {
+      let selected = datepicker.selectedDates;
+      let amountOfDays;
       if (date.length !== 0) {
         datepicker.$el.value = datepicker.formatDate(date[0], 'dd.MM.yyyy');
       }
@@ -23,11 +27,17 @@ export function setDatepicker(start, end) {
         let tommorow = new Date(today);
         tommorow.setDate(tommorow.getDate() + 1);
         end.value = datepicker.formatDate(tommorow, 'dd.MM.yyyy');
+        selected = [today, tommorow];;
       }
       if (date.length > 1) {
         end.value = datepicker.formatDate(date[1], 'dd.MM.yyyy');
       }
-    }
+      amountOfDays = daysBetween(selected);
+      if (day) {
+        day.textContent = amountOfDays;
+        calculateSum()
+      }
+    },
   });
 
   end.addEventListener('click', () => datepicker.show());

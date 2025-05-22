@@ -88,13 +88,12 @@
 }
 .room__price {
   color: variables.$dark50;
-  display: flex;
   line-height: 29px;
-  gap: 4px;
   & .price {
     font-weight: 800;
     & + span {
       font-size: 12px;
+      font-weight: 800;
     }
   }
 }

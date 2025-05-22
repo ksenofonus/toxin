@@ -11,7 +11,7 @@ mixin booking(type, number, price)
         .room__price
           span.price.digit #{price}
           span !{ruble}
-          span в сутки
+          span  в сутки
       .datepicker-container
         +label('прибытие')
           +field('text', 'date', '19.08.2019')(class='masked-date datepicker text-field' id='start-booking-date')
@@ -22,12 +22,12 @@ mixin booking(type, number, price)
         .sum-price__row 
           .sum-price__cost
             .sum-price__calc
-              span.digit #{price}
-              span  !{ruble} х 
+              span.digit.day-price #{price}
+              span !{ruble} х 
               span.days 4 
               span  суток
           .sum-price__sum 
-            span.digit 39960
+            span.digit.day-sum 39960
             span !{ruble}
         .sum-price__row 
           .sum-price__cost
@@ -37,14 +37,14 @@ mixin booking(type, number, price)
               span !{ruble}
             span.information i
           .sum-price__sum 
-            span.digit 0
+            span.digit.discont-sum 0
             span !{ruble}
         .sum-price__row 
           .sum-price__cost
             span Сбор за дополнительные услуги 
             span.information i
           .sum-price__sum 
-            span.digit 300
+            span.digit.service-sum 300
             span !{ruble}
       .total
         span Итого
