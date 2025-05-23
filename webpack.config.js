@@ -8,7 +8,7 @@ module.exports = (env) => {
   const isDev = env.mode === 'development';
   return {
     mode: env.mode ?? 'development',
-    // entry: './src/pages/index/index.js',
+    entry: './src/pages/index/index.js',
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].[contenthash].js',
@@ -99,5 +99,4 @@ module.exports = (env) => {
       errorDetails: false,
     },
   };
-  
 };
