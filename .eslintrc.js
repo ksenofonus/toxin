@@ -46,7 +46,15 @@ module.exports = {
   },
   plugins: ['prettier', 'import'],
   noInlineConfig: true,
-  // settings: {
-  //   'import/resolver': webpack,
-  // },
-};
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: 'webpack.config.js',
+        env: {
+          NODE_ENV: 'local',
+          production: true
+        },
+      }
+    }
+  }
+}

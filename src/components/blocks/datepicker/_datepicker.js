@@ -2,40 +2,67 @@ import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
 import { apply, clear } from './_datepicker_buttons';
 import '../forms/masked-text/_mask';
-import { calculateSum } from '../forms/booking/_booking';
 
 function daysBetween(array) {
   const startDate = array[0];
   const endDate = array[1];
-  const diffTime = Math.abs(Date.UTC(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()) - Date.UTC(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()));
+  const diffTime = Math.abs(
+    Date.UTC(endDate.getFullYear(), endDate.getMonth(), endDate.getDate()) -
+      Date.UTC(
+        startDate.getFullYear(),
+        startDate.getMonth(),
+        startDate.getDate()
+      )
+  );
   const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
   return diffDays;
 }
-
-export function setDatepicker(start, end, day) {
+function calculateSum(amountOfDays) {
+  const pricePerDay = document
+    .querySelector('.day-price')
+    .textContent.replace(/\s+/g, '');
+  const sumWrapper = document.querySelector('.day-sum');
+  const discount = document
+    .querySelector('.discont .digit')
+    .textContent.replace(/\s+/g, '');
+  const sumDiscount = document.querySelector('.discont-sum');
+  const services = document.querySelector('.service-sum');
+  const total = document.querySelector('.total .digit');
+  const sum = Number(pricePerDay) * Number(amountOfDays.textContent);
+  const totalSum =
+    sum +
+    Number(sumDiscount.textContent) +
+    Number(services.textContent) -
+    Number(discount);
+  sumWrapper.textContent = sum.toLocaleString('ru-RU');
+  total.textContent = totalSum.toLocaleString('ru-RU');
+}
+export default function setDatepicker(start, end, day) {
+  const endField = end;
+  const dayField = day;
   const datepicker = new AirDatepicker(start, {
     range: true,
     buttons: [clear, apply],
-    onSelect: ({ date, datepicker }) => {
+    onSelect: ({ date }) => {
       let selected = datepicker.selectedDates;
-      let amountOfDays;
+      let amountOfDays = 1;
       if (date.length !== 0) {
         datepicker.$el.value = datepicker.formatDate(date[0], 'dd.MM.yyyy');
       }
       if (date.length === 1) {
         const today = date[0];
-        let tommorow = new Date(today);
+        const tommorow = new Date(today);
         tommorow.setDate(tommorow.getDate() + 1);
-        end.value = datepicker.formatDate(tommorow, 'dd.MM.yyyy');
-        selected = [today, tommorow];;
+        endField.value = datepicker.formatDate(tommorow, 'dd.MM.yyyy');
+        selected = [today, tommorow];
       }
       if (date.length > 1) {
-        end.value = datepicker.formatDate(date[1], 'dd.MM.yyyy');
+        endField.value = datepicker.formatDate(date[1], 'dd.MM.yyyy');
       }
       amountOfDays = daysBetween(selected);
       if (day) {
-        day.textContent = amountOfDays;
-        calculateSum()
+        dayField.textContent = amountOfDays;
+        calculateSum(day);
       }
     },
   });
@@ -58,20 +85,3 @@ export function setDatepicker(start, end, day) {
   });
   return datepicker;
 }
-
-export function selectDates(datepicker, end, field) {
-  datepicker.opts.onSelect = ({ date }) => {
-    
-    // if (date.length > 1) {
-    //   end.value = datepicker.formatDate(date[1], 'dd.MM.yyyy');
-    //   const amountOfDays = daysBetween(date[0], date[1]);
-    //   if (field) {
-    //     field.textContent = amountOfDays;
-    //   }
-    // }
-  };
-  return;
-}
-
-
-
