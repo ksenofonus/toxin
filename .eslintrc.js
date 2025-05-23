@@ -46,7 +46,7 @@ module.exports = {
   },
   plugins: ['prettier', 'import'],
   noInlineConfig: true,
-  settings: {
-    'import/resolver': webpack,
-  },
+  // settings: {
+  //   'import/resolver': webpack,
+  // },
 };

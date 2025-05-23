@@ -7,8 +7,8 @@
     "start": "webpack serve --env mode=development",
     "build": "webpack --env mode=development",
     "prod": "webpack --env mode=production",
-    "lint": "eslint ./src",
-    "lint:fix": "eslint ./src --fix",
+    "lint": "node node_modules/eslint/bin/eslint.js ./src",
+    "lint:fix": "node node_modules/eslint/bin/eslint.js ./src --fix",
     "prettier": "npx prettier src test --check",
     "prettier:fix": "npm run prettier -- --write"
   },
