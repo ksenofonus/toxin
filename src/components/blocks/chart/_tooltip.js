@@ -1,4 +1,5 @@
-import { getFontColors } from "./_getColors";
+import { getFontColors } from './_getColors';
+
 const getOrCreateTooltip = (chart) => {
   let tooltipEl = chart.canvas.parentNode.querySelector('div');
 
@@ -21,7 +22,7 @@ const getOrCreateTooltip = (chart) => {
   return tooltipEl;
 };
 
-export const externalTooltipHandler = (context) => {
+export default function externalTooltipHandler(context) {
   // Tooltip Element
   const { chart, tooltip } = context;
   const tooltipEl = getOrCreateTooltip(chart);
@@ -44,11 +45,9 @@ export const externalTooltipHandler = (context) => {
     tableRoot.appendChild(tooltipHead);
     tableRoot.appendChild(tooltipAfter);
   }
-  
   const fontColors = getFontColors(chart);
   const tooltipColor = fontColors[tooltip.title];
   tooltipEl.style.left = '50%';
   tooltipEl.style.top = '50%';
   tooltipEl.style.color = tooltipColor;
-};
-
+}

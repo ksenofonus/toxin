@@ -1,7 +1,7 @@
 import Chart from 'chart.js/auto';
 import { plugins, Tooltip } from 'chart.js';
 import { htmlLegendPlugin } from './_legend';
-import { externalTooltipHandler } from './_tooltip';
+import externalTooltipHandler from './_tooltip';
 import { getColors } from './_getColors';
 
 export default function addChart(data, labels) {

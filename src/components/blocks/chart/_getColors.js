@@ -1,6 +1,6 @@
 export function getColors(chart) {
   const ctx = chart.getContext('2d');
-  //gradient for arcs
+  // gradient for arcs
   const gradientPerfect = ctx.createLinearGradient(0, 0, 0, 120);
   gradientPerfect.addColorStop(0, '#FFE39C');
   gradientPerfect.addColorStop(1, '#FFBA9C');
@@ -25,9 +25,7 @@ export function getColors(chart) {
 export function getFontColors(chart) {
   const colors = ['#ffba9a', '#bc9cff', '#6fcf97', '#3d4975'];
   const labels = [];
-  for (let i of chart.legend.legendItems) {
-    labels.push(i.text);
-  }
+  chart.legend.legendItems.forEach((i) => labels.push(i.text));
   const fontColors = labels.reduce((acc, current, index) => {
     acc[current] = colors[index];
     return acc;
