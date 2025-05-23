@@ -5,16 +5,11 @@ import 'Blocks/buttons/like/_like';
 import 'Blocks/forms/booking/_booking'
 
 function getRoom(data, number) {
-  let room = {};
-  for (let item of data) {
-    if (item.number === number) {
-      room = item;
-    }
-  }
+  const room = data.find((el) => el.number === number);
   return room;
 }
 
-export function setChart(number) {
+export default function setChart(number) {
   const room = getRoom(Data, number);
   const data = Object.values(room.impressions);
   const labels = Object.keys(room.impressions);

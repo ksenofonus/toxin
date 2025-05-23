@@ -1,19 +1,15 @@
 import $ from 'jquery';
 import 'Assets/lib/pagination/_pagination.scss';
 import * as paginationjs from 'Assets/lib/pagination/_pagination';
-import Data from '../../../assets/json/rooms.json';
-import template from '../../blocks/room/_room.pug';
-// const rooms = Data.reduce((acc, currentdata, index) => {
-//   acc[index] = currentdata;
-//   return acc;
-// }, {});
+import Data from 'Assets/json/rooms.json';
+import template from 'Blocks/room/_room.pug';
 
 function simpleTemplating(data) {
   const container = document.createElement('ul');
   container.className = 'room-wrapper';
-  for (let item of data) {
-    container.insertAdjacentHTML('beforeend', template(item));
-  }
+  data.forEach((element) => {
+    container.insertAdjacentHTML('beforeend', template(element));
+  });
   return container;
 }
 
@@ -35,8 +31,8 @@ $('#pagination-container').pagination({
   disableClassName: 'toxin-theme_pages__disable',
   nextClassName: 'toxin-theme_pages__next',
   prevClassName: 'toxin-theme_pages__prev',
-  callback(Data, pagination) {
-    const html = simpleTemplating(Data);
+  callback(data, pagination) {
+    const html = simpleTemplating(data);
     $('#data-container').html(html);
   },
 });

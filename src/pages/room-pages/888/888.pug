@@ -11,10 +11,8 @@ block advantage
   each item in advantages
     +advantage(item)
 block booking
-  each item in data
-    if item.number === number
-      +booking(item.type, number, item.price)
-      
+  - const myData = data.find((el) => el.number === number)
+  +booking(myData.type, number, myData.price)
 block review
   each item in reviews
     +review(item)
