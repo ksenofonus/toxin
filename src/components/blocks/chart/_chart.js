@@ -1,14 +1,12 @@
 import Chart from 'chart.js/auto';
+import { plugins, Tooltip } from 'chart.js';
 import { htmlLegendPlugin } from './_legend';
 import { externalTooltipHandler } from './_tooltip';
 import { getColors } from './_getColors';
-import { plugins, Tooltip } from 'chart.js';
 
-
-export function addChart(data, labels) {
+export default function addChart(data, labels) {
   const doughnut = document.getElementById('myChart');
-  
-  Tooltip.positioners.myCustomPositioner = function (elements, eventPosition) {
+  Tooltip.positioners.myCustomPositioner = function positioner() {
     // A reference to the tooltip model
     const tooltip = this;
 
@@ -20,16 +18,16 @@ export function addChart(data, labels) {
       // You may also include xAlign and yAlign to override those tooltip options.
     };
   };
-  new Chart(doughnut, {
+  const chart = new Chart(doughnut, {
     type: 'doughnut',
     data: {
       datasets: [
         {
-          data: data,
+          data,
           backgroundColor: getColors(doughnut),
         },
       ],
-      labels: labels,
+      labels,
     },
     options: {
       rotation: 180,

@@ -1,5 +1,5 @@
 import './_roompage.scss';
-import { addChart } from 'Blocks/chart/_chart';
+import addChart from 'Blocks/chart/_chart';
 import Data from 'Assets/json/rooms.json';
 import 'Blocks/buttons/like/_like';
 import 'Blocks/forms/booking/_booking'
