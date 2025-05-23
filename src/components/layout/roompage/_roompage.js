@@ -2,7 +2,7 @@ import './_roompage.scss';
 import addChart from 'Blocks/chart/_chart';
 import Data from 'Assets/json/rooms.json';
 import 'Blocks/buttons/like/_like';
-import 'Blocks/forms/booking/_booking'
+import 'Blocks/forms/booking/_booking';
 
 function getRoom(data, number) {
   const room = data.find((el) => el.number === number);
@@ -15,7 +15,3 @@ export default function setChart(number) {
   const labels = Object.keys(room.impressions);
   addChart(data, labels);
 }
-
-
-
-
