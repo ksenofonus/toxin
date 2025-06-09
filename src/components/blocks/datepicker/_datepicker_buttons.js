@@ -11,12 +11,14 @@ const clear = {
   onClick: (dp) => {
     dp.clear();
     const ranged = dp.$datepicker.querySelectorAll('.-in-range-');
-    const end =
-      dp.$el.parentNode.nextElementSibling.querySelector('.datepicker');
+    if (dp.$el.parentNode.nextElementSibling) {
+      const end =
+        dp.$el.parentNode.nextElementSibling.querySelector('.datepicker');
+      end.value = '';
+    }
     ranged.forEach((element) => {
       element.classList.remove('-in-range-');
     });
-    end.value = '';
   },
 };
 
