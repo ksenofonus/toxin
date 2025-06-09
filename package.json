@@ -10,7 +10,9 @@
     "lint": "node node_modules/eslint/bin/eslint.js ./src",
     "lint:fix": "node node_modules/eslint/bin/eslint.js ./src --fix",
     "prettier": "npx prettier src test --check",
-    "prettier:fix": "npm run prettier -- --write"
+    "prettier:fix": "npm run prettier -- --write",
+    "pre-commit": "lint-staged",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -45,16 +47,11 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "",
-      "pre-push": ""
-    }
-  },
   "lint-staged": {
     "*.js": [
       "npm run lint:fix",
-      "git add"
+      "git add",
+      "eslint --cache --fix"
     ]
   }
 }

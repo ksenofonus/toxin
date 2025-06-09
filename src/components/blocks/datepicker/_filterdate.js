@@ -1,13 +1,7 @@
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
 import 'Blocks/forms/masked-text/_mask';
+import setDatepicker from './_datepicker';
 
-export const filterDatepicker = document.querySelector('.filter-datepicker');
-export const filterPicker = new AirDatepicker(filterDatepicker, {
-  range: true,
-  multipleDatesSeparator: ' - ',
-  dateFormat: 'dd MMM',
-});
-if (filterDatepicker) {
-  filterDatepicker.addEventListener('click', () => filterPicker.show());
-}
+const filterDatepicker = document.querySelector('.filter-datepicker');
+setDatepicker(filterDatepicker);

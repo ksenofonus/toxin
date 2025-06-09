@@ -1,5 +1,5 @@
-@use '../../sass/abstracts/variables';
-@use '../../sass/mixins/mixins';
+@use 'Components/sass/abstracts/variables';
+@use 'Components/sass/mixins/mixins';
 .datepicker-container .field-name {
   position: relative;
   &::after {
@@ -43,12 +43,13 @@
     &--buttons {
       border: none;
       padding: 0;
+      padding-top: 20px;
       & button {
         text-transform: uppercase;
-        font-size: 15px;
+        font-size: 12px;
         font-weight: 700;
         &.clear-button {
-          color: variables.$dark50;
+          color: variables.$purple;
           & > span {
             justify-content: flex-start;
           }
