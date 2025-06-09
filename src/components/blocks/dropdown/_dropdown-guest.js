@@ -8,6 +8,16 @@ function dropdown() {
     item.addEventListener('click', (event) => {
       const current = event.currentTarget;
       dropdownToggle(current);
+      document.body.addEventListener('click', (e) => {
+        const { target } = e;
+        const isDropdown = target === item || item.contains(target);
+        const isMenu =
+          target === item.nextElementSibling ||
+          item.nextElementSibling.contains(target);
+        if (!isDropdown && !isMenu) {
+          dropdownToggle(current);
+        }
+      });
     });
     const menu = item.nextElementSibling;
     counter(menu);
