@@ -8,6 +8,7 @@
   width: 150px;
   & .datepicker {
     width: 100%;
+    cursor: pointer;
     &::-webkit-input-placeholder,
     &::-webkit-input-placeholder {
       color: variables.$dark75;
