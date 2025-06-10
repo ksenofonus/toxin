@@ -21,6 +21,9 @@ export default function setDatepicker(start, end, day) {
       range: true,
       dateFormat: 'dd.MM.yyyy',
       buttons: [clear, apply],
+      navTitles: {
+        days: 'MMMM yyyy',
+      },
       onSelect: ({ date }) => {
         let selected = datepicker.selectedDates;
         let amountOfDays = 1;
