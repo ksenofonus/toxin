@@ -8,7 +8,14 @@
 }
 .room__price {
   min-width: 100px;
-  line-height: 26px;
+  line-height: 27px;
+  color: variables.$dark50;
+  & .price {
+    font-weight: 800;
+    & + span {
+      font-weight: 800;
+    }
+  }
   span:last-child {
     font-size: 12px;
   }
@@ -48,8 +55,8 @@
   cursor: pointer;
 }
 .room-search {
-  padding-left: 29px;
-  padding-right: 29px;
+  padding-left: 28px;
+  padding-right: 30px;
   & .total {
     display: flex;
     justify-content: space-between;
@@ -61,9 +68,6 @@
     & span {
       display: block;
       flex-shrink: 0;
-      &:last-child {
-        font-family: variables.$font-2;
-      }
     }
     & .dots {
       display: block;
@@ -71,6 +75,9 @@
       flex-grow: 1;
       margin: 0 5px;
     }
+  }
+  .button {
+    margin-top: -2px;
   }
 }
 .room__number {
@@ -89,17 +96,7 @@
     color: variables.$purple;
     font-size: 12px;
     text-transform: uppercase;
-    line-height: 29px;
+    line-height: 26px;
   }
 }
-.room__price {
-  color: variables.$dark50;
-  line-height: 29px;
-  & .price {
-    font-weight: 800;
-    & + span {
-      font-size: 12px;
-      font-weight: 800;
-    }
-  }
-}
+
