@@ -7,25 +7,25 @@ block main
     block photo
   .content-container
     .info
-      .advantages
+      section.advantages
         h2.info__title Сведения о номере
         .advantages__items
           block advantage
-      .impressions
-        h2.info__title Впечатления о номере
+      section.impressions
+        h2.info__title Впечатления от номера
         .chart-container
           .chart
             canvas(id="myChart")
           .chart__legend#legend
-      .reviews
+      section.reviews
         h2.info__title Отзывы посетителей номера
           span.review__counter #{reviews.length} отзыва
         .review-container
           block review
-      .rules
+      section.rules
         h2.info__title Правила
         block rules
-      .cancel
+      section.cancel
         h2.info__title Отмена
         p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
     .booking-form

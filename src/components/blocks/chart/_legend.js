@@ -54,7 +54,7 @@ export const htmlLegendPlugin = {
       boxSpan.style.display = 'inline-block';
       boxSpan.style.flexShrink = 0;
       boxSpan.style.height = '10px';
-      boxSpan.style.marginRight = '10px';
+      boxSpan.style.marginRight = '5px';
       boxSpan.style.width = '10px';
       boxSpan.style.borderRadius = '100%';
 
