@@ -6,6 +6,11 @@
   align-items: flex-end;
   margin-bottom: -5px;
 }
+.room__price {
+  span:last-child {
+    font-size: 12px;
+  }
+}
 .sum-price {
   padding-left: 1px;
   &__row {
