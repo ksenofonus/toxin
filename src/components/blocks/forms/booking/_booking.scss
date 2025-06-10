@@ -7,6 +7,8 @@
   margin-bottom: -5px;
 }
 .room__price {
+  min-width: 100px;
+  line-height: 26px;
   span:last-child {
     font-size: 12px;
   }
