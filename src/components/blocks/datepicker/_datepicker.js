@@ -68,5 +68,6 @@ export default function setDatepicker(start, end, day) {
       datepicker.hide();
     }
   });
+  datepicker.show();
   return datepicker;
 }
