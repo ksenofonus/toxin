@@ -50,7 +50,6 @@
     margin-bottom: -1px;
     padding-left: 1px;
     @include mixins.h2;
-    font-family: variables.$openSans;
     align-items: baseline;
     & span {
       display: block;

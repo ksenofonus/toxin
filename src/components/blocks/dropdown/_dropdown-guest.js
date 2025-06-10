@@ -15,7 +15,7 @@ function dropdown() {
           target === item.nextElementSibling ||
           item.nextElementSibling.contains(target);
         if (!isDropdown && !isMenu) {
-          dropdownToggle(current);
+          item.parentElement.classList.remove('dropdown_active');
         }
       });
     });

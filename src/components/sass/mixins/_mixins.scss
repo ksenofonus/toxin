@@ -77,6 +77,7 @@
 }
 @mixin h2 {
   @include main-font;
+  font-weight: bold;
   font-size: 19px;
   line-height: 24px;
 }
