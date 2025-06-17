@@ -23,7 +23,7 @@ export default function setDatepicker(cont, start, end, day) {
       range: true,
       dateFormat: 'dd.MM.yyyy',
       buttons: [clear, apply],
-      selectedDates: ['2019-08-19', '2019-08-23'],
+      // selectedDates: ['2019-08-19', '2019-08-23'],
       navTitles: {
         days: 'MMMM yyyy',
       },
@@ -58,23 +58,22 @@ export default function setDatepicker(cont, start, end, day) {
     end.addEventListener('focus', () => datepicker.show());
   }
 
-  // document.body.addEventListener('click', (e) => {
-  //   const { target } = e;
-  //   const isDatepicker =
-  //     target === datepicker.$datepicker ||
-  //     datepicker.$datepicker.contains(target);
-  //   const isStartInput =
-  //     target === datepicker.$el || datepicker.$el.contains(target);
-  //   let isEndInput;
-  //   if (end) {
-  //     isEndInput = target === end || end.contains(target);
-  //   }
-  //   const isOpen = datepicker.$datepicker.classList.contains('-active-');
-  //   if (!isDatepicker && !isStartInput && !isEndInput && isOpen) {
-  //     datepicker.hide();
-  //   }
-  // });
-  datepicker.show();
+  document.body.addEventListener('click', (e) => {
+    const { target } = e;
+    const isDatepicker =
+      target === datepicker.$datepicker ||
+      datepicker.$datepicker.contains(target);
+    const isStartInput =
+      target === datepicker.$el || datepicker.$el.contains(target);
+    let isEndInput;
+    if (end) {
+      isEndInput = target === end || end.contains(target);
+    }
+    const isOpen = datepicker.$datepicker.classList.contains('-active-');
+    if (!isDatepicker && !isStartInput && !isEndInput && isOpen) {
+      datepicker.hide();
+    }
+  });
   datepicker.$datepicker.classList.add('-custom-position-');
   return datepicker;
 }
