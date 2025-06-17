@@ -23,7 +23,6 @@ export default function setDatepicker(cont, start, end, day) {
       range: true,
       dateFormat: 'dd.MM.yyyy',
       buttons: [clear, apply],
-      // selectedDates: ['2019-08-19', '2019-08-23'],
       navTitles: {
         days: 'MMMM yyyy',
       },
