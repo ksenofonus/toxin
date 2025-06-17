@@ -5,12 +5,13 @@ import 'air-datepicker/air-datepicker.css';
 import { apply, clear } from './_datepicker_buttons';
 import '../forms/masked-text/_mask';
 
-export default function setDatepicker(start, end, day) {
+export default function setDatepicker(cont, start, end, day) {
   const endField = end;
   const dayField = day;
   let datepicker;
   if (!end) {
     datepicker = new AirDatepicker(start, {
+      container: cont,
       range: true,
       multipleDatesSeparator: ' - ',
       dateFormat: 'dd MMM',
@@ -18,9 +19,11 @@ export default function setDatepicker(start, end, day) {
     });
   } else {
     datepicker = new AirDatepicker(start, {
+      container: cont,
       range: true,
       dateFormat: 'dd.MM.yyyy',
       buttons: [clear, apply],
+      selectedDates: ['2019-08-19', '2019-08-23'],
       navTitles: {
         days: 'MMMM yyyy',
       },
@@ -55,22 +58,23 @@ export default function setDatepicker(start, end, day) {
     end.addEventListener('focus', () => datepicker.show());
   }
 
-  document.body.addEventListener('click', (e) => {
-    const { target } = e;
-    const isDatepicker =
-      target === datepicker.$datepicker ||
-      datepicker.$datepicker.contains(target);
-    const isStartInput =
-      target === datepicker.$el || datepicker.$el.contains(target);
-    let isEndInput;
-    if (end) {
-      isEndInput = target === end || end.contains(target);
-    }
-    const isOpen = datepicker.$datepicker.classList.contains('-active-');
-    if (!isDatepicker && !isStartInput && !isEndInput && isOpen) {
-      datepicker.hide();
-    }
-  });
+  // document.body.addEventListener('click', (e) => {
+  //   const { target } = e;
+  //   const isDatepicker =
+  //     target === datepicker.$datepicker ||
+  //     datepicker.$datepicker.contains(target);
+  //   const isStartInput =
+  //     target === datepicker.$el || datepicker.$el.contains(target);
+  //   let isEndInput;
+  //   if (end) {
+  //     isEndInput = target === end || end.contains(target);
+  //   }
+  //   const isOpen = datepicker.$datepicker.classList.contains('-active-');
+  //   if (!isDatepicker && !isStartInput && !isEndInput && isOpen) {
+  //     datepicker.hide();
+  //   }
+  // });
   datepicker.show();
+  datepicker.$datepicker.classList.add('-custom-position-');
   return datepicker;
 }
