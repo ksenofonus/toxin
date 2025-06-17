@@ -8,19 +8,19 @@
   width: 100%;
   min-height: 829px;
   background-image:
-    url('Assets/images/background/background_main.jpg'),
+    url('Assets/images/background/background-main.jpg'),
     url('Assets/images/background/background1.jpg'),
     url('Assets/images/background/background_green.jpg');
-  background-position: 0 100%;
+  background-position: 50% 68%;
   background-repeat: no-repeat;
   padding-left: 140px;
   padding-top: 70px;
   position: relative;
-  // animation-name: background-switch;
-  // animation-duration: 30s;
-  // animation-iteration-count: infinite;
-  // animation-timing-function: linear;
-  // animation-fill-mode: forwards;
+  animation-name: background-switch;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
   & .tagline {
     width: 297px;
     text-align: right;
@@ -31,33 +31,43 @@
 }
 @keyframes background-switch {
   0% {
-    background-image: url('Assets/images/background/background_main.jpg');
+    background-image: url('Assets/images/background/background-main.jpg');
+    background-position: 50% 68%;
   }
   10% {
-    background-image: url('Assets/images/background/background_main.jpg');
+    background-image: url('Assets/images/background/background-main.jpg');
+    background-position: 50% 68%;
   }
   25% {
-    background-image: url('Assets/images/background/background_main.jpg');
+    background-image: url('Assets/images/background/background-main.jpg');
+    background-position: 50% 68%;
   }
   33% {
     background-image: url('Assets/images/background/background1.jpg');
+    background-position: 100% 68%;
   }
   45% {
     background-image: url('Assets/images/background/background1.jpg');
+    background-position: 100% 68%;
   }
   58% {
     background-image: url('Assets/images/background/background1.jpg');
+    background-position: 100% 68%;
   }
   66% {
     background-image: url('Assets/images/background/background_green.jpg');
+    background-position: 100% 0%;
   }
   85% {
     background-image: url('Assets/images/background/background_green.jpg');
+    background-position: 100% 0%;
   }
   92% {
     background-image: url('Assets/images/background/background_green.jpg');
+    background-position: 100% 0%;
   }
   100% {
-    background-image: url('Assets/images/background/background_main.jpg');
+    background-image: url('Assets/images/background/background-main.jpg');
+    background-position: 100% 0%;
   }
 }

@@ -35,19 +35,20 @@
   width: 100%;
   background-image:
     url('Assets/images/background/background-login.jpg'),
-    url('Assets/images/background/background-main-login.jpg');
-  background-position: 0 100%;
+    url('Assets/images/background/background-main.jpg');
+  background-position: -44px -236px;
   background-repeat: no-repeat;
   padding: 20px;
   position: relative;
-  animation-name: background-switch;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+  // animation-name: background-switch;
+  // animation-duration: 30s;
+  // animation-iteration-count: infinite;
+  // animation-timing-function: linear;
+  // animation-fill-mode: forwards;
   .enter-form {
-    margin-top: 172px;
-    margin-bottom: 172px;
+    margin-top: 152px;
+    margin-bottom: 152px;
+    padding-bottom: 32px;
   }
   .reg-form {
     translate: 3px 0;
@@ -63,10 +64,10 @@
     background-image: url('Assets/images/background/background-login.jpg');
   }
   50% {
-    background-image: url('Assets/images/background/background-main-login.jpg');
+    background-image: url('Assets/images/background/background-main.jpg');
   }
   75% {
-    background-image: url('Assets/images/background/background-main-login.jpg');
+    background-image: url('Assets/images/background/background-main.jpg');
   }
   100% {
     background-image: url('Assets/images/background/background-login.jpg');
