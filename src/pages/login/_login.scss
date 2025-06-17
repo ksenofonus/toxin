@@ -36,9 +36,9 @@
   background-image:
     url('Assets/images/background/background-login.jpg'),
     url('Assets/images/background/background-main-login.jpg');
-  background-position: center center;
+  background-position: 0 100%;
   background-repeat: no-repeat;
-  padding: 19px;
+  padding: 20px;
   position: relative;
   animation-name: background-switch;
   animation-duration: 30s;
@@ -49,6 +49,11 @@
     margin-top: 172px;
     margin-bottom: 172px;
   }
+  .reg-form {
+    translate: 3px 0;
+  }
+  display: flex;
+  justify-content: center;
 }
 @keyframes background-switch {
   0% {
