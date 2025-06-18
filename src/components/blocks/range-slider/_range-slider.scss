@@ -21,9 +21,10 @@
     font-size: 12px;
   }
   &_tag {
-    margin-top: 10px;
+    margin-top: 14px;
     color: variables.$dark50;
     font-size: 12px;
+    line-height: 14px;
     &::first-letter {
       text-transform: uppercase;
     }

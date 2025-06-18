@@ -44,6 +44,20 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  
+  // .dropdown {
+  //   margin-bottom: 8px;
+  // }
+}
+.room-filter-base {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.room-filter-conveniences {
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
 }
 .room-wrapper {
   display: flex;

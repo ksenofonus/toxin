@@ -2,12 +2,13 @@ extends Components/layout/layout/_layout.pug
 
 block main 
   .room-filter
-    +filter-datepicker('дата пребывания в отеле', 'text', 'date', '19 авг - 23 авг')
-    +guestDropdown('гости', '3 гостя, 1 младенец',
+    .room-filter-base
+        +filter-datepicker('даты пребывания в отеле', 'text', 'date', '19 авг - 23 авг')
+        +guestDropdown('гости', '3 гостя, 1 младенец',
                 {'adults': {amount: 2, text: 'взрослые'},'children': { amount: 1, text: 'дети'},'infants': {amount: 1, text: 'младенцы'},})
     +range-slider('диапазон цены', 'стоимость за сутки пребывания в номере')
     .button-container
-      h3.buttons-name checkbox buttons
+      h3.buttons-name правила дома
       .checkbox-container
         +checkbox({ 1: {name: 'smoking', text: 'Можно курить'}, 2: {name: 'pets', text: 'Можно с питомцами', checked: 'checked'}, 3: {name: 'guests', text: 'Можно пригласить гостей (до 10 человек)', checked: 'checked'}})
     .rich-container
@@ -17,8 +18,9 @@ block main
           +checkbox-rich('Ширина коридоров в номере не\u00A0менее 91 см.')
         +checkbox({1: {name: 'assistant', text: 'Помощник для инвалидов'}} )(class="checkbox-rich")
           +checkbox-rich('На 1 этаже вас встретит специалист и проводит до номера.')
-    +roomDropdown('удобства номера')(id='roomselect')
-    +expandable-checkbox('дополнительные удобства')
+    .room-filter-conveniences
+      +roomDropdown('удобства номера')(id='roomselect')
+      +expandable-checkbox('дополнительные удобства')
         +checkbox({ 1: {name: 'breakfast', text: "Завтрак"}, 
                             2: {name: 'desk', text: "Письменный стол", checked: 'checked'}, 
                             3: {name: 'babychair', text: "Стул для кормления", checked: 'checked'}, 
