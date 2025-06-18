@@ -179,6 +179,7 @@
     top: 50%;
   }
   & .filter-datepicker {
+    cursor: pointer;
     width: inherit;
     text-transform: lowercase;
     &::-webkit-input-placeholder,

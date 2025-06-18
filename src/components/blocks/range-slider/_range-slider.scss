@@ -30,6 +30,7 @@
   }
   & .noUi-connects {
     overflow: visible;
+    cursor: pointer;
     & .noUi-connect {
       background-color: variables.$green;
       border: 1px solid variables.$green;
@@ -43,6 +44,7 @@
     border-color: variables.$dark25;
     background-color: #fff;
     & .noUi-handle {
+      cursor: pointer;
       width: 17px;
       height: 17px;
       background-color: variables.$green;
