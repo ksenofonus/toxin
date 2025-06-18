@@ -18,7 +18,9 @@
       }
     }
   }
-  .air-datepicker {
+}
+
+.air-datepicker-global-container .air-datepicker {
     width: 320px;
     min-height: 369px;
     box-sizing: border-box;
@@ -95,7 +97,7 @@
         }
         &--day-name {
           color: variables.$purple;
-          font-weight: 700;
+          // font-weight: 700;
           text-transform: capitalize;
           font-size: 12px;
         }
@@ -104,6 +106,7 @@
           &.-days- {
             color: variables.$dark50;
             font-size: 12px;
+            font-weight: normal;
             grid-template-columns: repeat(7, 40px);
             grid-auto-rows: 40px;
           } 
@@ -167,7 +170,6 @@
       transform: translateY(-6px);
     }
   }
-}
 
 .datepicker-filter-container .field-name {
   position: relative;

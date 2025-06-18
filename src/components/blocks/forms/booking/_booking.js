@@ -4,7 +4,7 @@ import setDatepicker from 'Blocks/datepicker/_datepicker';
 const startDate = document.getElementById('start-booking-date');
 const endDate = document.getElementById('end-booking-date');
 const amountOfDays = document.querySelector('.days');
-const datepicker = setDatepicker(startDate, endDate, amountOfDays);
+setDatepicker(startDate, endDate, amountOfDays);
 
 // number with spaces
 const digits = document.querySelectorAll('.digit');

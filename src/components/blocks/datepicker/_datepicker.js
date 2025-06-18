@@ -5,24 +5,24 @@ import 'air-datepicker/air-datepicker.css';
 import { apply, clear } from './_datepicker_buttons';
 import '../forms/masked-text/_mask';
 
-export default function setDatepicker(cont, start, end, day) {
+export default function setDatepicker(start, end, day) {
   const endField = end;
   const dayField = day;
   let datepicker;
   if (!end) {
     datepicker = new AirDatepicker(start, {
-      container: cont,
       range: true,
       multipleDatesSeparator: ' - ',
       dateFormat: 'dd MMM',
       buttons: [clear, apply],
+      classes: '-custom-position-',
     });
   } else {
     datepicker = new AirDatepicker(start, {
-      container: cont,
       range: true,
       dateFormat: 'dd.MM.yyyy',
       buttons: [clear, apply],
+      classes: '-custom-position-',
       navTitles: {
         days: 'MMMM yyyy',
       },
@@ -42,7 +42,7 @@ export default function setDatepicker(cont, start, end, day) {
         if (date.length > 1) {
           endField.value = datepicker.formatDate(date[1], 'dd.MM.yyyy');
         }
-        if (!selected) {
+        if (selected) {
           amountOfDays = daysBetween(selected);
         } else {
           amountOfDays = 4;
@@ -73,6 +73,5 @@ export default function setDatepicker(cont, start, end, day) {
       datepicker.hide();
     }
   });
-  datepicker.$datepicker.classList.add('-custom-position-');
   return datepicker;
 }
