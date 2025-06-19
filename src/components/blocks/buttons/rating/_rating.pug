@@ -4,7 +4,7 @@ mixin star(i)
   .rating-container
     while count < 5
       if count < i
-        span.material-icons.rating-star.rating-star_checked star
+        span(data-value= count + 1).material-icons.rating-star.rating-star_checked star
       else
-        span.material-icons.rating-star star
+        span(data-value= count + 1).material-icons.rating-star star
       - count += 1;

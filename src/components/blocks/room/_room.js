@@ -1,3 +1,5 @@
+import { starMouseEvent, starClickEvent } from 'Blocks/buttons/rating/_rating';
+
 const cards = document.querySelectorAll('.room__page');
 cards.forEach((card) => {
   const rightArrow = card.querySelector('.room__slider-arrow_right');
@@ -10,11 +12,21 @@ cards.forEach((card) => {
   const endPosition = -(stepSize * (sliderCount - 1));
   const carousel = card.querySelector('.carousel');
   const carouselItems = carousel.querySelectorAll('.carousel__item');
+  const rating = card.querySelector('.rating-container');
+  const stars = card.querySelectorAll('rating-star');
+  starMouseEvent(rating);
   card.addEventListener('click', (e) => {
-    const button = e.target;
-    if (button.contains(rightArrow) || button.contains(leftArrow)) {
+    const target = e.target;
+    if (
+      target.contains(rightArrow) ||
+      target.contains(leftArrow) ||
+      target.classList.contains('rating-star')
+    ) {
       e.preventDefault();
-      if (button.contains(rightArrow)) {
+      if (target.classList.contains('rating-star')) {
+        starClickEvent(rating);
+      }
+      if (target.contains(rightArrow)) {
         position -= stepSize;
         index += 1;
         if (position < endPosition) {
@@ -22,7 +34,7 @@ cards.forEach((card) => {
           index = 0;
         }
       }
-      if (button.contains(leftArrow)) {
+      if (target.contains(leftArrow)) {
         position += stepSize;
         index -= 1;
         if (position > 0) {
