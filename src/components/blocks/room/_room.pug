@@ -6,13 +6,13 @@ include Blocks/buttons/rating/_rating.pug
 li.room
   a.room__page(href=`./room-pages/${number}/${number}.html`)
     .room__image
+      button.room__slider-arrow.room__slider-arrow_left
+      button.room__slider-arrow.room__slider-arrow_right
       .room__slider
-        .room__slider-arrow.room__slider-arrow_left
-        .room__slider-arrow.room__slider-arrow_right
         each image in images
           .room__slider-item
             img(src=require(`Assets/images/rooms/${number}/${image}.jpg`), alt= number)
-        +carousel
+      +carousel
     .room-container
       .room__info
         .room__number
