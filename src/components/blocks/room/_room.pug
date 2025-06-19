@@ -9,7 +9,9 @@ li.room
       .room__slider
         .room__slider-arrow.room__slider-arrow_left
         .room__slider-arrow.room__slider-arrow_right
-        img(src=require(`Assets/images/rooms/${number}.jpg`), alt= number)
+        each image in images
+          .room__slider-item
+            img(src=require(`Assets/images/rooms/${number}/${image}.jpg`), alt= number)
         +carousel
     .room-container
       .room__info
@@ -18,8 +20,8 @@ li.room
           if (lux)
             span.room_type= 'люкс'
         .room__price
-          span.price= price
-          span в сутки
+          span.price= price.toLocaleString('ru-RU')
+          span  в сутки
       .room__rating
         +star(stars)
         .room__review
