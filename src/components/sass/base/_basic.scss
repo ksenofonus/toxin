@@ -12,6 +12,8 @@ ul {
 }
 h1 {
   @include mixins.h1;
+  margin: 0;
+  padding: 0;
 }
 h2 {
   @include mixins.h2;

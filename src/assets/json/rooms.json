@@ -2,7 +2,7 @@
   {
     "number": 888,
     "stars": 5,
-    "type": "люкс",
+    "lux": true,
     "price": 9990,
     "reviews": 145,
     "impressions": {
@@ -87,7 +87,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -183,7 +183,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -279,7 +279,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -375,7 +375,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -471,7 +471,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -567,7 +567,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -663,7 +663,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -759,7 +759,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -855,7 +855,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -951,7 +951,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -1047,7 +1047,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -1143,7 +1143,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -1239,7 +1239,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -1335,7 +1335,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,
@@ -1431,7 +1431,7 @@
   },
   {
     "number": 444,
-    "stars": 4,
+    "stars": 3,
     "lux": false,
     "price": 5000,
     "reviews": 15,

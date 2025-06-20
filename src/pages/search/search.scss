@@ -63,11 +63,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px 12px;
+  height: 1091px;
+  align-items: stretch;
 }
 .room-section {
   &__title {
-    @include mixins.h1;
-    margin-top: 0;
+    margin-bottom: 21px;
   }
 }
 .room-pagination-container {

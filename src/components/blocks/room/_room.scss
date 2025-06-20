@@ -108,5 +108,8 @@ $arrow_linear:
     display: block;
     text-decoration: none;
   }
+  &__price span:last-child {
+    font-weight: normal;
+  }
 }
 

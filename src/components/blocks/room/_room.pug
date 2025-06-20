@@ -1,6 +1,6 @@
 include Blocks/img-slider/_img-slider.pug
 include Blocks/buttons/rating/_rating.pug
-//- - const ruble = '&#8381';
+- const ruble = '&#8381';
 
 
 li.room
@@ -21,6 +21,7 @@ li.room
             span.room_type= 'люкс'
         .room__price
           span.price= price.toLocaleString('ru-RU')
+          span !{ruble}
           span  в сутки
       .room__rating
         +star(stars)
