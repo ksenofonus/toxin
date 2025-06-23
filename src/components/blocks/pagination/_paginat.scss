@@ -1,5 +1,6 @@
 @use '../../sass/abstracts/variables';
 @use '../../sass/mixins/mixins';
+
 #pagination-container .toxin-theme {
   flex-direction: column-reverse;
   font-family: variables.$font-1;
@@ -8,7 +9,6 @@
     @include mixins.main-font;
     color: variables.$dark75;
     font-size: 14px;
-    margin-left: 5px;
     line-height: 186%;
     text-align: center;
   }

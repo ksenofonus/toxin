@@ -37,7 +37,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: 266px auto;
-  padding: 30px 140px 70px;
+  padding: 30px 140px 67px;
   gap: 60px;
 }
 .room-filter {
@@ -76,4 +76,7 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
+}
+#pagination-container {
+  margin-left: -15px;
 }
