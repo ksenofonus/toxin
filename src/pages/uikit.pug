@@ -119,7 +119,7 @@ html(lang='en')
                 {'adults': {amount: 2, text: 'взрослые'},'children': { amount: 1, text: 'дети'},'infants': {amount: 0, text: 'младенцы'},})(class='dropdown_active')
           .row.row-3
             .forms-block
-              +expandable-checkbox('expandable checkbox')
+              +expandable-checkbox('expandable checkbox list')
                 +checkbox({ 1: {name: 'breakfast', text: "Завтрак"}, 
                             2: {name: 'desk', text: "Письменный стол"}, 
                             3: {name: 'babychair', text: "Стул для кормления"}, 
@@ -127,7 +127,7 @@ html(lang='en')
                             5: {name: 'tv', text: "Телевизор"}, 
                             6: {name: 'shampoo', text: "Шампунь"}})
 
-              +expandable-checkbox(class="exp-checkbox_active")
+              +expandable-checkbox('expandable checkbox list')(class="exp-checkbox_active")
                 +checkbox({ 1: {name: 'breakfast', text: "Завтрак"}, 
                             2: {name: 'desk', text: "Письменный стол", checked: 'checked'}, 
                             3: {name: 'babychair', text: "Стул для кормления", checked: 'checked'}, 
