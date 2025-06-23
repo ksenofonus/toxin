@@ -3,13 +3,16 @@
   &__header {
     position: relative;
     width: 266px;
+    height: 44px;
+    display: flex;
+    align-items: center;
     cursor: pointer;
     &::after {
       @include mixins.expand-more;
       translate: 0 -50%;
     }
     & h3 {
-      margin-bottom: 17px;
+      margin-bottom: 0;
     }
   }
   &__container {
@@ -23,6 +26,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+      margin-top: 4px;
       & .checkbox-label::first-letter {
         text-transform: uppercase;
       }

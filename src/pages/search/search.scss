@@ -43,11 +43,12 @@
 .room-filter {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  
-  // .dropdown {
-  //   margin-bottom: 8px;
-  // }
+  & .room-filter__item:not(.rich-container) {
+    margin-bottom: 30px;
+  }
+  .rich-container {
+    margin-bottom: 28px;
+  }
 }
 .room-filter-base {
   display: flex;
@@ -57,7 +58,7 @@
 .room-filter-conveniences {
   display: flex;
   flex-direction: column;
-  gap: 29px;
+  gap: 15px;
 }
 .room-wrapper {
   display: flex;
