@@ -17,6 +17,7 @@
   color: #fff;
   opacity: 1;
   padding-top: 6px;
+  cursor: pointer;
   &_checked {
     @include mixins.text-gradient;
   }

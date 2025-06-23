@@ -16,17 +16,17 @@ cards.forEach((card) => {
   const stars = card.querySelectorAll('rating-star');
   starMouseEvent(rating);
   card.addEventListener('click', (e) => {
-    const target = e.target;
+    const eventtarget = e.target;
     if (
-      target.contains(rightArrow) ||
-      target.contains(leftArrow) ||
-      target.classList.contains('rating-star')
+      eventtarget.contains(rightArrow) ||
+      eventtarget.contains(leftArrow) ||
+      eventtarget.classList.contains('rating-star')
     ) {
       e.preventDefault();
-      if (target.classList.contains('rating-star')) {
+      if (eventtarget.classList.contains('rating-star')) {
         starClickEvent(rating);
       }
-      if (target.contains(rightArrow)) {
+      if (eventtarget.contains(rightArrow)) {
         position -= stepSize;
         index += 1;
         if (position < endPosition) {
@@ -34,7 +34,7 @@ cards.forEach((card) => {
           index = 0;
         }
       }
-      if (target.contains(leftArrow)) {
+      if (eventtarget.contains(leftArrow)) {
         position += stepSize;
         index -= 1;
         if (position > 0) {

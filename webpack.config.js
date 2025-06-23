@@ -30,7 +30,7 @@ module.exports = (env) => {
           port: 8080,
           watchFiles: ['src/**/**'],
           hot: true,
-          open: ['http://localhost:8080/search.html'],
+          open: ['http://localhost:8080/uikit.html'],
         }
       : undefined,
     plugins: [
