@@ -26,7 +26,8 @@ function dropdown() {
       apply(menu);
       const options = menu.querySelectorAll('.amount');
       options.forEach((option) => {
-        if (Number(option) !== 0) {
+        if (Number(option.textContent) !== 0) {
+          console.log(option);
           const clearBtn = menu.querySelector('.dropdown__btn__clear');
           clearBtn.classList.add('dropdown__btn__clear_active');
         }
