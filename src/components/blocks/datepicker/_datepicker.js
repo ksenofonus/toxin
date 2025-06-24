@@ -59,7 +59,10 @@ export default function setDatepicker(container, day) {
     end.addEventListener('click', () => datepicker.show());
     end.addEventListener('focus', () => datepicker.show());
   }
-
+  if (container.classList.contains('invisible-datepicker')) {
+    console.log(datepicker.visible);
+    datepicker.show();
+  }
   document.body.addEventListener('click', (e) => {
     const { target } = e;
     const isDatepicker =
@@ -83,5 +86,8 @@ const datepicker = document.querySelectorAll('.datepicker-container');
 datepicker.forEach((dp) => {
   if (!dp.classList.contains('booking-datepicker')) {
     setDatepicker(dp);
+    if (dp.classList.contains('invisible-datepicker')) {
+      console.log(dp);
+    }
   }
 });
