@@ -35,3 +35,8 @@ function starClickEvent(container) {
   });
 }
 export { starMouseEvent, starClickEvent };
+
+const rating = document.querySelectorAll('.rating-container');
+rating.forEach((item) => {
+  starClickEvent(item);
+});
