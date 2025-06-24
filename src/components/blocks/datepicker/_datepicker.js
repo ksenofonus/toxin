@@ -5,11 +5,13 @@ import 'air-datepicker/air-datepicker.css';
 import { apply, clear } from './_datepicker_buttons';
 import '../forms/masked-text/_mask';
 
-export default function setDatepicker(start, end, day) {
-  const endField = end;
-  const dayField = day;
+export default function setDatepicker(container, day) {
+  const startfield = container.firstChild;
+  const endfield = container.lastChild;
+  const start = startfield.querySelector('input');
+  const end = endfield.querySelector('input');
   let datepicker;
-  if (!end) {
+  if (startfield === endfield) {
     datepicker = new AirDatepicker(start, {
       range: true,
       multipleDatesSeparator: ' - ',
@@ -36,11 +38,11 @@ export default function setDatepicker(start, end, day) {
           const today = date[0];
           const tommorow = new Date(today);
           tommorow.setDate(tommorow.getDate() + 1);
-          endField.value = datepicker.formatDate(tommorow, 'dd.MM.yyyy');
+          end.value = datepicker.formatDate(tommorow, 'dd.MM.yyyy');
           selected = [today, tommorow];
         }
         if (date.length > 1) {
-          endField.value = datepicker.formatDate(date[1], 'dd.MM.yyyy');
+          end.value = datepicker.formatDate(date[1], 'dd.MM.yyyy');
         }
         if (selected) {
           amountOfDays = daysBetween(selected);
@@ -48,6 +50,7 @@ export default function setDatepicker(start, end, day) {
           amountOfDays = 4;
         }
         if (day) {
+          const dayField = document.querySelector('.days');
           dayField.textContent = amountOfDays;
           calculateSum(day);
         }
@@ -75,3 +78,10 @@ export default function setDatepicker(start, end, day) {
   });
   return datepicker;
 }
+
+const datepicker = document.querySelectorAll('.datepicker-container');
+datepicker.forEach((dp) => {
+  if (!dp.classList.contains('booking-datepicker')) {
+    setDatepicker(dp);
+  }
+});

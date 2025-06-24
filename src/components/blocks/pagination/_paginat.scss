@@ -1,5 +1,8 @@
 @use '../../sass/abstracts/variables';
 @use '../../sass/mixins/mixins';
+#pagination-container {
+  display: flex;
+}
 
 #pagination-container .toxin-theme {
   flex-direction: column-reverse;

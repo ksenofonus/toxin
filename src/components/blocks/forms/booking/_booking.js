@@ -1,11 +1,9 @@
 import 'Blocks/dropdown/_dropdown-guest';
 import setDatepicker from 'Blocks/datepicker/_datepicker';
 
-const startDate = document.getElementById('start-booking-date');
-const endDate = document.getElementById('end-booking-date');
+const container = document.querySelector('.booking-datepicker');
 const amountOfDays = document.querySelector('.days');
-setDatepicker(startDate, endDate, amountOfDays);
-
+setDatepicker(container, amountOfDays);
 // number with spaces
 const digits = document.querySelectorAll('.digit');
 digits.forEach((item) => {
