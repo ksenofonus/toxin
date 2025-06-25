@@ -3,8 +3,8 @@ extends Components/layout/layout/_layout.pug
 block main 
   .room-filter
     .room-filter__item.room-filter-base
-        +filter-datepicker('даты пребывания в отеле', 'text', 'date', '19 авг - 23 авг')
-        +guestDropdown('гости', '3 гостя, 1 младенец',
+      +filter-datepicker('даты пребывания в отеле', '19 авг - 23 авг')
+      +guestDropdown('гости', '3 гостя, 1 младенец',
                 {'adults': {amount: 2, text: 'взрослые'},'children': { amount: 1, text: 'дети'},'infants': {amount: 1, text: 'младенцы'},})
     .room-filter__item
       +range-slider('диапазон цены', 'стоимость за сутки пребывания в номере')

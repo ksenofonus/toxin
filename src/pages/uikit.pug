@@ -17,12 +17,13 @@ include Blocks/forms/subscription/_subscription.pug
 include Blocks/forms/booking/_booking.pug
 include Blocks/forms/reg-form/_reg-form.pug
 include Blocks/forms/enter/_enter.pug
-include Blocks/datepicker/_filter-datepicker.pug
+include Blocks/datepicker/_datepicker.pug
 include Blocks/range-slider/_range-slider.pug
 doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
+    include Assets/favicons/_favicons.pug
     title Uikit
   body
     .container
@@ -53,12 +54,8 @@ html(lang='en')
               +label('masked text field')(class="text-field_default")
                 +field('text', 'masked', 'ДД.ММ.ГГГГ')(class='text-field masked-date')
               .datepick-wrapper
-                .datepicker-container
-                  +label('date dropdown')
-                    +field('text', 'date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field' id='start-day')
-                  +label('date dropdown')
-                    +field('text', 'date', '19.08.2019')(class='masked-date datepicker text-field' id='end-day')
-                +filter-datepicker('filter date dropdown', 'text', 'date', '19 авг - 23 авг')
+                +datepicker('date dropdown', 'date dropdown')
+                +filter-datepicker('filter date dropdown', '19 авг - 23 авг')
                 .datepicker-email-container
                   +label('subscription text field')
                     +subscription
@@ -173,10 +170,10 @@ html(lang='en')
         .grid
           include ../components/blocks/forms/search-form/_search-form.pug
           +registration
-          +booking('люкс', '888', '9 990')
+          +booking('люкс', '888', '9990')
           +enter
-          +filter-datepicker('', 'text', 'date')(class='invisible-datepicker')
-
+          +filter-datepicker('')(class='invisible-datepicker')
+          .room-template
       section.block-container.block-container__layout
         h2.section-title Headers and footers
         +simpleLogo

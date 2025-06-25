@@ -12,11 +12,7 @@ mixin booking(type, number, price)
           span.price.digit #{price}
           span !{ruble}
           span  в сутки
-      .datepicker-container.booking-datepicker
-        +label('прибытие')
-          +field('text', 'date', '19.08.2019')(class='masked-date datepicker text-field' id='start-booking-date')
-        +label('выезд')
-          +field('text', 'date', '23.08.2019')(class='masked-date datepicker text-field' id='end-booking-date')
+      +datepicker('прибытие', 'выезд')(class='booking-datepicker')
       +guestDropdown('гости')
       .sum-price 
         .sum-price__row 

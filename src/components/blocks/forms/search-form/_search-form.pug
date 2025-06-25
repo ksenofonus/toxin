@@ -1,10 +1,6 @@
 .form.search
   h2.form__title Найдём номера под ваши пожелания
   .form-container
-    .datepicker-container
-      +label('прибытие')
-        +field('text', 'start-date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field', readonly='readonly' id='start-search-date')
-      +label('выезд')
-        +field('text', 'end-date', 'ДД.ММ.ГГГГ')(class='masked-date datepicker text-field' readonly='readonly' id='end-search-date')
+    +datepicker('прибытие', 'выезд')
     +guestDropdown('гости')
     +button('подобрать номер', './search.html')(class="button__long")

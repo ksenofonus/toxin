@@ -4,7 +4,7 @@ import * as paginationjs from 'Assets/lib/pagination/_pagination';
 import Data from 'Assets/json/rooms.json';
 import template from 'Blocks/room/_room.pug';
 
-function simpleTemplating(data) {
+export default function simpleTemplating(data) {
   const container = document.createElement('ul');
   container.className = 'room-wrapper';
   data.forEach((element) => {

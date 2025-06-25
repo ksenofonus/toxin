@@ -1,0 +1,13 @@
+include Blocks/forms/mixins/_mixins-forms.pug
+
+mixin filter-datepicker(label, placeholder='ДД МММ - ДД МММ')
+  .datepicker-container.datepicker-filter-container&attributes(attributes)
+    +label(label)
+      +field('text', 'date', placeholder)(class='filter-datepicker text-field' readonly='readonly')
+
+mixin datepicker(label1, label2, placeholder='ДД.ММ.ГГГГ')
+  .datepicker-container&attributes(attributes)
+    +label(label1)
+      +field('text', 'date', placeholder)(class='masked-date datepicker text-field start-field' readonly='readonly')
+    +label(label2)
+      +field('text', 'date', placeholder)(class='masked-date datepicker text-field end-field' readonly='readonly')

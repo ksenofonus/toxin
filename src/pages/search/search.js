@@ -3,6 +3,9 @@ import 'Components/blocks/pagination/_paginat';
 import 'Components/blocks/dropdown/_dropdown-guest';
 import 'Components/blocks/range-slider/_range-slider';
 import 'Components/blocks/buttons/checkbox/expandable/_expandable';
-import 'Components/blocks/room/_room';
+import cardsSlider from 'Blocks/room/_room';
 import 'Blocks/buttons/rating/_rating';
 import 'Blocks/datepicker/_datepicker';
+
+const cards = document.querySelectorAll('.room__page');
+cardsSlider(cards);
