@@ -61,6 +61,7 @@ export default function setDatepicker(container, day) {
   }
   if (container.classList.contains('invisible-datepicker')) {
     datepicker.show();
+    datepicker.$datepicker.classList.add('invisible');
   }
   document.body.addEventListener('click', (e) => {
     const { target } = e;
