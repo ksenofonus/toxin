@@ -190,5 +190,15 @@
 }
 
 .invisible-datepicker {
-  visibility: hidden;
+  width: 320px;
+  height: 369px;
+  .field-name {
+    height: 0;
+    .text-field {
+      height: 0;
+      &::after {
+        height: 0;
+      }
+    }
+  }
 }
