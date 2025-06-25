@@ -262,7 +262,7 @@
 }
 .invisible-datepicker {
   width: 320px;
-  height: 409px;
+  height: 367px;
   .field-name {
     height: 0;
     &::after {
@@ -272,6 +272,9 @@
       height: 0;
       border: none;
     }
+  }
+  &.-from-bottom-  {
+    transform: translateY(0px);
   }
 }
 .room-template {
