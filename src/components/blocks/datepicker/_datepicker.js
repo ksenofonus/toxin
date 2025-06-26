@@ -5,14 +5,15 @@ import 'air-datepicker/air-datepicker.css';
 import { apply, clear } from './_datepicker_buttons';
 import '../forms/masked-text/_mask';
 
-export default function setDatepicker(container, day) {
-  const startfield = container.firstChild;
-  const endfield = container.lastChild;
+export default function setDatepicker(cont, day) {
+  const startfield = cont.firstChild;
+  const endfield = cont.lastChild;
   const start = startfield.querySelector('input');
   const end = endfield.querySelector('input');
   let datepicker;
   if (startfield === endfield) {
     datepicker = new AirDatepicker(start, {
+      container: cont,
       range: true,
       multipleDatesSeparator: ' - ',
       dateFormat: 'dd MMM',
@@ -21,6 +22,7 @@ export default function setDatepicker(container, day) {
     });
   } else {
     datepicker = new AirDatepicker(start, {
+      container: cont,
       range: true,
       dateFormat: 'dd.MM.yyyy',
       buttons: [clear, apply],
@@ -59,7 +61,7 @@ export default function setDatepicker(container, day) {
     end.addEventListener('click', () => datepicker.show());
     end.addEventListener('focus', () => datepicker.show());
   }
-  if (container.classList.contains('invisible-datepicker')) {
+  if (cont.classList.contains('invisible-datepicker')) {
     datepicker.show();
     datepicker.$datepicker.classList.add('invisible');
   }

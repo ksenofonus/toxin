@@ -284,6 +284,6 @@
     gap: 40px;
   }
 }
-.air-datepicker-global-container .air-datepicker.-from-bottom-.invisible {
-  transform: translateY(0);
+.datepicker-container .air-datepicker.-from-bottom-.invisible {
+  transform: translateY(-12px);
 }
