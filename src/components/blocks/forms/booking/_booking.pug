@@ -18,17 +18,25 @@ mixin booking(type, number, price)
           .sum-price__cost
             .sum-price__calc
               span.digit.day-price #{price}
-              span !{ruble} х
+              span !{ruble}
+              |
+              | x
+              |
               span.days 4
-              span  суток
+              |
+              | суток
+              |
           .sum-price__sum
             span.digit.day-sum 39960
             span !{ruble}
         .sum-price__row
           .sum-price__cost
             .discont
-              span Сбор за услуги: скидка
-              span.digit 2179
+              span 
+              |
+              | Сбор за услуги: скидка
+              |
+              span.digit  2179
               span !{ruble}
             span.information i
           .sum-price__sum
@@ -46,5 +54,4 @@ mixin booking(type, number, price)
         span.dots
         span.digit 38081
         span !{ruble}
-
       +button('забронировать')(class="button__long")
