@@ -64,8 +64,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px 12px;
-  height: 1091px;
+  min-height: 1091px;
   align-items: stretch;
+  justify-content: center;
 }
 .room-section {
   &__title {
@@ -77,6 +78,7 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  justify-content: center;
 }
 #pagination-container {
   margin-left: -15px;
