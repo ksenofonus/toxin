@@ -7,15 +7,10 @@ import { getColors } from './_getColors';
 export default function addChart(data, labels) {
   const doughnut = document.getElementById('myChart');
   Tooltip.positioners.myCustomPositioner = function positioner() {
-    // A reference to the tooltip model
     const tooltip = this;
-
-    /* ... */
-
     return {
       x: 60,
       y: 60,
-      // You may also include xAlign and yAlign to override those tooltip options.
     };
   };
   const chart = new Chart(doughnut, {

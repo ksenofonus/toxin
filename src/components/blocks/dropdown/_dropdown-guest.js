@@ -1,7 +1,6 @@
 import dropdownToggle from './js/_dpopdownToggle';
 import counter from './js/_dropdownCounter';
 import apply from './js/_apply';
-import clear from './js/_clear';
 
 function dropdown() {
   const dropdowns = document.querySelectorAll('.dropdown__item');

@@ -1,5 +1,5 @@
-@use '../../../sass/mixins/mixins';
-@use '../../../sass/abstracts/variables';
+@use 'Sass/mixins/mixins';
+@use 'Sass/abstracts/variables';
 @mixin field-style {
   box-sizing: border-box;
   height: 44px;

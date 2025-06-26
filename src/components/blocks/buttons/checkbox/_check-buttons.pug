@@ -17,7 +17,7 @@ mixin checkbox(data={})
 mixin radio(name, value, text, checked)
   .radio__item
     label.radio-label
-      input(class!=attributes.class)(
+      input(class!=attributes.class
       type="radio"
       name= name
       value= value
@@ -30,11 +30,11 @@ mixin radio(name, value, text, checked)
 mixin toggle(name, text, checked)
   .checkbox.toggle
     label.checkbox-label
-      input(class!=attributes.class)(
+      input(class!=attributes.class
       type="checkbox"
       name= name
       id= name
       class="switch"
       checked= checked
-    )
+      )
       | #{text}

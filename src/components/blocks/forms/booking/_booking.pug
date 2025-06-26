@@ -1,10 +1,9 @@
 - const ruble = '&#8381';
 mixin booking(type, number, price)
   .form.room-search
-    .form-container 
+    .form-container
       .room__info
         .room__number
-          //- span №&nbsp;
           span.number= number
           if type
             span.room_type= type
@@ -14,32 +13,32 @@ mixin booking(type, number, price)
           span  в сутки
       +datepicker('прибытие', 'выезд')(class='booking-datepicker')
       +guestDropdown('гости')
-      .sum-price 
-        .sum-price__row 
+      .sum-price
+        .sum-price__row
           .sum-price__cost
             .sum-price__calc
               span.digit.day-price #{price}
-              span !{ruble} х 
-              span.days 4 
+              span !{ruble} х
+              span.days 4
               span  суток
-          .sum-price__sum 
+          .sum-price__sum
             span.digit.day-sum 39960
             span !{ruble}
-        .sum-price__row 
+        .sum-price__row
           .sum-price__cost
             .discont
-              span Сбор за услуги: скидка 
+              span Сбор за услуги: скидка
               span.digit 2179
               span !{ruble}
             span.information i
-          .sum-price__sum 
+          .sum-price__sum
             span.digit.discont-sum 0
             span !{ruble}
-        .sum-price__row 
+        .sum-price__row
           .sum-price__cost
-            span Сбор за дополнительные услуги 
+            span Сбор за дополнительные услуги
             span.information i
-          .sum-price__sum 
+          .sum-price__sum
             span.digit.service-sum 300
             span !{ruble}
       .total

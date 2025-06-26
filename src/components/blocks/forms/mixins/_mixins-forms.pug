@@ -4,10 +4,9 @@ mixin label(fieldName)
     block
 
 mixin field(type, name, placeholder)
-  input(class!=attributes.class)(
+  input(class!=attributes.class
     type= type
     name= name
     placeholder= placeholder
-    id= name
-  )&attributes(attributes)
+    id= name)&attributes(attributes)
 

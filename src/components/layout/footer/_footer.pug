@@ -4,7 +4,7 @@ mixin menu(classname, data=[{}])
       if item.href
         li(class= classname + '__menu-item')
           a(class= classname + '__menu-link', href= item.href)= item.itemname
-      else 
+      else
         li(class= classname + '__menu-item')= item.itemname
 - const icons = ['twitter', 'square-facebook', 'instagram'];
 //footer
@@ -49,4 +49,3 @@ mixin footer
             each icon in icons
               li.meadia-block__item
                 i(class=`fa-brands fa-${icon}`)
-              

@@ -21,6 +21,7 @@ module.exports = (env) => {
         Components: path.resolve(__dirname, 'src/components/'),
         Assets: path.resolve(__dirname, 'src/assets/'),
         Pages: path.resolve(__dirname, 'src/pages/'),
+        Sass: path.resolve(__dirname, 'src/components/sass/'),
       },
       extensions: ['.js', '.ts'],
     },

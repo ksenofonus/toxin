@@ -9,7 +9,6 @@ import 'Blocks/forms/search-form/_search-form';
 import 'Blocks/forms/booking/_booking';
 import 'Blocks/datepicker/_datepicker';
 import cardsSlider from 'Blocks/room/_room';
-
 import Data from 'Assets/json/rooms.json';
 
 const roomContainer = document.querySelector('.room-template');

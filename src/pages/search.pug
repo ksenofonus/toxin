@@ -1,6 +1,6 @@
 extends Components/layout/layout/_layout.pug
 
-block main 
+block main
   .room-filter
     .room-filter__item.room-filter-base
       +filter-datepicker('даты пребывания в отеле', '19 авг - 23 авг')
@@ -22,15 +22,15 @@ block main
     .room-filter__item.room-filter-conveniences
       +roomDropdown('удобства номера')(id='roomselect')
       +expandable-checkbox('дополнительные удобства')
-        +checkbox({ 1: {name: 'breakfast', text: "Завтрак"}, 
-                            2: {name: 'desk', text: "Письменный стол", checked: 'checked'}, 
-                            3: {name: 'babychair', text: "Стул для кормления", checked: 'checked'}, 
-                            4: {name: 'crib', text: "Кроватка", checked: 'checked'}, 
-                            5: {name: 'tv', text: "Телевизор"}, 
+        +checkbox({ 1: {name: 'breakfast', text: "Завтрак"},
+                            2: {name: 'desk', text: "Письменный стол", checked: 'checked'},
+                            3: {name: 'babychair', text: "Стул для кормления", checked: 'checked'},
+                            4: {name: 'crib', text: "Кроватка", checked: 'checked'},
+                            5: {name: 'tv', text: "Телевизор"},
                             6: {name: 'shampoo', text: "Шампунь"}})
   .room-section
     h1.room-section__title Номера, которые мы для вас подобрали
     .room-pagination-container
       include Blocks/pagination/_paginat.pug
-block script 
+block script
   script(src="./search/search.js")
