@@ -39,7 +39,7 @@ html(lang='en')
           +color-item('purple', '#BC9CFF', 'color__rect_purple')
           +color-item('green', '#6FCF97', 'color__rect_green')
         .text-container
-          include ../components/blocks/text-block/_text-block.pug
+          include Blocks/text-block/_text-block.pug
       section.block-container.forms
         h2.section-title Form elements
         +simpleLogo
@@ -103,7 +103,7 @@ html(lang='en')
                   +button("перейти к оплате")(class="button__long")
                 .button-container
                   h3.buttons-name pagination
-                  include ../components/blocks/pagination/_paginat.pug
+                  include Blocks/pagination/_paginat.pug
           .row.row-2
             .forms-block
               +roomDropdown('dropdown')(class='default' id='roomselect')
@@ -168,7 +168,7 @@ html(lang='en')
         h2.section-title Cards
         +simpleLogo
         .grid
-          include ../components/blocks/forms/search-form/_search-form.pug
+          include Blocks/forms/search-form/_search-form.pug
           +registration
           +booking('люкс', '888', '9990')
           +enter

@@ -1,7 +1,7 @@
 extends Components/layout/roompage/_roompage.pug
 
 block photo
-  include ./_data.pug
+  include Assets/room-data/888/_data.pug
   each photo, index in photos
     div.room-image(class='room-image_'+ index)
       img(src=require(`Assets/images/rooms/` + number + `/`+ photo))
@@ -18,4 +18,4 @@ block review
 block rules
   +bullet(rules)
 block script
-  script(src=`Pages/room-pages/` + number +`/` + number +`.js`)
+  script(src=`./room-pages/` + number +`.js`)
