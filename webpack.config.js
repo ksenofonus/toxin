@@ -38,7 +38,7 @@ module.exports = (env) => {
       new PugPlugin({
         entry: './src/pages/',
         filename: ({ filename, chunk: { name } }) => {
-          return '[name].html';
+          return './[name].html';
         },
         js: {
           // JS output filename
@@ -47,6 +47,9 @@ module.exports = (env) => {
         css: {
           // CSS output filename
           filename: 'css/[name].[contenthash:8].css',
+        },
+        loaderOptions: {
+          root: path.join(__dirname, 'dist'),
         },
       }),
       new FaviconsWebpackPlugin({
