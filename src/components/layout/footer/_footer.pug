@@ -6,8 +6,7 @@ mixin menu(classname, data=[{}])
           a(class= classname + '__menu-link', href= item.href)= item.itemname
       else
         li(class= classname + '__menu-item')= item.itemname
-- const icons = ['twitter', 'square-facebook', 'instagram'];
-//footer
+- const icons = [{name: "twitter", href: "https://twitter.com/"},{name: "square-facebook", href: "https://www.facebook.com/?locale=ru_RU"},{name: "instagram", href: "https://www.instagram.com/"}]
 mixin footer
   footer.footer(class!=attributes.class)
     .footer-container
@@ -48,4 +47,5 @@ mixin footer
           ul.media-block__list
             each icon in icons
               li.meadia-block__item
-                i(class=`fa-brands fa-${icon}`)
+                a(class='media-block__item-link' href=`${icon.href}` target='_blank')
+                  i(class=`fa-brands fa-${icon.name}`)
