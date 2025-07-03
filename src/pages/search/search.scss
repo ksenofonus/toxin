@@ -39,6 +39,13 @@
   grid-template-columns: 266px auto;
   padding: 30px 140px 67px;
   gap: 60px;
+  @media screen and (max-width: 1160px) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  @media screen and (max-width: 975px) {
+    grid-template-columns: 1fr;
+  }
 }
 .room-filter {
   display: flex;
@@ -48,6 +55,9 @@
   }
   .rich-container {
     margin-bottom: 28px;
+  }
+  @media screen and (max-width: 975px) {
+    display: none;
   }
 }
 .room-filter-base {
