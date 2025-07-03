@@ -26,6 +26,9 @@ body {
   @include mixins.bodyfont;
   box-sizing: border-box;
 }
+.no-scroll {
+  overflow: hidden;
+}
 input:focus,
 input:hover,
 textarea:hover,

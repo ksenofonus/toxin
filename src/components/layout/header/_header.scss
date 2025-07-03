@@ -1,6 +1,7 @@
 
 @use 'Sass/abstracts/variables';
 @use 'Blocks/buttons/button/button';
+@use 'Blocks/burger/burger';
 .header {
   width: 100%;
   background-color: #fff;
@@ -9,6 +10,36 @@
     height: 34px;
     min-width: 87px;
     padding: 0 19px;
+  }
+  &-menu {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+    @media screen and (max-width: 980px) {
+      position: fixed;
+      left: 100%;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      gap: 30px;
+      background-color: #fff;
+      z-index: 2;
+    }
+    &_open {
+      left: 0;
+      & .header__nav {
+        flex-direction: column;
+      }
+      & .header__login {
+        flex-direction: column;
+      }
+     }
   }
 }
 .header-container {
@@ -34,6 +65,7 @@
   &-link {
     text-decoration: none;
     color: variables.$dark50;
+    white-space: nowrap;
   }
 }
 .header__title {
@@ -48,7 +80,7 @@
 .header__login {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 21px;
   color: variables.$dark50;
   position: relative;
   & .hatch {

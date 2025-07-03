@@ -8,6 +8,7 @@ import 'Blocks/buttons/checkbox/expandable/_expandable';
 import 'Blocks/forms/search-form/_search-form';
 import 'Blocks/forms/booking/_booking';
 import 'Blocks/datepicker/_datepicker';
+import 'Blocks/burger/_burger';
 import cardsSlider from 'Blocks/room/_room';
 import Data from 'Assets/json/rooms.json';
 

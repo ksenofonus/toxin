@@ -1,0 +1,23 @@
+@use 'Sass/abstracts/variables';
+.burger {
+  display: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  @media screen and (max-width: 980px) {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  &__item {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: variables.$dark50;
+  }
+  &_open {
+    transform: rotate(90deg);
+  }
+}
