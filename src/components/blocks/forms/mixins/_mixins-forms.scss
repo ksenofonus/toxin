@@ -46,7 +46,7 @@
   width: 266px;
 }
 .form {
-  max-width: 378px;
+  width: 378px;
   background-color: #fff;
   padding: 40px 29px 29px;
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
@@ -60,5 +60,6 @@
   }
   @media screen and (max-width: 410px) {
     padding: 40px 25px 29px;
+    width: 360px;
   }
 }

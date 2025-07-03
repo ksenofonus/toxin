@@ -18,9 +18,6 @@
       }
     }
   }
-  @media screen and (max-width: 420px) {
-    justify-content: space-between;
-  }
 }
 
 .datepicker-container .air-datepicker {
@@ -170,6 +167,9 @@
     }
     &.-from-bottom-  {
       transform: translateY(-6px);
+    }
+    @media screen and (max-width: 420px) {
+      width: 310px;
     }
   }
 
