@@ -46,7 +46,7 @@
   width: 266px;
 }
 .form {
-  width: 378px;
+  max-width: 378px;
   background-color: #fff;
   padding: 40px 29px 29px;
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
@@ -57,5 +57,8 @@
     font-size: 24px;
     line-height: 30px;
     font-weight: bold;
+  }
+  @media screen and (max-width: 410px) {
+    padding: 40px 25px 29px;
   }
 }

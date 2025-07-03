@@ -25,6 +25,7 @@ h3 {
 body {
   @include mixins.bodyfont;
   box-sizing: border-box;
+  
 }
 .no-scroll {
   overflow: hidden;
@@ -55,4 +56,5 @@ h3.buttons-name {
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
